@@ -1,0 +1,344 @@
+[
+ {
+  "label": "ceiling_growth",
+  "horizon": 12,
+  "n_train": 123233,
+  "n_val": 29227,
+  "n_test": 39917,
+  "train_winsor_low": -0.7641716792838964,
+  "train_winsor_high": 2.598074423130609,
+  "quantiles": {
+   "0.10": {
+    "train_constant": 0.0,
+    "pinball_constant": 0.020870411441121974,
+    "pinball_gbm": 0.020792597143532175,
+    "n_iter": 28,
+    "val_pinball_at_selected_iter": 0.019343575468408352,
+    "pinball_skill_vs_constant": 0.003728450577475284
+   },
+   "0.50": {
+    "train_constant": 0.0,
+    "pinball_constant": 0.05286151578880277,
+    "pinball_gbm": 0.05293862402569814,
+    "n_iter": 57,
+    "val_pinball_at_selected_iter": 0.04845529446552392,
+    "pinball_skill_vs_constant": -0.001458683803231109,
+    "mae_constant": 0.10572303157760554,
+    "mae_gbm": 0.10587724805139628,
+    "coverage_note": "median forecast, so MAE is reported here"
+   },
+   "0.90": {
+    "train_constant": 0.19938604084592654,
+    "pinball_constant": 0.0777582386900368,
+    "pinball_gbm": 0.06106005437350799,
+    "n_iter": 185,
+    "val_pinball_at_selected_iter": 0.05163520381087211,
+    "pinball_skill_vs_constant": 0.214744888745382
+   }
+  }
+ },
+ {
+  "label": "ceiling_growth",
+  "horizon": 24,
+  "n_train": 123233,
+  "n_val": 29227,
+  "n_test": 39917,
+  "train_winsor_low": -0.9462905015626492,
+  "train_winsor_high": 3.846000526844173,
+  "quantiles": {
+   "0.10": {
+    "train_constant": -0.0012458552891669846,
+    "pinball_constant": 0.03496737991311392,
+    "pinball_gbm": 0.03393674282747073,
+    "n_iter": 37,
+    "val_pinball_at_selected_iter": 0.032105427305520594,
+    "pinball_skill_vs_constant": 0.029474243944044076
+   },
+   "0.50": {
+    "train_constant": 0.0,
+    "pinball_constant": 0.08563602675703894,
+    "pinball_gbm": 0.0857315905473198,
+    "n_iter": 300,
+    "val_pinball_at_selected_iter": 0.08174723501886813,
+    "pinball_skill_vs_constant": -0.0011159297540974666,
+    "mae_constant": 0.17127205351407787,
+    "mae_gbm": 0.1714631810946396,
+    "coverage_note": "median forecast, so MAE is reported here"
+   },
+   "0.90": {
+    "train_constant": 0.3592990733961035,
+    "pinball_constant": 0.11493096611797488,
+    "pinball_gbm": 0.0897856745993418,
+    "n_iter": 114,
+    "val_pinball_at_selected_iter": 0.07841241629157195,
+    "pinball_skill_vs_constant": 0.21878604494476994
+   }
+  }
+ },
+ {
+  "label": "ceiling_growth",
+  "horizon": 36,
+  "n_train": 123233,
+  "n_val": 29227,
+  "n_test": 39917,
+  "train_winsor_low": -0.9731719955277363,
+  "train_winsor_high": 4.402907501046412,
+  "quantiles": {
+   "0.10": {
+    "train_constant": -0.007261331556737758,
+    "pinball_constant": 0.04268980772511213,
+    "pinball_gbm": 0.04076540658044409,
+    "n_iter": 215,
+    "val_pinball_at_selected_iter": 0.03816464354148846,
+    "pinball_skill_vs_constant": 0.04507870255728552
+   },
+   "0.50": {
+    "train_constant": 0.0,
+    "pinball_constant": 0.10320235856693806,
+    "pinball_gbm": 0.10257797143227546,
+    "n_iter": 300,
+    "val_pinball_at_selected_iter": 0.09734326606560721,
+    "pinball_skill_vs_constant": 0.006050124661226786,
+    "mae_constant": 0.20640471713387612,
+    "mae_gbm": 0.2051559428645509,
+    "coverage_note": "median forecast, so MAE is reported here"
+   },
+   "0.90": {
+    "train_constant": 0.43817530304933294,
+    "pinball_constant": 0.13375480202199982,
+    "pinball_gbm": 0.10402233991113788,
+    "n_iter": 124,
+    "val_pinball_at_selected_iter": 0.09147473526280762,
+    "pinball_skill_vs_constant": 0.2222908012377125
+   }
+  }
+ },
+ {
+  "label": "schedule_slip_days",
+  "horizon": 12,
+  "n_train": 123233,
+  "n_val": 29227,
+  "n_test": 39917,
+  "train_winsor_low": -491.0,
+  "train_winsor_high": 652.359999999986,
+  "quantiles": {
+   "0.10": {
+    "train_constant": 0.0,
+    "pinball_constant": 16.472250118996907,
+    "pinball_gbm": 14.832845793641662,
+    "n_iter": 71,
+    "val_pinball_at_selected_iter": 13.7238740635983,
+    "pinball_skill_vs_constant": 0.09952522050794832
+   },
+   "0.50": {
+    "train_constant": 0.0,
+    "pinball_constant": 47.27073778089528,
+    "pinball_gbm": 36.2493391266147,
+    "n_iter": 283,
+    "val_pinball_at_selected_iter": 34.96669921055573,
+    "pinball_skill_vs_constant": 0.23315478394616762,
+    "mae_constant": 94.54147556179056,
+    "mae_gbm": 72.4986782532294,
+    "coverage_note": "median forecast, so MAE is reported here"
+   },
+   "0.90": {
+    "train_constant": 336.0,
+    "pinball_constant": 34.374764436204984,
+    "pinball_gbm": 22.33090380149147,
+    "n_iter": 118,
+    "val_pinball_at_selected_iter": 21.971243247837084,
+    "pinball_skill_vs_constant": 0.35036925582618395
+   }
+  }
+ },
+ {
+  "label": "schedule_slip_days",
+  "horizon": 24,
+  "n_train": 123233,
+  "n_val": 29227,
+  "n_test": 39917,
+  "train_winsor_low": -550.0,
+  "train_winsor_high": 915.0,
+  "quantiles": {
+   "0.10": {
+    "train_constant": 0.0,
+    "pinball_constant": 27.619718415712605,
+    "pinball_gbm": 24.304295711601718,
+    "n_iter": 64,
+    "val_pinball_at_selected_iter": 22.626936722539515,
+    "pinball_skill_vs_constant": 0.12003825144809488
+   },
+   "0.50": {
+    "train_constant": 13.0,
+    "pinball_constant": 98.04782423528822,
+    "pinball_gbm": 62.8426573735368,
+    "n_iter": 299,
+    "val_pinball_at_selected_iter": 61.38863235692167,
+    "pinball_skill_vs_constant": 0.35906117383358305,
+    "mae_constant": 196.09564847057644,
+    "mae_gbm": 125.6853147470736,
+    "coverage_note": "median forecast, so MAE is reported here"
+   },
+   "0.90": {
+    "train_constant": 517.0,
+    "pinball_constant": 59.885702833379256,
+    "pinball_gbm": 34.916075743742454,
+    "n_iter": 161,
+    "val_pinball_at_selected_iter": 34.93007024201895,
+    "pinball_skill_vs_constant": 0.41695473056582655
+   }
+  }
+ },
+ {
+  "label": "schedule_slip_days",
+  "horizon": 36,
+  "n_train": 123233,
+  "n_val": 29227,
+  "n_test": 39917,
+  "train_winsor_low": -395.68000000000006,
+  "train_winsor_high": 1187.0,
+  "quantiles": {
+   "0.10": {
+    "train_constant": 0.0,
+    "pinball_constant": 33.70400470977278,
+    "pinball_gbm": 31.153475663398705,
+    "n_iter": 85,
+    "val_pinball_at_selected_iter": 28.86185767800954,
+    "pinball_skill_vs_constant": 0.07567436179578169
+   },
+   "0.50": {
+    "train_constant": 40.0,
+    "pinball_constant": 132.36699701881403,
+    "pinball_gbm": 82.11142782404005,
+    "n_iter": 298,
+    "val_pinball_at_selected_iter": 79.66254563263277,
+    "pinball_skill_vs_constant": 0.37966842435528614,
+    "mae_constant": 264.73399403762807,
+    "mae_gbm": 164.2228556480801,
+    "coverage_note": "median forecast, so MAE is reported here"
+   },
+   "0.90": {
+    "train_constant": 730.0,
+    "pinball_constant": 79.6471950296866,
+    "pinball_gbm": 46.14835605229901,
+    "n_iter": 250,
+    "val_pinball_at_selected_iter": 46.10061405581123,
+    "pinball_skill_vs_constant": 0.4205903166445686
+   }
+  }
+ },
+ {
+  "label": "unplanned_growth",
+  "horizon": 12,
+  "n_train": 123233,
+  "n_val": 29227,
+  "n_test": 39917,
+  "train_winsor_low": -0.0032849809446278294,
+  "train_winsor_high": 0.43317298594257125,
+  "quantiles": {
+   "0.10": {
+    "train_constant": 0.0,
+    "pinball_constant": 0.0008270392075300322,
+    "pinball_gbm": 0.0008270915337811568,
+    "n_iter": 1,
+    "val_pinball_at_selected_iter": 0.0008971459569685849,
+    "pinball_skill_vs_constant": -6.32693718123356e-05
+   },
+   "0.50": {
+    "train_constant": 0.0,
+    "pinball_constant": 0.0040319448220039085,
+    "pinball_gbm": 0.00403195441987359,
+    "n_iter": 2,
+    "val_pinball_at_selected_iter": 0.004374127106505838,
+    "pinball_skill_vs_constant": -2.380456604722525e-06,
+    "mae_constant": 0.008063889644007817,
+    "mae_gbm": 0.00806390883974718,
+    "coverage_note": "median forecast, so MAE is reported here"
+   },
+   "0.90": {
+    "train_constant": 0.0,
+    "pinball_constant": 0.0072368504364777875,
+    "pinball_gbm": 0.007071144404598424,
+    "n_iter": 31,
+    "val_pinball_at_selected_iter": 0.007223741326272586,
+    "pinball_skill_vs_constant": 0.022897534408630627
+   }
+  }
+ },
+ {
+  "label": "unplanned_growth",
+  "horizon": 24,
+  "n_train": 123233,
+  "n_val": 29227,
+  "n_test": 39917,
+  "train_winsor_low": -0.020898640110794744,
+  "train_winsor_high": 0.7000521949617978,
+  "quantiles": {
+   "0.10": {
+    "train_constant": 0.0,
+    "pinball_constant": 0.001809285971047907,
+    "pinball_gbm": 0.0018072740606143501,
+    "n_iter": 17,
+    "val_pinball_at_selected_iter": 0.0019816860396003047,
+    "pinball_skill_vs_constant": 0.00111199139646867
+   },
+   "0.50": {
+    "train_constant": 0.0,
+    "pinball_constant": 0.008206538678674914,
+    "pinball_gbm": 0.008216647747806049,
+    "n_iter": 126,
+    "val_pinball_at_selected_iter": 0.008993816333900928,
+    "pinball_skill_vs_constant": -0.0012318310467973603,
+    "mae_constant": 0.01641307735734983,
+    "mae_gbm": 0.016433295495612097,
+    "coverage_note": "median forecast, so MAE is reported here"
+   },
+   "0.90": {
+    "train_constant": 0.01281750580130383,
+    "pinball_constant": 0.014766252544185995,
+    "pinball_gbm": 0.014075757188519262,
+    "n_iter": 62,
+    "val_pinball_at_selected_iter": 0.01397815457286757,
+    "pinball_skill_vs_constant": 0.046761719237871646
+   }
+  }
+ },
+ {
+  "label": "unplanned_growth",
+  "horizon": 36,
+  "n_train": 123233,
+  "n_val": 29227,
+  "n_test": 39917,
+  "train_winsor_low": -0.03170277550728865,
+  "train_winsor_high": 0.8455965907360296,
+  "quantiles": {
+   "0.10": {
+    "train_constant": 0.0,
+    "pinball_constant": 0.0024445407136675997,
+    "pinball_gbm": 0.002443160286261126,
+    "n_iter": 20,
+    "val_pinball_at_selected_iter": 0.0025956770309191754,
+    "pinball_skill_vs_constant": 0.0005646980632212362
+   },
+   "0.50": {
+    "train_constant": 0.0,
+    "pinball_constant": 0.01083088628986943,
+    "pinball_gbm": 0.010828728139991637,
+    "n_iter": 45,
+    "val_pinball_at_selected_iter": 0.01149410971525553,
+    "pinball_skill_vs_constant": 0.0001992588436471321,
+    "mae_constant": 0.02166177257973886,
+    "mae_gbm": 0.021657456279983275,
+    "coverage_note": "median forecast, so MAE is reported here"
+   },
+   "0.90": {
+    "train_constant": 0.021742905940161563,
+    "pinball_constant": 0.019313898257067797,
+    "pinball_gbm": 0.01810061031456526,
+    "n_iter": 120,
+    "val_pinball_at_selected_iter": 0.017578942431531106,
+    "pinball_skill_vs_constant": 0.0628194229022897
+   }
+  }
+ }
+]

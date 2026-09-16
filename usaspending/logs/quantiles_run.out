@@ -1,0 +1,29 @@
+[2026-09-16T01:20:46] quantile ladder over labels ['ceiling_growth', 'schedule_slip_days', 'unplanned_growth'] at horizons [12, 24, 36]
+[2026-09-16T01:22:20] ceiling_growth H=12 q=0.1: pinball const=0.02087 gbm=0.02079 skill=0.0037
+[2026-09-16T01:23:15] ceiling_growth H=12 q=0.5: pinball const=0.05286 gbm=0.05294 skill=-0.0015
+[2026-09-16T01:24:16] ceiling_growth H=12 q=0.9: pinball const=0.07776 gbm=0.06106 skill=0.2147
+[2026-09-16T01:24:49] ceiling_growth H=24 q=0.1: pinball const=0.03497 gbm=0.03394 skill=0.0295
+[2026-09-16T01:25:44] ceiling_growth H=24 q=0.5: pinball const=0.08564 gbm=0.08573 skill=-0.0011
+[2026-09-16T01:26:29] ceiling_growth H=24 q=0.9: pinball const=0.11493 gbm=0.08979 skill=0.2188
+[2026-09-16T01:27:57] ceiling_growth H=36 q=0.1: pinball const=0.04269 gbm=0.04077 skill=0.0451
+[2026-09-16T01:28:26] ceiling_growth H=36 q=0.5: pinball const=0.10320 gbm=0.10258 skill=0.0061
+[2026-09-16T01:28:47] ceiling_growth H=36 q=0.9: pinball const=0.13375 gbm=0.10402 skill=0.2223
+[2026-09-16T01:29:19] schedule_slip_days H=12 q=0.1: pinball const=16.47225 gbm=14.83285 skill=0.0995
+[2026-09-16T01:30:02] schedule_slip_days H=12 q=0.5: pinball const=47.27074 gbm=36.24934 skill=0.2332
+[2026-09-16T01:30:25] schedule_slip_days H=12 q=0.9: pinball const=34.37476 gbm=22.33090 skill=0.3504
+[2026-09-16T01:30:53] schedule_slip_days H=24 q=0.1: pinball const=27.61972 gbm=24.30430 skill=0.1200
+[2026-09-16T01:31:29] schedule_slip_days H=24 q=0.5: pinball const=98.04782 gbm=62.84266 skill=0.3591
+[2026-09-16T01:31:54] schedule_slip_days H=24 q=0.9: pinball const=59.88570 gbm=34.91608 skill=0.4170
+[2026-09-16T01:32:17] schedule_slip_days H=36 q=0.1: pinball const=33.70400 gbm=31.15348 skill=0.0757
+[2026-09-16T01:32:55] schedule_slip_days H=36 q=0.5: pinball const=132.36700 gbm=82.11143 skill=0.3797
+[2026-09-16T01:33:24] schedule_slip_days H=36 q=0.9: pinball const=79.64720 gbm=46.14836 skill=0.4206
+[2026-09-16T01:33:43] unplanned_growth H=12 q=0.1: pinball const=0.00083 gbm=0.00083 skill=-0.0001
+[2026-09-16T01:33:57] unplanned_growth H=12 q=0.5: pinball const=0.00403 gbm=0.00403 skill=-0.0000
+[2026-09-16T01:34:13] unplanned_growth H=12 q=0.9: pinball const=0.00724 gbm=0.00707 skill=0.0229
+[2026-09-16T01:34:28] unplanned_growth H=24 q=0.1: pinball const=0.00181 gbm=0.00181 skill=0.0011
+[2026-09-16T01:34:44] unplanned_growth H=24 q=0.5: pinball const=0.00821 gbm=0.00822 skill=-0.0012
+[2026-09-16T01:34:58] unplanned_growth H=24 q=0.9: pinball const=0.01477 gbm=0.01408 skill=0.0468
+[2026-09-16T01:35:12] unplanned_growth H=36 q=0.1: pinball const=0.00244 gbm=0.00244 skill=0.0006
+[2026-09-16T01:35:26] unplanned_growth H=36 q=0.5: pinball const=0.01083 gbm=0.01083 skill=0.0002
+[2026-09-16T01:35:43] unplanned_growth H=36 q=0.9: pinball const=0.01931 gbm=0.01810 skill=0.0628
+[2026-09-16T01:35:43] done

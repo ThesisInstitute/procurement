@@ -1,0 +1,34 @@
+{
+ "panel": {
+  "seconds": 52.6,
+  "finished_at": "2026-09-15T23:51:08",
+  "awards": 192377,
+  "transactions": 3287223,
+  "history_source_awards": 474512
+ },
+ "field_evidence": {
+  "seconds": 19.2,
+  "finished_at": "2026-09-16T00:01:02",
+  "transactions": 3287223
+ },
+ "models": {
+  "seconds": 5029.9,
+  "finished_at": "2026-09-16T01:19:27",
+  "cells": 24
+ },
+ "quantile_models": {
+  "seconds": 897.2,
+  "finished_at": "2026-09-16T01:35:43",
+  "cells": 9,
+  "labels": [
+   "ceiling_growth",
+   "schedule_slip_days",
+   "unplanned_growth"
+  ],
+  "horizons": [
+   12,
+   24,
+   36
+  ]
+ }
+}

@@ -8,8 +8,13 @@ Ladder per (label, horizon):
   3 GBM no history     model 2 with the history block removed
 
 Split by base action_date fiscal year: train FY2010-FY2017, validate
-FY2018-FY2019, test FY2020-FY2022. The GBM early-stops on the validation split;
-nothing is selected on test.
+FY2018-FY2019, test FY2020-FY2022. sklearn's own early stopping is switched OFF,
+because it carves a validation split out of the training rows at random and that
+would break the forward chaining. Instead each GBM is fitted on the training
+years, its boosting-iteration count is chosen by Brier score on the validation
+years through staged_predict_proba, and it is refitted at that count. Category
+lumping and the reference-class quintile edges are also fitted on training rows
+only. Nothing is selected on the test years.
 """
 from __future__ import annotations
 
@@ -28,6 +33,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import features as F  # noqa: E402
 import scoring as S  # noqa: E402
 from reference_class import ReferenceClassModel  # noqa: E402
+from timing import record as record_timing  # noqa: E402
 
 TRAIN_FY = (2010, 2017)
 VAL_FY = (2018, 2019)
@@ -126,7 +132,8 @@ def binary_metrics(y, p, base_rate_train) -> dict:
 
 
 def run_cell(panel: pd.DataFrame, label: str, h: int, maps: dict,
-             perm_sample: int, perm_repeats: int, log) -> dict:
+             perm_sample: int, perm_repeats: int, log,
+             do_permutation: bool = True) -> dict:
     col = f"{label}_{h}"
     qual = panel[f"qualifies_{h}"].astype(bool) & panel[col].notna()
     d = panel[qual].copy()
@@ -175,14 +182,29 @@ def run_cell(panel: pd.DataFrame, label: str, h: int, maps: dict,
                 y[masks["test"]], p_te).to_dict("records")
             res["calibration_test_reference_class"] = S.calibration_table(
                 y[masks["test"]], p1_te).to_dict("records")
-            # unseen-recipient slice
-            train_uei = set(d.loc[masks["train"], "recipient_uei"].dropna().unique())
+            # Unseen-recipient slice. Awards booked to an aggregate placeholder
+            # recipient are excluded from BOTH sides: such an award has no
+            # identifiable contractor, so it is neither a contractor seen in
+            # training nor a contractor unseen in training, and letting the
+            # bucket code into train_uei would mark a test award as "seen"
+            # because the bucket appears in both periods rather than because any
+            # contractor does. Measured on this panel the exclusion changes no
+            # row's classification, because all three buckets appear in the
+            # training years and so no aggregate award was ever in the unseen
+            # slice; the count is recorded so that stays checkable.
+            agg = (d["recipient_is_aggregate"].astype(bool).to_numpy()
+                   if "recipient_is_aggregate" in d.columns
+                   else np.zeros(len(d), dtype=bool))
+            train_uei = set(
+                d.loc[masks["train"] & ~agg, "recipient_uei"].dropna().unique())
             te = d[masks["test"]]
-            unseen = ~te["recipient_uei"].isin(train_uei).to_numpy()
+            te_agg = agg[masks["test"]]
+            unseen = (~te["recipient_uei"].isin(train_uei).to_numpy()) & ~te_agg
             if unseen.sum() > 50 and len(np.unique(y[masks["test"]][unseen])) > 1:
                 res["unseen_recipient_test"] = {
                     "n": int(unseen.sum()),
                     "share_of_test": float(unseen.mean()),
+                    "test_rows_excluded_as_aggregate_recipient": int(te_agg.sum()),
                     "base_rate": binary_metrics(
                         y[masks["test"]][unseen],
                         np.full(int(unseen.sum()), base_rate), base_rate),
@@ -196,7 +218,16 @@ def run_cell(panel: pd.DataFrame, label: str, h: int, maps: dict,
                     "n": int(unseen.sum()),
                     "note": "too few unseen-recipient test rows or single class",
                 }
-            # permutation importance on validation
+            # Permutation importance on validation. It is by a wide margin the
+            # most expensive step in the ladder and it runs single threaded, so
+            # it is computed for the horizons the report actually prints rather
+            # than for all of them. Which horizons were covered is recorded in
+            # the result, so a horizon without it is visibly absent rather than
+            # silently zero.
+            res["permutation_importance_computed"] = bool(do_permutation)
+            if not do_permutation:
+                log(f"{label} H={h}: permutation importance skipped for this horizon")
+                continue
             Xv = X[masks["val"]]
             yv = y[masks["val"]]
             if len(Xv) > perm_sample:
@@ -305,6 +336,10 @@ def main() -> int:
     ap.add_argument("--perm-repeats", type=int, default=3)
     ap.add_argument("--labels", type=str, default=",".join(BINARY_LABELS))
     ap.add_argument("--horizons", type=str, default="12,24,36")
+    ap.add_argument("--perm-horizons", type=str, default="36",
+                    help="horizons to compute permutation importance for; it is "
+                         "single threaded and dominates the run time, and the "
+                         "report prints it per label at 36 months")
     a = ap.parse_args()
 
     a.log.parent.mkdir(parents=True, exist_ok=True)
@@ -346,16 +381,21 @@ def main() -> int:
 
     labels = [x for x in a.labels.split(",") if x]
     horizons = [int(x) for x in a.horizons.split(",") if x]
+    perm_horizons = {int(x) for x in a.perm_horizons.split(",") if x}
+    log(f"permutation importance will be computed for horizons {sorted(perm_horizons)}")
     results = []
     for label in labels:
         for h in horizons:
             try:
                 results.append(run_cell(panel, label, h, maps, a.perm_sample,
-                                        a.perm_repeats, log))
+                                        a.perm_repeats, log,
+                                        do_permutation=h in perm_horizons))
             except Exception as exc:  # noqa: BLE001
                 log(f"ERROR {label} H={h}: {exc}")
                 results.append({"label": label, "horizon": h, "error": str(exc)})
             (a.out / "model_results.json").write_text(json.dumps(results, indent=1))
+    record_timing(a.out, "models", time.time() - t0,
+                  {"cells": len(results)})
     log(f"done in {time.time()-t0:.0f}s -> {a.out/'model_results.json'}")
     handle.close()
     return 0

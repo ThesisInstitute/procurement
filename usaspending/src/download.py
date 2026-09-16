@@ -87,17 +87,26 @@ def download(fiscal_year: int, out: Path, workers: int, log) -> Path:
     log(f"FY{fiscal_year} url={url} size={total}")
 
     out.parent.mkdir(parents=True, exist_ok=True)
+    # The file is assembled under a .part name and renamed only after every range
+    # has been written and counted. Ranges are fetched concurrently, so the file
+    # has to be pre-sized to its full length before any of them can seek into it,
+    # which means its size says nothing about how much of it is real. Writing
+    # straight to `out` therefore made both checks below vacuous: a download
+    # killed halfway left a full-length file of mostly zeros, the "already
+    # complete" test passed on the next run, and the final size check could never
+    # fail. `out` now exists only when it is genuinely finished.
+    part = out.with_name(out.name + ".part")
     if out.exists() and out.stat().st_size == total:
         log(f"FY{fiscal_year} already complete at {out}")
         return out
-    with open(out, "wb") as fh:
+    with open(part, "wb") as fh:
         fh.truncate(total)
 
     ranges = [(s, min(s + CHUNK - 1, total - 1)) for s in range(0, total, CHUNK)]
     done_bytes = 0
     t0 = time.time()
     with cf.ThreadPoolExecutor(max_workers=workers) as pool:
-        futures = {pool.submit(fetch_range, url, s, e, out): (s, e) for s, e in ranges}
+        futures = {pool.submit(fetch_range, url, s, e, part): (s, e) for s, e in ranges}
         for i, fut in enumerate(cf.as_completed(futures), 1):
             done_bytes += fut.result()
             if i % 5 == 0 or i == len(ranges):
@@ -108,9 +117,16 @@ def download(fiscal_year: int, out: Path, workers: int, log) -> Path:
                     f"{done_bytes/1e6/max(el,1e-6):.2f} MB/s "
                     f"elapsed {el:.0f}s"
                 )
-    got = out.stat().st_size
+    # done_bytes is the sum of the lengths each range actually delivered, and a
+    # range that failed raised out of fut.result() above, so this is a real check
+    # rather than a restatement of the pre-sized length.
+    if done_bytes != total:
+        raise RuntimeError(
+            f"wrote {done_bytes} bytes across ranges but the file is {total}")
+    got = part.stat().st_size
     if got != total:
         raise RuntimeError(f"size mismatch {got} != {total}")
+    part.replace(out)
     log(f"FY{fiscal_year} download complete in {time.time()-t0:.0f}s -> {out}")
     return out
 

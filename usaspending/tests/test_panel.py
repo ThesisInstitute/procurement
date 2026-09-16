@@ -133,9 +133,26 @@ def _award_with_growth_and_slip():
 
 
 def _labels(tx, data_end="2026-09-01"):
-    base_all, _ = P.pick_base_rows(tx, _noop_log)
-    base, _ = P.apply_population_filters(base_all, _noop_log)
-    return P.build_labels(base, tx, pd.Timestamp(data_end), _noop_log)
+    """The labelled history-source frame: every well identified base award.
+
+    This is the frame the in-scope filters are applied to, so it still holds
+    awards that the panel will later drop. The label assertions below want that,
+    because they check the arithmetic of a label, not whether the award is in
+    scope.
+    """
+    _, labels, _, _ = P.build_panel(tx, pd.Timestamp(data_end), _noop_log)
+    return labels
+
+
+def _panel(tx, data_end="2026-09-01"):
+    """The in-scope modelling panel, exactly as main() builds it."""
+    panel, _, _, _ = P.build_panel(tx, pd.Timestamp(data_end), _noop_log)
+    return panel
+
+
+def _panel_and_steps(tx, data_end="2026-09-01"):
+    panel, _, _, steps = P.build_panel(tx, pd.Timestamp(data_end), _noop_log)
+    return panel, steps
 
 
 def test_ceiling_growth_at_each_horizon():
@@ -290,8 +307,7 @@ def test_population_filters_drop_small_awards_and_missing_end_dates():
              potential_total_value_of_award=900_000,
              period_of_performance_current_end_date="2024-01-15"),
     ])
-    base_all, _ = P.pick_base_rows(tx, _noop_log)
-    kept, steps = P.apply_population_filters(base_all, _noop_log)
+    kept, steps = _panel_and_steps(tx)
     assert set(kept["contract_award_unique_key"]) == {"S2"}
     names = [s["filter"] for s in steps]
     assert names[0].startswith("start")
@@ -313,10 +329,11 @@ def test_award_whose_mod_zero_is_not_the_first_action_is_excluded():
              potential_total_value_of_award=900_000,
              period_of_performance_current_end_date="2016-01-15"),
     ])
-    base_all, diag = P.pick_base_rows(tx, _noop_log)
-    assert diag["awards_base_row_not_first_action"] == 1
-    kept, _ = P.apply_population_filters(base_all, _noop_log)
-    assert kept.empty
+    _, diag = P.pick_base_rows(tx, _noop_log)
+    assert diag["awards_with_modification_zero_that_is_not_the_first_action"] == 1
+    # and an award that simply has no modification zero is NOT counted here
+    assert diag["awards_without_modification_number_zero"] == 0
+    assert _panel(tx).empty
 
 
 def test_award_without_any_mod_zero_is_counted_and_excluded():
@@ -328,10 +345,9 @@ def test_award_without_any_mod_zero_is_counted_and_excluded():
              potential_total_value_of_award=900_000,
              period_of_performance_current_end_date="2016-01-15"),
     ])
-    base_all, diag = P.pick_base_rows(tx, _noop_log)
+    _, diag = P.pick_base_rows(tx, _noop_log)
     assert diag["awards_without_modification_number_zero"] == 1
-    kept, _ = P.apply_population_filters(base_all, _noop_log)
-    assert kept.empty
+    assert _panel(tx).empty
 
 
 def test_right_censoring_flags_horizons_beyond_the_data_end():
@@ -351,10 +367,10 @@ def test_zero_or_missing_base_ceiling_yields_missing_growth():
              potential_total_value_of_award=0,
              period_of_performance_current_end_date="2016-01-15"),
     ])
-    base_all, _ = P.pick_base_rows(tx, _noop_log)
-    base, _ = P.apply_population_filters(base_all, _noop_log)
-    lab = P.build_labels(base, tx, pd.Timestamp("2026-09-01"), _noop_log)
+    lab = _labels(tx)
     assert bool(lab["base_ceiling_valid"].iloc[0]) is False
+    # and the panel drops it, because ceiling growth is undefined for it
+    assert _panel(tx).empty
     assert np.isnan(lab["ceiling_growth_12"].iloc[0])
     assert np.isnan(lab["ceiling_growth_gt25_12"].iloc[0])
 
@@ -493,10 +509,9 @@ def test_award_with_two_base_actions_is_excluded():
              base_and_all_options_value=500_000,
              period_of_performance_current_end_date="2016-01-15"),
     ])
-    base_all, diag = P.pick_base_rows(tx, _noop_log)
+    _, diag = P.pick_base_rows(tx, _noop_log)
     assert diag["awards_with_more_than_one_base_action"] == 1
-    kept, _ = P.apply_population_filters(base_all, _noop_log)
-    assert kept.empty
+    assert _panel(tx).empty
 
 
 def test_history_growth_input_is_capped_but_the_label_is_not():
@@ -515,3 +530,120 @@ def test_history_growth_input_is_capped_but_the_label_is_not():
                   "recipient_prior_mean_ceiling_growth_36"]
     assert got == pytest.approx(P.HISTORY_GROWTH_CAP)
     assert out["ceiling_growth_36"].max() == 10_000.0
+
+
+# ------------------------------------------------ extract coverage guard
+
+def test_check_year_coverage_finds_a_hole(tmp_path):
+    """A missing fiscal year silently corrupts every label whose horizon crosses it."""
+    for fy in (2010, 2011, 2013):
+        (tmp_path / f"contracts_D_FY{fy}.parquet").write_bytes(b"")
+    assert P.check_year_coverage(tmp_path) == [2012]
+    assert P.fiscal_years_present(tmp_path) == [2010, 2011, 2013]
+
+
+def test_check_year_coverage_is_clean_on_a_contiguous_run(tmp_path):
+    for fy in range(2010, 2027):
+        (tmp_path / f"contracts_D_FY{fy}.parquet").write_bytes(b"")
+    assert P.check_year_coverage(tmp_path) == []
+
+
+def test_load_transactions_refuses_an_extract_with_a_missing_year(tmp_path):
+    tx = _tx([dict(contract_award_unique_key="A1", modification_number="0",
+                   action_date="2015-01-15", federal_action_obligation=900_000,
+                   base_and_all_options_value=900_000,
+                   period_of_performance_current_end_date="2016-01-15")])
+    for fy in (2010, 2012):
+        tx.drop(columns=["mod_seq", "txn_seq", "is_base_mod"]).to_parquet(
+            tmp_path / f"contracts_D_FY{fy}.parquet", index=False)
+    with pytest.raises(ValueError, match=r"\[2011\]"):
+        P.load_transactions(tmp_path, _noop_log)
+    # the override exists, and says so loudly, but it does not raise
+    got = P.load_transactions(tmp_path, _noop_log, allow_year_gaps=True)
+    assert len(got) == 2
+
+
+# ------------------------------------------ aggregate placeholder recipients
+
+def test_aggregate_recipient_rule_matches_the_placeholders_and_not_real_firms():
+    names = pd.Series([
+        "MISCELLANEOUS FOREIGN AWARDEES",
+        "FOREIGN AWARDEES (UNDISCLOSED)",
+        "DOMESTIC AWARDEES (UNDISCLOSED)",
+        "MULTIPLE RECIPIENTS",
+        "REDACTED DUE TO PII",
+        "HIGH DESERT AGGREGATE & PAVING, INC.",   # a real firm
+        "EASTMAN AGGREGATE ENTERPRISES LLC",      # a real firm
+        "RAYTHEON COMPANY",
+        None,
+    ])
+    assert P.is_aggregate_recipient(names).tolist() == [
+        True, True, True, True, True, False, False, False, False]
+
+
+def test_aggregate_recipients_neither_accumulate_nor_receive_a_history():
+    """A placeholder recipient must not become a contractor with a track record."""
+    rows = pd.DataFrame({
+        "action_date": pd.to_datetime(
+            ["2010-01-01", "2011-01-01", "2015-01-01", "2015-06-01"]),
+        "recipient_uei": ["AGG", "AGG", "AGG", "REAL"],
+        "recipient_name": ["FOREIGN AWARDEES (UNDISCLOSED)"] * 3 + ["REAL CORP"],
+        "awarding_office_code": ["O", "O", "O", "O"],
+        "ceiling_growth_36": [5.0, 5.0, 5.0, 0.0],
+        "terminated_36": [1, 1, 1, 0],
+        "schedule_slip_gt90_36": [1.0, 1.0, 1.0, 0.0],
+    })
+    out = P.add_history_features(rows).set_index("recipient_uei")
+    agg = out.loc["AGG"]
+    assert agg["recipient_is_aggregate"].tolist() == [1, 1, 1]
+    # null, not zero: the record does not say who the contractor is
+    assert agg["recipient_prior_award_count"].isna().all()
+    assert agg["recipient_prior_termination_rate_36"].isna().all()
+    # the real firm has no prior award of its own, and must not inherit theirs
+    real = out.loc["REAL"]
+    assert real["recipient_prior_award_count"] == 0
+    assert np.isnan(real["recipient_prior_termination_rate_36"])
+    # the office history is a separate key and DOES see all four awards
+    assert real["office_prior_award_count"] == 3
+    assert real["office_prior_termination_rate_36"] == pytest.approx(1.0)
+
+
+def test_a_missing_grouping_key_gets_a_null_history_not_a_pooled_one():
+    rows = pd.DataFrame({
+        "action_date": pd.to_datetime(["2010-01-01", "2011-01-01", "2015-01-01"]),
+        "recipient_uei": [None, None, None],
+        "recipient_name": ["FIRM ONE", "FIRM TWO", "FIRM THREE"],
+        "awarding_office_code": ["O", "O", "O"],
+        "ceiling_growth_36": [5.0, 5.0, 0.0],
+        "terminated_36": [1, 1, 0],
+        "schedule_slip_gt90_36": [1.0, 1.0, 0.0],
+    })
+    out = P.add_history_features(rows)
+    assert out["recipient_prior_award_count"].isna().all()
+    assert out["recipient_prior_mean_ceiling_growth_36"].isna().all()
+
+
+def test_history_counts_prior_awards_of_any_size():
+    """The history source is not filtered to the in-scope panel.
+
+    A contractor's second contract is its second contract even when the first
+    was below the simplified acquisition threshold, so a small prior award still
+    counts. This is what building history before the scope filters buys.
+    """
+    tx = _tx([
+        dict(contract_award_unique_key="SMALL", modification_number="0",
+             action_date="2013-01-01", federal_action_obligation=10_000,
+             base_and_all_options_value=10_000, recipient_uei="U9",
+             period_of_performance_current_end_date="2014-01-01"),
+        dict(contract_award_unique_key="BIG", modification_number="0",
+             action_date="2018-01-01", federal_action_obligation=900_000,
+             base_and_all_options_value=900_000, recipient_uei="U9",
+             period_of_performance_current_end_date="2019-01-01"),
+    ])
+    panel, labels, _, _ = P.build_panel(tx, pd.Timestamp("2026-09-01"), _noop_log)
+    # only the large award is in scope
+    assert set(panel["contract_award_unique_key"]) == {"BIG"}
+    # but it knows the contractor had an earlier, smaller contract
+    assert panel.set_index("contract_award_unique_key").loc[
+        "BIG", "recipient_prior_award_count"] == 1
+    assert len(labels) == 2

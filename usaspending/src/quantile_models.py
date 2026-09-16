@@ -22,6 +22,7 @@ import features as F  # noqa: E402
 import scoring as S  # noqa: E402
 from models import (CONTINUOUS_LABELS, HORIZONS, MAX_ITER, prepare_matrix,  # noqa: E402
                     split_masks)
+from timing import record as record_timing  # noqa: E402
 
 QUANTILES = (0.10, 0.50, 0.90)
 REG_KW = dict(learning_rate=0.06, max_leaf_nodes=31, min_samples_leaf=50,
@@ -106,6 +107,12 @@ def main() -> int:
     ap.add_argument("--out", type=Path, default=Path("usaspending/results"))
     ap.add_argument("--log", type=Path,
                     default=Path("usaspending/logs/quantile_models.log"))
+    ap.add_argument("--labels", type=str, default=",".join(CONTINUOUS_LABELS))
+    ap.add_argument("--horizons", type=str,
+                    default=",".join(str(h) for h in HORIZONS),
+                    help="horizons to fit; each one costs three quantile "
+                         "regressors per label, so this is the knob to turn when "
+                         "the machine is busy")
     a = ap.parse_args()
     a.log.parent.mkdir(parents=True, exist_ok=True)
     handle = open(a.log, "a")
@@ -116,18 +123,24 @@ def main() -> int:
         handle.write(line + "\n")
         handle.flush()
 
+    t0 = time.time()
     panel = pd.read_parquet(a.panel)
     masks = split_masks(panel)
     maps = F.fit_category_maps(panel[masks["train"]])
+    labels = [x for x in a.labels.split(",") if x]
+    horizons = [int(x) for x in a.horizons.split(",") if x]
+    log(f"quantile ladder over labels {labels} at horizons {horizons}")
     out = []
-    for label in CONTINUOUS_LABELS:
-        for h in HORIZONS:
+    for label in labels:
+        for h in horizons:
             try:
                 out.append(run_cell(panel, label, h, maps, log))
             except Exception as exc:  # noqa: BLE001
                 log(f"ERROR {label} H={h}: {exc}")
                 out.append({"label": label, "horizon": h, "error": str(exc)})
             (a.out / "quantile_results.json").write_text(json.dumps(out, indent=1))
+    record_timing(a.out, "quantile_models", time.time() - t0,
+                  {"cells": len(out), "labels": labels, "horizons": horizons})
     log("done")
     handle.close()
     return 0

@@ -17,6 +17,7 @@ import pandas as pd
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from panel import fiscal_year, is_base_mod, load_transactions  # noqa: E402
+from timing import record as record_timing  # noqa: E402
 
 SAMPLE_COLS = [
     "modification_number", "action_date", "action_type_code",
@@ -33,6 +34,206 @@ def close(a: pd.Series, b: pd.Series, rel: float = 0.01, abs_: float = 1.0) -> p
     b = pd.to_numeric(b, errors="coerce")
     denom = pd.concat([a.abs(), b.abs()], axis=1).max(axis=1)
     return ((a - b).abs() <= np.maximum(abs_, rel * denom))
+
+
+SOLICITATION_MIN_LEN = 8
+
+
+def looks_like_a_solicitation_number(s: pd.Series) -> pd.Series:
+    """Shape test for a SAM.gov style solicitation number.
+
+    This is an INFERENCE, not an official rule, and it is labelled as such
+    wherever it is reported: a real solicitation number carries both letters and
+    digits and is at least SOLICITATION_MIN_LEN characters long. Placeholders
+    such as "NONE", "N/A" or a bare sequence number fail it. The test says
+    nothing about whether the value resolves to a retrievable notice.
+    """
+    v = s.astype("string").str.strip()
+    has_alpha = v.str.contains(r"[A-Za-z]", regex=True, na=False)
+    has_digit = v.str.contains(r"[0-9]", regex=True, na=False)
+    long_enough = (v.str.len() >= SOLICITATION_MIN_LEN).fillna(False)
+    return (has_alpha & has_digit & long_enough).fillna(False)
+
+
+def _restatement_block(frame: pd.DataFrame, field: str, final_col: str,
+                       base_col: str) -> dict | None:
+    """How often a field on a non-final action already equals its final value.
+
+    A field that is genuinely carried per action should rarely equal the value
+    the award ends up with, on awards where that value changed. A field that is
+    restated across the award's whole history will equal it almost always.
+    """
+    if frame.empty:
+        return None
+    return {
+        "n_actions": int(len(frame)),
+        "share_equal_to_the_awards_final_value": float(
+            close(frame[field], frame[final_col]).mean()),
+        "share_equal_to_the_base_action_value": float(
+            close(frame[field], frame[base_col]).mean()),
+    }
+
+
+def _date_restatement_block(frame: pd.DataFrame, field: str, final_col: str,
+                            base_col: str) -> dict | None:
+    """The same test for a date field, compared exactly rather than within a tolerance."""
+    if frame.empty:
+        return None
+    f = pd.to_datetime(frame[field], errors="coerce")
+    return {
+        "n_actions": int(len(frame)),
+        "share_equal_to_the_awards_final_value": float(
+            (f == pd.to_datetime(frame[final_col], errors="coerce")).mean()),
+        "share_equal_to_the_base_action_value": float(
+            (f == pd.to_datetime(frame[base_col], errors="coerce")).mean()),
+    }
+
+
+def fill_rate_tables(base: pd.DataFrame, log) -> dict:
+    """The two fill-rate tables a public scoreboard needs, on base actions."""
+    b = base.copy()
+    b["fy"] = fiscal_year(b["action_date"])
+    b = b[b["fy"].notna()]
+    out: dict = {}
+
+    sol = b["solicitation_identifier"]
+    shaped = looks_like_a_solicitation_number(sol)
+    rows = {}
+    for fy, blk in b.groupby("fy"):
+        m = blk.index
+        rows[str(int(fy))] = {
+            "base_actions": int(len(blk)),
+            "share_non_null": float(sol.loc[m].notna().mean()),
+            "share_matching_solicitation_number_shape": float(shaped.loc[m].mean()),
+        }
+    out["solicitation_identifier_by_base_fy"] = rows
+    out["solicitation_identifier_overall"] = {
+        "base_actions": int(len(b)),
+        "share_non_null": float(sol.notna().mean()),
+        "share_matching_solicitation_number_shape": float(shaped.mean()),
+        "shape_rule": (f"contains at least one letter and one digit and is at "
+                       f"least {SOLICITATION_MIN_LEN} characters after stripping "
+                       f"whitespace; an inference, not an official rule"),
+    }
+    present = sol[sol.notna()].astype("string").str.strip()
+    out["solicitation_identifier_most_common_values_failing_the_shape_rule"] = {
+        str(k): int(v) for k, v in
+        present[~looks_like_a_solicitation_number(present)].value_counts().head(15).items()}
+
+    offers = pd.to_numeric(b["number_of_offers_received"], errors="coerce")
+    rows = {}
+    for fy, blk in b.groupby("fy"):
+        o = offers.loc[blk.index]
+        rows[str(int(fy))] = {
+            "base_actions": int(len(blk)),
+            "share_non_null": float(o.notna().mean()),
+            "median_where_present": (float(o.median()) if o.notna().any() else None),
+            "share_equal_to_one_where_present": (
+                float((o.dropna() == 1).mean()) if o.notna().any() else None),
+        }
+    out["number_of_offers_received_by_base_fy"] = rows
+
+    ec = b["extent_competed_code"].astype("string").fillna("(null)")
+    rows = {}
+    for code, blk in b.groupby(ec):
+        o = offers.loc[blk.index]
+        rows[str(code)] = {
+            "base_actions": int(len(blk)),
+            "share_of_all_base_actions": float(len(blk) / len(b)),
+            "share_non_null": float(o.notna().mean()),
+            "median_where_present": (float(o.median()) if o.notna().any() else None),
+            "share_equal_to_one_where_present": (
+                float((o.dropna() == 1).mean()) if o.notna().any() else None),
+        }
+    out["number_of_offers_received_by_extent_competed_code"] = rows
+    log(f"fill-rate tables: solicitation non-null "
+        f"{out['solicitation_identifier_overall']['share_non_null']:.3f}, "
+        f"shaped {out['solicitation_identifier_overall']['share_matching_solicitation_number_shape']:.3f}")
+    return out
+
+
+def restatement_evidence(tx: pd.DataFrame, base: pd.DataFrame, sizes: pd.Series,
+                         cutoff_fy: int | None, log) -> dict:
+    """Per-action behaviour of the ceiling field and of the current end date.
+
+    Restricted to awards with at least three actions so "non-final action" means
+    something, and, for the ceiling field, to base fiscal years at or after the
+    first year in which the field is populated on every action, so the test is
+    not selecting on availability.
+    """
+    out: dict = {}
+    base_fy_all = fiscal_year(base["action_date"])
+    keep = ((sizes.reindex(base.index) >= 3)
+            & (base_fy_all >= (cutoff_fy if cutoff_fy else 0)).fillna(False))
+    keys = base.index[keep.to_numpy(dtype=bool)]
+    sub = tx[tx["contract_award_unique_key"].isin(set(keys))].copy()
+    if sub.empty:
+        return out
+    sg = sub.groupby("contract_award_unique_key", sort=False)
+    sub["rank_from_end"] = sg.cumcount(ascending=False)
+    sub["delta"] = np.where(sub["is_base_row"], 0.0,
+                            pd.to_numeric(sub["base_and_all_options_value"],
+                                          errors="coerce").fillna(0.0))
+    sub["ceiling_base"] = sub["contract_award_unique_key"].map(
+        base["base_and_all_options_value"])
+    sub["ceiling_final"] = sg["potential_total_value_of_award"].transform("last")
+    sub["end_base"] = sub["contract_award_unique_key"].map(
+        base["period_of_performance_current_end_date"])
+    sub["end_final"] = sg["period_of_performance_current_end_date"].transform("last")
+
+    changed_ceiling = set(sg["delta"].sum().abs().pipe(lambda x: x[x > 1]).index)
+    end_changed = sg["period_of_performance_current_end_date"].nunique(dropna=True)
+    changed_end = set(end_changed[end_changed > 1].index)
+
+    nonfinal = sub[sub["rank_from_end"] > 0]
+    out["ceiling_field_restatement"] = {
+        "awards_tested": int(len(keys)),
+        "awards_whose_ceiling_changed": int(len(changed_ceiling)),
+        "all_non_final_actions": _restatement_block(
+            nonfinal, "potential_total_value_of_award", "ceiling_final", "ceiling_base"),
+        "non_final_actions_on_awards_whose_ceiling_changed": _restatement_block(
+            nonfinal[nonfinal["contract_award_unique_key"].isin(changed_ceiling)],
+            "potential_total_value_of_award", "ceiling_final", "ceiling_base"),
+        "reading": ("on an award whose ceiling changed, a non-final action that "
+                    "already carries the award's final ceiling is a restated "
+                    "record: reading it at a horizon imports the future"),
+    }
+    out["current_end_date_restatement"] = {
+        "awards_tested": int(len(keys)),
+        "awards_whose_current_end_date_changed": int(len(changed_end)),
+        "all_non_final_actions": _date_restatement_block(
+            nonfinal, "period_of_performance_current_end_date", "end_final", "end_base"),
+        "non_final_actions_on_awards_whose_end_date_changed": _date_restatement_block(
+            nonfinal[nonfinal["contract_award_unique_key"].isin(changed_end)],
+            "period_of_performance_current_end_date", "end_final", "end_base"),
+        "reading": ("the same test applied to the schedule field. A low share "
+                    "equal to the final value on awards whose end date moved "
+                    "means the field is carried per action and can be read at a "
+                    "horizon"),
+    }
+
+    # Restatement rate by the fiscal year of the action, for the ceiling field.
+    nf_changed = nonfinal[nonfinal["contract_award_unique_key"].isin(changed_ceiling)]
+    if not nf_changed.empty:
+        by_fy = {}
+        for fy, blk in nf_changed.groupby(fiscal_year(nf_changed["action_date"])):
+            if pd.isna(fy):
+                continue
+            blk = blk[blk["potential_total_value_of_award"].notna()]
+            if blk.empty:
+                continue
+            by_fy[str(int(fy))] = {
+                "non_final_actions": int(len(blk)),
+                "share_already_equal_to_the_awards_final_value": float(
+                    close(blk["potential_total_value_of_award"],
+                          blk["ceiling_final"]).mean()),
+            }
+        out["ceiling_field_restatement_rate_by_action_fy"] = by_fy
+    log(f"restatement: ceiling non-final-on-changed "
+        f"{out['ceiling_field_restatement']['non_final_actions_on_awards_whose_ceiling_changed']}, "
+        f"end-date non-final-on-changed "
+        f"{out['current_end_date_restatement']['non_final_actions_on_awards_whose_end_date_changed']}")
+    return out
 
 
 def run(tx: pd.DataFrame, out_dir: Path, log) -> dict:
@@ -268,19 +469,58 @@ def run(tx: pd.DataFrame, out_dir: Path, log) -> dict:
                       "share_without_base_action": round(float(1 - b["has_base"].mean()), 4)}
         for k, b in trunc.groupby("first_fy") if pd.notna(k)}
 
-    # Twenty heavily modified awards, printed action by action.
+    ev["fill_rates_for_the_scoreboard"] = fill_rate_tables(base, log)
+    ev["per_action_restatement"] = restatement_evidence(
+        tx, base, sizes, (min(full_years) + 1) if full_years else None, log)
+
+    # Twenty heavily modified awards, printed action by action. The selection is
+    # deliberate: an award whose ceiling never moved shows the reconstruction
+    # converging but shows nothing about restatement, because every action
+    # trivially carries the same value. The sample therefore prefers awards that
+    # are based in a year where potential_total_value_of_award is populated on
+    # every action AND whose ceiling actually changed, which is the only case
+    # where the two readings of the field can be told apart by eye.
     counts_per_award = nact.sort_values(ascending=False)
     big = base.index.intersection(counts_per_award.index)
     ranked = counts_per_award.loc[big]
     ranked = ranked[ranked >= 8]
-    sample_keys = list(ranked.index[:2000])
-    # prefer awards that are large and have terminations or change orders
-    interesting = tx[tx["contract_award_unique_key"].isin(sample_keys)]
-    has_event = interesting[interesting["action_type_code"].isin(
-        ["A", "D", "E", "F", "X", "G"])]["contract_award_unique_key"].unique()
-    chosen = [k for k in sample_keys if k in set(has_event)][:20]
-    if len(chosen) < 20:
-        chosen = sample_keys[:20]
+    sample_keys = list(ranked.index[:4000])
+
+    pool = tx[tx["contract_award_unique_key"].isin(set(sample_keys))]
+    has_event = set(pool[pool["action_type_code"].isin(
+        ["A", "D", "E", "F", "X", "G"])]["contract_award_unique_key"].unique())
+    net_delta = (pool[~pool["is_base_row"]]
+                 .groupby("contract_award_unique_key", sort=False)
+                 ["base_and_all_options_value"].sum().abs())
+    ceiling_moved = set(net_delta[net_delta > 1].index)
+    base_fy_sample = fiscal_year(base["action_date"])
+    fully_populated = set(base.index[
+        base_fy_sample.isin(full_years).fillna(False).to_numpy()]) if full_years else set()
+
+    def pick(pred, n):
+        return [k for k in sample_keys if pred(k)][:n]
+
+    # Best evidence first, then progressively weaker fallbacks, so the sample is
+    # always twenty awards even on a small extract.
+    chosen = pick(lambda k: k in ceiling_moved and k in fully_populated
+                  and k in has_event, 12)
+    for extra in (pick(lambda k: k in ceiling_moved and k in has_event, 20),
+                  pick(lambda k: k in has_event, 20),
+                  sample_keys[:20]):
+        for k in extra:
+            if len(chosen) >= 20:
+                break
+            if k not in chosen:
+                chosen.append(k)
+        if len(chosen) >= 20:
+            break
+    ev["sample_selection"] = {
+        "awards_with_at_least_eight_actions_considered": len(sample_keys),
+        "of_those_whose_ceiling_moved": len(ceiling_moved & set(sample_keys)),
+        "of_those_also_based_in_a_fully_populated_year": len(
+            ceiling_moved & fully_populated & set(sample_keys)),
+        "chosen_whose_ceiling_moved": sum(1 for k in chosen if k in ceiling_moved),
+    }
 
     lines = []
     chosen_rows = tx[tx["contract_award_unique_key"].isin(set(chosen))]
@@ -297,9 +537,22 @@ def run(tx: pd.DataFrame, out_dir: Path, log) -> dict:
             blk.loc[~is_base_mod(blk["modification_number"]),
                     "base_and_all_options_value"], errors="coerce").fillna(0).cumsum()
         last_pot = blk["potential_total_value_of_award"].iloc[-1]
+        recon_final = float(recon.iloc[-1]) if len(recon) else float(bl)
+        moved = "yes" if abs(recon_final - float(bl)) > 1 else "no"
         lines.append(f"base ceiling {bl}; base plus summed mod deltas "
-                     f"{float(recon.iloc[-1]) if len(recon) else bl}; "
-                     f"potential_total_value_of_award on last action {last_pot}")
+                     f"{recon_final}; potential_total_value_of_award on last "
+                     f"action {last_pot}; ceiling moved: {moved}")
+        if moved == "yes":
+            pot = pd.to_numeric(blk["potential_total_value_of_award"],
+                                errors="coerce")
+            fin = pot.iloc[-1]
+            early = pot.iloc[:-1]
+            n_eq = int(close(early, pd.Series([fin] * len(early),
+                                              index=early.index)).sum())
+            lines.append(
+                f"of the {len(early)} actions before the last, {n_eq} already "
+                f"carry the award's final potential_total_value_of_award, which "
+                f"is what a reader should look at: those are the restated ones")
         lines.append("")
     out_dir.mkdir(parents=True, exist_ok=True)
     (out_dir / "field_evidence_samples.md").write_text(
@@ -334,6 +587,8 @@ def main() -> int:
     ev = run(tx, a.out, log)
     ev["seconds"] = round(time.time() - t0, 1)
     (a.out / "field_evidence.json").write_text(json.dumps(ev, indent=1))
+    record_timing(a.out, "field_evidence", ev["seconds"],
+                  {"transactions": int(len(tx))})
     log(f"wrote {a.out/'field_evidence.json'} in {ev['seconds']}s")
     handle.close()
     return 0

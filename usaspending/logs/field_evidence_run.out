@@ -1,0 +1,23 @@
+[2026-09-15T23:23:41] loaded contracts_D_FY2010.parquet rows=253528
+[2026-09-15T23:23:41] loaded contracts_D_FY2011.parquet rows=254015
+[2026-09-15T23:23:41] loaded contracts_D_FY2012.parquet rows=237691
+[2026-09-15T23:23:41] loaded contracts_D_FY2013.parquet rows=227576
+[2026-09-15T23:23:41] loaded contracts_D_FY2014.parquet rows=208891
+[2026-09-15T23:23:41] loaded contracts_D_FY2015.parquet rows=197215
+[2026-09-15T23:23:41] loaded contracts_D_FY2016.parquet rows=193779
+[2026-09-15T23:23:41] loaded contracts_D_FY2017.parquet rows=196646
+[2026-09-15T23:23:41] loaded contracts_D_FY2018.parquet rows=191570
+[2026-09-15T23:23:41] loaded contracts_D_FY2019.parquet rows=182650
+[2026-09-15T23:23:41] loaded contracts_D_FY2020.parquet rows=190686
+[2026-09-15T23:23:41] loaded contracts_D_FY2021.parquet rows=178034
+[2026-09-15T23:23:41] loaded contracts_D_FY2022.parquet rows=179542
+[2026-09-15T23:23:41] loaded contracts_D_FY2023.parquet rows=162165
+[2026-09-15T23:23:41] loaded contracts_D_FY2024.parquet rows=162574
+[2026-09-15T23:23:41] loaded contracts_D_FY2025.parquet rows=163731
+[2026-09-15T23:23:41] loaded contracts_D_FY2026.parquet rows=106930
+[2026-09-15T23:23:48] transactions after type-D and action_date filters: 3287223
+[2026-09-15T23:23:48] action_type_code codes observed: ['M', 'B', 'C', '(null)', 'G', 'D', 'K', 'A', 'L', 'F', 'V', 'J', 'W', 'H', 'N', 'S', 'E', 'X', 'T', 'R', 'P', 'Y']
+[2026-09-15T23:23:58] fill-rate tables: solicitation non-null 0.545, shaped 0.537
+[2026-09-15T23:24:00] restatement: ceiling non-final-on-changed {'n_actions': 525900, 'share_equal_to_the_awards_final_value': 0.3774310705457311, 'share_equal_to_the_base_action_value': 0.3057653546301578}, end-date non-final-on-changed {'n_actions': 600913, 'share_equal_to_the_awards_final_value': 0.17023595761782487, 'share_equal_to_the_base_action_value': 0.330913127191457}
+[2026-09-15T23:24:02] wrote usaspending/results/field_evidence_samples.md with 20 awards
+[2026-09-15T23:24:03] wrote usaspending/results/field_evidence.json in 22.0s

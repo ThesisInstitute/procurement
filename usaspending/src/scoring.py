@@ -9,6 +9,42 @@ import numpy as np
 import pandas as pd
 
 
+def bin_index(p: np.ndarray, n_bins: int = 10) -> np.ndarray:
+    """Index of the fixed-width bin each probability falls in.
+
+    Written as floor(p * n_bins) with a rounding step, not as a digitize against
+    np.linspace edges. np.linspace(0, 1, 11) does not reproduce the decimal
+    literals: its fourth element is 0.30000000000000004, which is strictly
+    greater than the float64 nearest 0.3, so a forecast of exactly 0.3 would be
+    binned as though it were below 0.3. The same happens at 0.6 and 0.7. The
+    rounding to nine places removes that, so p == 0.3 lands in the bin whose
+    label starts at 0.3, which is what the table claims.
+
+    The final bin is closed on the right, so p == 1.0 lands in it rather than
+    running off the end.
+    """
+    p = np.asarray(p, dtype=float)
+    idx = np.floor(np.round(p * n_bins, 9)).astype(int)
+    return np.clip(idx, 0, n_bins - 1)
+
+
+def bin_labels(n_bins: int = 10) -> list:
+    """Half-open labels, except the last, which is closed on the right."""
+    edges = [i / n_bins for i in range(n_bins + 1)]
+    out = [f"[{edges[i]:.{_label_dp(n_bins)}f},{edges[i+1]:.{_label_dp(n_bins)}f})"
+           for i in range(n_bins)]
+    out[-1] = out[-1][:-1] + "]"
+    return out
+
+
+def _label_dp(n_bins: int) -> int:
+    """Decimal places needed so that adjacent bin labels stay distinct."""
+    dp = 1
+    while dp < 6 and len({f"{i / n_bins:.{dp}f}" for i in range(n_bins + 1)}) < n_bins + 1:
+        dp += 1
+    return dp
+
+
 def brier_score(y: np.ndarray, p: np.ndarray) -> float:
     """Mean squared error of a probability forecast against a 0/1 outcome."""
     y = np.asarray(y, dtype=float)
@@ -61,16 +97,16 @@ def auc(y: np.ndarray, p: np.ndarray) -> float:
 
 
 def calibration_table(y: np.ndarray, p: np.ndarray, n_bins: int = 10) -> pd.DataFrame:
-    """Reliability table on fixed-width probability bins [0,0.1),...,[0.9,1.0]."""
+    """Reliability table on fixed-width bins [0,0.1), ..., [0.9,1.0]."""
     y = np.asarray(y, dtype=float)
     p = np.asarray(p, dtype=float)
-    edges = np.linspace(0.0, 1.0, n_bins + 1)
-    idx = np.clip(np.digitize(p, edges[1:-1], right=False), 0, n_bins - 1)
+    idx = bin_index(p, n_bins)
+    labels = bin_labels(n_bins)
     rows = []
     for b in range(n_bins):
         m = idx == b
         rows.append({
-            "bin": f"[{edges[b]:.1f},{edges[b+1]:.1f})",
+            "bin": labels[b],
             "n": int(m.sum()),
             "mean_forecast": float(np.mean(p[m])) if m.any() else float("nan"),
             "observed_rate": float(np.mean(y[m])) if m.any() else float("nan"),
@@ -98,8 +134,7 @@ def murphy_decomposition(y: np.ndarray, p: np.ndarray, n_bins: int = 10) -> dict
         return {"reliability": float("nan"), "resolution": float("nan"),
                 "uncertainty": float("nan")}
     ybar = float(np.mean(y))
-    edges = np.linspace(0.0, 1.0, n_bins + 1)
-    idx = np.clip(np.digitize(p, edges[1:-1], right=False), 0, n_bins - 1)
+    idx = bin_index(p, n_bins)
     rel = res = 0.0
     for b in range(n_bins):
         m = idx == b

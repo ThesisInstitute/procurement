@@ -1,0 +1,32 @@
+[2026-09-15T23:22:10] loaded contracts_D_FY2010.parquet rows=253528
+[2026-09-15T23:22:10] loaded contracts_D_FY2011.parquet rows=254015
+[2026-09-15T23:22:10] loaded contracts_D_FY2012.parquet rows=237691
+[2026-09-15T23:22:10] loaded contracts_D_FY2013.parquet rows=227576
+[2026-09-15T23:22:10] loaded contracts_D_FY2014.parquet rows=208891
+[2026-09-15T23:22:10] loaded contracts_D_FY2015.parquet rows=197215
+[2026-09-15T23:22:10] loaded contracts_D_FY2016.parquet rows=193779
+[2026-09-15T23:22:10] loaded contracts_D_FY2017.parquet rows=196646
+[2026-09-15T23:22:10] loaded contracts_D_FY2018.parquet rows=191570
+[2026-09-15T23:22:10] loaded contracts_D_FY2019.parquet rows=182650
+[2026-09-15T23:22:10] loaded contracts_D_FY2020.parquet rows=190686
+[2026-09-15T23:22:10] loaded contracts_D_FY2021.parquet rows=178034
+[2026-09-15T23:22:10] loaded contracts_D_FY2022.parquet rows=179542
+[2026-09-15T23:22:10] loaded contracts_D_FY2023.parquet rows=162165
+[2026-09-15T23:22:10] loaded contracts_D_FY2024.parquet rows=162574
+[2026-09-15T23:22:10] loaded contracts_D_FY2025.parquet rows=163731
+[2026-09-15T23:22:10] loaded contracts_D_FY2026.parquet rows=106930
+[2026-09-15T23:22:16] transactions after type-D and action_date filters: 3287223
+[2026-09-15T23:22:16] data end (max action_date) = 2026-09-13
+[2026-09-15T23:22:20] base rows: {"awards_type_D_total": 631431, "awards_without_modification_number_zero": 72424, "awards_base_row_not_first_action": 6, "awards_with_more_than_one_base_action": 3334}
+[2026-09-15T23:22:20] funnel start: one base row per type-D award: 631431
+[2026-09-15T23:22:20] funnel base row is the first action: 631425
+[2026-09-15T23:22:20] funnel base row carries an explicit modification_number of zero: 559001
+[2026-09-15T23:22:20] funnel exactly one action carries a modification_number of zero: 555668
+[2026-09-15T23:22:20] funnel base action_date in FY2010-FY2022: 471439
+[2026-09-15T23:22:20] funnel base federal_action_obligation >= 250,000: 192380
+[2026-09-15T23:22:20] funnel base period_of_performance_current_end_date is not null: 192380
+[2026-09-15T23:22:22] state at H=12: 192380 awards, 1661 terminated
+[2026-09-15T23:22:24] state at H=24: 192380 awards, 2510 terminated
+[2026-09-15T23:22:25] state at H=36: 192380 awards, 3253 terminated
+[2026-09-15T23:22:35] funnel base ceiling valid: 192377 (dropped 3)
+[2026-09-15T23:22:35] panel -> data/raw/usaspending/panel.parquet rows=192377 in 26s

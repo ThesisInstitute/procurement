@@ -1,0 +1,45 @@
+[2026-09-15T23:55:37] panel rows 192377
+[2026-09-15T23:55:37] wrote base_rates.csv and continuous_label_summary.csv
+[2026-09-15T23:55:37] wrote reference_class_table.csv rows=2885
+[2026-09-15T23:55:37] permutation importance will be computed for horizons [36]
+[2026-09-16T00:01:21] ceiling_growth_gt10 H=12: permutation importance skipped for this horizon
+[2026-09-16T00:03:10] ceiling_growth_gt10 H=12: n_test=39917 base=0.1392 rc_bss=0.0302 gbm_bss=0.0970 gbm_nohist_bss=0.0962
+[2026-09-16T00:04:57] ceiling_growth_gt10 H=24: permutation importance skipped for this horizon
+[2026-09-16T00:05:51] ceiling_growth_gt10 H=24: n_test=39917 base=0.1930 rc_bss=0.0453 gbm_bss=0.0866 gbm_nohist_bss=0.0877
+[2026-09-16T00:08:09] ceiling_growth_gt10 H=36: n_test=39917 base=0.2169 rc_bss=0.0511 gbm_bss=0.0849 gbm_nohist_bss=0.0847
+[2026-09-16T00:09:06] ceiling_growth_gt25 H=12: permutation importance skipped for this horizon
+[2026-09-16T00:10:07] ceiling_growth_gt25 H=12: n_test=39917 base=0.0884 rc_bss=0.0231 gbm_bss=0.1104 gbm_nohist_bss=0.1097
+[2026-09-16T00:11:42] ceiling_growth_gt25 H=24: permutation importance skipped for this horizon
+[2026-09-16T00:13:35] ceiling_growth_gt25 H=24: n_test=39917 base=0.1229 rc_bss=0.0310 gbm_bss=0.1021 gbm_nohist_bss=0.0995
+[2026-09-16T00:20:33] ceiling_growth_gt25 H=36: n_test=39917 base=0.1388 rc_bss=0.0308 gbm_bss=0.0876 gbm_nohist_bss=0.0845
+[2026-09-16T00:23:01] ceiling_growth_gt50 H=12: permutation importance skipped for this horizon
+[2026-09-16T00:25:23] ceiling_growth_gt50 H=12: n_test=39917 base=0.0596 rc_bss=0.0195 gbm_bss=0.1111 gbm_nohist_bss=0.1157
+[2026-09-16T00:27:15] ceiling_growth_gt50 H=24: permutation importance skipped for this horizon
+[2026-09-16T00:28:40] ceiling_growth_gt50 H=24: n_test=39917 base=0.0811 rc_bss=0.0334 gbm_bss=0.1198 gbm_nohist_bss=0.1161
+[2026-09-16T00:31:25] ceiling_growth_gt50 H=36: n_test=39917 base=0.0906 rc_bss=0.0301 gbm_bss=0.1083 gbm_nohist_bss=0.1040
+[2026-09-16T00:32:33] schedule_slip_gt90 H=12: permutation importance skipped for this horizon
+[2026-09-16T00:33:45] schedule_slip_gt90 H=12: n_test=39917 base=0.2529 rc_bss=0.1094 gbm_bss=0.3137 gbm_nohist_bss=0.3137
+[2026-09-16T00:35:24] schedule_slip_gt90 H=24: permutation importance skipped for this horizon
+[2026-09-16T00:36:43] schedule_slip_gt90 H=24: n_test=39917 base=0.4018 rc_bss=0.1690 gbm_bss=0.3518 gbm_nohist_bss=0.3517
+[2026-09-16T00:41:01] schedule_slip_gt90 H=36: n_test=39917 base=0.4422 rc_bss=0.2054 gbm_bss=0.3547 gbm_nohist_bss=0.3549
+[2026-09-16T00:41:55] schedule_slip_gt365 H=12: permutation importance skipped for this horizon
+[2026-09-16T00:42:44] schedule_slip_gt365 H=12: n_test=39917 base=0.0458 rc_bss=0.0347 gbm_bss=0.0959 gbm_nohist_bss=0.0973
+[2026-09-16T00:43:45] schedule_slip_gt365 H=24: permutation importance skipped for this horizon
+[2026-09-16T00:44:49] schedule_slip_gt365 H=24: n_test=39917 base=0.1624 rc_bss=0.1289 gbm_bss=0.3631 gbm_nohist_bss=0.3636
+[2026-09-16T00:48:04] schedule_slip_gt365 H=36: n_test=39917 base=0.2239 rc_bss=0.1628 gbm_bss=0.3836 gbm_nohist_bss=0.3829
+[2026-09-16T00:49:41] terminated H=12: permutation importance skipped for this horizon
+[2026-09-16T00:51:34] terminated H=12: n_test=39917 base=0.0086 rc_bss=-0.0023 gbm_bss=0.0035 gbm_nohist_bss=0.0037
+[2026-09-16T00:53:41] terminated H=24: permutation importance skipped for this horizon
+[2026-09-16T00:56:06] terminated H=24: n_test=39917 base=0.0129 rc_bss=0.0008 gbm_bss=0.0050 gbm_nohist_bss=0.0062
+[2026-09-16T01:01:15] terminated H=36: n_test=39917 base=0.0159 rc_bss=0.0048 gbm_bss=0.0060 gbm_nohist_bss=0.0053
+[2026-09-16T01:02:36] terminated_default H=12: permutation importance skipped for this horizon
+[2026-09-16T01:03:51] terminated_default H=12: n_test=39917 base=0.0007 rc_bss=-0.0083 gbm_bss=0.0003 gbm_nohist_bss=0.0009
+[2026-09-16T01:04:59] terminated_default H=24: permutation importance skipped for this horizon
+[2026-09-16T01:06:14] terminated_default H=24: n_test=39917 base=0.0014 rc_bss=-0.0062 gbm_bss=0.0002 gbm_nohist_bss=0.0001
+[2026-09-16T01:08:35] terminated_default H=36: n_test=39917 base=0.0019 rc_bss=-0.0062 gbm_bss=0.0025 gbm_nohist_bss=0.0019
+[2026-09-16T01:10:13] any_change_order H=12: permutation importance skipped for this horizon
+[2026-09-16T01:11:43] any_change_order H=12: n_test=39917 base=0.1436 rc_bss=0.0411 gbm_bss=0.0766 gbm_nohist_bss=0.0776
+[2026-09-16T01:13:14] any_change_order H=24: permutation importance skipped for this horizon
+[2026-09-16T01:14:54] any_change_order H=24: n_test=39917 base=0.1902 rc_bss=0.0765 gbm_bss=0.1184 gbm_nohist_bss=0.1163
+[2026-09-16T01:19:27] any_change_order H=36: n_test=39917 base=0.2083 rc_bss=0.0873 gbm_bss=0.1240 gbm_nohist_bss=0.1248
+[2026-09-16T01:19:27] done in 5030s -> usaspending/results/model_results.json

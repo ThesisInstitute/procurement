@@ -1,8 +1,14 @@
 """Column subset kept from the USAspending contract archive CSVs.
 
-Names are the USAspending download column names. Verified against the header of
-FY2010_All_Contracts_Full_20260906.zip on 2026-09-15; the realised mapping is
-written to usaspending/results/column_mapping.json by convert.py.
+Names are the USAspending download column names. They are sent verbatim as the
+`columns` list in the bulk-download request, so the server does the projection.
+
+Verified two ways on 2026-09-15: against the header of
+FY2010_All_Contracts_Full_20260906.zip from the independent monthly archive, and
+against the parquet schema of all 17 delivered fiscal years. All 44 are present
+in every year. The check is `usaspending/src/schema_check.py`, it is the `schema`
+target of the Makefile, and it writes
+usaspending/results/column_mapping.json.
 """
 
 KEEP = [

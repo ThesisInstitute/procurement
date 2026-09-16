@@ -33,6 +33,7 @@ NUMERIC = [
     "n_offers_missing",
     "base_fy",
     "base_month",
+    "recipient_is_aggregate",
 ]
 
 HISTORY = [

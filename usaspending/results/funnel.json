@@ -1,0 +1,66 @@
+{
+ "data_end": "2026-09-13",
+ "transactions_loaded": 3287223,
+ "fiscal_years_loaded": [
+  2010,
+  2011,
+  2012,
+  2013,
+  2014,
+  2015,
+  2016,
+  2017,
+  2018,
+  2019,
+  2020,
+  2021,
+  2022,
+  2023,
+  2024,
+  2025,
+  2026
+ ],
+ "base_row_diagnostics": {
+  "awards_type_D_total": 631431,
+  "awards_without_modification_number_zero": 72424,
+  "awards_with_modification_zero_that_is_not_the_first_action": 6,
+  "awards_with_more_than_one_base_action": 3334
+ },
+ "history_source_awards": 474512,
+ "history_source_aggregate_recipient_awards": 25040,
+ "funnel": [
+  {
+   "filter": "start: one base row per type-D award",
+   "awards_remaining": 631431
+  },
+  {
+   "filter": "award has an action with an explicit modification_number of zero",
+   "awards_remaining": 559007
+  },
+  {
+   "filter": "that modification-zero action is the award's first action",
+   "awards_remaining": 559001
+  },
+  {
+   "filter": "base action_date in FY2010-FY2022",
+   "awards_remaining": 474512
+  },
+  {
+   "filter": "exactly one action carries a modification_number of zero",
+   "awards_remaining": 471439
+  },
+  {
+   "filter": "base federal_action_obligation >= 250,000",
+   "awards_remaining": 192380
+  },
+  {
+   "filter": "base period_of_performance_current_end_date is not null",
+   "awards_remaining": 192380
+  },
+  {
+   "filter": "base_and_all_options_value > 0 and not null",
+   "awards_remaining": 192377
+  }
+ ],
+ "seconds": 52.6
+}

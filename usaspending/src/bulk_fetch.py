@@ -175,19 +175,58 @@ def zip_to_frame(zip_path: Path, fy: int, log) -> tuple[pd.DataFrame, int, list]
     return df, n_raw, header_seen
 
 
+def describe_existing(fy: int, out_parquet: Path) -> dict:
+    """Manifest record for a fiscal year whose parquet is already on disk.
+
+    Re-reads the two identifying columns rather than reporting "skipped", so a
+    second `make fetch` rebuilds a complete manifest for every year instead of
+    a mix of real records and placeholders.
+    """
+    df = pd.read_parquet(out_parquet,
+                         columns=["contract_award_unique_key", "award_type_code"])
+    return {
+        "fiscal_year": fy,
+        "reused_existing_parquet": True,
+        "rows_type_D": int((df["award_type_code"] == "D").sum()),
+        "unique_awards": int(df["contract_award_unique_key"].nunique()),
+        "parquet_bytes": out_parquet.stat().st_size,
+    }
+
+
 def run_year(fy: int, zdir: Path, pdir: Path, log, splits: int = 1) -> dict:
     out_parquet = pdir / f"contracts_D_FY{fy}.parquet"
     if out_parquet.exists():
-        log(f"FY{fy} parquet already present, skipping")
-        return {"fiscal_year": fy, "skipped": True,
-                "parquet_bytes": out_parquet.stat().st_size}
+        info = describe_existing(fy, out_parquet)
+        log(f"FY{fy} parquet already present, reusing: "
+            f"rows={info['rows_type_D']} awards={info['unique_awards']}")
+        return info
     parts, n_raw_total, header_seen = [], 0, None
+    window_report = []
     for i, window in enumerate(fy_windows(fy, splits)):
         job = start_job(fy, window, log)
-        poll_job(fy, job["status_url"], log)
+        status = poll_job(fy, job["status_url"], log)
+        reported = status.get("total_rows")
         zp = zdir / f"bulk_FY{fy}_{i}.zip"
         download_file(job["file_url"], zp, log)
         part, n_raw, header = zip_to_frame(zp, fy, log)
+        # A window that comes back empty, or short of what the service said it
+        # was sending, must stop the year. Otherwise the short part is quietly
+        # concatenated into the fiscal year, the parquet is written, and every
+        # later run reuses it: the missing actions never reappear and nothing
+        # anywhere reports a problem. This is the failure mode that a fiscal year
+        # fetched in windows is most exposed to.
+        if reported is not None and int(reported) != n_raw:
+            raise RuntimeError(
+                f"FY{fy} window {window} : the download service reported "
+                f"{reported} rows but the zip parsed to {n_raw}. Refusing to "
+                f"write a fiscal year from a short window.")
+        if n_raw == 0:
+            raise RuntimeError(
+                f"FY{fy} window {window} returned no rows at all. Refusing to "
+                f"write a fiscal year with an empty window.")
+        window_report.append({"window": list(window), "rows_reported_by_api": reported,
+                              "rows_parsed": int(n_raw),
+                              "rows_type_D": int(len(part))})
         parts.append(part)
         n_raw_total += n_raw
         header_seen = header_seen or header
@@ -210,6 +249,7 @@ def run_year(fy: int, zdir: Path, pdir: Path, log, splits: int = 1) -> dict:
         "duplicate_rows_removed_across_windows": int(before - len(df)),
         "unique_awards": int(df["contract_award_unique_key"].nunique()) if len(df) else 0,
         "parquet_bytes": out_parquet.stat().st_size,
+        "windows_detail": window_report,
         "header": header_seen,
     }
     log(f"FY{fy} parquet {out_parquet} rows={info['rows_type_D']} "
@@ -256,11 +296,46 @@ def main() -> int:
             except Exception as exc:  # noqa: BLE001
                 log(f"FY{fy} ERROR {exc}")
                 results.append({"fiscal_year": fy, "error": str(exc)})
-    results.sort(key=lambda r: r["fiscal_year"])
+    # Merge into any existing manifest rather than replacing it, and prefer a
+    # record that actually carries row counts over an error or a placeholder,
+    # so fetching one year separately does not erase the other years.
+    merged: dict[int, dict] = {}
+    if a.manifest.exists():
+        try:
+            for r in json.loads(a.manifest.read_text()):
+                merged[int(r["fiscal_year"])] = r
+        except (ValueError, KeyError, TypeError) as exc:
+            log(f"existing manifest unreadable, starting fresh: {exc}")
+    for r in results:
+        fy = int(r["fiscal_year"])
+        prev = merged.get(fy)
+        if prev is not None and "rows_type_D" in prev and "rows_type_D" not in r:
+            # Keep the counts, but never let the manifest look clean after a
+            # failed run: the error is attached to the record it belongs to.
+            log(f"FY{fy} keeping the earlier manifest record with row counts, "
+                f"and recording this run's error against it")
+            merged[fy] = {**prev, "last_run_error": r.get("error", "unknown")}
+            continue
+        if prev is not None and "last_run_error" in prev and "error" not in r:
+            prev = {k: v for k, v in prev.items() if k != "last_run_error"}
+        if prev is not None:
+            # Union, new values winning, so provenance recorded on the original
+            # fetch (the observed CSV header, the raw row count, the number of
+            # windows) survives a later re-run that only reuses the parquet.
+            keep = {k: v for k, v in prev.items() if k not in r}
+            r = {**keep, **r}
+        merged[fy] = r
+    out = [merged[k] for k in sorted(merged)]
     a.manifest.parent.mkdir(parents=True, exist_ok=True)
-    a.manifest.write_text(json.dumps(results, indent=1))
-    log(f"manifest -> {a.manifest}")
+    a.manifest.write_text(json.dumps(out, indent=1))
+    log(f"manifest -> {a.manifest} ({len(out)} fiscal years)")
+    failed = sorted(int(r["fiscal_year"]) for r in results if "error" in r)
     handle.close()
+    if failed:
+        # Exiting zero here would let `make all` sail on and build a panel from
+        # an extract with a hole in it.
+        print(f"FAILED fiscal years: {failed}", flush=True)
+        return 1
     return 0
 
 

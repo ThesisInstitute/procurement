@@ -1,0 +1,252 @@
+{
+ "parquet_files": 17,
+ "columns_requested": 44,
+ "columns_present_in_every_year": [
+  "action_date",
+  "action_type",
+  "action_type_code",
+  "award_id_piid",
+  "award_type",
+  "award_type_code",
+  "awarding_agency_code",
+  "awarding_agency_name",
+  "awarding_office_code",
+  "awarding_sub_agency_code",
+  "base_and_all_options_value",
+  "base_and_exercised_options_value",
+  "contract_award_unique_key",
+  "contracting_officers_determination_of_business_size_code",
+  "cost_or_pricing_data_code",
+  "current_total_value_of_award",
+  "extent_competed_code",
+  "fed_biz_opps_code",
+  "federal_action_obligation",
+  "funding_agency_code",
+  "last_modified_date",
+  "modification_number",
+  "multi_year_contract_code",
+  "naics_code",
+  "number_of_offers_received",
+  "parent_award_id_piid",
+  "performance_based_service_acquisition_code",
+  "period_of_performance_current_end_date",
+  "period_of_performance_potential_end_date",
+  "period_of_performance_start_date",
+  "potential_total_value_of_award",
+  "primary_place_of_performance_state_code",
+  "prime_award_transaction_place_of_performance_state_fips_code",
+  "product_or_service_code",
+  "recipient_duns",
+  "recipient_name",
+  "recipient_parent_uei",
+  "recipient_uei",
+  "solicitation_identifier",
+  "solicitation_procedures_code",
+  "total_dollars_obligated",
+  "transaction_number",
+  "type_of_contract_pricing_code",
+  "type_of_set_aside_code"
+ ],
+ "columns_absent_from_some_year": [],
+ "per_year": {
+  "2010": {
+   "columns_in_file": 45,
+   "requested_columns_present": 44,
+   "requested_columns_absent": [],
+   "extra_columns_not_requested": [
+    "source_fiscal_year"
+   ]
+  },
+  "2011": {
+   "columns_in_file": 45,
+   "requested_columns_present": 44,
+   "requested_columns_absent": [],
+   "extra_columns_not_requested": [
+    "source_fiscal_year"
+   ]
+  },
+  "2012": {
+   "columns_in_file": 45,
+   "requested_columns_present": 44,
+   "requested_columns_absent": [],
+   "extra_columns_not_requested": [
+    "source_fiscal_year"
+   ]
+  },
+  "2013": {
+   "columns_in_file": 45,
+   "requested_columns_present": 44,
+   "requested_columns_absent": [],
+   "extra_columns_not_requested": [
+    "source_fiscal_year"
+   ]
+  },
+  "2014": {
+   "columns_in_file": 45,
+   "requested_columns_present": 44,
+   "requested_columns_absent": [],
+   "extra_columns_not_requested": [
+    "source_fiscal_year"
+   ]
+  },
+  "2015": {
+   "columns_in_file": 45,
+   "requested_columns_present": 44,
+   "requested_columns_absent": [],
+   "extra_columns_not_requested": [
+    "source_fiscal_year"
+   ]
+  },
+  "2016": {
+   "columns_in_file": 45,
+   "requested_columns_present": 44,
+   "requested_columns_absent": [],
+   "extra_columns_not_requested": [
+    "source_fiscal_year"
+   ]
+  },
+  "2017": {
+   "columns_in_file": 45,
+   "requested_columns_present": 44,
+   "requested_columns_absent": [],
+   "extra_columns_not_requested": [
+    "source_fiscal_year"
+   ]
+  },
+  "2018": {
+   "columns_in_file": 45,
+   "requested_columns_present": 44,
+   "requested_columns_absent": [],
+   "extra_columns_not_requested": [
+    "source_fiscal_year"
+   ]
+  },
+  "2019": {
+   "columns_in_file": 45,
+   "requested_columns_present": 44,
+   "requested_columns_absent": [],
+   "extra_columns_not_requested": [
+    "source_fiscal_year"
+   ]
+  },
+  "2020": {
+   "columns_in_file": 45,
+   "requested_columns_present": 44,
+   "requested_columns_absent": [],
+   "extra_columns_not_requested": [
+    "source_fiscal_year"
+   ]
+  },
+  "2021": {
+   "columns_in_file": 45,
+   "requested_columns_present": 44,
+   "requested_columns_absent": [],
+   "extra_columns_not_requested": [
+    "source_fiscal_year"
+   ]
+  },
+  "2022": {
+   "columns_in_file": 45,
+   "requested_columns_present": 44,
+   "requested_columns_absent": [],
+   "extra_columns_not_requested": [
+    "source_fiscal_year"
+   ]
+  },
+  "2023": {
+   "columns_in_file": 45,
+   "requested_columns_present": 44,
+   "requested_columns_absent": [],
+   "extra_columns_not_requested": [
+    "source_fiscal_year"
+   ]
+  },
+  "2024": {
+   "columns_in_file": 45,
+   "requested_columns_present": 44,
+   "requested_columns_absent": [],
+   "extra_columns_not_requested": [
+    "source_fiscal_year"
+   ]
+  },
+  "2025": {
+   "columns_in_file": 45,
+   "requested_columns_present": 44,
+   "requested_columns_absent": [],
+   "extra_columns_not_requested": [
+    "source_fiscal_year"
+   ]
+  },
+  "2026": {
+   "columns_in_file": 45,
+   "requested_columns_present": 44,
+   "requested_columns_absent": [],
+   "extra_columns_not_requested": [
+    "source_fiscal_year"
+   ]
+  }
+ },
+ "realised_dtypes": {
+  "contract_award_unique_key": "large_string",
+  "award_id_piid": "large_string",
+  "parent_award_id_piid": "large_string",
+  "modification_number": "large_string",
+  "transaction_number": "large_string",
+  "action_date": "timestamp[us]",
+  "action_type_code": "large_string",
+  "action_type": "large_string",
+  "award_type_code": "large_string",
+  "award_type": "large_string",
+  "federal_action_obligation": "double",
+  "total_dollars_obligated": "double",
+  "base_and_exercised_options_value": "double",
+  "current_total_value_of_award": "double",
+  "base_and_all_options_value": "double",
+  "potential_total_value_of_award": "double",
+  "period_of_performance_start_date": "timestamp[us]",
+  "period_of_performance_current_end_date": "timestamp[us]",
+  "period_of_performance_potential_end_date": "timestamp[us]",
+  "awarding_agency_code": "large_string",
+  "awarding_agency_name": "large_string",
+  "awarding_sub_agency_code": "large_string",
+  "awarding_office_code": "large_string",
+  "funding_agency_code": "large_string",
+  "recipient_uei": "large_string",
+  "recipient_duns": "large_string",
+  "recipient_name": "large_string",
+  "recipient_parent_uei": "large_string",
+  "contracting_officers_determination_of_business_size_code": "large_string",
+  "type_of_contract_pricing_code": "large_string",
+  "naics_code": "large_string",
+  "product_or_service_code": "large_string",
+  "extent_competed_code": "large_string",
+  "solicitation_procedures_code": "large_string",
+  "number_of_offers_received": "double",
+  "type_of_set_aside_code": "large_string",
+  "solicitation_identifier": "large_string",
+  "fed_biz_opps_code": "large_string",
+  "performance_based_service_acquisition_code": "large_string",
+  "multi_year_contract_code": "large_string",
+  "cost_or_pricing_data_code": "large_string",
+  "primary_place_of_performance_state_code": "large_string",
+  "prime_award_transaction_place_of_performance_state_fips_code": "large_string",
+  "last_modified_date": "timestamp[us, tz=UTC]",
+  "source_fiscal_year": "int64"
+ },
+ "declared_numeric": [
+  "federal_action_obligation",
+  "total_dollars_obligated",
+  "base_and_exercised_options_value",
+  "current_total_value_of_award",
+  "base_and_all_options_value",
+  "potential_total_value_of_award",
+  "number_of_offers_received"
+ ],
+ "declared_dates": [
+  "action_date",
+  "period_of_performance_start_date",
+  "period_of_performance_current_end_date",
+  "period_of_performance_potential_end_date",
+  "last_modified_date"
+ ]
+}

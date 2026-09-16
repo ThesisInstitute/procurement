@@ -1,0 +1,19 @@
+{
+ "type_of_contract_pricing_code": 13,
+ "extent_competed_code": 7,
+ "solicitation_procedures_code": 8,
+ "type_of_set_aside_code": 19,
+ "naics2": 24,
+ "naics6": 254,
+ "psc1": 33,
+ "psc_full": 254,
+ "awarding_agency_code": 54,
+ "awarding_sub_agency_code": 157,
+ "awarding_office_code": 254,
+ "contracting_officers_determination_of_business_size_code": 2,
+ "performance_based_service_acquisition_code": 3,
+ "multi_year_contract_code": 2,
+ "cost_or_pricing_data_code": 4,
+ "fed_biz_opps_code": 3,
+ "primary_place_of_performance_state_code": 61
+}
