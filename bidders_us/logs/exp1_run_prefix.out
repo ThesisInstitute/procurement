@@ -1,0 +1,58 @@
+[2026-09-16T08:33:23] predictions rows 192377
+[2026-09-16T08:33:24] shape_office schedule_slip_gt90 24 recipient_uei: n_groups=1623 r=0.078 auc_resid=0.532
+[2026-09-16T08:33:24] shape_office schedule_slip_gt90 24 recipient_parent_uei: n_groups=1446 r=0.085 auc_resid=0.529
+[2026-09-16T08:33:25] shape_office schedule_slip_gt90 24 recipient_name_norm: n_groups=1579 r=0.076 auc_resid=0.526
+[2026-09-16T08:33:26] shape_office schedule_slip_gt90 24 awarding_office_code: n_groups=676 r=0.150 auc_resid=0.552
+[2026-09-16T08:33:43] shape_office schedule_slip_gt90 24: contractor share of signal anova=0.1755 split=0.1300 cross=0.0238; office cross=0.0248
+[2026-09-16T08:34:22] shape_office schedule_slip_gt90 24: pairs acc=0.5191 null=0.5001 n_disc=28544
+[2026-09-16T08:34:37] shape_office schedule_slip_gt90 24: placebo r mean=0.0051
+[2026-09-16T08:34:37] shape_office schedule_slip_gt90 36 recipient_uei: n_groups=1623 r=0.088 auc_resid=0.541
+[2026-09-16T08:34:38] shape_office schedule_slip_gt90 36 recipient_parent_uei: n_groups=1446 r=0.092 auc_resid=0.545
+[2026-09-16T08:34:38] shape_office schedule_slip_gt90 36 recipient_name_norm: n_groups=1579 r=0.093 auc_resid=0.529
+[2026-09-16T08:34:39] shape_office schedule_slip_gt90 36 awarding_office_code: n_groups=676 r=0.147 auc_resid=0.532
+[2026-09-16T08:34:56] shape_office schedule_slip_gt90 36: contractor share of signal anova=0.1887 split=0.1490 cross=0.0272; office cross=0.0256
+[2026-09-16T08:35:37] shape_office schedule_slip_gt90 36: pairs acc=0.5505 null=0.5000 n_disc=25197
+[2026-09-16T08:35:52] shape_office schedule_slip_gt90 36: placebo r mean=0.0046
+[2026-09-16T08:35:53] shape_office schedule_slip_gt365 24 recipient_uei: n_groups=1623 r=0.055 auc_resid=0.528
+[2026-09-16T08:35:53] shape_office schedule_slip_gt365 24 recipient_parent_uei: n_groups=1446 r=0.053 auc_resid=0.518
+[2026-09-16T08:35:54] shape_office schedule_slip_gt365 24 recipient_name_norm: n_groups=1579 r=0.052 auc_resid=0.521
+[2026-09-16T08:35:55] shape_office schedule_slip_gt365 24 awarding_office_code: n_groups=676 r=0.095 auc_resid=0.557
+[2026-09-16T08:36:12] shape_office schedule_slip_gt365 24: contractor share of signal anova=0.1541 split=0.0921 cross=0.0140; office cross=0.0154
+[2026-09-16T08:36:55] shape_office schedule_slip_gt365 24: pairs acc=0.5080 null=0.5011 n_disc=16062
+[2026-09-16T08:37:11] shape_office schedule_slip_gt365 24: placebo r mean=0.0034
+[2026-09-16T08:37:12] shape_office schedule_slip_gt365 36 recipient_uei: n_groups=1623 r=0.064 auc_resid=0.534
+[2026-09-16T08:37:12] shape_office schedule_slip_gt365 36 recipient_parent_uei: n_groups=1446 r=0.080 auc_resid=0.537
+[2026-09-16T08:37:13] shape_office schedule_slip_gt365 36 recipient_name_norm: n_groups=1579 r=0.076 auc_resid=0.530
+[2026-09-16T08:37:13] shape_office schedule_slip_gt365 36 awarding_office_code: n_groups=676 r=0.142 auc_resid=0.535
+[2026-09-16T08:37:30] shape_office schedule_slip_gt365 36: contractor share of signal anova=0.1561 split=0.1222 cross=0.0182; office cross=0.0213
+[2026-09-16T08:38:12] shape_office schedule_slip_gt365 36: pairs acc=0.5280 null=0.5011 n_disc=22402
+[2026-09-16T08:38:28] shape_office schedule_slip_gt365 36: placebo r mean=0.0064
+[2026-09-16T08:38:28] shape_only schedule_slip_gt90 24 recipient_uei: n_groups=1623 r=0.086 auc_resid=0.546
+[2026-09-16T08:38:29] shape_only schedule_slip_gt90 24 recipient_parent_uei: n_groups=1446 r=0.099 auc_resid=0.538
+[2026-09-16T08:38:29] shape_only schedule_slip_gt90 24 recipient_name_norm: n_groups=1579 r=0.087 auc_resid=0.541
+[2026-09-16T08:38:30] shape_only schedule_slip_gt90 24 awarding_office_code: n_groups=676 r=0.217 auc_resid=0.554
+[2026-09-16T08:38:49] shape_only schedule_slip_gt90 24: contractor share of signal anova=0.1783 split=0.1369 cross=0.0273; office cross=0.0395
+[2026-09-16T08:39:29] shape_only schedule_slip_gt90 24: pairs acc=0.5351 null=0.5006 n_disc=28544
+[2026-09-16T08:39:44] shape_only schedule_slip_gt90 24: placebo r mean=0.0140
+[2026-09-16T08:39:44] shape_only schedule_slip_gt90 36 recipient_uei: n_groups=1623 r=0.087 auc_resid=0.550
+[2026-09-16T08:39:44] shape_only schedule_slip_gt90 36 recipient_parent_uei: n_groups=1446 r=0.106 auc_resid=0.544
+[2026-09-16T08:39:45] shape_only schedule_slip_gt90 36 recipient_name_norm: n_groups=1579 r=0.096 auc_resid=0.544
+[2026-09-16T08:39:46] shape_only schedule_slip_gt90 36 awarding_office_code: n_groups=676 r=0.212 auc_resid=0.565
+[2026-09-16T08:40:03] shape_only schedule_slip_gt90 36: contractor share of signal anova=0.1962 split=0.1588 cross=0.0284; office cross=0.0401
+[2026-09-16T08:40:41] shape_only schedule_slip_gt90 36: pairs acc=0.5594 null=0.5008 n_disc=25197
+[2026-09-16T08:40:56] shape_only schedule_slip_gt90 36: placebo r mean=0.0144
+[2026-09-16T08:40:56] shape_only schedule_slip_gt365 24 recipient_uei: n_groups=1623 r=0.059 auc_resid=0.533
+[2026-09-16T08:40:56] shape_only schedule_slip_gt365 24 recipient_parent_uei: n_groups=1446 r=0.056 auc_resid=0.522
+[2026-09-16T08:40:57] shape_only schedule_slip_gt365 24 recipient_name_norm: n_groups=1579 r=0.056 auc_resid=0.527
+[2026-09-16T08:40:58] shape_only schedule_slip_gt365 24 awarding_office_code: n_groups=676 r=0.118 auc_resid=0.534
+[2026-09-16T08:41:13] shape_only schedule_slip_gt365 24: contractor share of signal anova=0.1579 split=0.0989 cross=0.0157; office cross=0.0201
+[2026-09-16T08:41:50] shape_only schedule_slip_gt365 24: pairs acc=0.5209 null=0.5013 n_disc=16062
+[2026-09-16T08:42:04] shape_only schedule_slip_gt365 24: placebo r mean=0.0133
+[2026-09-16T08:42:04] shape_only schedule_slip_gt365 36 recipient_uei: n_groups=1623 r=0.062 auc_resid=0.531
+[2026-09-16T08:42:05] shape_only schedule_slip_gt365 36 recipient_parent_uei: n_groups=1446 r=0.082 auc_resid=0.536
+[2026-09-16T08:42:05] shape_only schedule_slip_gt365 36 recipient_name_norm: n_groups=1579 r=0.071 auc_resid=0.528
+[2026-09-16T08:42:06] shape_only schedule_slip_gt365 36 awarding_office_code: n_groups=676 r=0.170 auc_resid=0.529
+[2026-09-16T08:42:21] shape_only schedule_slip_gt365 36: contractor share of signal anova=0.1605 split=0.1282 cross=0.0184; office cross=0.0273
+[2026-09-16T08:43:02] shape_only schedule_slip_gt365 36: pairs acc=0.5346 null=0.5008 n_disc=22402
+[2026-09-16T08:43:18] shape_only schedule_slip_gt365 36: placebo r mean=0.0172
+[2026-09-16T08:43:19] done in 595s

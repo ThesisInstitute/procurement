@@ -1,0 +1,47 @@
+[2026-09-16T08:42:44] FY2010 parquet already present, reusing
+[2026-09-16T08:42:44] FY2011 parquet already present, reusing
+[2026-09-16T08:42:44] FY2012 parquet already present, reusing
+[2026-09-16T08:42:44] FY2013 parquet already present, reusing
+[2026-09-16T08:42:44] FY2014 parquet already present, reusing
+[2026-09-16T08:42:44] FY2015 parquet already present, reusing
+[2026-09-16T08:42:44] FY2016 parquet already present, reusing
+[2026-09-16T08:42:44] FY2017 parquet already present, reusing
+[2026-09-16T08:42:44] FY2018 parquet already present, reusing
+[2026-09-16T08:42:44] FY2019 parquet already present, reusing
+[2026-09-16T08:42:45] FY2020 url=https://files.usaspending.gov/award_data_archive/FY2020_All_Contracts_Full_20260906.zip size=1936859336
+[2026-09-16T08:42:51] FY2020 5/116 chunks 84/1937 MB 14.41 MB/s elapsed 6s
+[2026-09-16T08:42:55] FY2020 10/116 chunks 168/1937 MB 15.98 MB/s elapsed 11s
+[2026-09-16T08:42:59] FY2020 15/116 chunks 252/1937 MB 17.60 MB/s elapsed 14s
+[2026-09-16T08:43:03] FY2020 20/116 chunks 336/1937 MB 18.89 MB/s elapsed 18s
+[2026-09-16T08:43:07] FY2020 25/116 chunks 419/1937 MB 19.13 MB/s elapsed 22s
+[2026-09-16T08:43:12] FY2020 30/116 chunks 503/1937 MB 18.17 MB/s elapsed 28s
+[2026-09-16T08:43:16] FY2020 35/116 chunks 587/1937 MB 19.08 MB/s elapsed 31s
+[2026-09-16T08:43:19] FY2020 40/116 chunks 671/1937 MB 19.37 MB/s elapsed 35s
+[2026-09-16T08:43:23] FY2020 45/116 chunks 755/1937 MB 19.88 MB/s elapsed 38s
+[2026-09-16T08:43:26] FY2020 50/116 chunks 839/1937 MB 20.47 MB/s elapsed 41s
+[2026-09-16T08:43:35] FY2020 55/116 chunks 923/1937 MB 18.36 MB/s elapsed 50s
+[2026-09-16T08:43:39] FY2020 60/116 chunks 1007/1937 MB 18.67 MB/s elapsed 54s
+[2026-09-16T08:43:43] FY2020 65/116 chunks 1091/1937 MB 18.73 MB/s elapsed 58s
+[2026-09-16T08:43:47] FY2020 70/116 chunks 1174/1937 MB 18.77 MB/s elapsed 63s
+[2026-09-16T08:43:50] FY2020 75/116 chunks 1258/1937 MB 19.25 MB/s elapsed 65s
+[2026-09-16T08:43:56] FY2020 80/116 chunks 1342/1937 MB 18.96 MB/s elapsed 71s
+[2026-09-16T08:43:59] FY2020 85/116 chunks 1426/1937 MB 19.14 MB/s elapsed 75s
+[2026-09-16T08:44:04] FY2020 90/116 chunks 1510/1937 MB 19.16 MB/s elapsed 79s
+[2026-09-16T08:44:10] FY2020 95/116 chunks 1594/1937 MB 18.74 MB/s elapsed 85s
+[2026-09-16T08:44:14] FY2020 100/116 chunks 1678/1937 MB 18.88 MB/s elapsed 89s
+[2026-09-16T08:44:22] FY2020 105/116 chunks 1762/1937 MB 18.18 MB/s elapsed 97s
+[2026-09-16T08:44:27] FY2020 110/116 chunks 1845/1937 MB 18.11 MB/s elapsed 102s
+[2026-09-16T08:44:38] FY2020 115/116 chunks 1920/1937 MB 17.01 MB/s elapsed 113s
+[2026-09-16T08:44:40] FY2020 116/116 chunks 1937/1937 MB 16.83 MB/s elapsed 115s
+[2026-09-16T08:44:40] FY2020 download complete in 115s -> /Users/maxghenis/ThesisInstitute/procurement/data/raw/bidders_us/zips/FY2020_All_Contracts_Full.zip
+[2026-09-16T08:44:40] FY2020 kept-order set from earlier years: 613205
+[2026-09-16T08:44:40] FY2020 archive members ['FY2020_All_Contracts_Full_20260907_1.csv', 'FY2020_All_Contracts_Full_20260907_2.csv', 'FY2020_All_Contracts_Full_20260907_3.csv', 'FY2020_All_Contracts_Full_20260907_4.csv', 'FY2020_All_Contracts_Full_20260907_5.csv', 'FY2020_All_Contracts_Full_20260907_6.csv', 'FY2020_All_Contracts_Full_20260907_7.csv']
+[2026-09-16T08:44:40] FY2021 DOWNLOAD ERROR ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[2026-09-16T08:45:05] FY2020 scanned 2000000 rows
+[2026-09-16T08:45:29] FY2020 scanned 4000000 rows
+[2026-09-16T08:45:52] FY2020 scanned 6000000 rows
+[2026-09-16T08:46:02] FY2020 {"archive_rows_all_types": 6306607, "rows_type_C": 4138818, "base_actions": 3611666, "base_actions_at_or_above_threshold": 65318, "base_actions_with_parent": 3611666, "distinct_vehicles_all_sizes": 60619, "fiscal_year": 2020, "new_orders_kept_this_year": 65170, "rows_kept": 268660, "rows_kept_base": 65467, "parquet_bytes": 18700496, "seconds_parse": 82.1}
+[2026-09-16T08:46:02] FY2020 zip deleted
+[2026-09-16T08:46:02] FY2021 skipped after download error; stopping so later years are not parsed without this year's kept orders
+[2026-09-16T08:46:03] FY2022 DOWNLOAD ERROR ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[2026-09-16T08:46:03] done in 199s; errors={2021: "('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))", 2022: "('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"}

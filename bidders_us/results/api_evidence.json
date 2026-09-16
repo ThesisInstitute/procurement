@@ -1,0 +1,276 @@
+{
+ "pulled_at": "2026-09-16T09:56:22",
+ "counts": [
+  {
+   "fiscal_year": 2010,
+   "awards_with_activity_C": 1404235,
+   "transactions_C": 1955587,
+   "awards_with_activity_D": 49304,
+   "transactions_D": 253528
+  },
+  {
+   "fiscal_year": 2011,
+   "awards_with_activity_C": 1195138,
+   "transactions_C": 1761089,
+   "awards_with_activity_D": 45331,
+   "transactions_D": 254015
+  },
+  {
+   "fiscal_year": 2012,
+   "awards_with_activity_C": 1074830,
+   "transactions_C": 1599188,
+   "awards_with_activity_D": 42615,
+   "transactions_D": 237691
+  },
+  {
+   "fiscal_year": 2013,
+   "awards_with_activity_C": 740159,
+   "transactions_C": 1209246,
+   "awards_with_activity_D": 41281,
+   "transactions_D": 227576
+  },
+  {
+   "fiscal_year": 2014,
+   "awards_with_activity_C": 758008,
+   "transactions_C": 1228713,
+   "awards_with_activity_D": 36960,
+   "transactions_D": 208891
+  },
+  {
+   "fiscal_year": 2015,
+   "awards_with_activity_C": 2392566,
+   "transactions_C": 2866092,
+   "awards_with_activity_D": 34894,
+   "transactions_D": 197215
+  },
+  {
+   "fiscal_year": 2016,
+   "awards_with_activity_C": 2764990,
+   "transactions_C": 3248823,
+   "awards_with_activity_D": 34694,
+   "transactions_D": 193779
+  },
+  {
+   "fiscal_year": 2017,
+   "awards_with_activity_C": 2785868,
+   "transactions_C": 3287372,
+   "awards_with_activity_D": 34463,
+   "transactions_D": 196646
+  },
+  {
+   "fiscal_year": 2018,
+   "awards_with_activity_C": 3531527,
+   "transactions_C": 4041225,
+   "awards_with_activity_D": 31303,
+   "transactions_D": 191570
+  },
+  {
+   "fiscal_year": 2019,
+   "awards_with_activity_C": 3885334,
+   "transactions_C": 4389444,
+   "awards_with_activity_D": 36426,
+   "transactions_D": 182650
+  },
+  {
+   "fiscal_year": 2020,
+   "awards_with_activity_C": 3621860,
+   "transactions_C": 4138821,
+   "awards_with_activity_D": 35565,
+   "transactions_D": 190686
+  },
+  {
+   "fiscal_year": 2021,
+   "awards_with_activity_C": 3806209,
+   "transactions_C": 4309562,
+   "awards_with_activity_D": 30776,
+   "transactions_D": 178034
+  },
+  {
+   "fiscal_year": 2022,
+   "awards_with_activity_C": 3975119,
+   "transactions_C": 4491223,
+   "awards_with_activity_D": 29799,
+   "transactions_D": 179543
+  },
+  {
+   "fiscal_year": 2023,
+   "awards_with_activity_C": 4043295,
+   "transactions_C": 4535173,
+   "awards_with_activity_D": 29164,
+   "transactions_D": 162169
+  },
+  {
+   "fiscal_year": 2024,
+   "awards_with_activity_C": 4046946,
+   "transactions_C": 4535892,
+   "awards_with_activity_D": 31887,
+   "transactions_D": 162577
+  },
+  {
+   "fiscal_year": 2025,
+   "awards_with_activity_C": 4060329,
+   "transactions_C": 4498998,
+   "awards_with_activity_D": 39445,
+   "transactions_D": 163736
+  },
+  {
+   "fiscal_year": 2026,
+   "awards_with_activity_C": 3031985,
+   "transactions_C": 3241443,
+   "awards_with_activity_D": 48743,
+   "transactions_D": 107740
+  }
+ ],
+ "dictionary": [
+  {
+   "Element": "contract_award_type",
+   "Definition": "The type of award being entered by this transaction. Types of awards include Purchase Orders (PO), Delivery Orders (DO), Blanket Purchase Agreements (BPA) Calls and Definitive Contracts.",
+   "FPDS Data Dictionary Element": "Award Type",
+   "Grouping": "Award Attribute",
+   "Domain Values": "A = BPA Call\nB = Purchase Order\nC = Delivery Order\nD = Definitive Contract",
+   "Domain Values Code Description": "A = Enter this code for an award that is a call against a BPA.\nB = Enter this code for an award that is a Purchase Order (PO).\nC = Enter this code for an award that is a Delivery Order or Task Order under an IDV.\nD = Enter this code for an award that is a Definitive Contract.",
+   "Award File": "Contracts",
+   "Award Element": "contractactiontype",
+   "Subaward File": null,
+   "Subaward Element": null,
+   "Account File": "FA_AccountBreakdownByAward.csv,\nTAS_AccountBreakdownByAward.csv",
+   "Account Element": "award_type_code",
+   "Table": "transaction_fpds"
+  },
+  {
+   "Element": "extent_competed",
+   "Definition": "A code that represents the competitive nature of the contract.",
+   "FPDS Data Dictionary Element": "Extent Competed",
+   "Grouping": "Award Attribute",
+   "Domain Values": "A = FULL AND OPEN COMPETITION\nB = NOT AVAILABLE FOR COMPETITION\nC = NOT COMPETED\nD = FULL AND OPEN COMPETITION AFTER EXCLUSION OF SOURCES\nE = FOLLOW ON TO COMPETED ACTION\nF = COMPETED UNDER SAP\nG = NOT COMPETED UNDER SAP\nCDO = COMPETITIVE DELIVERY ORDER\nNDO = NON-COMPETITIVE DELIVERY ORDER",
+   "Domain Values Code Description": "A = Report this code if the action resulted from an award pursuant to FAR 6.102(a) - sealed bid, FAR 6.102(b) - competitive proposal, FAR 6.102(c) - Combination, or any other competitive method that did not exclude sources of any type\nB = Select this code when the contract is not available for competition\nC = Select this code when the contract is not competed.\nD = Select this code when some sources are excluded before competition\nE = Select this code when the action is a follow on to an existing competed contract. FAR 6.302-1. (Note: This is not applicable to Version 1.4/1.5 documents.)\nF = Select this code when the action is competed under the Simplified Acquisition Procedures.\nG = Select this code when the action is NOT competed under the Simplified Acquisition Procedures.\nCDO = Apply to Full and Open Competition pursuant to FAR 6.1 and only apply to Delivery Orders) Report this code if the IDV Type is a Federal Schedule. Report this code when the Order delivery/task order award was made pursuant to a process that permitted each contract awardee a fair opportunity to be considered. See FAR Part 16.505(b)(1). Report this code if the action is for the award of a multiple award schedule or an order against a multiple award schedule pursuant to FAR 6.102(d)(3) and the applicable provisions referenced there under. (Note: This is not applicable to Version 1.4/1.5 documents.)\nReport this code when competitive procedures are not used in awarding the delivery order for a reason not included above (when the action was non-competitive). (Note: This is not applicable to Version 1.4/1.5 documents.)\nNDO = Report this code when competitive procedures are not used in awarding the delivery order for a reason not included above (when the action was non-competitive). (Note: This is not applicable to Version 1.4/1.5 documents.)",
+   "Award File": "Contracts",
+   "Award Element": "extentcompeted",
+   "Subaward File": null,
+   "Subaward Element": null,
+   "Account File": null,
+   "Account Element": null,
+   "Table": "transaction_fpds"
+  },
+  {
+   "Element": "idv_type",
+   "Definition": "The type of Indefinite Delivery Vehicle being (IDV) loaded by this transaction. IDV Types include Government-Wide Acquisition Contract (GWAC), Multi-Agency Contract, Other Indefinite Delivery Contract (IDC), Federal Supply Schedule (FSS), Basic Ordering Agreement (BOA), and Blanket Purchase Agreements (BPA).",
+   "FPDS Data Dictionary Element": "IDV Type",
+   "Grouping": "Award Attribute",
+   "Domain Values": "A = GWAC\nB = IDC\nC = FSS\nD = BOA\nE = BPA",
+   "Domain Values Code Description": "A = Enter this code for the initial load of an IDV that is a Government-Wide Agency Contract (GWAC) approved by OMB.\nB = Enter this code for the initial load of an IDV that is an Indefinite Delivery Contract (IDC) for use by a single agency or for use by multiple agencies but is not a GWAC (may also be a \"Multi-Agency Contract\").\nC = Enter this code for the initial load of an IDV that is a GSA or VA Federal Supply Schedule (FSS).\nD = Enter this code for the initial load of an IDV that is a Basic Ordering Agreement (BOA).\nE = Enter this code for the initial load of an IDV that is a Blanket Purchase Agreement (BPA).",
+   "Award File": "Contracts",
+   "Award Element": "contractactiontype",
+   "Subaward File": null,
+   "Subaward Element": null,
+   "Account File": "FA_AccountBreakdownByAward.csv,\nTAS_AccountBreakdownByAward.csv",
+   "Account Element": "idv_type_code",
+   "Table": "transaction_fpds"
+  },
+  {
+   "Element": "idv_type_description",
+   "Definition": "Description tag (by way of the FPDS Atom Feed) that explains the meaning of the code provided in the IDV_Type Field.",
+   "FPDS Data Dictionary Element": null,
+   "Grouping": "Award Attribute",
+   "Domain Values": "A = GWAC\nB = IDC\nC = FSS\nD = BOA\nE = BPA",
+   "Domain Values Code Description": "A = Enter this code for the initial load of an IDV that is a Government-Wide Agency Contract (GWAC) approved by OMB.\nB = Enter this code for the initial load of an IDV that is an Indefinite Delivery Contract (IDC) for use by a single agency or for use by multiple agencies but is not a GWAC (may also be a \"Multi-Agency Contract\").\nC = Enter this code for the initial load of an IDV that is a GSA or VA Federal Supply Schedule (FSS).\nD = Enter this code for the initial load of an IDV that is a Basic Ordering Agreement (BOA).\nE = Enter this code for the initial load of an IDV that is a Blanket Purchase Agreement (BPA).",
+   "Award File": "Contracts",
+   "Award Element": "contractactiontype",
+   "Subaward File": null,
+   "Subaward Element": null,
+   "Account File": "FA_AccountBreakdownByAward.csv,\nTAS_AccountBreakdownByAward.csv",
+   "Account Element": "idv_type",
+   "Table": "transaction_fpds"
+  },
+  {
+   "Element": "multiple_or_single_award_i",
+   "Definition": "Indicates whether the contract is one of many that resulted from a single solicitation, all of the contracts are for the same or similar items, and contracting officers are required to compare their requirements with the offerings under more than one contract or are required to acquire the requirement competitively among the awardees. BPA \"Multiple or Single Award IDV\" value does not pull the \"Multiple or Single Award IDV\" value of the referenced FSS to the BPA. The \"Multiple or Single Award IDV\" value shall be required and selected by the user for all BPA bases created.",
+   "FPDS Data Dictionary Element": "Multiple or Single Award IDV",
+   "Grouping": "Award Attribute",
+   "Domain Values": "M = MULTIPLE AWARD\nS = SINGLE AWARD",
+   "Domain Values Code Description": "M = Enter code M if the contract is one of several awarded under a single solicitation when contracting officers are required to compare or compete their requirements among several entities.\nS = Enter code S when the contract does not meet the definition of a multiple award contract.",
+   "Award File": "Contracts",
+   "Award Element": "Multipleorsingleawardidc",
+   "Subaward File": null,
+   "Subaward Element": null,
+   "Account File": null,
+   "Account Element": null,
+   "Table": "transaction_fpds"
+  },
+  {
+   "Element": "parent_award_piid,\nparent_award_id,\nparent_award_id,\nparent_award_id",
+   "Definition": "The identifier of the procurement award under which the specific award is issued, such as a Federal Supply Schedule. This data element currently applies to procurement actions only.",
+   "FPDS Data Dictionary Element": "Referenced PIID",
+   "Grouping": "Award Attribute",
+   "Domain Values": null,
+   "Domain Values Code Description": null,
+   "Award File": "Contracts",
+   "Award Element": "idvpiid",
+   "Subaward File": "Contracts_Subawards.csv",
+   "Subaward Element": "prime_award_idvpiid",
+   "Account File": "FA_AccountBreakdownByAward.csv,\nTAS_AccountBreakdownByAward.csv",
+   "Account Element": "parent_award_id_piid",
+   "Table": "awards,\ntransaction_fpds,\nbroker_subaward,\nfinancial_accounts_by_awards"
+  },
+  {
+   "Element": "referenced_mult_or_single",
+   "Definition": "Indicates whether the contract of the referenced IDV is one of many that resulted from a single solicitation, all of the contracts are for the same or similar items, and contracting officers are required to compare their requirements with the offerings under more than one contract or are required to acquire the requirement competitively among the awardees. BPA \"Multiple or Single Award IDV\" value does not pull the \"Multiple or Single Award IDV\" value of the referenced FSS to the BPA. The \"Multiple or Single Award IDV\" value shall be required and selected by the user for all BPA bases created.",
+   "FPDS Data Dictionary Element": null,
+   "Grouping": "Award Attribute",
+   "Domain Values": "M = MULTIPLE AWARD\nS = SINGLE AWARD",
+   "Domain Values Code Description": null,
+   "Award File": "Contracts",
+   "Award Element": "multipleorsingleawardidc",
+   "Subaward File": null,
+   "Subaward Element": null,
+   "Account File": null,
+   "Account Element": null,
+   "Table": "transaction_fpds"
+  },
+  {
+   "Element": "referenced_idv_type",
+   "Definition": "The type of Indefinite Delivery Vehicle (IDV) being loaded by the IDV referenced in this transaction. Referenced IDV Types include Government-Wide Acquisition Contract (GWAC), Multi-Agency Contract, Other Indefinite Delivery Contract (IDC), Federal Supply Schedule (FSS), Basic Ordering Agreement (BOA), and Blanket Purchase Agreements (BPA).",
+   "FPDS Data Dictionary Element": null,
+   "Grouping": "Award Attribute",
+   "Domain Values": "A = GWAC\nB = IDC\nC = FSS\nD = BOA\nE = BPA",
+   "Domain Values Code Description": null,
+   "Award File": null,
+   "Award Element": null,
+   "Subaward File": null,
+   "Subaward Element": null,
+   "Account File": null,
+   "Account Element": null,
+   "Table": "transaction_fpds"
+  },
+  {
+   "Element": "referenced_idv_agency_iden",
+   "Definition": "Identifier used to link agency in FPDS to referenced IDV information.",
+   "FPDS Data Dictionary Element": "Referenced IDV Agency Identifier",
+   "Grouping": "Award Attribute",
+   "Domain Values": "Refer to the GSA Federal Procurement Data System (FPDS)",
+   "Domain Values Code Description": null,
+   "Award File": "Contracts",
+   "Award Element": "idvagencyid",
+   "Subaward File": null,
+   "Subaward Element": null,
+   "Account File": null,
+   "Account Element": null,
+   "Table": "transaction_fpds"
+  },
+  {
+   "Element": "referenced_idv_modificatio",
+   "Definition": "When reporting orders under Indefinite Delivery Vehicles (IDV) such as a GWAC, IDC, FSS, BOA, or BPA, report the Modification Number along with Procurement Instrument Identifier (Contract Number or Agreement Number) of the IDV. For the initial load of a BPA under a FSS, this is the FSS contract number. Note: BOAs and BPAs are with industry and not with other Federal Agencies",
+   "FPDS Data Dictionary Element": "Referenced IDV Modification Number",
+   "Grouping": "Award Attribute",
+   "Domain Values": null,
+   "Domain Values Code Description": null,
+   "Award File": "Contracts",
+   "Award Element": "idvmodificationnumber",
+   "Subaward File": null,
+   "Subaward Element": null,
+   "Account File": null,
+   "Account Element": null,
+   "Table": "transaction_fpds"
+  }
+ ]
+}

@@ -1,0 +1,31 @@
+{
+ "tenders": {
+  "file": "tenders.csv",
+  "rows": 13675,
+  "columns": 31,
+  "megabytes": 6.9
+ },
+ "bids": {
+  "file": "bids.csv",
+  "rows": 40461,
+  "columns": 20,
+  "megabytes": 11.0
+ },
+ "contracts": {
+  "file": "contracts.csv",
+  "rows": 16226,
+  "columns": 49,
+  "megabytes": 10.6
+ },
+ "lots": {
+  "file": "lots.csv",
+  "rows": 15707,
+  "columns": 35,
+  "megabytes": 6.7
+ },
+ "identifier_shape": {
+  "bidders with an 8 digit company EDRPOU": 10543,
+  "bidders with a 10 digit individual taxpayer number": 4652,
+  "bidders with another identifier length": 27
+ }
+}

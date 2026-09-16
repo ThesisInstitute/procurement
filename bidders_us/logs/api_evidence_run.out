@@ -1,0 +1,35 @@
+[2026-09-16T09:57:25] POST https://api.usaspending.gov/api/v2/search/spending_by_transaction_count/ -> 504
+[2026-09-16T10:00:36] {"fiscal_year": 2010, "awards_with_activity_C": 1404235, "transactions_C": 1955587, "awards_with_activity_D": 49304, "transactions_D": 253528}
+[2026-09-16T10:01:39] POST https://api.usaspending.gov/api/v2/search/spending_by_award_count/ -> 504
+[2026-09-16T10:02:58] POST https://api.usaspending.gov/api/v2/search/spending_by_transaction_count/ -> 502
+[2026-09-16T10:04:14] POST https://api.usaspending.gov/api/v2/search/spending_by_transaction_count/ -> 502
+[2026-09-16T10:04:30] {"fiscal_year": 2011, "awards_with_activity_C": 1195138, "transactions_C": 1761089, "awards_with_activity_D": 45331, "transactions_D": 254015}
+[2026-09-16T10:05:43] POST https://api.usaspending.gov/api/v2/search/spending_by_transaction_count/ -> 503
+[2026-09-16T10:06:00] {"fiscal_year": 2012, "awards_with_activity_C": 1074830, "transactions_C": 1599188, "awards_with_activity_D": 42615, "transactions_D": 237691}
+[2026-09-16T10:06:08] {"fiscal_year": 2013, "awards_with_activity_C": 740159, "transactions_C": 1209246, "awards_with_activity_D": 41281, "transactions_D": 227576}
+[2026-09-16T10:06:11] POST https://api.usaspending.gov/api/v2/search/spending_by_transaction_count/ -> 503
+[2026-09-16T10:06:30] POST https://api.usaspending.gov/api/v2/search/spending_by_award_count/ -> 503
+[2026-09-16T10:07:06] {"fiscal_year": 2014, "awards_with_activity_C": 758008, "transactions_C": 1228713, "awards_with_activity_D": 36960, "transactions_D": 208891}
+[2026-09-16T10:08:59] POST https://api.usaspending.gov/api/v2/search/spending_by_transaction_count/ -> 504
+[2026-09-16T10:10:10] {"fiscal_year": 2015, "awards_with_activity_C": 2392566, "transactions_C": 2866092, "awards_with_activity_D": 34894, "transactions_D": 197215}
+[2026-09-16T10:10:14] {"fiscal_year": 2016, "awards_with_activity_C": 2764990, "transactions_C": 3248823, "awards_with_activity_D": 34694, "transactions_D": 193779}
+[2026-09-16T10:10:18] {"fiscal_year": 2017, "awards_with_activity_C": 2785868, "transactions_C": 3287372, "awards_with_activity_D": 34463, "transactions_D": 196646}
+[2026-09-16T10:10:21] {"fiscal_year": 2018, "awards_with_activity_C": 3531527, "transactions_C": 4041225, "awards_with_activity_D": 31303, "transactions_D": 191570}
+[2026-09-16T10:10:25] POST https://api.usaspending.gov/api/v2/search/spending_by_award_count/ -> 503
+[2026-09-16T10:10:40] POST https://api.usaspending.gov/api/v2/search/spending_by_award_count/ -> 503
+[2026-09-16T10:12:00] {"fiscal_year": 2019, "awards_with_activity_C": 3885334, "transactions_C": 4389444, "awards_with_activity_D": 36426, "transactions_D": 182650}
+[2026-09-16T10:12:02] {"fiscal_year": 2020, "awards_with_activity_C": 3621860, "transactions_C": 4138821, "awards_with_activity_D": 35565, "transactions_D": 190686}
+[2026-09-16T10:13:03] POST https://api.usaspending.gov/api/v2/search/spending_by_award_count/ -> 504
+[2026-09-16T10:15:05] POST https://api.usaspending.gov/api/v2/search/spending_by_transaction_count/ -> 504
+[2026-09-16T10:16:20] POST https://api.usaspending.gov/api/v2/search/spending_by_transaction_count/ -> 504
+[2026-09-16T10:17:45] {"fiscal_year": 2021, "awards_with_activity_C": 3806209, "transactions_C": 4309562, "awards_with_activity_D": 30776, "transactions_D": 178034}
+[2026-09-16T10:17:56] {"fiscal_year": 2022, "awards_with_activity_C": 3975119, "transactions_C": 4491223, "awards_with_activity_D": 29799, "transactions_D": 179543}
+[2026-09-16T10:19:51] {"fiscal_year": 2023, "awards_with_activity_C": 4043295, "transactions_C": 4535173, "awards_with_activity_D": 29164, "transactions_D": 162169}
+[2026-09-16T10:20:45] {"fiscal_year": 2024, "awards_with_activity_C": 4046946, "transactions_C": 4535892, "awards_with_activity_D": 31887, "transactions_D": 162577}
+[2026-09-16T10:21:47] POST https://api.usaspending.gov/api/v2/search/spending_by_transaction_count/ -> 502
+[2026-09-16T10:23:03] POST https://api.usaspending.gov/api/v2/search/spending_by_transaction_count/ -> 502
+[2026-09-16T10:24:18] POST https://api.usaspending.gov/api/v2/search/spending_by_transaction_count/ -> 504
+[2026-09-16T10:24:49] {"fiscal_year": 2025, "awards_with_activity_C": 4060329, "transactions_C": 4498998, "awards_with_activity_D": 39445, "transactions_D": 163736}
+[2026-09-16T10:25:48] {"fiscal_year": 2026, "awards_with_activity_C": 3031985, "transactions_C": 3241443, "awards_with_activity_D": 48743, "transactions_D": 107740}
+[2026-09-16T10:25:51] dictionary rows kept: 10
+[2026-09-16T10:25:51] -> /Users/maxghenis/ThesisInstitute/procurement/bidders_us/results/api_evidence.json

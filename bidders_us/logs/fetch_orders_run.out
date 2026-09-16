@@ -1,0 +1,173 @@
+[2026-09-16T09:39:03] FY2010 parquet already present, reusing
+[2026-09-16T09:39:03] FY2011 parquet already present, reusing
+[2026-09-16T09:39:03] FY2012 parquet already present, reusing
+[2026-09-16T09:39:03] FY2013 parquet already present, reusing
+[2026-09-16T09:39:03] FY2014 parquet already present, reusing
+[2026-09-16T09:39:03] FY2015 parquet already present, reusing
+[2026-09-16T09:39:03] FY2016 parquet already present, reusing
+[2026-09-16T09:39:03] FY2017 parquet already present, reusing
+[2026-09-16T09:39:03] FY2018 parquet already present, reusing
+[2026-09-16T09:39:03] FY2019 parquet already present, reusing
+[2026-09-16T09:39:03] FY2020 parquet already present, reusing
+[2026-09-16T09:39:03] FY2021 parquet already present, reusing
+[2026-09-16T09:39:03] FY2022 DOWNLOAD ERROR attempt 1/40: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[2026-09-16T09:40:08] FY2022 url=https://files.usaspending.gov/award_data_archive/FY2022_All_Contracts_Full_20260906.zip size=1991610844
+[2026-09-16T09:40:13] FY2022 5/119 chunks 84/1992 MB 16.30 MB/s elapsed 5s
+[2026-09-16T09:40:18] FY2022 10/119 chunks 168/1992 MB 16.46 MB/s elapsed 10s
+[2026-09-16T09:40:22] FY2022 15/119 chunks 252/1992 MB 18.50 MB/s elapsed 14s
+[2026-09-16T09:40:26] FY2022 20/119 chunks 336/1992 MB 18.72 MB/s elapsed 18s
+[2026-09-16T09:40:30] FY2022 25/119 chunks 419/1992 MB 19.14 MB/s elapsed 22s
+[2026-09-16T09:40:34] FY2022 30/119 chunks 503/1992 MB 19.63 MB/s elapsed 26s
+[2026-09-16T09:40:40] FY2022 35/119 chunks 587/1992 MB 18.14 MB/s elapsed 32s
+[2026-09-16T09:40:47] FY2022 40/119 chunks 671/1992 MB 17.24 MB/s elapsed 39s
+[2026-09-16T09:40:52] FY2022 45/119 chunks 755/1992 MB 17.17 MB/s elapsed 44s
+[2026-09-16T09:40:56] FY2022 50/119 chunks 839/1992 MB 17.31 MB/s elapsed 48s
+[2026-09-16T09:41:01] FY2022 55/119 chunks 923/1992 MB 17.28 MB/s elapsed 53s
+[2026-09-16T09:41:04] FY2022 60/119 chunks 1007/1992 MB 17.86 MB/s elapsed 56s
+[2026-09-16T09:41:08] FY2022 65/119 chunks 1091/1992 MB 18.12 MB/s elapsed 60s
+[2026-09-16T09:41:11] FY2022 70/119 chunks 1174/1992 MB 18.52 MB/s elapsed 63s
+[2026-09-16T09:41:15] FY2022 75/119 chunks 1258/1992 MB 18.87 MB/s elapsed 67s
+[2026-09-16T09:41:20] FY2022 80/119 chunks 1342/1992 MB 18.72 MB/s elapsed 72s
+[2026-09-16T09:41:23] FY2022 85/119 chunks 1426/1992 MB 19.02 MB/s elapsed 75s
+[2026-09-16T09:41:26] FY2022 90/119 chunks 1510/1992 MB 19.27 MB/s elapsed 78s
+[2026-09-16T09:41:30] FY2022 95/119 chunks 1594/1992 MB 19.42 MB/s elapsed 82s
+[2026-09-16T09:41:35] FY2022 100/119 chunks 1678/1992 MB 19.30 MB/s elapsed 87s
+[2026-09-16T09:41:41] FY2022 105/119 chunks 1762/1992 MB 19.02 MB/s elapsed 93s
+[2026-09-16T09:41:44] FY2022 110/119 chunks 1845/1992 MB 19.22 MB/s elapsed 96s
+[2026-09-16T09:41:47] FY2022 115/119 chunks 1925/1992 MB 19.33 MB/s elapsed 100s
+[2026-09-16T09:42:13] FY2022 119/119 chunks 1992/1992 MB 15.89 MB/s elapsed 125s
+[2026-09-16T09:42:13] FY2022 download complete in 125s -> /Users/maxghenis/ThesisInstitute/procurement/data/raw/bidders_us/zips/FY2022_All_Contracts_Full.zip
+[2026-09-16T09:42:14] FY2022 kept-order set from earlier years: 741307
+[2026-09-16T09:42:14] FY2022 archive members ['FY2022_All_Contracts_Full_20260906_1.csv', 'FY2022_All_Contracts_Full_20260906_2.csv', 'FY2022_All_Contracts_Full_20260906_3.csv', 'FY2022_All_Contracts_Full_20260906_4.csv', 'FY2022_All_Contracts_Full_20260906_5.csv', 'FY2022_All_Contracts_Full_20260906_6.csv', 'FY2022_All_Contracts_Full_20260906_7.csv']
+[2026-09-16T09:42:14] FY2023 DOWNLOAD ERROR attempt 1/40: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[2026-09-16T09:42:38] FY2022 scanned 2000000 rows
+[2026-09-16T09:43:01] FY2022 scanned 4000000 rows
+[2026-09-16T09:43:15] FY2023 DOWNLOAD ERROR attempt 2/40: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[2026-09-16T09:43:23] FY2022 scanned 6000000 rows
+[2026-09-16T09:43:39] FY2022 {"archive_rows_all_types": 6668009, "rows_type_C": 4491218, "archive_members": ["FY2022_All_Contracts_Full_20260906_1.csv", "FY2022_All_Contracts_Full_20260906_2.csv", "FY2022_All_Contracts_Full_20260906_3.csv", "FY2022_All_Contracts_Full_20260906_4.csv", "FY2022_All_Contracts_Full_20260906_5.csv", "FY2022_All_Contracts_Full_20260906_6.csv", "FY2022_All_Contracts_Full_20260906_7.csv"], "zip_bytes": 1991610844, "base_actions": 3959896, "base_actions_at_or_above_threshold": 65902, "base_actions_with_parent": 3959895, "distinct_vehicles_all_sizes": 65942, "fiscal_year": 2022, "orders_with_qualifying_base_row_this_year": 65768, "new_orders_kept_this_year": 65768, "duplicate_rows_removed": 0, "rows_kept": 278439, "rows_kept_base": 66021, "parquet_bytes": 19392592, "seconds_parse": 85.6}
+[2026-09-16T09:43:39] FY2022 zip deleted
+[2026-09-16T09:45:15] FY2023 DOWNLOAD ERROR attempt 3/40: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[2026-09-16T09:48:16] FY2023 url=https://files.usaspending.gov/award_data_archive/FY2023_All_Contracts_Full_20260906.zip size=1964231271
+[2026-09-16T09:48:21] FY2023 5/118 chunks 84/1964 MB 17.25 MB/s elapsed 5s
+[2026-09-16T09:48:26] FY2023 10/118 chunks 168/1964 MB 17.83 MB/s elapsed 9s
+[2026-09-16T09:48:29] FY2023 15/118 chunks 252/1964 MB 20.45 MB/s elapsed 12s
+[2026-09-16T09:48:30] FY2023 20/118 chunks 336/1964 MB 24.88 MB/s elapsed 13s
+[2026-09-16T09:48:34] FY2023 25/118 chunks 419/1964 MB 24.21 MB/s elapsed 17s
+[2026-09-16T09:48:36] FY2023 30/118 chunks 503/1964 MB 25.44 MB/s elapsed 20s
+[2026-09-16T09:48:40] FY2023 35/118 chunks 587/1964 MB 24.96 MB/s elapsed 24s
+[2026-09-16T09:48:43] FY2023 40/118 chunks 671/1964 MB 24.69 MB/s elapsed 27s
+[2026-09-16T09:48:47] FY2023 45/118 chunks 755/1964 MB 24.72 MB/s elapsed 31s
+[2026-09-16T09:48:49] FY2023 50/118 chunks 839/1964 MB 25.23 MB/s elapsed 33s
+[2026-09-16T09:48:52] FY2023 55/118 chunks 923/1964 MB 25.43 MB/s elapsed 36s
+[2026-09-16T09:48:55] FY2023 60/118 chunks 1007/1964 MB 25.94 MB/s elapsed 39s
+[2026-09-16T09:48:59] FY2023 65/118 chunks 1091/1964 MB 25.78 MB/s elapsed 42s
+[2026-09-16T09:49:02] FY2023 70/118 chunks 1174/1964 MB 25.65 MB/s elapsed 46s
+[2026-09-16T09:49:04] FY2023 75/118 chunks 1258/1964 MB 26.51 MB/s elapsed 47s
+[2026-09-16T09:49:06] FY2023 80/118 chunks 1342/1964 MB 26.79 MB/s elapsed 50s
+[2026-09-16T09:49:08] FY2023 85/118 chunks 1426/1964 MB 27.34 MB/s elapsed 52s
+[2026-09-16T09:49:11] FY2023 90/118 chunks 1510/1964 MB 27.34 MB/s elapsed 55s
+[2026-09-16T09:49:14] FY2023 95/118 chunks 1594/1964 MB 27.36 MB/s elapsed 58s
+[2026-09-16T09:49:17] FY2023 100/118 chunks 1678/1964 MB 27.54 MB/s elapsed 61s
+[2026-09-16T09:49:20] FY2023 105/118 chunks 1762/1964 MB 27.69 MB/s elapsed 64s
+[2026-09-16T09:49:23] FY2023 110/118 chunks 1845/1964 MB 27.71 MB/s elapsed 67s
+[2026-09-16T09:49:25] FY2023 115/118 chunks 1914/1964 MB 27.79 MB/s elapsed 69s
+[2026-09-16T09:49:26] FY2023 118/118 chunks 1964/1964 MB 28.33 MB/s elapsed 69s
+[2026-09-16T09:49:26] FY2023 download complete in 69s -> /Users/maxghenis/ThesisInstitute/procurement/data/raw/bidders_us/zips/FY2023_All_Contracts_Full.zip
+[2026-09-16T09:49:26] FY2023 kept-order set from earlier years: 807075
+[2026-09-16T09:49:26] FY2023 archive members ['FY2023_All_Contracts_Full_20260906_1.csv', 'FY2023_All_Contracts_Full_20260906_2.csv', 'FY2023_All_Contracts_Full_20260906_3.csv', 'FY2023_All_Contracts_Full_20260906_4.csv', 'FY2023_All_Contracts_Full_20260906_5.csv', 'FY2023_All_Contracts_Full_20260906_6.csv', 'FY2023_All_Contracts_Full_20260906_7.csv']
+[2026-09-16T09:49:27] FY2024 url=https://files.usaspending.gov/award_data_archive/FY2024_All_Contracts_Full_20260906.zip size=1944325215
+[2026-09-16T09:49:36] FY2024 5/116 chunks 84/1944 MB 9.15 MB/s elapsed 9s
+[2026-09-16T09:49:41] FY2024 10/116 chunks 168/1944 MB 11.38 MB/s elapsed 15s
+[2026-09-16T09:49:48] FY2024 15/116 chunks 252/1944 MB 11.94 MB/s elapsed 21s
+[2026-09-16T09:49:51] FY2023 scanned 2000000 rows
+[2026-09-16T09:49:52] FY2024 20/116 chunks 336/1944 MB 13.41 MB/s elapsed 25s
+[2026-09-16T09:49:55] FY2024 25/116 chunks 419/1944 MB 15.02 MB/s elapsed 28s
+[2026-09-16T09:50:02] FY2024 30/116 chunks 503/1944 MB 14.20 MB/s elapsed 35s
+[2026-09-16T09:50:06] FY2024 35/116 chunks 587/1944 MB 14.89 MB/s elapsed 39s
+[2026-09-16T09:50:11] FY2024 40/116 chunks 671/1944 MB 15.19 MB/s elapsed 44s
+[2026-09-16T09:50:14] FY2023 scanned 4000000 rows
+[2026-09-16T09:50:17] FY2024 45/116 chunks 755/1944 MB 14.94 MB/s elapsed 51s
+[2026-09-16T09:50:23] FY2024 50/116 chunks 839/1944 MB 14.83 MB/s elapsed 57s
+[2026-09-16T09:50:26] FY2024 55/116 chunks 923/1944 MB 15.53 MB/s elapsed 59s
+[2026-09-16T09:50:30] FY2024 60/116 chunks 1007/1944 MB 15.80 MB/s elapsed 64s
+[2026-09-16T09:50:36] FY2023 scanned 6000000 rows
+[2026-09-16T09:50:37] FY2024 65/116 chunks 1091/1944 MB 15.41 MB/s elapsed 71s
+[2026-09-16T09:50:44] FY2024 70/116 chunks 1174/1944 MB 15.19 MB/s elapsed 77s
+[2026-09-16T09:50:47] FY2024 75/116 chunks 1258/1944 MB 15.65 MB/s elapsed 80s
+[2026-09-16T09:50:51] FY2024 80/116 chunks 1342/1944 MB 15.87 MB/s elapsed 85s
+[2026-09-16T09:50:53] FY2023 {"archive_rows_all_types": 6693769, "rows_type_C": 4535168, "archive_members": ["FY2023_All_Contracts_Full_20260906_1.csv", "FY2023_All_Contracts_Full_20260906_2.csv", "FY2023_All_Contracts_Full_20260906_3.csv", "FY2023_All_Contracts_Full_20260906_4.csv", "FY2023_All_Contracts_Full_20260906_5.csv", "FY2023_All_Contracts_Full_20260906_6.csv", "FY2023_All_Contracts_Full_20260906_7.csv"], "zip_bytes": 1964231271, "base_actions": 4027228, "base_actions_at_or_above_threshold": 69605, "base_actions_with_parent": 4027228, "distinct_vehicles_all_sizes": 63471, "fiscal_year": 2023, "orders_with_qualifying_base_row_this_year": 69479, "new_orders_kept_this_year": 69479, "duplicate_rows_removed": 0, "rows_kept": 282429, "rows_kept_base": 69720, "parquet_bytes": 19816297, "seconds_parse": 87.0}
+[2026-09-16T09:50:53] FY2023 zip deleted
+[2026-09-16T09:50:56] FY2024 85/116 chunks 1426/1944 MB 15.91 MB/s elapsed 90s
+[2026-09-16T09:51:00] FY2024 90/116 chunks 1510/1944 MB 16.26 MB/s elapsed 93s
+[2026-09-16T09:51:02] FY2024 95/116 chunks 1594/1944 MB 16.64 MB/s elapsed 96s
+[2026-09-16T09:51:06] FY2024 100/116 chunks 1678/1944 MB 16.89 MB/s elapsed 99s
+[2026-09-16T09:51:09] FY2024 105/116 chunks 1762/1944 MB 17.22 MB/s elapsed 102s
+[2026-09-16T09:51:12] FY2024 110/116 chunks 1845/1944 MB 17.46 MB/s elapsed 106s
+[2026-09-16T09:51:15] FY2024 115/116 chunks 1928/1944 MB 17.86 MB/s elapsed 108s
+[2026-09-16T09:51:15] FY2024 116/116 chunks 1944/1944 MB 18.00 MB/s elapsed 108s
+[2026-09-16T09:51:15] FY2024 download complete in 108s -> /Users/maxghenis/ThesisInstitute/procurement/data/raw/bidders_us/zips/FY2024_All_Contracts_Full.zip
+[2026-09-16T09:51:15] FY2024 kept-order set from earlier years: 876554
+[2026-09-16T09:51:15] FY2024 archive members ['FY2024_All_Contracts_Full_20260906_1.csv', 'FY2024_All_Contracts_Full_20260906_2.csv', 'FY2024_All_Contracts_Full_20260906_3.csv', 'FY2024_All_Contracts_Full_20260906_4.csv', 'FY2024_All_Contracts_Full_20260906_5.csv', 'FY2024_All_Contracts_Full_20260906_6.csv', 'FY2024_All_Contracts_Full_20260906_7.csv']
+[2026-09-16T09:51:16] FY2025 url=https://files.usaspending.gov/award_data_archive/FY2025_All_Contracts_Full_20260906.zip size=1914255016
+[2026-09-16T09:51:24] FY2025 5/115 chunks 84/1914 MB 10.81 MB/s elapsed 8s
+[2026-09-16T09:51:29] FY2025 10/115 chunks 168/1914 MB 12.30 MB/s elapsed 14s
+[2026-09-16T09:51:34] FY2025 15/115 chunks 252/1914 MB 14.01 MB/s elapsed 18s
+[2026-09-16T09:51:37] FY2025 20/115 chunks 336/1914 MB 16.12 MB/s elapsed 21s
+[2026-09-16T09:51:38] FY2024 scanned 2000000 rows
+[2026-09-16T09:51:42] FY2025 25/115 chunks 419/1914 MB 15.98 MB/s elapsed 26s
+[2026-09-16T09:51:48] FY2025 30/115 chunks 503/1914 MB 15.85 MB/s elapsed 32s
+[2026-09-16T09:51:53] FY2025 35/115 chunks 587/1914 MB 15.84 MB/s elapsed 37s
+[2026-09-16T09:51:57] FY2025 40/115 chunks 671/1914 MB 16.13 MB/s elapsed 42s
+[2026-09-16T09:52:01] FY2024 scanned 4000000 rows
+[2026-09-16T09:52:03] FY2025 45/115 chunks 755/1914 MB 16.13 MB/s elapsed 47s
+[2026-09-16T09:52:07] FY2025 50/115 chunks 839/1914 MB 16.35 MB/s elapsed 51s
+[2026-09-16T09:52:11] FY2025 55/115 chunks 923/1914 MB 16.63 MB/s elapsed 55s
+[2026-09-16T09:52:17] FY2025 60/115 chunks 1007/1914 MB 16.33 MB/s elapsed 62s
+[2026-09-16T09:52:24] FY2025 65/115 chunks 1091/1914 MB 16.07 MB/s elapsed 68s
+[2026-09-16T09:52:26] FY2024 scanned 6000000 rows
+[2026-09-16T09:52:27] FY2025 70/115 chunks 1174/1914 MB 16.45 MB/s elapsed 71s
+[2026-09-16T09:52:34] FY2025 75/115 chunks 1258/1914 MB 16.17 MB/s elapsed 78s
+[2026-09-16T09:52:39] FY2025 80/115 chunks 1342/1914 MB 16.12 MB/s elapsed 83s
+[2026-09-16T09:52:43] FY2025 85/115 chunks 1426/1914 MB 16.41 MB/s elapsed 87s
+[2026-09-16T09:52:46] FY2024 {"archive_rows_all_types": 6692741, "rows_type_C": 4535885, "archive_members": ["FY2024_All_Contracts_Full_20260906_1.csv", "FY2024_All_Contracts_Full_20260906_2.csv", "FY2024_All_Contracts_Full_20260906_3.csv", "FY2024_All_Contracts_Full_20260906_4.csv", "FY2024_All_Contracts_Full_20260906_5.csv", "FY2024_All_Contracts_Full_20260906_6.csv", "FY2024_All_Contracts_Full_20260906_7.csv"], "zip_bytes": 1944325215, "base_actions": 4008344, "base_actions_at_or_above_threshold": 69800, "base_actions_with_parent": 4008341, "distinct_vehicles_all_sizes": 60806, "fiscal_year": 2024, "orders_with_qualifying_base_row_this_year": 69662, "new_orders_kept_this_year": 69662, "duplicate_rows_removed": 0, "rows_kept": 292726, "rows_kept_base": 69908, "parquet_bytes": 20536731, "seconds_parse": 90.6}
+[2026-09-16T09:52:46] FY2024 zip deleted
+[2026-09-16T09:52:47] FY2025 90/115 chunks 1510/1914 MB 16.59 MB/s elapsed 91s
+[2026-09-16T09:52:50] FY2025 95/115 chunks 1594/1914 MB 16.94 MB/s elapsed 94s
+[2026-09-16T09:52:53] FY2025 100/115 chunks 1678/1914 MB 17.24 MB/s elapsed 97s
+[2026-09-16T09:52:55] FY2025 105/115 chunks 1762/1914 MB 17.85 MB/s elapsed 99s
+[2026-09-16T09:52:58] FY2025 110/115 chunks 1845/1914 MB 18.06 MB/s elapsed 102s
+[2026-09-16T09:53:00] FY2025 115/115 chunks 1914/1914 MB 18.44 MB/s elapsed 104s
+[2026-09-16T09:53:00] FY2025 download complete in 104s -> /Users/maxghenis/ThesisInstitute/procurement/data/raw/bidders_us/zips/FY2025_All_Contracts_Full.zip
+[2026-09-16T09:53:00] FY2025 kept-order set from earlier years: 946216
+[2026-09-16T09:53:00] FY2025 archive members ['FY2025_All_Contracts_Full_20260907_1.csv', 'FY2025_All_Contracts_Full_20260907_2.csv', 'FY2025_All_Contracts_Full_20260907_3.csv', 'FY2025_All_Contracts_Full_20260907_4.csv', 'FY2025_All_Contracts_Full_20260907_5.csv', 'FY2025_All_Contracts_Full_20260907_6.csv', 'FY2025_All_Contracts_Full_20260907_7.csv']
+[2026-09-16T09:53:01] FY2026 url=https://files.usaspending.gov/award_data_archive/FY2026_All_Contracts_Full_20260906.zip size=1383095241
+[2026-09-16T09:53:10] FY2026 5/83 chunks 84/1383 MB 9.33 MB/s elapsed 9s
+[2026-09-16T09:53:15] FY2026 10/83 chunks 168/1383 MB 12.35 MB/s elapsed 14s
+[2026-09-16T09:53:21] FY2026 15/83 chunks 252/1383 MB 12.43 MB/s elapsed 20s
+[2026-09-16T09:53:23] FY2025 scanned 2000000 rows
+[2026-09-16T09:53:25] FY2026 20/83 chunks 336/1383 MB 14.21 MB/s elapsed 24s
+[2026-09-16T09:53:29] FY2026 25/83 chunks 419/1383 MB 14.96 MB/s elapsed 28s
+[2026-09-16T09:53:36] FY2026 30/83 chunks 503/1383 MB 14.37 MB/s elapsed 35s
+[2026-09-16T09:53:42] FY2026 35/83 chunks 587/1383 MB 14.42 MB/s elapsed 41s
+[2026-09-16T09:53:45] FY2026 40/83 chunks 671/1383 MB 15.15 MB/s elapsed 44s
+[2026-09-16T09:53:47] FY2025 scanned 4000000 rows
+[2026-09-16T09:53:51] FY2026 45/83 chunks 755/1383 MB 15.06 MB/s elapsed 50s
+[2026-09-16T09:53:57] FY2026 50/83 chunks 839/1383 MB 15.08 MB/s elapsed 56s
+[2026-09-16T09:54:02] FY2026 55/83 chunks 923/1383 MB 15.12 MB/s elapsed 61s
+[2026-09-16T09:54:07] FY2026 60/83 chunks 1007/1383 MB 15.18 MB/s elapsed 66s
+[2026-09-16T09:54:10] FY2025 scanned 6000000 rows
+[2026-09-16T09:54:13] FY2026 65/83 chunks 1091/1383 MB 15.13 MB/s elapsed 72s
+[2026-09-16T09:54:17] FY2026 70/83 chunks 1174/1383 MB 15.40 MB/s elapsed 76s
+[2026-09-16T09:54:22] FY2026 75/83 chunks 1258/1383 MB 15.62 MB/s elapsed 81s
+[2026-09-16T09:54:25] FY2026 80/83 chunks 1333/1383 MB 15.80 MB/s elapsed 84s
+[2026-09-16T09:54:28] FY2025 {"archive_rows_all_types": 6639176, "rows_type_C": 4498972, "archive_members": ["FY2025_All_Contracts_Full_20260907_1.csv", "FY2025_All_Contracts_Full_20260907_2.csv", "FY2025_All_Contracts_Full_20260907_3.csv", "FY2025_All_Contracts_Full_20260907_4.csv", "FY2025_All_Contracts_Full_20260907_5.csv", "FY2025_All_Contracts_Full_20260907_6.csv", "FY2025_All_Contracts_Full_20260907_7.csv"], "zip_bytes": 1914255016, "base_actions": 3989592, "base_actions_at_or_above_threshold": 64564, "base_actions_with_parent": 3989591, "distinct_vehicles_all_sizes": 58186, "fiscal_year": 2025, "orders_with_qualifying_base_row_this_year": 64430, "new_orders_kept_this_year": 64430, "duplicate_rows_removed": 0, "rows_kept": 290150, "rows_kept_base": 64662, "parquet_bytes": 20198292, "seconds_parse": 88.2}
+[2026-09-16T09:54:28] FY2025 zip deleted
+[2026-09-16T09:54:31] FY2026 83/83 chunks 1383/1383 MB 15.38 MB/s elapsed 90s
+[2026-09-16T09:54:31] FY2026 download complete in 90s -> /Users/maxghenis/ThesisInstitute/procurement/data/raw/bidders_us/zips/FY2026_All_Contracts_Full.zip
+[2026-09-16T09:54:31] FY2026 kept-order set from earlier years: 1010646
+[2026-09-16T09:54:31] FY2026 archive members ['FY2026_All_Contracts_Full_20260906_1.csv', 'FY2026_All_Contracts_Full_20260906_2.csv', 'FY2026_All_Contracts_Full_20260906_3.csv', 'FY2026_All_Contracts_Full_20260906_4.csv', 'FY2026_All_Contracts_Full_20260906_5.csv']
+[2026-09-16T09:54:56] FY2026 scanned 2000000 rows
+[2026-09-16T09:55:20] FY2026 scanned 4000000 rows
+[2026-09-16T09:55:37] FY2026 {"archive_rows_all_types": 4705099, "rows_type_C": 3128084, "archive_members": ["FY2026_All_Contracts_Full_20260906_1.csv", "FY2026_All_Contracts_Full_20260906_2.csv", "FY2026_All_Contracts_Full_20260906_3.csv", "FY2026_All_Contracts_Full_20260906_4.csv", "FY2026_All_Contracts_Full_20260906_5.csv"], "zip_bytes": 1383095241, "base_actions": 2778829, "base_actions_at_or_above_threshold": 42645, "base_actions_with_parent": 2778828, "distinct_vehicles_all_sizes": 48325, "fiscal_year": 2026, "orders_with_qualifying_base_row_this_year": 42576, "new_orders_kept_this_year": 42571, "duplicate_rows_removed": 0, "rows_kept": 188366, "rows_kept_base": 42698, "parquet_bytes": 13361227, "seconds_parse": 65.6}
+[2026-09-16T09:55:37] FY2026 zip deleted
+[2026-09-16T09:55:37] done in 994s; errors={}

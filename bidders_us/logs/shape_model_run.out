@@ -1,0 +1,58 @@
+[2026-09-16T08:21:00] panel rows 192377
+[2026-09-16T08:21:17] shape_office schedule_slip_gt90_24: full fit, best_iter=280 val_brier=0.16631 (17s)
+[2026-09-16T08:21:25] shape_office schedule_slip_gt90_24: fold 1/5 done (25s)
+[2026-09-16T08:21:34] shape_office schedule_slip_gt90_24: fold 2/5 done (34s)
+[2026-09-16T08:21:43] shape_office schedule_slip_gt90_24: fold 3/5 done (43s)
+[2026-09-16T08:21:52] shape_office schedule_slip_gt90_24: fold 4/5 done (52s)
+[2026-09-16T08:21:59] shape_office schedule_slip_gt90_24: fold 5/5 done (59s)
+[2026-09-16T08:21:59] shape_office schedule_slip_gt90_24: test auc=0.8383 bss=0.3498; train crossfit auc=0.8400
+[2026-09-16T08:22:10] shape_only schedule_slip_gt90_24: full fit, best_iter=137 val_brier=0.16731 (11s)
+[2026-09-16T08:22:15] shape_only schedule_slip_gt90_24: fold 1/5 done (16s)
+[2026-09-16T08:22:19] shape_only schedule_slip_gt90_24: fold 2/5 done (19s)
+[2026-09-16T08:22:22] shape_only schedule_slip_gt90_24: fold 3/5 done (22s)
+[2026-09-16T08:22:25] shape_only schedule_slip_gt90_24: fold 4/5 done (26s)
+[2026-09-16T08:22:28] shape_only schedule_slip_gt90_24: fold 5/5 done (29s)
+[2026-09-16T08:22:28] shape_only schedule_slip_gt90_24: test auc=0.8387 bss=0.3514; train crossfit auc=0.8331
+[2026-09-16T08:22:41] shape_office schedule_slip_gt90_36: full fit, best_iter=258 val_brier=0.16530 (13s)
+[2026-09-16T08:22:48] shape_office schedule_slip_gt90_36: fold 1/5 done (19s)
+[2026-09-16T08:22:55] shape_office schedule_slip_gt90_36: fold 2/5 done (26s)
+[2026-09-16T08:23:02] shape_office schedule_slip_gt90_36: fold 3/5 done (33s)
+[2026-09-16T08:23:08] shape_office schedule_slip_gt90_36: fold 4/5 done (40s)
+[2026-09-16T08:23:14] shape_office schedule_slip_gt90_36: fold 5/5 done (46s)
+[2026-09-16T08:23:14] shape_office schedule_slip_gt90_36: test auc=0.8379 bss=0.3542; train crossfit auc=0.8424
+[2026-09-16T08:23:27] shape_only schedule_slip_gt90_36: full fit, best_iter=217 val_brier=0.16619 (12s)
+[2026-09-16T08:23:32] shape_only schedule_slip_gt90_36: fold 1/5 done (17s)
+[2026-09-16T08:23:37] shape_only schedule_slip_gt90_36: fold 2/5 done (22s)
+[2026-09-16T08:23:42] shape_only schedule_slip_gt90_36: fold 3/5 done (28s)
+[2026-09-16T08:23:48] shape_only schedule_slip_gt90_36: fold 4/5 done (33s)
+[2026-09-16T08:23:53] shape_only schedule_slip_gt90_36: fold 5/5 done (38s)
+[2026-09-16T08:23:53] shape_only schedule_slip_gt90_36: test auc=0.8357 bss=0.3510; train crossfit auc=0.8366
+[2026-09-16T08:24:03] shape_office schedule_slip_gt365_24: full fit, best_iter=106 val_brier=0.09714 (10s)
+[2026-09-16T08:24:06] shape_office schedule_slip_gt365_24: fold 1/5 done (13s)
+[2026-09-16T08:24:08] shape_office schedule_slip_gt365_24: fold 2/5 done (15s)
+[2026-09-16T08:24:12] shape_office schedule_slip_gt365_24: fold 3/5 done (19s)
+[2026-09-16T08:24:14] shape_office schedule_slip_gt365_24: fold 4/5 done (21s)
+[2026-09-16T08:24:17] shape_office schedule_slip_gt365_24: fold 5/5 done (24s)
+[2026-09-16T08:24:17] shape_office schedule_slip_gt365_24: test auc=0.8600 bss=0.3630; train crossfit auc=0.8672
+[2026-09-16T08:24:27] shape_only schedule_slip_gt365_24: full fit, best_iter=108 val_brier=0.09768 (10s)
+[2026-09-16T08:24:30] shape_only schedule_slip_gt365_24: fold 1/5 done (13s)
+[2026-09-16T08:24:33] shape_only schedule_slip_gt365_24: fold 2/5 done (16s)
+[2026-09-16T08:24:36] shape_only schedule_slip_gt365_24: fold 3/5 done (19s)
+[2026-09-16T08:24:39] shape_only schedule_slip_gt365_24: fold 4/5 done (21s)
+[2026-09-16T08:24:41] shape_only schedule_slip_gt365_24: fold 5/5 done (24s)
+[2026-09-16T08:24:41] shape_only schedule_slip_gt365_24: test auc=0.8567 bss=0.3580; train crossfit auc=0.8610
+[2026-09-16T08:24:52] shape_office schedule_slip_gt365_36: full fit, best_iter=133 val_brier=0.12213 (11s)
+[2026-09-16T08:24:56] shape_office schedule_slip_gt365_36: fold 1/5 done (14s)
+[2026-09-16T08:24:59] shape_office schedule_slip_gt365_36: fold 2/5 done (18s)
+[2026-09-16T08:25:02] shape_office schedule_slip_gt365_36: fold 3/5 done (21s)
+[2026-09-16T08:25:07] shape_office schedule_slip_gt365_36: fold 4/5 done (25s)
+[2026-09-16T08:25:12] shape_office schedule_slip_gt365_36: fold 5/5 done (30s)
+[2026-09-16T08:25:12] shape_office schedule_slip_gt365_36: test auc=0.8556 bss=0.3822; train crossfit auc=0.8638
+[2026-09-16T08:25:25] shape_only schedule_slip_gt365_36: full fit, best_iter=189 val_brier=0.12302 (14s)
+[2026-09-16T08:25:31] shape_only schedule_slip_gt365_36: fold 1/5 done (19s)
+[2026-09-16T08:25:36] shape_only schedule_slip_gt365_36: fold 2/5 done (24s)
+[2026-09-16T08:25:41] shape_only schedule_slip_gt365_36: fold 3/5 done (29s)
+[2026-09-16T08:25:46] shape_only schedule_slip_gt365_36: fold 4/5 done (34s)
+[2026-09-16T08:25:52] shape_only schedule_slip_gt365_36: fold 5/5 done (40s)
+[2026-09-16T08:25:52] shape_only schedule_slip_gt365_36: test auc=0.8520 bss=0.3760; train crossfit auc=0.8578
+[2026-09-16T08:25:52] predictions -> /Users/maxghenis/ThesisInstitute/procurement/data/raw/bidders_us/exp1_predictions.parquet in 292s

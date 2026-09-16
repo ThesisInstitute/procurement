@@ -1,0 +1,36 @@
+{
+ "shape_model": {
+  "seconds": 291.9,
+  "finished_at": "2026-09-16T08:25:52",
+  "cells": 8
+ },
+ "exp1": {
+  "seconds": 1620.8,
+  "finished_at": "2026-09-16T09:26:53",
+  "cells": 8
+ },
+ "exp3": {
+  "seconds": 124.4,
+  "finished_at": "2026-09-16T08:56:24",
+  "cells": 4
+ },
+ "report": {
+  "seconds": 0.4,
+  "finished_at": "2026-09-16T10:34:39"
+ },
+ "orders_panel": {
+  "seconds": 38.0,
+  "finished_at": "2026-09-16T09:56:57",
+  "orders": 798977
+ },
+ "vehicle_map": {
+  "seconds": 429.7,
+  "finished_at": "2026-09-16T10:20:56",
+  "idvs": 838888
+ },
+ "exp2": {
+  "seconds": 820.7,
+  "finished_at": "2026-09-16T10:34:38",
+  "cells": 6
+ }
+}

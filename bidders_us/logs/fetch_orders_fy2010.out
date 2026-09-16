@@ -1,0 +1,21 @@
+[2026-09-16T08:24:14] FY2010 url=https://files.usaspending.gov/award_data_archive/FY2010_All_Contracts_Full_20260906.zip size=1172509746
+[2026-09-16T08:24:19] FY2010 5/70 chunks 84/1173 MB 14.89 MB/s elapsed 6s
+[2026-09-16T08:24:23] FY2010 10/70 chunks 168/1173 MB 18.17 MB/s elapsed 9s
+[2026-09-16T08:24:26] FY2010 15/70 chunks 252/1173 MB 20.31 MB/s elapsed 12s
+[2026-09-16T08:24:30] FY2010 20/70 chunks 336/1173 MB 20.93 MB/s elapsed 16s
+[2026-09-16T08:24:33] FY2010 25/70 chunks 419/1173 MB 21.71 MB/s elapsed 19s
+[2026-09-16T08:24:36] FY2010 30/70 chunks 503/1173 MB 22.46 MB/s elapsed 22s
+[2026-09-16T08:24:39] FY2010 35/70 chunks 587/1173 MB 23.42 MB/s elapsed 25s
+[2026-09-16T08:24:43] FY2010 40/70 chunks 671/1173 MB 22.65 MB/s elapsed 30s
+[2026-09-16T08:24:46] FY2010 45/70 chunks 755/1173 MB 23.09 MB/s elapsed 33s
+[2026-09-16T08:24:49] FY2010 50/70 chunks 839/1173 MB 23.79 MB/s elapsed 35s
+[2026-09-16T08:24:52] FY2010 55/70 chunks 923/1173 MB 23.90 MB/s elapsed 39s
+[2026-09-16T08:24:56] FY2010 60/70 chunks 1007/1173 MB 23.96 MB/s elapsed 42s
+[2026-09-16T08:25:00] FY2010 65/70 chunks 1091/1173 MB 23.59 MB/s elapsed 46s
+[2026-09-16T08:25:02] FY2010 70/70 chunks 1173/1173 MB 24.50 MB/s elapsed 48s
+[2026-09-16T08:25:02] FY2010 download complete in 48s -> /Users/maxghenis/ThesisInstitute/procurement/data/raw/bidders_us/zips/FY2010_All_Contracts_Full.zip
+[2026-09-16T08:25:02] FY2010 kept-order set from earlier years: 0
+[2026-09-16T08:25:02] FY2010 archive members ['FY2010_All_Contracts_Full_20260906_1.csv', 'FY2010_All_Contracts_Full_20260906_2.csv', 'FY2010_All_Contracts_Full_20260906_3.csv', 'FY2010_All_Contracts_Full_20260906_4.csv']
+[2026-09-16T08:25:28] FY2010 scanned 2000000 rows
+[2026-09-16T08:25:52] FY2010 {"archive_rows_all_types": 3543905, "rows_type_C": 1955587, "base_actions": 1436026, "base_actions_at_or_above_threshold": 72579, "base_actions_with_parent": 1436025, "distinct_vehicles_all_sizes": 76505, "fiscal_year": 2010, "new_orders_kept_this_year": 72239, "rows_kept": 120781, "rows_kept_base": 73937, "parquet_bytes": 7772353, "seconds_parse": 50.3}
+[2026-09-16T08:25:52] done in 100s; errors={}

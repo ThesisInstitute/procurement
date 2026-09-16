@@ -1,0 +1,442 @@
+[
+ {
+  "label": "schedule_slip_gt90",
+  "horizon": 24,
+  "variant": "shape_office",
+  "n_train": 123233,
+  "n_val": 29227,
+  "n_test": 39917,
+  "features_categorical": [
+   "type_of_contract_pricing_code",
+   "extent_competed_code",
+   "solicitation_procedures_code",
+   "type_of_set_aside_code",
+   "naics2",
+   "naics6",
+   "psc1",
+   "psc_full",
+   "awarding_agency_code",
+   "awarding_sub_agency_code",
+   "awarding_office_code",
+   "performance_based_service_acquisition_code",
+   "multi_year_contract_code",
+   "cost_or_pricing_data_code",
+   "fed_biz_opps_code",
+   "primary_place_of_performance_state_code"
+  ],
+  "features_numeric": [
+   "log_base_obligation",
+   "log_base_ceiling",
+   "option_heaviness",
+   "planned_duration_days",
+   "potential_extra_duration_days",
+   "n_offers",
+   "n_offers_missing",
+   "base_fy",
+   "base_month"
+  ],
+  "n_iter": 280,
+  "train_base_rate": 0.4017836131555671,
+  "test_base_rate": 0.45614650399579126,
+  "train_crossfit": {
+   "brier": 0.15916258772290803,
+   "bss_vs_train_base_rate": 0.3377980335738946,
+   "auc": 0.8400428175036905
+  },
+  "val": {
+   "brier": 0.16630759290572034,
+   "auc": 0.8326944966444103
+  },
+  "test": {
+   "brier": 0.16321168379766623,
+   "bss_vs_train_base_rate": 0.3498376416019633,
+   "auc": 0.8382860926109141,
+   "ece": 0.024076464034225673
+  },
+  "seconds": 59.2
+ },
+ {
+  "label": "schedule_slip_gt90",
+  "horizon": 24,
+  "variant": "shape_only",
+  "n_train": 123233,
+  "n_val": 29227,
+  "n_test": 39917,
+  "features_categorical": [
+   "type_of_contract_pricing_code",
+   "extent_competed_code",
+   "solicitation_procedures_code",
+   "type_of_set_aside_code",
+   "naics2",
+   "naics6",
+   "psc1",
+   "psc_full",
+   "awarding_agency_code",
+   "performance_based_service_acquisition_code",
+   "multi_year_contract_code",
+   "cost_or_pricing_data_code",
+   "fed_biz_opps_code",
+   "primary_place_of_performance_state_code"
+  ],
+  "features_numeric": [
+   "log_base_obligation",
+   "log_base_ceiling",
+   "option_heaviness",
+   "planned_duration_days",
+   "potential_extra_duration_days",
+   "n_offers",
+   "n_offers_missing",
+   "base_fy",
+   "base_month"
+  ],
+  "n_iter": 137,
+  "train_base_rate": 0.4017836131555671,
+  "test_base_rate": 0.45614650399579126,
+  "train_crossfit": {
+   "brier": 0.1619646201030362,
+   "bss_vs_train_base_rate": 0.326140071871608,
+   "auc": 0.8331259475977518
+  },
+  "val": {
+   "brier": 0.1673061558336668,
+   "auc": 0.829351786590328
+  },
+  "test": {
+   "brier": 0.16283154104641237,
+   "bss_vs_train_base_rate": 0.3513519603194243,
+   "auc": 0.8387160386919293,
+   "ece": 0.026027932232890252
+  },
+  "seconds": 28.8
+ },
+ {
+  "label": "schedule_slip_gt90",
+  "horizon": 36,
+  "variant": "shape_office",
+  "n_train": 123233,
+  "n_val": 29227,
+  "n_test": 39917,
+  "features_categorical": [
+   "type_of_contract_pricing_code",
+   "extent_competed_code",
+   "solicitation_procedures_code",
+   "type_of_set_aside_code",
+   "naics2",
+   "naics6",
+   "psc1",
+   "psc_full",
+   "awarding_agency_code",
+   "awarding_sub_agency_code",
+   "awarding_office_code",
+   "performance_based_service_acquisition_code",
+   "multi_year_contract_code",
+   "cost_or_pricing_data_code",
+   "fed_biz_opps_code",
+   "primary_place_of_performance_state_code"
+  ],
+  "features_numeric": [
+   "log_base_obligation",
+   "log_base_ceiling",
+   "option_heaviness",
+   "planned_duration_days",
+   "potential_extra_duration_days",
+   "n_offers",
+   "n_offers_missing",
+   "base_fy",
+   "base_month"
+  ],
+  "n_iter": 258,
+  "train_base_rate": 0.44223544018241867,
+  "test_base_rate": 0.5024926722950122,
+  "train_crossfit": {
+   "brier": 0.16100155849653353,
+   "bss_vs_train_base_rate": 0.34728195293652087,
+   "auc": 0.8423812974459041
+  },
+  "val": {
+   "brier": 0.16529749431371332,
+   "auc": 0.8370881693590778
+  },
+  "test": {
+   "brier": 0.16378540695017113,
+   "bss_vs_train_base_rate": 0.3542214396200146,
+   "auc": 0.8379250729307788,
+   "ece": 0.022563635427203667
+  },
+  "seconds": 45.9
+ },
+ {
+  "label": "schedule_slip_gt90",
+  "horizon": 36,
+  "variant": "shape_only",
+  "n_train": 123233,
+  "n_val": 29227,
+  "n_test": 39917,
+  "features_categorical": [
+   "type_of_contract_pricing_code",
+   "extent_competed_code",
+   "solicitation_procedures_code",
+   "type_of_set_aside_code",
+   "naics2",
+   "naics6",
+   "psc1",
+   "psc_full",
+   "awarding_agency_code",
+   "performance_based_service_acquisition_code",
+   "multi_year_contract_code",
+   "cost_or_pricing_data_code",
+   "fed_biz_opps_code",
+   "primary_place_of_performance_state_code"
+  ],
+  "features_numeric": [
+   "log_base_obligation",
+   "log_base_ceiling",
+   "option_heaviness",
+   "planned_duration_days",
+   "potential_extra_duration_days",
+   "n_offers",
+   "n_offers_missing",
+   "base_fy",
+   "base_month"
+  ],
+  "n_iter": 217,
+  "train_base_rate": 0.44223544018241867,
+  "test_base_rate": 0.5024926722950122,
+  "train_crossfit": {
+   "brier": 0.1636379301264361,
+   "bss_vs_train_base_rate": 0.3365938120410361,
+   "auc": 0.8365592695261036
+  },
+  "val": {
+   "brier": 0.16618529611900648,
+   "auc": 0.8343396810198109
+  },
+  "test": {
+   "brier": 0.16459449647308638,
+   "bss_vs_train_base_rate": 0.3510313344875976,
+   "auc": 0.8356572287614018,
+   "ece": 0.025582126274562942
+  },
+  "seconds": 38.3
+ },
+ {
+  "label": "schedule_slip_gt365",
+  "horizon": 24,
+  "variant": "shape_office",
+  "n_train": 123233,
+  "n_val": 29227,
+  "n_test": 39917,
+  "features_categorical": [
+   "type_of_contract_pricing_code",
+   "extent_competed_code",
+   "solicitation_procedures_code",
+   "type_of_set_aside_code",
+   "naics2",
+   "naics6",
+   "psc1",
+   "psc_full",
+   "awarding_agency_code",
+   "awarding_sub_agency_code",
+   "awarding_office_code",
+   "performance_based_service_acquisition_code",
+   "multi_year_contract_code",
+   "cost_or_pricing_data_code",
+   "fed_biz_opps_code",
+   "primary_place_of_performance_state_code"
+  ],
+  "features_numeric": [
+   "log_base_obligation",
+   "log_base_ceiling",
+   "option_heaviness",
+   "planned_duration_days",
+   "potential_extra_duration_days",
+   "n_offers",
+   "n_offers_missing",
+   "base_fy",
+   "base_month"
+  ],
+  "n_iter": 106,
+  "train_base_rate": 0.16243214074152215,
+  "test_base_rate": 0.2065034947516096,
+  "train_crossfit": {
+   "brier": 0.08787617636278593,
+   "bss_vs_train_base_rate": 0.35407933330538943,
+   "auc": 0.8672398801857051
+  },
+  "val": {
+   "brier": 0.09713608804338722,
+   "auc": 0.8650100904616566
+  },
+  "test": {
+   "brier": 0.10561967733863843,
+   "bss_vs_train_base_rate": 0.3629773900384393,
+   "auc": 0.8600302463397298,
+   "ece": 0.020302499465370643
+  },
+  "seconds": 24.1
+ },
+ {
+  "label": "schedule_slip_gt365",
+  "horizon": 24,
+  "variant": "shape_only",
+  "n_train": 123233,
+  "n_val": 29227,
+  "n_test": 39917,
+  "features_categorical": [
+   "type_of_contract_pricing_code",
+   "extent_competed_code",
+   "solicitation_procedures_code",
+   "type_of_set_aside_code",
+   "naics2",
+   "naics6",
+   "psc1",
+   "psc_full",
+   "awarding_agency_code",
+   "performance_based_service_acquisition_code",
+   "multi_year_contract_code",
+   "cost_or_pricing_data_code",
+   "fed_biz_opps_code",
+   "primary_place_of_performance_state_code"
+  ],
+  "features_numeric": [
+   "log_base_obligation",
+   "log_base_ceiling",
+   "option_heaviness",
+   "planned_duration_days",
+   "potential_extra_duration_days",
+   "n_offers",
+   "n_offers_missing",
+   "base_fy",
+   "base_month"
+  ],
+  "n_iter": 108,
+  "train_base_rate": 0.16243214074152215,
+  "test_base_rate": 0.2065034947516096,
+  "train_crossfit": {
+   "brier": 0.0888287097963028,
+   "bss_vs_train_base_rate": 0.3470778790331178,
+   "auc": 0.8609693205222159
+  },
+  "val": {
+   "brier": 0.09767844392256425,
+   "auc": 0.8618447005446763
+  },
+  "test": {
+   "brier": 0.1064487471887537,
+   "bss_vs_train_base_rate": 0.3579770316481409,
+   "auc": 0.8566558692667232,
+   "ece": 0.018005103810778415
+  },
+  "seconds": 23.8
+ },
+ {
+  "label": "schedule_slip_gt365",
+  "horizon": 36,
+  "variant": "shape_office",
+  "n_train": 123233,
+  "n_val": 29227,
+  "n_test": 39917,
+  "features_categorical": [
+   "type_of_contract_pricing_code",
+   "extent_competed_code",
+   "solicitation_procedures_code",
+   "type_of_set_aside_code",
+   "naics2",
+   "naics6",
+   "psc1",
+   "psc_full",
+   "awarding_agency_code",
+   "awarding_sub_agency_code",
+   "awarding_office_code",
+   "performance_based_service_acquisition_code",
+   "multi_year_contract_code",
+   "cost_or_pricing_data_code",
+   "fed_biz_opps_code",
+   "primary_place_of_performance_state_code"
+  ],
+  "features_numeric": [
+   "log_base_obligation",
+   "log_base_ceiling",
+   "option_heaviness",
+   "planned_duration_days",
+   "potential_extra_duration_days",
+   "n_offers",
+   "n_offers_missing",
+   "base_fy",
+   "base_month"
+  ],
+  "n_iter": 133,
+  "train_base_rate": 0.22394163900903166,
+  "test_base_rate": 0.2814840794648896,
+  "train_crossfit": {
+   "brier": 0.1091675944579649,
+   "bss_vs_train_base_rate": 0.3718483484983003,
+   "auc": 0.8638074296964605
+  },
+  "val": {
+   "brier": 0.12212607540146792,
+   "auc": 0.8548228438828914
+  },
+  "test": {
+   "brier": 0.12699321987736142,
+   "bss_vs_train_base_rate": 0.38221428932966794,
+   "auc": 0.8555851718680221,
+   "ece": 0.022664211587109045
+  },
+  "seconds": 30.4
+ },
+ {
+  "label": "schedule_slip_gt365",
+  "horizon": 36,
+  "variant": "shape_only",
+  "n_train": 123233,
+  "n_val": 29227,
+  "n_test": 39917,
+  "features_categorical": [
+   "type_of_contract_pricing_code",
+   "extent_competed_code",
+   "solicitation_procedures_code",
+   "type_of_set_aside_code",
+   "naics2",
+   "naics6",
+   "psc1",
+   "psc_full",
+   "awarding_agency_code",
+   "performance_based_service_acquisition_code",
+   "multi_year_contract_code",
+   "cost_or_pricing_data_code",
+   "fed_biz_opps_code",
+   "primary_place_of_performance_state_code"
+  ],
+  "features_numeric": [
+   "log_base_obligation",
+   "log_base_ceiling",
+   "option_heaviness",
+   "planned_duration_days",
+   "potential_extra_duration_days",
+   "n_offers",
+   "n_offers_missing",
+   "base_fy",
+   "base_month"
+  ],
+  "n_iter": 189,
+  "train_base_rate": 0.22394163900903166,
+  "test_base_rate": 0.2814840794648896,
+  "train_crossfit": {
+   "brier": 0.11064925931602503,
+   "bss_vs_train_base_rate": 0.36332283108460595,
+   "auc": 0.8577845008472528
+  },
+  "val": {
+   "brier": 0.12302144911894611,
+   "auc": 0.8508564403111666
+  },
+  "test": {
+   "brier": 0.1282776041370818,
+   "bss_vs_train_base_rate": 0.3759661270779241,
+   "auc": 0.8520142089369929,
+   "ece": 0.020614315930620568
+  },
+  "seconds": 39.7
+ }
+]

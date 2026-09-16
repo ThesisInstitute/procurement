@@ -1,0 +1,14 @@
+[2026-09-16T08:54:20] panel 192377, competed with >=2 offers 85991, relative size defined on 155111
+[2026-09-16T08:54:34] schedule_slip_gt90 24: fitted with 23 features, iter=204
+[2026-09-16T08:54:52] schedule_slip_gt90 24: fitted with 26 features, iter=262
+[2026-09-16T08:54:52] schedule_slip_gt90 24: auc no-offers=0.8677 shape=0.8666 +rel=0.8670
+[2026-09-16T08:55:24] schedule_slip_gt90 36: fitted with 23 features, iter=267
+[2026-09-16T08:55:42] schedule_slip_gt90 36: fitted with 26 features, iter=226
+[2026-09-16T08:55:42] schedule_slip_gt90 36: auc no-offers=0.8692 shape=0.8702 +rel=0.8709
+[2026-09-16T08:55:53] schedule_slip_gt365 24: fitted with 23 features, iter=106
+[2026-09-16T08:56:03] schedule_slip_gt365 24: fitted with 26 features, iter=123
+[2026-09-16T08:56:03] schedule_slip_gt365 24: auc no-offers=0.8763 shape=0.8763 +rel=0.8759
+[2026-09-16T08:56:14] schedule_slip_gt365 36: fitted with 23 features, iter=160
+[2026-09-16T08:56:24] schedule_slip_gt365 36: fitted with 26 features, iter=160
+[2026-09-16T08:56:24] schedule_slip_gt365 36: auc no-offers=0.8620 shape=0.8606 +rel=0.8613
+[2026-09-16T08:56:24] done in 124s

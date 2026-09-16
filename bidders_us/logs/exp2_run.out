@@ -1,0 +1,46 @@
+[2026-09-16T10:20:58] vehicle map: {'orders': 798977, 'orders_with_parent': 798975, 'orders_parent_matched_to_idv_record': 789884, 'orders_in_sibling_set': 195604}
+[2026-09-16T10:20:58] orders panel 798977, orders history 807073, definitive-contract history 449472
+[2026-09-16T10:21:08] eligible vehicles 81: {'vehicle_definition': 'program of sibling IDV contracts sharing a solicitation (vehicle_map.py); the parent PIID where no sibling set is known', 'vehicle_map': {'orders': 798977, 'orders_with_parent': 798975, 'orders_parent_matched_to_idv_record': 789884, 'orders_in_sibling_set': 195604}, 'orders_in_panel': 798977, 'orders_with_vehicle': 798975, 'orders_with_identified_holder': 794865, 'distinct_vehicles_in_panel': 82868, 'rule': {'min_train_orders': 30, 'min_train_holders': 3, 'min_test_orders': 10, 'referenced_idv_flag': 'M'}, 'vehicles_passing_count_rule': 81, 'vehicles_passing_count_rule_not_flagged_multiple': 0, 'not_flagged_multiple_flag_counts': {}, 'eligible_vehicles': 81, 'eligible_train_orders': 33143, 'eligible_test_orders': 21605, 'eligible_train_holders_median': 21.0, 'eligible_holders_all_sizes_train_median': 57.0, 'parent_type_counts': {'B': 40, 'C': 36, 'A': 5}, 'single_or_multiple_counts': {'M': 81}, 'all_sizes_note': 'orders_all_sizes_train counts base-action ROWS in the archive; a base action reported in several transaction rows is counted once per row', 'train_holders_distribution': {'count': 81.0, 'mean': 58.666666666666664, 'std': 96.80560417661779, 'min': 3.0, '25%': 7.0, '50%': 21.0, '75%': 62.0, 'max': 526.0}}
+[2026-09-16T10:21:34] schedule_slip_gt90_12: history added; hv_rate defined on 0.573 of orders, ha_rate on 0.853, v_rate on 0.611
+[2026-09-16T10:21:54] schedule_slip_gt90_12 a_shape: auc=0.8557 within=0.8572 bss_veh=0.3028 iter=267 (19s)
+[2026-09-16T10:22:11] schedule_slip_gt90_12 b_shape_holder_vehicle: auc=0.8578 within=0.8583 bss_veh=0.3063 iter=261 (17s)
+[2026-09-16T10:22:29] schedule_slip_gt90_12 c_shape_holder_all: auc=0.8557 within=0.8565 bss_veh=0.3032 iter=257 (17s)
+[2026-09-16T10:22:39] schedule_slip_gt90_12 d_shape_vehicle: auc=0.8570 within=0.8572 bss_veh=0.3042 iter=300 (10s)
+[2026-09-16T10:23:21] schedule_slip_gt90_12 e_shape_all_history: auc=0.8575 within=0.8577 bss_veh=0.3053 iter=238 (41s)
+[2026-09-16T10:23:32] schedule_slip_gt90_12: holder spearman weighted=0.2270 null=0.0188; gaps n=61 oracle mean=0.434 recovered mean=0.051
+[2026-09-16T10:23:58] schedule_slip_gt90_24: history added; hv_rate defined on 0.377 of orders, ha_rate on 0.752, v_rate on 0.414
+[2026-09-16T10:24:08] schedule_slip_gt90_24 a_shape: auc=0.8893 within=0.8787 bss_veh=0.4079 iter=300 (9s)
+[2026-09-16T10:24:23] schedule_slip_gt90_24 b_shape_holder_vehicle: auc=0.8909 within=0.8794 bss_veh=0.4111 iter=300 (15s)
+[2026-09-16T10:24:48] schedule_slip_gt90_24 c_shape_holder_all: auc=0.8909 within=0.8809 bss_veh=0.4122 iter=300 (24s)
+[2026-09-16T10:25:34] schedule_slip_gt90_24 d_shape_vehicle: auc=0.8892 within=0.8774 bss_veh=0.4066 iter=299 (46s)
+[2026-09-16T10:26:22] schedule_slip_gt90_24 e_shape_all_history: auc=0.8907 within=0.8811 bss_veh=0.4111 iter=299 (47s)
+[2026-09-16T10:26:32] schedule_slip_gt90_24: holder spearman weighted=0.2431 null=0.0162; gaps n=61 oracle mean=0.446 recovered mean=0.030
+[2026-09-16T10:26:58] schedule_slip_gt90_36: history added; hv_rate defined on 0.237 of orders, ha_rate on 0.659, v_rate on 0.271
+[2026-09-16T10:27:29] schedule_slip_gt90_36 a_shape: auc=0.8907 within=0.8773 bss_veh=0.4061 iter=298 (30s)
+[2026-09-16T10:27:40] schedule_slip_gt90_36 b_shape_holder_vehicle: auc=0.8908 within=0.8797 bss_veh=0.4059 iter=300 (10s)
+[2026-09-16T10:27:58] schedule_slip_gt90_36 c_shape_holder_all: auc=0.8907 within=0.8771 bss_veh=0.4060 iter=299 (18s)
+[2026-09-16T10:28:17] schedule_slip_gt90_36 d_shape_vehicle: auc=0.8910 within=0.8770 bss_veh=0.4053 iter=293 (19s)
+[2026-09-16T10:28:35] schedule_slip_gt90_36 e_shape_all_history: auc=0.8914 within=0.8795 bss_veh=0.4077 iter=299 (18s)
+[2026-09-16T10:28:44] schedule_slip_gt90_36: holder spearman weighted=0.2573 null=0.0091; gaps n=61 oracle mean=0.454 recovered mean=0.058
+[2026-09-16T10:29:09] schedule_slip_gt365_12: history added; hv_rate defined on 0.573 of orders, ha_rate on 0.853, v_rate on 0.611
+[2026-09-16T10:29:25] schedule_slip_gt365_12 a_shape: auc=0.8429 within=0.8476 bss_veh=0.0622 iter=66 (16s)
+[2026-09-16T10:29:56] schedule_slip_gt365_12 b_shape_holder_vehicle: auc=0.8432 within=0.8494 bss_veh=0.0602 iter=65 (30s)
+[2026-09-16T10:30:14] schedule_slip_gt365_12 c_shape_holder_all: auc=0.8436 within=0.8494 bss_veh=0.0606 iter=77 (18s)
+[2026-09-16T10:30:28] schedule_slip_gt365_12 d_shape_vehicle: auc=0.8411 within=0.8465 bss_veh=0.0602 iter=71 (14s)
+[2026-09-16T10:30:42] schedule_slip_gt365_12 e_shape_all_history: auc=0.8447 within=0.8505 bss_veh=0.0620 iter=74 (13s)
+[2026-09-16T10:30:51] schedule_slip_gt365_12: holder spearman weighted=0.0620 null=0.0543; gaps n=61 oracle mean=0.132 recovered mean=0.027
+[2026-09-16T10:31:16] schedule_slip_gt365_24: history added; hv_rate defined on 0.377 of orders, ha_rate on 0.752, v_rate on 0.414
+[2026-09-16T10:31:42] schedule_slip_gt365_24 a_shape: auc=0.9074 within=0.9193 bss_veh=0.4213 iter=183 (25s)
+[2026-09-16T10:31:59] schedule_slip_gt365_24 b_shape_holder_vehicle: auc=0.9069 within=0.9194 bss_veh=0.4204 iter=182 (16s)
+[2026-09-16T10:32:14] schedule_slip_gt365_24 c_shape_holder_all: auc=0.9069 within=0.9191 bss_veh=0.4189 iter=136 (15s)
+[2026-09-16T10:32:30] schedule_slip_gt365_24 d_shape_vehicle: auc=0.9067 within=0.9188 bss_veh=0.4191 iter=161 (16s)
+[2026-09-16T10:32:46] schedule_slip_gt365_24 e_shape_all_history: auc=0.9072 within=0.9195 bss_veh=0.4212 iter=160 (15s)
+[2026-09-16T10:32:55] schedule_slip_gt365_24: holder spearman weighted=0.1180 null=0.0097; gaps n=61 oracle mean=0.343 recovered mean=0.037
+[2026-09-16T10:33:19] schedule_slip_gt365_36: history added; hv_rate defined on 0.237 of orders, ha_rate on 0.659, v_rate on 0.271
+[2026-09-16T10:33:30] schedule_slip_gt365_36 a_shape: auc=0.9314 within=0.9344 bss_veh=0.5352 iter=300 (10s)
+[2026-09-16T10:33:40] schedule_slip_gt365_36 b_shape_holder_vehicle: auc=0.9310 within=0.9353 bss_veh=0.5349 iter=300 (10s)
+[2026-09-16T10:34:00] schedule_slip_gt365_36 c_shape_holder_all: auc=0.9305 within=0.9343 bss_veh=0.5329 iter=299 (19s)
+[2026-09-16T10:34:10] schedule_slip_gt365_36 d_shape_vehicle: auc=0.9309 within=0.9341 bss_veh=0.5337 iter=300 (9s)
+[2026-09-16T10:34:29] schedule_slip_gt365_36 e_shape_all_history: auc=0.9308 within=0.9355 bss_veh=0.5337 iter=271 (18s)
+[2026-09-16T10:34:38] schedule_slip_gt365_36: holder spearman weighted=0.1933 null=0.0122; gaps n=61 oracle mean=0.419 recovered mean=0.058
+[2026-09-16T10:34:38] done in 821s

@@ -1,0 +1,30 @@
+[2026-09-16T08:46:07] FY2010 parquet already present, reusing
+[2026-09-16T08:46:07] FY2011 parquet already present, reusing
+[2026-09-16T08:46:07] FY2012 parquet already present, reusing
+[2026-09-16T08:46:07] FY2013 parquet already present, reusing
+[2026-09-16T08:46:07] FY2014 parquet already present, reusing
+[2026-09-16T08:46:07] FY2015 parquet already present, reusing
+[2026-09-16T08:46:07] FY2016 parquet already present, reusing
+[2026-09-16T08:46:07] FY2017 parquet already present, reusing
+[2026-09-16T08:46:07] FY2018 parquet already present, reusing
+[2026-09-16T08:46:07] FY2019 parquet already present, reusing
+[2026-09-16T08:46:07] FY2020 parquet already present, reusing
+[2026-09-16T08:46:08] FY2021 url=https://files.usaspending.gov/award_data_archive/FY2021_All_Contracts_Full_20260906.zip size=1951348561
+[2026-09-16T08:46:08] FY2021 already complete at /Users/maxghenis/ThesisInstitute/procurement/data/raw/bidders_us/zips/FY2021_All_Contracts_Full.zip
+[2026-09-16T08:46:08] FY2021 kept-order set from earlier years: 678375
+[2026-09-16T08:46:08] FY2021 archive members ['FY2021_All_Contracts_Full_20260906_1.csv', 'FY2021_All_Contracts_Full_20260906_2.csv', 'FY2021_All_Contracts_Full_20260906_3.csv', 'FY2021_All_Contracts_Full_20260906_4.csv', 'FY2021_All_Contracts_Full_20260906_5.csv', 'FY2021_All_Contracts_Full_20260906_6.csv', 'FY2021_All_Contracts_Full_20260906_7.csv']
+[2026-09-16T08:46:34] FY2021 scanned 2000000 rows
+[2026-09-16T08:46:43] FY2022 DOWNLOAD ERROR attempt 1/8: could not size https://files.usaspending.gov/award_data_archive/FY2022_All_Contracts_Full_20260906.zip
+[2026-09-16T08:46:58] FY2021 scanned 4000000 rows
+[2026-09-16T08:47:14] FY2022 DOWNLOAD ERROR attempt 2/8: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[2026-09-16T08:47:23] FY2021 scanned 6000000 rows
+[2026-09-16T08:47:36] FY2021 {"archive_rows_all_types": 6405488, "rows_type_C": 4309560, "archive_members": ["FY2021_All_Contracts_Full_20260906_1.csv", "FY2021_All_Contracts_Full_20260906_2.csv", "FY2021_All_Contracts_Full_20260906_3.csv", "FY2021_All_Contracts_Full_20260906_4.csv", "FY2021_All_Contracts_Full_20260906_5.csv", "FY2021_All_Contracts_Full_20260906_6.csv", "FY2021_All_Contracts_Full_20260906_7.csv"], "base_actions": 3797785, "base_actions_at_or_above_threshold": 63057, "base_actions_with_parent": 3797783, "distinct_vehicles_all_sizes": 66809, "fiscal_year": 2021, "new_orders_kept_this_year": 62932, "rows_kept": 274240, "rows_kept_base": 63170, "parquet_bytes": 19095065, "seconds_parse": 87.8}
+[2026-09-16T08:47:36] FY2021 zip deleted
+[2026-09-16T08:48:15] FY2022 DOWNLOAD ERROR attempt 3/8: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[2026-09-16T08:49:45] FY2022 DOWNLOAD ERROR attempt 4/8: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[2026-09-16T08:51:45] FY2022 DOWNLOAD ERROR attempt 5/8: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[2026-09-16T08:54:16] FY2022 DOWNLOAD ERROR attempt 6/8: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[2026-09-16T08:57:16] FY2022 DOWNLOAD ERROR attempt 7/8: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[2026-09-16T09:00:17] FY2022 DOWNLOAD ERROR attempt 8/8: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[2026-09-16T09:03:17] FY2022 skipped after download error; stopping so later years are not parsed without this year's kept orders
+[2026-09-16T09:03:17] FY2023 DOWNLOAD ERROR attempt 1/8: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))

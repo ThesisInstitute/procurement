@@ -1,0 +1,3 @@
+[2026-09-16T10:13:47] IDV actions 4365564 from 22 files
+[2026-09-16T10:20:55] IDVs 838888; flag M 293188; usable solicitation 391043; in sibling set 145502
+[2026-09-16T10:20:56] -> /Users/maxghenis/ThesisInstitute/procurement/data/raw/bidders_us/vehicle_map.parquet; {"orders": 798977, "orders_with_parent": 798975, "orders_parent_matched_to_idv_record": 789884, "orders_in_sibling_set": 195604}

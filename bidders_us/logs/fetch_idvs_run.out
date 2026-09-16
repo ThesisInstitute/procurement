@@ -1,0 +1,179 @@
+[2026-09-16T10:02:31] FY2006 IDV 2005-10-01..2006-09-30 job All_PrimeTransactions_2026-09-16_H14M02S31267488.zip
+[2026-09-16T10:02:31] FY2007 IDV 2006-10-01..2007-09-30 job All_PrimeTransactions_2026-09-16_H14M02S31373365.zip
+[2026-09-16T10:02:31] FY2008 IDV 2007-10-01..2008-09-30 job All_PrimeTransactions_2026-09-16_H14M02S31330372.zip
+[2026-09-16T10:02:32] FY2007 running rows=0 t=0s
+[2026-09-16T10:03:03] FY2007 running rows=0 t=32s
+[2026-09-16T10:03:08] FY2005 IDV 2004-10-01..2005-09-30 job All_PrimeTransactions_2026-09-16_H14M03S08856958.zip
+[2026-09-16T10:03:09] FY2006 running rows=0 t=38s
+[2026-09-16T10:03:09] FY2005 running rows=0 t=0s
+[2026-09-16T10:03:39] FY2006 running rows=0 t=68s
+[2026-09-16T10:03:39] FY2005 running rows=0 t=31s
+[2026-09-16T10:04:09] FY2007 running rows=0 t=98s
+[2026-09-16T10:04:10] FY2005 running rows=0 t=61s
+[2026-09-16T10:04:10] FY2006 running rows=0 t=99s
+[2026-09-16T10:04:10] FY2008 finished rows=117978 size=None sec=84.735182
+[2026-09-16T10:04:13] downloaded idv_FY2008_0.zip 7927771 bytes
+[2026-09-16T10:04:13] FY2008 IDV zip members ['All_Contracts_PrimeTransactions_2026-09-16_H14M02S32_1.csv']
+[2026-09-16T10:04:13] FY2008 IDV parquet rows=117978 idvs=71615 missing=[]
+[2026-09-16T10:04:14] FY2009 IDV 2008-10-01..2009-09-30 job All_PrimeTransactions_2026-09-16_H14M04S14855747.zip
+[2026-09-16T10:04:17] FY2009 running rows=0 t=3s
+[2026-09-16T10:04:40] FY2007 running rows=0 t=128s
+[2026-09-16T10:04:48] FY2009 running rows=0 t=33s
+[2026-09-16T10:05:10] FY2007 running rows=0 t=159s
+[2026-09-16T10:05:18] FY2005 running rows=0 t=129s
+[2026-09-16T10:05:18] FY2006 running rows=0 t=167s
+[2026-09-16T10:05:18] FY2009 running rows=0 t=64s
+[2026-09-16T10:05:40] FY2007 running rows=0 t=189s
+[2026-09-16T10:05:48] FY2006 running rows=0 t=197s
+[2026-09-16T10:05:50] FY2009 running rows=0 t=96s
+[2026-09-16T10:05:53] FY2005 running rows=0 t=164s
+[2026-09-16T10:06:11] FY2007 running rows=0 t=219s
+[2026-09-16T10:06:19] FY2006 running rows=81754 t=228s
+[2026-09-16T10:06:21] FY2009 running rows=0 t=126s
+[2026-09-16T10:06:23] FY2005 finished rows=82727 size=None sec=178.043512
+[2026-09-16T10:06:25] downloaded idv_FY2005_0.zip 5335097 bytes
+[2026-09-16T10:06:25] FY2005 IDV zip members ['All_Contracts_PrimeTransactions_2026-09-16_H14M03S09_1.csv']
+[2026-09-16T10:06:25] FY2005 IDV parquet rows=82727 idvs=62962 missing=[]
+[2026-09-16T10:06:27] FY2010 IDV 2009-10-01..2010-09-30 job All_PrimeTransactions_2026-09-16_H14M06S27339999.zip
+[2026-09-16T10:06:27] FY2010 running rows=0 t=0s
+[2026-09-16T10:06:41] FY2007 finished rows=108770 size=None sec=224.686926
+[2026-09-16T10:06:43] downloaded idv_FY2007_0.zip 7638582 bytes
+[2026-09-16T10:06:43] FY2007 IDV zip members ['All_Contracts_PrimeTransactions_2026-09-16_H14M02S32_1.csv']
+[2026-09-16T10:06:44] FY2007 IDV parquet rows=108770 idvs=65109 missing=[]
+[2026-09-16T10:06:45] FY2011 IDV 2010-10-01..2011-09-30 job All_PrimeTransactions_2026-09-16_H14M06S45628795.zip
+[2026-09-16T10:06:48] FY2011 running rows=0 t=2s
+[2026-09-16T10:06:49] FY2006 finished rows=81754 size=None sec=228.886392
+[2026-09-16T10:06:51] downloaded idv_FY2006_0.zip 5604777 bytes
+[2026-09-16T10:06:51] FY2006 IDV zip members ['All_Contracts_PrimeTransactions_2026-09-16_H14M02S32_1.csv']
+[2026-09-16T10:06:51] FY2009 running rows=0 t=157s
+[2026-09-16T10:06:51] FY2006 IDV parquet rows=81754 idvs=56565 missing=[]
+[2026-09-16T10:06:53] FY2012 IDV 2011-10-01..2012-09-30 job All_PrimeTransactions_2026-09-16_H14M06S53095994.zip
+[2026-09-16T10:06:53] FY2012 running rows=0 t=0s
+[2026-09-16T10:06:58] FY2010 running rows=177342 t=31s
+[2026-09-16T10:07:18] FY2011 running rows=0 t=33s
+[2026-09-16T10:07:21] FY2009 finished rows=155253 size=None sec=175.338851
+[2026-09-16T10:07:24] downloaded idv_FY2009_0.zip 10341059 bytes
+[2026-09-16T10:07:24] FY2009 IDV zip members ['All_Contracts_PrimeTransactions_2026-09-16_H14M04S15_1.csv']
+[2026-09-16T10:07:24] FY2009 IDV parquet rows=155253 idvs=83177 missing=[]
+[2026-09-16T10:07:26] FY2012 running rows=0 t=33s
+[2026-09-16T10:07:28] FY2010 finished rows=177342 size=None sec=31.538555
+[2026-09-16T10:07:29] FY2013 IDV 2012-10-01..2013-09-30 job All_PrimeTransactions_2026-09-16_H14M07S28929618.zip
+[2026-09-16T10:07:30] FY2013 running rows=0 t=2s
+[2026-09-16T10:07:30] downloaded idv_FY2010_0.zip 11683266 bytes
+[2026-09-16T10:07:30] FY2010 IDV zip members ['All_Contracts_PrimeTransactions_2026-09-16_H14M06S27_1.csv']
+[2026-09-16T10:07:31] FY2010 IDV parquet rows=177342 idvs=88380 missing=[]
+[2026-09-16T10:07:33] FY2014 IDV 2013-10-01..2014-09-30 job All_PrimeTransactions_2026-09-16_H14M07S33117829.zip
+[2026-09-16T10:07:33] FY2014 running rows=0 t=1s
+[2026-09-16T10:07:50] FY2011 running rows=0 t=65s
+[2026-09-16T10:07:58] FY2012 running rows=0 t=66s
+[2026-09-16T10:08:01] FY2013 running rows=0 t=32s
+[2026-09-16T10:08:04] FY2014 running rows=0 t=31s
+[2026-09-16T10:08:20] FY2011 running rows=0 t=95s
+[2026-09-16T10:08:29] FY2012 running rows=0 t=96s
+[2026-09-16T10:08:31] FY2013 running rows=0 t=63s
+[2026-09-16T10:08:34] FY2014 running rows=0 t=62s
+[2026-09-16T10:08:51] FY2011 finished rows=186592 size=None sec=121.43945
+[2026-09-16T10:08:53] downloaded idv_FY2011_0.zip 13093563 bytes
+[2026-09-16T10:08:53] FY2011 IDV zip members ['All_Contracts_PrimeTransactions_2026-09-16_H14M06S45_1.csv']
+[2026-09-16T10:08:54] FY2011 IDV parquet rows=186592 idvs=92921 missing=[]
+[2026-09-16T10:08:55] FY2015 IDV 2014-10-01..2015-09-30 job All_PrimeTransactions_2026-09-16_H14M08S55707042.zip
+[2026-09-16T10:08:56] FY2015 running rows=0 t=0s
+[2026-09-16T10:08:59] FY2012 finished rows=186580 size=None sec=111.482341
+[2026-09-16T10:09:01] downloaded idv_FY2012_0.zip 13114433 bytes
+[2026-09-16T10:09:01] FY2012 IDV zip members ['All_Contracts_PrimeTransactions_2026-09-16_H14M06S53_1.csv']
+[2026-09-16T10:09:02] FY2012 IDV parquet rows=186580 idvs=93632 missing=[]
+[2026-09-16T10:09:04] FY2016 IDV 2015-10-01..2016-09-30 job All_PrimeTransactions_2026-09-16_H14M09S03904888.zip
+[2026-09-16T10:09:04] FY2016 running rows=0 t=0s
+[2026-09-16T10:09:04] FY2013 finished rows=204967 size=None sec=91.894388
+[2026-09-16T10:09:05] FY2014 running rows=204159 t=92s
+[2026-09-16T10:09:07] downloaded idv_FY2013_0.zip 14228120 bytes
+[2026-09-16T10:09:07] FY2013 IDV zip members ['All_Contracts_PrimeTransactions_2026-09-16_H14M07S29_1.csv']
+[2026-09-16T10:09:07] FY2013 IDV parquet rows=204967 idvs=101799 missing=[]
+[2026-09-16T10:09:10] FY2017 IDV 2016-10-01..2017-09-30 job All_PrimeTransactions_2026-09-16_H14M09S09383826.zip
+[2026-09-16T10:09:10] FY2017 running rows=0 t=0s
+[2026-09-16T10:09:26] FY2015 running rows=0 t=31s
+[2026-09-16T10:09:36] FY2014 finished rows=204159 size=None sec=92.708353
+[2026-09-16T10:09:39] downloaded idv_FY2014_0.zip 14352795 bytes
+[2026-09-16T10:09:39] FY2014 IDV zip members ['All_Contracts_PrimeTransactions_2026-09-16_H14M07S33_1.csv']
+[2026-09-16T10:09:40] FY2014 IDV parquet rows=204159 idvs=102365 missing=[]
+[2026-09-16T10:09:40] FY2017 running rows=0 t=31s
+[2026-09-16T10:09:42] FY2018 IDV 2017-10-01..2018-09-30 job All_PrimeTransactions_2026-09-16_H14M09S41679152.zip
+[2026-09-16T10:09:44] FY2018 running rows=0 t=1s
+[2026-09-16T10:09:52] FY2016 finished rows=207319 size=None sec=46.712517
+[2026-09-16T10:09:55] downloaded idv_FY2016_0.zip 13946900 bytes
+[2026-09-16T10:09:55] FY2016 IDV zip members ['All_Contracts_PrimeTransactions_2026-09-16_H14M09S04_1.csv']
+[2026-09-16T10:09:56] FY2016 IDV parquet rows=207319 idvs=100649 missing=[]
+[2026-09-16T10:09:56] FY2015 finished rows=204704 size=None sec=51.6093
+[2026-09-16T10:09:57] FY2019 IDV 2018-10-01..2019-09-30 job All_PrimeTransactions_2026-09-16_H14M09S57665654.zip
+[2026-09-16T10:09:58] FY2019 running rows=0 t=1s
+[2026-09-16T10:09:59] downloaded idv_FY2015_0.zip 13493630 bytes
+[2026-09-16T10:09:59] FY2015 IDV zip members ['All_Contracts_PrimeTransactions_2026-09-16_H14M08S56_1.csv']
+[2026-09-16T10:10:00] FY2015 IDV parquet rows=204704 idvs=101205 missing=[]
+[2026-09-16T10:10:01] FY2020 IDV 2019-10-01..2020-09-30 job All_PrimeTransactions_2026-09-16_H14M10S01598558.zip
+[2026-09-16T10:10:03] FY2020 running rows=0 t=2s
+[2026-09-16T10:10:11] FY2017 finished rows=207107 size=None sec=42.249361
+[2026-09-16T10:10:14] FY2018 running rows=222099 t=32s
+[2026-09-16T10:10:15] downloaded idv_FY2017_0.zip 13890054 bytes
+[2026-09-16T10:10:15] FY2017 IDV zip members ['All_Contracts_PrimeTransactions_2026-09-16_H14M09S10_1.csv']
+[2026-09-16T10:10:16] FY2017 IDV parquet rows=207107 idvs=102189 missing=[]
+[2026-09-16T10:10:17] FY2021 IDV 2020-10-01..2021-09-30 job All_PrimeTransactions_2026-09-16_H14M10S17350893.zip
+[2026-09-16T10:10:17] FY2021 running rows=0 t=0s
+[2026-09-16T10:10:29] FY2019 running rows=0 t=31s
+[2026-09-16T10:10:33] FY2020 running rows=0 t=32s
+[2026-09-16T10:10:46] FY2018 finished rows=222099 size=None sec=38.255455
+[2026-09-16T10:10:48] FY2021 running rows=228754 t=31s
+[2026-09-16T10:10:49] downloaded idv_FY2018_0.zip 14722755 bytes
+[2026-09-16T10:10:49] FY2018 IDV zip members ['All_Contracts_PrimeTransactions_2026-09-16_H14M09S43_1.csv']
+[2026-09-16T10:10:50] FY2018 IDV parquet rows=222099 idvs=98017 missing=[]
+[2026-09-16T10:10:51] FY2022 IDV 2021-10-01..2022-09-30 job All_PrimeTransactions_2026-09-16_H14M10S51715397.zip
+[2026-09-16T10:10:52] FY2022 running rows=0 t=0s
+[2026-09-16T10:11:03] FY2020 running rows=266972 t=62s
+[2026-09-16T10:11:04] FY2019 running rows=201776 t=66s
+[2026-09-16T10:11:20] FY2021 finished rows=228754 size=None sec=36.936047
+[2026-09-16T10:11:22] FY2022 running rows=0 t=31s
+[2026-09-16T10:11:23] downloaded idv_FY2021_0.zip 15209620 bytes
+[2026-09-16T10:11:23] FY2021 IDV zip members ['All_Contracts_PrimeTransactions_2026-09-16_H14M10S17_1.csv']
+[2026-09-16T10:11:24] FY2021 IDV parquet rows=228754 idvs=110910 missing=[]
+[2026-09-16T10:11:28] FY2023 IDV 2022-10-01..2023-09-30 job All_PrimeTransactions_2026-09-16_H14M11S27959202.zip
+[2026-09-16T10:11:29] FY2023 running rows=0 t=1s
+[2026-09-16T10:11:34] FY2020 finished rows=266972 size=None sec=64.071551
+[2026-09-16T10:11:35] FY2019 finished rows=201776 size=None sec=68.364493
+[2026-09-16T10:11:37] downloaded idv_FY2020_0.zip 17541400 bytes
+[2026-09-16T10:11:37] FY2020 IDV zip members ['All_Contracts_PrimeTransactions_2026-09-16_H14M10S02_1.csv']
+[2026-09-16T10:11:38] downloaded idv_FY2019_0.zip 13350332 bytes
+[2026-09-16T10:11:38] FY2019 IDV zip members ['All_Contracts_PrimeTransactions_2026-09-16_H14M09S58_1.csv']
+[2026-09-16T10:11:38] FY2020 IDV parquet rows=266972 idvs=110268 missing=[]
+[2026-09-16T10:11:38] FY2019 IDV parquet rows=201776 idvs=97364 missing=[]
+[2026-09-16T10:11:39] FY2024 IDV 2023-10-01..2024-09-30 job All_PrimeTransactions_2026-09-16_H14M11S39657388.zip
+[2026-09-16T10:11:41] FY2025 IDV 2024-10-01..2025-09-30 job All_PrimeTransactions_2026-09-16_H14M11S40747377.zip
+[2026-09-16T10:11:41] FY2025 running rows=0 t=0s
+[2026-09-16T10:11:43] FY2024 running rows=0 t=3s
+[2026-09-16T10:11:53] FY2022 finished rows=252733 size=None sec=52.787124
+[2026-09-16T10:11:56] downloaded idv_FY2022_0.zip 16971150 bytes
+[2026-09-16T10:11:56] FY2022 IDV zip members ['All_Contracts_PrimeTransactions_2026-09-16_H14M10S52_1.csv']
+[2026-09-16T10:11:57] FY2022 IDV parquet rows=252733 idvs=106031 missing=[]
+[2026-09-16T10:12:01] FY2023 running rows=0 t=33s
+[2026-09-16T10:12:01] FY2026 IDV 2025-10-01..2026-09-30 job All_PrimeTransactions_2026-09-16_H14M12S00577410.zip
+[2026-09-16T10:12:01] FY2026 running rows=0 t=0s
+[2026-09-16T10:12:13] FY2025 running rows=0 t=32s
+[2026-09-16T10:12:17] FY2024 running rows=0 t=38s
+[2026-09-16T10:12:31] FY2023 finished rows=244608 size=None sec=49.233879
+[2026-09-16T10:12:32] FY2026 running rows=0 t=31s
+[2026-09-16T10:12:34] downloaded idv_FY2023_0.zip 16476958 bytes
+[2026-09-16T10:12:34] FY2023 IDV zip members ['All_Contracts_PrimeTransactions_2026-09-16_H14M11S28_1.csv']
+[2026-09-16T10:12:35] FY2023 IDV parquet rows=244608 idvs=107531 missing=[]
+[2026-09-16T10:12:43] FY2025 running rows=311919 t=62s
+[2026-09-16T10:12:48] FY2024 finished rows=260985 size=None sec=59.122078
+[2026-09-16T10:12:50] downloaded idv_FY2024_0.zip 17281072 bytes
+[2026-09-16T10:12:50] FY2024 IDV zip members ['All_Contracts_PrimeTransactions_2026-09-16_H14M11S40_1.csv']
+[2026-09-16T10:12:52] FY2024 IDV parquet rows=260985 idvs=105440 missing=[]
+[2026-09-16T10:13:02] FY2026 running rows=0 t=61s
+[2026-09-16T10:13:13] FY2025 finished rows=311919 size=None sec=70.408777
+[2026-09-16T10:13:16] downloaded idv_FY2025_0.zip 20043821 bytes
+[2026-09-16T10:13:16] FY2025 IDV zip members ['All_Contracts_PrimeTransactions_2026-09-16_H14M11S41_1.csv']
+[2026-09-16T10:13:18] FY2025 IDV parquet rows=311919 idvs=111710 missing=[]
+[2026-09-16T10:13:32] FY2026 finished rows=250466 size=None sec=73.46596
+[2026-09-16T10:13:35] downloaded idv_FY2026_0.zip 15945637 bytes
+[2026-09-16T10:13:35] FY2026 IDV zip members ['All_Contracts_PrimeTransactions_2026-09-16_H14M12S01_1.csv']
+[2026-09-16T10:13:36] FY2026 IDV parquet rows=250466 idvs=97960 missing=[]
+[2026-09-16T10:13:36] done in 667s; failed=[]

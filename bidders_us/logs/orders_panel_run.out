@@ -1,0 +1,34 @@
+[2026-09-16T09:56:19] fiscal years loaded: [2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026]
+[2026-09-16T09:56:19] loaded orders_C_FY2010.parquet rows=120781
+[2026-09-16T09:56:19] loaded orders_C_FY2011.parquet rows=186214
+[2026-09-16T09:56:19] loaded orders_C_FY2012.parquet rows=206792
+[2026-09-16T09:56:19] loaded orders_C_FY2013.parquet rows=210871
+[2026-09-16T09:56:19] loaded orders_C_FY2014.parquet rows=216510
+[2026-09-16T09:56:19] loaded orders_C_FY2015.parquet rows=224544
+[2026-09-16T09:56:19] loaded orders_C_FY2016.parquet rows=227674
+[2026-09-16T09:56:20] loaded orders_C_FY2017.parquet rows=237984
+[2026-09-16T09:56:20] loaded orders_C_FY2018.parquet rows=247364
+[2026-09-16T09:56:20] loaded orders_C_FY2019.parquet rows=250129
+[2026-09-16T09:56:20] loaded orders_C_FY2020.parquet rows=268660
+[2026-09-16T09:56:20] loaded orders_C_FY2021.parquet rows=274240
+[2026-09-16T09:56:20] loaded orders_C_FY2022.parquet rows=278439
+[2026-09-16T09:56:20] loaded orders_C_FY2023.parquet rows=282429
+[2026-09-16T09:56:20] loaded orders_C_FY2024.parquet rows=292726
+[2026-09-16T09:56:20] loaded orders_C_FY2025.parquet rows=290150
+[2026-09-16T09:56:20] loaded orders_C_FY2026.parquet rows=188366
+[2026-09-16T09:56:26] transactions after type-C and action_date filters: 4003873
+[2026-09-16T09:56:26] data end (max action_date) = 2026-09-04
+[2026-09-16T09:56:29] base rows: {"awards_type_D_total": 1053217, "awards_without_modification_number_zero": 0, "awards_with_modification_zero_that_is_not_the_first_action": 3, "awards_with_more_than_one_base_action": 8916}
+[2026-09-16T09:56:29] funnel start: one base row per type-D award: 1053217
+[2026-09-16T09:56:29] funnel award has an action with an explicit modification_number of zero: 1053217
+[2026-09-16T09:56:29] funnel that modification-zero action is the award's first action: 1053214
+[2026-09-16T09:56:29] funnel base action_date in FY2010-FY2022: 807073
+[2026-09-16T09:56:33] state at H=12: 807073 awards, 5398 terminated
+[2026-09-16T09:56:37] state at H=24: 807073 awards, 7194 terminated
+[2026-09-16T09:56:41] state at H=36: 807073 awards, 8459 terminated
+[2026-09-16T09:56:54] funnel exactly one action carries a modification_number of zero: 798984
+[2026-09-16T09:56:54] funnel base federal_action_obligation >= 250,000: 798984
+[2026-09-16T09:56:54] funnel base period_of_performance_current_end_date is not null: 798984
+[2026-09-16T09:56:54] funnel base_and_all_options_value > 0 and not null: 798977
+[2026-09-16T09:56:54] history source 807073 orders; panel 798977 orders
+[2026-09-16T09:56:57] panel -> /Users/maxghenis/ThesisInstitute/procurement/data/raw/bidders_us/orders_panel.parquet rows=798977 in 38s

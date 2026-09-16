@@ -1,0 +1,71 @@
+{
+ "idv_files": [
+  "idv_FY2005.parquet",
+  "idv_FY2006.parquet",
+  "idv_FY2007.parquet",
+  "idv_FY2008.parquet",
+  "idv_FY2009.parquet",
+  "idv_FY2010.parquet",
+  "idv_FY2011.parquet",
+  "idv_FY2012.parquet",
+  "idv_FY2013.parquet",
+  "idv_FY2014.parquet",
+  "idv_FY2015.parquet",
+  "idv_FY2016.parquet",
+  "idv_FY2017.parquet",
+  "idv_FY2018.parquet",
+  "idv_FY2019.parquet",
+  "idv_FY2020.parquet",
+  "idv_FY2021.parquet",
+  "idv_FY2022.parquet",
+  "idv_FY2023.parquet",
+  "idv_FY2024.parquet",
+  "idv_FY2025.parquet",
+  "idv_FY2026.parquet"
+ ],
+ "idv_actions": 4365564,
+ "idvs": 838888,
+ "flag_counts": {
+  "S": 495659,
+  "M": 293188,
+  "NA": 50040,
+  "A": 1
+ },
+ "idv_type_counts": {
+  "B": 501940,
+  "E": 240816,
+  "C": 60202,
+  "D": 29029,
+  "A": 6901
+ },
+ "solicitation_filled": 396878,
+ "solicitation_usable": 391043,
+ "idvs_in_sibling_set": 145502,
+ "sibling_sets": 11569,
+ "siblings_per_set": {
+  "count": 11569.0,
+  "mean": 12.576886507044689,
+  "std": 115.77730636757501,
+  "min": 2.0,
+  "25%": 2.0,
+  "50%": 4.0,
+  "75%": 6.0,
+  "max": 8888.0
+ },
+ "recipients_per_set": {
+  "count": 11569.0,
+  "mean": 11.609300717434524,
+  "std": 110.9887607698348,
+  "min": 2.0,
+  "25%": 2.0,
+  "50%": 4.0,
+  "75%": 6.0,
+  "max": 8735.0
+ },
+ "orders": {
+  "orders": 798977,
+  "orders_with_parent": 798975,
+  "orders_parent_matched_to_idv_record": 789884,
+  "orders_in_sibling_set": 195604
+ }
+}

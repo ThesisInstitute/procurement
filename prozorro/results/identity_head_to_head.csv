@@ -1,0 +1,176 @@
+split,label,subset,predictor,n,base_rate,auc,auc_within_buyer,buyers_contributing,auc_within_cpv_year,cpv_year_cells_contributing
+test 2021-2022,duration_extension,all test lots,buyer's as-of extension rate,6338,0.09482486588829284,0.641102636156055,0.4722222222222222,183,0.6187930451613759,57
+test 2021-2022,duration_extension,all test lots,winner's as-of extension rate,6338,0.09482486588829284,0.5193408406244081,0.39279155188246095,183,0.5379725438986073,57
+test 2021-2022,duration_extension,all test lots,winner's as-of win rate,6338,0.09482486588829284,0.4936569316666749,0.5169880624426079,183,0.487176767710246,57
+test 2021-2022,duration_extension,all test lots,winner's price as a share of the expected value,6338,0.09482486588829284,0.5501778309754499,0.5762167125803489,183,0.5330175859577486,57
+test 2021-2022,duration_extension,all test lots,log lot value,6338,0.09482486588829284,0.7242337954550794,0.6012396694214877,183,0.6933461046407573,57
+test 2021-2022,duration_extension,winner has 10 or more prior wins,buyer's as-of extension rate,718,0.10724233983286909,0.829446684360881,,2,,6
+test 2021-2022,duration_extension,winner has 10 or more prior wins,winner's as-of extension rate,718,0.10724233983286909,0.25622505419697306,,2,,6
+test 2021-2022,duration_extension,winner has 10 or more prior wins,winner's as-of win rate,718,0.10724233983286909,0.5322345361346922,,2,,6
+test 2021-2022,duration_extension,winner has 10 or more prior wins,winner's price as a share of the expected value,718,0.10724233983286909,0.8009603501023158,,2,,6
+test 2021-2022,duration_extension,winner has 10 or more prior wins,log lot value,718,0.10724233983286909,0.6593998824888061,,2,,6
+test 2021-2022,duration_extension,buyer has 10 or more prior lots,buyer's as-of extension rate,1072,0.15671641791044777,0.7875546512852929,0.4965923172242875,35,0.8024878640776699,37
+test 2021-2022,duration_extension,buyer has 10 or more prior lots,winner's as-of extension rate,1072,0.15671641791044777,0.43085295512010113,0.379182156133829,35,0.6020428802588996,37
+test 2021-2022,duration_extension,buyer has 10 or more prior lots,winner's as-of win rate,1072,0.15671641791044777,0.5412617203961231,0.5201363073110284,35,0.4958535598705502,37
+test 2021-2022,duration_extension,buyer has 10 or more prior lots,winner's price as a share of the expected value,1072,0.15671641791044777,0.6529017857142857,0.5991325898389095,35,0.5648260517799353,37
+test 2021-2022,duration_extension,buyer has 10 or more prior lots,log lot value,1072,0.15671641791044777,0.6773993889591234,0.619268897149938,35,0.6950849514563107,37
+test 2021-2022,days_extended_gt90,all test lots,buyer's as-of extension rate,6317,0.07725186006015514,0.5608551012602336,0.5843873517786561,166,0.5242901603001364,49
+test 2021-2022,days_extended_gt90,all test lots,winner's as-of extension rate,6317,0.07725186006015514,0.5221389870883008,0.45632411067193673,166,0.5036770975443383,49
+test 2021-2022,days_extended_gt90,all test lots,winner's as-of win rate,6317,0.07725186006015514,0.5009894352432299,0.4207509881422925,166,0.5028599647567076,49
+test 2021-2022,days_extended_gt90,all test lots,winner's price as a share of the expected value,6317,0.07725186006015514,0.5340909570294373,0.5877470355731226,166,0.5118839529331515,49
+test 2021-2022,days_extended_gt90,all test lots,log lot value,6317,0.07725186006015514,0.7424773742930345,0.5675889328063242,166,0.7407095554797636,49
+test 2021-2022,days_extended_gt90,winner has 10 or more prior wins,buyer's as-of extension rate,716,0.08798882681564246,0.50376771433433,,9,,8
+test 2021-2022,days_extended_gt90,winner has 10 or more prior wins,winner's as-of extension rate,716,0.08798882681564246,0.36074041663628187,,9,,8
+test 2021-2022,days_extended_gt90,winner has 10 or more prior wins,winner's as-of win rate,716,0.08798882681564246,0.4789980310654124,,9,,8
+test 2021-2022,days_extended_gt90,winner has 10 or more prior wins,winner's price as a share of the expected value,716,0.08798882681564246,0.6600913974574005,,9,,8
+test 2021-2022,days_extended_gt90,winner has 10 or more prior wins,log lot value,716,0.08798882681564246,0.6186586936969786,,9,,8
+test 2021-2022,days_extended_gt90,buyer has 10 or more prior lots,buyer's as-of extension rate,1067,0.1302717900656045,0.6409428491689407,0.5963325183374083,40,0.5962224383916991,29
+test 2021-2022,days_extended_gt90,buyer has 10 or more prior lots,winner's as-of extension rate,1067,0.1302717900656045,0.4663428739766807,0.447921760391198,40,0.5339656290531777,29
+test 2021-2022,days_extended_gt90,buyer has 10 or more prior lots,winner's as-of win rate,1067,0.1302717900656045,0.5114619511287521,0.4080684596577017,40,0.488245784695201,29
+test 2021-2022,days_extended_gt90,buyer has 10 or more prior lots,winner's price as a share of the expected value,1067,0.1302717900656045,0.5729696415281568,0.6,40,0.5094844357976653,29
+test 2021-2022,days_extended_gt90,buyer has 10 or more prior lots,log lot value,1067,0.1302717900656045,0.6392838315554453,0.5562347188264058,40,0.6366731517509727,29
+test 2021-2022,value_growth_gt10,all test lots,buyer's as-of extension rate,6338,0.052698011991164403,0.39224050233975755,0.5449678800856531,141,0.4096503410986784,42
+test 2021-2022,value_growth_gt10,all test lots,winner's as-of extension rate,6338,0.052698011991164403,0.5035981501354386,0.39186295503211993,141,0.5115606683961811,42
+test 2021-2022,value_growth_gt10,all test lots,winner's as-of win rate,6338,0.052698011991164403,0.4986072159478511,0.6110813704496788,141,0.518884899941476,42
+test 2021-2022,value_growth_gt10,all test lots,winner's price as a share of the expected value,6338,0.052698011991164403,0.5353546737304871,0.619914346895075,141,0.540115126263288,42
+test 2021-2022,value_growth_gt10,all test lots,log lot value,6338,0.052698011991164403,0.48720787937781995,0.5066916488222698,141,0.4991876523151909,42
+test 2021-2022,value_growth_gt10,winner has 10 or more prior wins,buyer's as-of extension rate,718,0.04178272980501393,0.20138081395348836,,9,,7
+test 2021-2022,value_growth_gt10,winner has 10 or more prior wins,winner's as-of extension rate,718,0.04178272980501393,0.5102713178294573,,9,,7
+test 2021-2022,value_growth_gt10,winner has 10 or more prior wins,winner's as-of win rate,718,0.04178272980501393,0.6512839147286822,,9,,7
+test 2021-2022,value_growth_gt10,winner has 10 or more prior wins,winner's price as a share of the expected value,718,0.04178272980501393,0.5885658914728682,,9,,7
+test 2021-2022,value_growth_gt10,winner has 10 or more prior wins,log lot value,718,0.04178272980501393,0.5031492248062015,,9,,7
+test 2021-2022,value_growth_gt10,buyer has 10 or more prior lots,buyer's as-of extension rate,1072,0.06436567164179105,0.42336035372144437,0.5694864048338368,29,,18
+test 2021-2022,value_growth_gt10,buyer has 10 or more prior lots,winner's as-of extension rate,1072,0.06436567164179105,0.5095221581631916,0.5506042296072508,29,,18
+test 2021-2022,value_growth_gt10,buyer has 10 or more prior lots,winner's as-of win rate,1072,0.06436567164179105,0.5005057291892439,0.5188821752265861,29,,18
+test 2021-2022,value_growth_gt10,buyer has 10 or more prior lots,winner's price as a share of the expected value,1072,0.06436567164179105,0.5181773520019651,0.5634441087613293,29,,18
+test 2021-2022,value_growth_gt10,buyer has 10 or more prior lots,log lot value,1072,0.06436567164179105,0.51441328189345,0.5317220543806647,29,,18
+test 2021-2022,any_change,all test lots,buyer's as-of extension rate,6338,0.5597980435468602,0.5505020244632748,0.5222475165562914,585,0.5261104939211769,71
+test 2021-2022,any_change,all test lots,winner's as-of extension rate,6338,0.5597980435468602,0.48245732867828006,0.4810637417218543,585,0.48880658860209464,71
+test 2021-2022,any_change,all test lots,winner's as-of win rate,6338,0.5597980435468602,0.472015785560445,0.45240066225165565,585,0.49439377514177946,71
+test 2021-2022,any_change,all test lots,winner's price as a share of the expected value,6338,0.5597980435468602,0.4895508802980527,0.4978269867549669,585,0.4744180993934616,71
+test 2021-2022,any_change,all test lots,log lot value,6338,0.5597980435468602,0.6177132454853661,0.5872309602649006,585,0.6227893152476773,71
+test 2021-2022,any_change,winner has 10 or more prior wins,buyer's as-of extension rate,718,0.6894150417827298,0.610966163880962,0.6578947368421053,24,,14
+test 2021-2022,any_change,winner has 10 or more prior wins,winner's as-of extension rate,718,0.6894150417827298,0.5211169995923359,0.4093567251461988,24,,14
+test 2021-2022,any_change,winner has 10 or more prior wins,winner's as-of win rate,718,0.6894150417827298,0.4629433346922136,0.4093567251461988,24,,14
+test 2021-2022,any_change,winner has 10 or more prior wins,winner's price as a share of the expected value,718,0.6894150417827298,0.4673370476061059,0.5380116959064327,24,,14
+test 2021-2022,any_change,winner has 10 or more prior wins,log lot value,718,0.6894150417827298,0.6004529600942157,0.5497076023391813,24,,14
+test 2021-2022,any_change,buyer has 10 or more prior lots,buyer's as-of extension rate,1072,0.4664179104477612,0.5630017482517482,0.5222889661713563,81,0.5474414113929605,47
+test 2021-2022,any_change,buyer has 10 or more prior lots,winner's as-of extension rate,1072,0.4664179104477612,0.44536013986013984,0.47533986721466964,81,0.5486263495128588,47
+test 2021-2022,any_change,buyer has 10 or more prior lots,winner's as-of win rate,1072,0.4664179104477612,0.49957342657342657,0.45652861207714196,81,0.49451417537084175,47
+test 2021-2022,any_change,buyer has 10 or more prior lots,winner's price as a share of the expected value,1072,0.4664179104477612,0.5594982517482517,0.5061650331963325,81,0.5100500307206179,47
+test 2021-2022,any_change,buyer has 10 or more prior lots,log lot value,1072,0.4664179104477612,0.6242255244755245,0.5698703762251027,81,0.5944439568155885,47
+test 2021-2022,underexecuted,all test lots,buyer's as-of extension rate,5503,0.3290932218789751,0.5620336298041402,0.535167846540306,463,0.5352105453764626,67
+test 2021-2022,underexecuted,all test lots,winner's as-of extension rate,5503,0.3290932218789751,0.48388930832585025,0.43137702671842887,463,0.48157988353422665,67
+test 2021-2022,underexecuted,all test lots,winner's as-of win rate,5503,0.3290932218789751,0.4811770102413743,0.5011418131993606,463,0.4784695358995971,67
+test 2021-2022,underexecuted,all test lots,winner's price as a share of the expected value,5503,0.3290932218789751,0.4862058666401843,0.48744005480703356,463,0.46880838912516065,67
+test 2021-2022,underexecuted,all test lots,log lot value,5503,0.3290932218789751,0.6009799719183299,0.5359671157798584,463,0.6174032042509687,67
+test 2021-2022,underexecuted,winner has 10 or more prior wins,buyer's as-of extension rate,646,0.46594427244582043,0.6589532476286774,,17,,10
+test 2021-2022,underexecuted,winner has 10 or more prior wins,winner's as-of extension rate,646,0.46594427244582043,0.5170735230391449,,17,,10
+test 2021-2022,underexecuted,winner has 10 or more prior wins,winner's as-of win rate,646,0.46594427244582043,0.45605951177235304,,17,,10
+test 2021-2022,underexecuted,winner has 10 or more prior wins,winner's price as a share of the expected value,646,0.46594427244582043,0.5190909528624392,,17,,10
+test 2021-2022,underexecuted,winner has 10 or more prior wins,log lot value,646,0.46594427244582043,0.6048870913380519,,17,,10
+test 2021-2022,underexecuted,buyer has 10 or more prior lots,buyer's as-of extension rate,935,0.3122994652406417,0.6026545090436524,0.5578723404255319,68,0.5639294790343075,42
+test 2021-2022,underexecuted,buyer has 10 or more prior lots,winner's as-of extension rate,935,0.3122994652406417,0.42945365261296575,0.38042553191489364,68,0.5123094027954257,42
+test 2021-2022,underexecuted,buyer has 10 or more prior lots,winner's as-of win rate,935,0.3122994652406417,0.5043700334476661,0.5261702127659574,68,0.5127858958068615,42
+test 2021-2022,underexecuted,buyer has 10 or more prior lots,winner's price as a share of the expected value,935,0.3122994652406417,0.5702427618824432,0.5129787234042553,68,0.48959656925031764,42
+test 2021-2022,underexecuted,buyer has 10 or more prior lots,log lot value,935,0.3122994652406417,0.6190854087219583,0.5646808510638298,68,0.6003017789072427,42
+test 2021 only (pre-invasion),duration_extension,all test lots,buyer's as-of extension rate,4810,0.10395010395010396,0.6472742459396752,0.5095518001469508,141,0.6127446396846746,35
+test 2021 only (pre-invasion),duration_extension,all test lots,winner's as-of extension rate,4810,0.10395010395010396,0.5364828306264501,0.43864805290227776,141,0.5490214412613015,35
+test 2021 only (pre-invasion),duration_extension,all test lots,winner's as-of win rate,4810,0.10395010395010396,0.5122628770301624,0.5455547391623806,141,0.486154167056268,35
+test 2021 only (pre-invasion),duration_extension,all test lots,winner's price as a share of the expected value,4810,0.10395010395010396,0.5529563805104408,0.6458486407053637,141,0.5338665477483439,35
+test 2021 only (pre-invasion),duration_extension,all test lots,log lot value,4810,0.10395010395010396,0.7425621809744779,0.582659808963997,141,0.706148269091066,35
+test 2021 only (pre-invasion),duration_extension,winner has 10 or more prior wins,buyer's as-of extension rate,486,0.13580246913580246,0.8395923520923521,,1,,4
+test 2021 only (pre-invasion),duration_extension,winner has 10 or more prior wins,winner's as-of extension rate,486,0.13580246913580246,0.2294011544011544,,1,,4
+test 2021 only (pre-invasion),duration_extension,winner has 10 or more prior wins,winner's as-of win rate,486,0.13580246913580246,0.554978354978355,,1,,4
+test 2021 only (pre-invasion),duration_extension,winner has 10 or more prior wins,winner's price as a share of the expected value,486,0.13580246913580246,0.8534271284271284,,1,,4
+test 2021 only (pre-invasion),duration_extension,winner has 10 or more prior wins,log lot value,486,0.13580246913580246,0.6794552669552669,,1,,4
+test 2021 only (pre-invasion),duration_extension,buyer has 10 or more prior lots,buyer's as-of extension rate,830,0.172289156626506,0.79671420282774,0.5415057915057915,31,0.7995190205509402,25
+test 2021 only (pre-invasion),duration_extension,buyer has 10 or more prior lots,winner's as-of extension rate,830,0.172289156626506,0.4289451451023503,0.4314671814671815,31,0.6140139921294272,25
+test 2021 only (pre-invasion),duration_extension,buyer has 10 or more prior lots,winner's as-of win rate,830,0.172289156626506,0.5602803310226891,0.5468146718146718,31,0.49223874070835155,25
+test 2021 only (pre-invasion),duration_extension,buyer has 10 or more prior lots,winner's price as a share of the expected value,830,0.172289156626506,0.6918547246058163,0.6814671814671814,31,0.5781591604722344,25
+test 2021 only (pre-invasion),duration_extension,buyer has 10 or more prior lots,log lot value,830,0.172289156626506,0.6803320405940493,0.5685328185328186,31,0.705400087450809,25
+test 2021 only (pre-invasion),days_extended_gt90,all test lots,buyer's as-of extension rate,4789,0.08122781373982042,0.5613764898340734,0.590782122905028,127,0.522663100014861,29
+test 2021 only (pre-invasion),days_extended_gt90,all test lots,winner's as-of extension rate,4789,0.08122781373982042,0.5377185089974293,0.49134078212290505,127,0.5159678062744913,29
+test 2021 only (pre-invasion),days_extended_gt90,all test lots,winner's as-of win rate,4789,0.08122781373982042,0.5153239658798785,0.4360335195530726,127,0.5029643882331777,29
+test 2021 only (pre-invasion),days_extended_gt90,all test lots,winner's price as a share of the expected value,4789,0.08122781373982042,0.5358109371348446,0.590782122905028,127,0.5139889402507607,29
+test 2021 only (pre-invasion),days_extended_gt90,all test lots,log lot value,4789,0.08122781373982042,0.7732492989016125,0.5488826815642458,127,0.757373817959969,29
+test 2021 only (pre-invasion),days_extended_gt90,winner has 10 or more prior wins,buyer's as-of extension rate,484,0.09504132231404959,0.5823654953345245,,6,,5
+test 2021 only (pre-invasion),days_extended_gt90,winner has 10 or more prior wins,winner's as-of extension rate,484,0.09504132231404959,0.3413490172721858,,6,,5
+test 2021 only (pre-invasion),days_extended_gt90,winner has 10 or more prior wins,winner's as-of win rate,484,0.09504132231404959,0.49992555092316854,,6,,5
+test 2021 only (pre-invasion),days_extended_gt90,winner has 10 or more prior wins,winner's price as a share of the expected value,484,0.09504132231404959,0.712949176096883,,6,,5
+test 2021 only (pre-invasion),days_extended_gt90,winner has 10 or more prior wins,log lot value,484,0.09504132231404959,0.6482777446892992,,6,,5
+test 2021 only (pre-invasion),days_extended_gt90,buyer has 10 or more prior lots,buyer's as-of extension rate,825,0.13454545454545455,0.6776124864360158,0.5991321762349799,33,0.6203088525767643,21
+test 2021 only (pre-invasion),days_extended_gt90,buyer has 10 or more prior lots,winner's as-of extension rate,825,0.13454545454545455,0.48880813586695937,0.4876502002670227,33,0.549470281917759,21
+test 2021 only (pre-invasion),days_extended_gt90,buyer has 10 or more prior lots,winner's as-of win rate,825,0.13454545454545455,0.5096525096525096,0.4252336448598131,33,0.47997845214580714,21
+test 2021 only (pre-invasion),days_extended_gt90,buyer has 10 or more prior lots,winner's price as a share of the expected value,825,0.13454545454545455,0.5902036490271785,0.5931241655540721,33,0.5174178488058897,21
+test 2021 only (pre-invasion),days_extended_gt90,buyer has 10 or more prior lots,log lot value,825,0.13454545454545455,0.6523771670830494,0.5200267022696929,33,0.6457173639791705,21
+test 2021 only (pre-invasion),value_growth_gt10,all test lots,buyer's as-of extension rate,4810,0.05862785862785863,0.40400236197779615,0.555090206185567,106,0.4093383799304539,28
+test 2021 only (pre-invasion),value_growth_gt10,all test lots,winner's as-of extension rate,4810,0.05862785862785863,0.5165917976092023,0.37789948453608246,106,0.5070385113781498,28
+test 2021 only (pre-invasion),value_growth_gt10,all test lots,winner's as-of win rate,4810,0.05862785862785863,0.5005525117159111,0.6398195876288659,106,0.5176895037616415,28
+test 2021 only (pre-invasion),value_growth_gt10,all test lots,winner's price as a share of the expected value,4810,0.05862785862785863,0.5383010832518859,0.6320876288659794,106,0.5490784677487018,28
+test 2021 only (pre-invasion),value_growth_gt10,all test lots,log lot value,4810,0.05862785862785863,0.47698912049219355,0.4842139175257732,106,0.49516160608574866,28
+test 2021 only (pre-invasion),value_growth_gt10,winner has 10 or more prior wins,buyer's as-of extension rate,486,0.047325102880658436,0.22438726640999154,,7,,5
+test 2021 only (pre-invasion),value_growth_gt10,winner has 10 or more prior wins,winner's as-of extension rate,486,0.047325102880658436,0.49732369236548035,,7,,5
+test 2021 only (pre-invasion),value_growth_gt10,winner has 10 or more prior wins,winner's as-of win rate,486,0.047325102880658436,0.653159921119354,,7,,5
+test 2021 only (pre-invasion),value_growth_gt10,winner has 10 or more prior wins,winner's price as a share of the expected value,486,0.047325102880658436,0.6418443046295427,,7,,5
+test 2021 only (pre-invasion),value_growth_gt10,winner has 10 or more prior wins,log lot value,486,0.047325102880658436,0.5177011926002442,,7,,5
+test 2021 only (pre-invasion),value_growth_gt10,buyer has 10 or more prior lots,buyer's as-of extension rate,830,0.07228915662650602,0.4690800865800866,0.631578947368421,26,,14
+test 2021 only (pre-invasion),value_growth_gt10,buyer has 10 or more prior lots,winner's as-of extension rate,830,0.07228915662650602,0.556060606060606,0.6157894736842106,26,,14
+test 2021 only (pre-invasion),value_growth_gt10,buyer has 10 or more prior lots,winner's as-of win rate,830,0.07228915662650602,0.49533549783549785,0.531578947368421,26,,14
+test 2021 only (pre-invasion),value_growth_gt10,buyer has 10 or more prior lots,winner's price as a share of the expected value,830,0.07228915662650602,0.5187878787878788,0.5726315789473684,26,,14
+test 2021 only (pre-invasion),value_growth_gt10,buyer has 10 or more prior lots,log lot value,830,0.07228915662650602,0.5294047619047619,0.4884210526315789,26,,14
+test 2021 only (pre-invasion),any_change,all test lots,buyer's as-of extension rate,4810,0.5615384615384615,0.5532265151606915,0.5223583968201391,419,0.527366320388154,40
+test 2021 only (pre-invasion),any_change,all test lots,winner's as-of extension rate,4810,0.5615384615384615,0.5026290247066179,0.5115932427956277,419,0.495963439431459,40
+test 2021 only (pre-invasion),any_change,all test lots,winner's as-of win rate,4810,0.5615384615384615,0.4633003880163801,0.454786353097052,419,0.4883911135270077,40
+test 2021 only (pre-invasion),any_change,all test lots,winner's price as a share of the expected value,4810,0.5615384615384615,0.4963673605599598,0.49619079165286517,419,0.4765280545992632,40
+test 2021 only (pre-invasion),any_change,all test lots,log lot value,4810,0.5615384615384615,0.62388190524943,0.5592911560119245,419,0.6248968210827244,40
+test 2021 only (pre-invasion),any_change,winner has 10 or more prior wins,buyer's as-of extension rate,486,0.6502057613168725,0.5947598659717052,,15,,9
+test 2021 only (pre-invasion),any_change,winner has 10 or more prior wins,winner's as-of extension rate,486,0.6502057613168725,0.4996276991809382,,15,,9
+test 2021 only (pre-invasion),any_change,winner has 10 or more prior wins,winner's as-of win rate,486,0.6502057613168725,0.4531645569620253,,15,,9
+test 2021 only (pre-invasion),any_change,winner has 10 or more prior wins,winner's price as a share of the expected value,486,0.6502057613168725,0.525716679076694,,15,,9
+test 2021 only (pre-invasion),any_change,winner has 10 or more prior wins,log lot value,486,0.6502057613168725,0.622114668652271,,15,,9
+test 2021 only (pre-invasion),any_change,buyer has 10 or more prior lots,buyer's as-of extension rate,830,0.4783132530120482,0.5745370882077475,0.5188585607940447,65,0.5534981434434239,29
+test 2021 only (pre-invasion),any_change,buyer has 10 or more prior lots,winner's as-of extension rate,830,0.4783132530120482,0.4460474342790327,0.5245657568238213,65,0.562829783076021,29
+test 2021 only (pre-invasion),any_change,buyer has 10 or more prior lots,winner's as-of win rate,830,0.4783132530120482,0.5107590997143705,0.4630272952853598,65,0.4907172171194059,29
+test 2021 only (pre-invasion),any_change,buyer has 10 or more prior lots,winner's price as a share of the expected value,830,0.4783132530120482,0.5660583708064526,0.5022332506203474,65,0.507328512800469,29
+test 2021 only (pre-invasion),any_change,buyer has 10 or more prior lots,log lot value,830,0.4783132530120482,0.6396908685813346,0.5300248138957816,65,0.5992280633183505,29
+test 2021 only (pre-invasion),underexecuted,all test lots,buyer's as-of extension rate,4190,0.3133651551312649,0.5596043521894501,0.5415994840374073,325,0.5417373311903046,40
+test 2021 only (pre-invasion),underexecuted,all test lots,winner's as-of extension rate,4190,0.3133651551312649,0.4738643351782038,0.43356981618832635,325,0.4850098837961167,40
+test 2021 only (pre-invasion),underexecuted,all test lots,winner's as-of win rate,4190,0.3133651551312649,0.47530245524753006,0.5203160270880361,325,0.4790426573555765,40
+test 2021 only (pre-invasion),underexecuted,all test lots,winner's price as a share of the expected value,4190,0.3133651551312649,0.486539116733523,0.4995162850693325,325,0.465379002013708,40
+test 2021 only (pre-invasion),underexecuted,all test lots,log lot value,4190,0.3133651551312649,0.6130124121740802,0.518058690744921,325,0.6206192613940771,40
+test 2021 only (pre-invasion),underexecuted,winner has 10 or more prior wins,buyer's as-of extension rate,444,0.44144144144144143,0.6534418202764977,,11,,6
+test 2021 only (pre-invasion),underexecuted,winner has 10 or more prior wins,winner's as-of extension rate,444,0.44144144144144143,0.5148329493087558,,11,,6
+test 2021 only (pre-invasion),underexecuted,winner has 10 or more prior wins,winner's as-of win rate,444,0.44144144144144143,0.4682973996050033,,11,,6
+test 2021 only (pre-invasion),underexecuted,winner has 10 or more prior wins,winner's price as a share of the expected value,444,0.44144144144144143,0.5491688610928243,,11,,6
+test 2021 only (pre-invasion),underexecuted,winner has 10 or more prior wins,log lot value,444,0.44144144144144143,0.6442252304147466,,11,,6
+test 2021 only (pre-invasion),underexecuted,buyer has 10 or more prior lots,buyer's as-of extension rate,719,0.3240611961057024,0.6174296614210777,0.5981912144702842,53,0.5624096820809249,26
+test 2021 only (pre-invasion),underexecuted,buyer has 10 or more prior lots,winner's as-of extension rate,719,0.3240611961057024,0.40917801444744695,0.38372093023255816,53,0.5148121387283237,26
+test 2021 only (pre-invasion),underexecuted,buyer has 10 or more prior lots,winner's as-of win rate,719,0.3240611961057024,0.5340874971299387,0.5594315245478036,53,0.5186054913294798,26
+test 2021 only (pre-invasion),underexecuted,buyer has 10 or more prior lots,winner's price as a share of the expected value,719,0.3240611961057024,0.5518023984881401,0.5329457364341085,53,0.4684790462427746,26
+test 2021 only (pre-invasion),underexecuted,buyer has 10 or more prior lots,log lot value,719,0.3240611961057024,0.6473047916777054,0.562015503875969,53,0.6185874277456648,26
+test 2022 post-invasion,duration_extension,all test lots,buyer's as-of extension rate,1027,0.06815968841285297,0.6383937901179281,,19,0.6622174764192917,21
+test 2022 post-invasion,duration_extension,all test lots,winner's as-of extension rate,1027,0.06815968841285297,0.5158605762054038,,19,0.4229400249154654,21
+test 2022 post-invasion,duration_extension,all test lots,winner's as-of win rate,1027,0.06815968841285297,0.4677414539483505,,19,0.4814023847659726,21
+test 2022 post-invasion,duration_extension,all test lots,winner's price as a share of the expected value,1027,0.06815968841285297,0.5279817883266159,,19,0.497686421071365,21
+test 2022 post-invasion,duration_extension,all test lots,log lot value,1027,0.06815968841285297,0.6634945514255859,,19,0.5947677522690871,21
+test 2022 post-invasion,days_extended_gt90,all test lots,buyer's as-of extension rate,1027,0.05744888023369036,0.5962144558061353,,12,,18
+test 2022 post-invasion,days_extended_gt90,all test lots,winner's as-of extension rate,1027,0.05744888023369036,0.511827636923939,,12,,18
+test 2022 post-invasion,days_extended_gt90,all test lots,winner's as-of win rate,1027,0.05744888023369036,0.4394960778820563,,12,,18
+test 2022 post-invasion,days_extended_gt90,all test lots,winner's price as a share of the expected value,1027,0.05744888023369036,0.5493503992155764,,12,,18
+test 2022 post-invasion,days_extended_gt90,all test lots,log lot value,1027,0.05744888023369036,0.6427458327496848,,12,,18
+test 2022 post-invasion,value_growth_gt10,all test lots,buyer's as-of extension rate,1027,0.03213242453748783,0.423053472349247,,7,,12
+test 2022 post-invasion,value_growth_gt10,all test lots,winner's as-of extension rate,1027,0.03213242453748783,0.5263246143527833,,7,,12
+test 2022 post-invasion,value_growth_gt10,all test lots,winner's as-of win rate,1027,0.03213242453748783,0.48304981403572955,,7,,12
+test 2022 post-invasion,value_growth_gt10,all test lots,winner's price as a share of the expected value,1027,0.03213242453748783,0.5181086519114688,,7,,12
+test 2022 post-invasion,value_growth_gt10,all test lots,log lot value,1027,0.03213242453748783,0.503810743247363,,7,,12
+test 2022 post-invasion,any_change,all test lots,buyer's as-of extension rate,1027,0.5170399221032133,0.5644382935423121,0.43526785714285715,63,0.5365505706414797,31
+test 2022 post-invasion,any_change,all test lots,winner's as-of extension rate,1027,0.5170399221032133,0.4455493287163599,0.49107142857142855,63,0.4477567886658796,31
+test 2022 post-invasion,any_change,all test lots,winner's as-of win rate,1027,0.5170399221032133,0.4960569679849341,0.4174107142857143,63,0.5132083825265643,31
+test 2022 post-invasion,any_change,all test lots,winner's price as a share of the expected value,1027,0.5170399221032133,0.440761496871393,0.5602678571428571,63,0.43127705627705626,31
+test 2022 post-invasion,any_change,all test lots,log lot value,1027,0.5170399221032133,0.5982530678573598,0.625,63,0.6148170011806375,31
+test 2022 post-invasion,underexecuted,all test lots,buyer's as-of extension rate,937,0.2892209178228389,0.5463249227086866,0.5215827338129496,42,0.4990808823529412,25
+test 2022 post-invasion,underexecuted,all test lots,winner's as-of extension rate,937,0.2892209178228389,0.4795635118513347,0.5287769784172662,42,0.4626676038062284,25
+test 2022 post-invasion,underexecuted,all test lots,winner's as-of win rate,937,0.2892209178228389,0.45928770098511795,0.381294964028777,42,0.4656682525951557,25
+test 2022 post-invasion,underexecuted,all test lots,winner's price as a share of the expected value,937,0.2892209178228389,0.4402141994392917,0.4748201438848921,42,0.43568879757785467,25
+test 2022 post-invasion,underexecuted,all test lots,log lot value,937,0.2892209178228389,0.595929878217701,0.5683453237410072,42,0.6021842560553633,25
