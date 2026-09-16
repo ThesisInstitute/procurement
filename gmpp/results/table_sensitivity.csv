@@ -1,0 +1,81 @@
+variant,outcome,scale,n,base_rate,auc,brier,skill_vs_base_rate
+headline,wlc_growth_1y_gt_10,five_point,831,0.2371,0.6144,0.27,-0.4931
+headline,wlc_growth_1y_gt_10,three_point,425,0.24,0.5521,0.2632,-0.4431
+headline,wlc_growth_1y_gt_25,five_point,831,0.1516,0.6177,0.2817,-1.1901
+headline,wlc_growth_1y_gt_25,three_point,425,0.16,0.5604,0.2665,-0.983
+headline,slip_1y_gt_6m,five_point,919,0.1948,0.6098,0.2778,-0.7715
+headline,slip_1y_gt_6m,three_point,632,0.2722,0.5406,0.2697,-0.3615
+headline,slip_1y_gt_12m,five_point,919,0.136,0.6139,0.2858,-1.4318
+headline,slip_1y_gt_12m,three_point,632,0.1788,0.5563,0.2719,-0.8518
+headline,red_next,five_point,790,0.0456,0.6797,0.3005,-5.9092
+headline,red_next,three_point,699,0.1516,0.7122,0.2486,-0.9326
+headline,worsened_next,five_point,790,0.1962,0.2968,0.3528,-1.2369
+headline,worsened_next,three_point,699,0.1102,0.3367,0.3177,-2.2413
+headline,worsened_next_excl_worst,five_point,756,0.205,0.3136,0.3322,-1.0383
+headline,worsened_next_excl_worst,three_point,602,0.1279,0.3989,0.2525,-1.2636
+headline,permanent_exit_next,five_point,1312,0.2668,0.3497,0.3438,-0.7574
+headline,permanent_exit_next,three_point,859,0.1711,0.3586,0.3128,-1.2054
+excluding project-years whose narrative mentions rebaselining,wlc_growth_1y_gt_10,five_point,776,0.2332,0.6079,0.2697,-0.5083
+excluding project-years whose narrative mentions rebaselining,wlc_growth_1y_gt_10,three_point,384,0.2526,0.5472,0.2645,-0.4009
+excluding project-years whose narrative mentions rebaselining,wlc_growth_1y_gt_25,five_point,776,0.1508,0.611,0.2799,-1.1862
+excluding project-years whose narrative mentions rebaselining,wlc_growth_1y_gt_25,three_point,384,0.1693,0.5534,0.2681,-0.9069
+excluding project-years whose narrative mentions rebaselining,slip_1y_gt_6m,five_point,862,0.1833,0.6161,0.2756,-0.841
+excluding project-years whose narrative mentions rebaselining,slip_1y_gt_6m,three_point,573,0.2705,0.5439,0.2691,-0.3638
+excluding project-years whose narrative mentions rebaselining,slip_1y_gt_12m,five_point,862,0.1241,0.6217,0.2838,-1.6106
+excluding project-years whose narrative mentions rebaselining,slip_1y_gt_12m,three_point,573,0.1763,0.5459,0.2752,-0.8956
+excluding project-years whose narrative mentions rebaselining,red_next,five_point,741,0.0432,0.6716,0.2979,-6.2097
+excluding project-years whose narrative mentions rebaselining,red_next,three_point,639,0.1534,0.7032,0.2509,-0.9323
+excluding project-years whose narrative mentions rebaselining,worsened_next,five_point,741,0.1984,0.2944,0.3508,-1.206
+excluding project-years whose narrative mentions rebaselining,worsened_next,three_point,639,0.108,0.3539,0.3155,-2.2759
+excluding project-years whose narrative mentions rebaselining,worsened_next_excl_worst,five_point,710,0.207,0.3106,0.3308,-1.0147
+excluding project-years whose narrative mentions rebaselining,worsened_next_excl_worst,three_point,550,0.1255,0.4194,0.2497,-1.2757
+excluding project-years whose narrative mentions rebaselining,permanent_exit_next,five_point,1241,0.2724,0.3458,0.3437,-0.7343
+excluding project-years whose narrative mentions rebaselining,permanent_exit_next,three_point,785,0.172,0.3488,0.315,-1.2123
+12-month steps only (drops September 2019 to March 2021),wlc_growth_1y_gt_10,five_point,758,0.2322,0.6171,0.2681,-0.5039
+12-month steps only (drops September 2019 to March 2021),wlc_growth_1y_gt_10,three_point,425,0.24,0.5521,0.2632,-0.4431
+12-month steps only (drops September 2019 to March 2021),wlc_growth_1y_gt_25,five_point,758,0.1504,0.6179,0.2796,-1.188
+12-month steps only (drops September 2019 to March 2021),wlc_growth_1y_gt_25,three_point,425,0.16,0.5604,0.2665,-0.983
+12-month steps only (drops September 2019 to March 2021),slip_1y_gt_6m,five_point,839,0.1895,0.6167,0.2745,-0.7875
+12-month steps only (drops September 2019 to March 2021),slip_1y_gt_6m,three_point,632,0.2722,0.5406,0.2697,-0.3615
+12-month steps only (drops September 2019 to March 2021),slip_1y_gt_12m,five_point,839,0.1335,0.6106,0.2838,-1.4539
+12-month steps only (drops September 2019 to March 2021),slip_1y_gt_12m,three_point,632,0.1788,0.5563,0.2719,-0.8518
+12-month steps only (drops September 2019 to March 2021),red_next,five_point,707,0.0467,0.6788,0.2953,-5.6363
+12-month steps only (drops September 2019 to March 2021),red_next,three_point,699,0.1516,0.7122,0.2486,-0.9326
+12-month steps only (drops September 2019 to March 2021),worsened_next,five_point,707,0.2037,0.3005,0.3498,-1.1564
+12-month steps only (drops September 2019 to March 2021),worsened_next,three_point,699,0.1102,0.3367,0.3177,-2.2413
+12-month steps only (drops September 2019 to March 2021),worsened_next_excl_worst,five_point,680,0.2118,0.3157,0.3315,-0.9859
+12-month steps only (drops September 2019 to March 2021),worsened_next_excl_worst,three_point,602,0.1279,0.3989,0.2525,-1.2636
+12-month steps only (drops September 2019 to March 2021),permanent_exit_next,five_point,1191,0.2636,0.3388,0.344,-0.7719
+12-month steps only (drops September 2019 to March 2021),permanent_exit_next,three_point,859,0.1711,0.3586,0.3128,-1.2054
+including the March 2025 to March 2026 price-base break,wlc_growth_1y_gt_10,five_point,831,0.2371,0.6144,0.27,-0.4931
+including the March 2025 to March 2026 price-base break,wlc_growth_1y_gt_10,three_point,538,0.2509,0.5625,0.2625,-0.3965
+including the March 2025 to March 2026 price-base break,wlc_growth_1y_gt_25,five_point,831,0.1516,0.6177,0.2817,-1.1901
+including the March 2025 to March 2026 price-base break,wlc_growth_1y_gt_25,three_point,538,0.1524,0.5689,0.269,-1.0822
+including the March 2025 to March 2026 price-base break,slip_1y_gt_6m,five_point,919,0.1948,0.6098,0.2778,-0.7715
+including the March 2025 to March 2026 price-base break,slip_1y_gt_6m,three_point,632,0.2722,0.5406,0.2697,-0.3615
+including the March 2025 to March 2026 price-base break,slip_1y_gt_12m,five_point,919,0.136,0.6139,0.2858,-1.4318
+including the March 2025 to March 2026 price-base break,slip_1y_gt_12m,three_point,632,0.1788,0.5563,0.2719,-0.8518
+including the March 2025 to March 2026 price-base break,red_next,five_point,790,0.0456,0.6797,0.3005,-5.9092
+including the March 2025 to March 2026 price-base break,red_next,three_point,699,0.1516,0.7122,0.2486,-0.9326
+including the March 2025 to March 2026 price-base break,worsened_next,five_point,790,0.1962,0.2968,0.3528,-1.2369
+including the March 2025 to March 2026 price-base break,worsened_next,three_point,699,0.1102,0.3367,0.3177,-2.2413
+including the March 2025 to March 2026 price-base break,worsened_next_excl_worst,five_point,756,0.205,0.3136,0.3322,-1.0383
+including the March 2025 to March 2026 price-base break,worsened_next_excl_worst,three_point,602,0.1279,0.3989,0.2525,-1.2636
+including the March 2025 to March 2026 price-base break,permanent_exit_next,five_point,1312,0.2668,0.3497,0.3438,-0.7574
+including the March 2025 to March 2026 price-base break,permanent_exit_next,three_point,859,0.1711,0.3586,0.3128,-1.2054
+excluding the final two snapshots (right censoring),wlc_growth_1y_gt_10,five_point,831,0.2371,0.6144,0.27,-0.4931
+excluding the final two snapshots (right censoring),wlc_growth_1y_gt_10,three_point,282,0.227,0.5585,0.2585,-0.4734
+excluding the final two snapshots (right censoring),wlc_growth_1y_gt_25,five_point,831,0.1516,0.6177,0.2817,-1.1901
+excluding the final two snapshots (right censoring),wlc_growth_1y_gt_25,three_point,282,0.1525,0.582,0.2585,-1.0003
+excluding the final two snapshots (right censoring),slip_1y_gt_6m,five_point,919,0.1948,0.6098,0.2778,-0.7715
+excluding the final two snapshots (right censoring),slip_1y_gt_6m,three_point,332,0.2169,0.4925,0.2806,-0.6523
+excluding the final two snapshots (right censoring),slip_1y_gt_12m,five_point,919,0.136,0.6139,0.2858,-1.4318
+excluding the final two snapshots (right censoring),slip_1y_gt_12m,three_point,332,0.1386,0.5088,0.2785,-1.3335
+excluding the final two snapshots (right censoring),red_next,five_point,790,0.0456,0.6797,0.3005,-5.9092
+excluding the final two snapshots (right censoring),red_next,three_point,364,0.1236,0.6972,0.2538,-1.3421
+excluding the final two snapshots (right censoring),worsened_next,five_point,790,0.1962,0.2968,0.3528,-1.2369
+excluding the final two snapshots (right censoring),worsened_next,three_point,364,0.1044,0.2952,0.3172,-2.3927
+excluding the final two snapshots (right censoring),worsened_next_excl_worst,five_point,756,0.205,0.3136,0.3322,-1.0383
+excluding the final two snapshots (right censoring),worsened_next_excl_worst,three_point,319,0.1191,0.3425,0.26,-1.4782
+excluding the final two snapshots (right censoring),permanent_exit_next,five_point,1312,0.2668,0.3497,0.3438,-0.7574
+excluding the final two snapshots (right censoring),permanent_exit_next,three_point,450,0.18,0.3862,0.3037,-1.0574

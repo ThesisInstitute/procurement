@@ -1,0 +1,23 @@
+link_group,name_before,name_after,last_snapshot_before,first_snapshot_after,start_date,wlc_before,wlc_after,name_similarity
+MOJ,Common Platform (CP),CJS Common Platform,2016-09-30,2017-09-30,2012-11-01,380.89,380.96,0.8824
+MOJ,HMCTS Compliance & Enforcement Services Project,Her Majesty's Courts and Tribunals Services (HMCTS) Compliance & Enforcement Services Project (CESP),2014-09-30,2015-09-30,2012-06-21,439.2,439.2,0.7206
+DWP,Fraud and Error Programme,"Fraud, Error and Debt Programme",2012-09-30,2013-09-30,2012-04-02,770.3,770.3,0.7636
+DWP,Personal Independence Payment Implementation,Personal Independence Payment Programme,2013-09-30,2014-09-30,2011-10-31,2518.57,2525.94,0.7952
+MOJ,MoJ Shared Services Evolve (SS Evolve) Programme,Shared Services (ISSC2) Evolve,2016-09-30,2017-09-30,2013-09-07,395.15,398.07,0.7586
+MOJ,North Wales Prison (NWP ) Programme,Berwyn Programme,2016-09-30,2017-09-30,2013-01-10,2252.7,2269.7,0.5909
+BEIS lineage,Smart Meters Programme,Smart Meters Implementation Programme,2012-09-30,2013-09-30,2009-12-02,17171.9455,17184.647,0.7458
+BEIS lineage,Dounreay Parent Body Organisation (PBO),Dounreay Parent Body Organisation (PBO) - Delivery Phase,2012-09-30,2013-09-30,2009-09-21,1578.0,1578.0,0.8148
+HO,IMPACT,PND (IMPACT),2012-09-30,2013-09-30,2004-04-01,184.84,188.49,0.2222
+BEIS lineage,Further Education Fee Loans Programme,Further Education 24+ Learning Loans Programme,2012-09-30,2013-09-30,2010-11-30,576.593,572.291,0.8537
+DCMS,Urban Broadband Fund - Super-Connected City Initiative,Super-Connected City Programme,2014-09-30,2015-09-30,2012-12-05,152.08,154.6,0.561
+DEFRA,Thames Estuary Programme Phase 1 (TEP1),Thames Estuary Asset Management Programme (TEAM2100),2014-09-30,2015-09-30,2010-04-01,318.42,318.42,0.6575
+DFE,Priority School Building Programme - Capital,Priority School Building Programme 1 (PSBP1) - Capital,2014-09-30,2015-09-30,2011-07-19,2023.34,2023.3,0.9767
+HMRC,Debt Management & Banking (DMB) Staff Reinvestment,Debt Staff Reinvestment,2012-09-30,2013-09-30,2011-04-01,56.41,56.418,0.6667
+DFT,Airport Capacity Programme,Heathrow Expansion Programme,2017-09-30,2018-09-30,2015-07-01,22747.0,22732.9,0.6296
+DH/DHSC,CSC LSP Delivery Programme,CSC Local Service Provider (LSP) Delivery Programme,2014-09-30,2015-09-30,2003-06-23,2294.07,2294.07,0.7324
+DH/DHSC,Genomics Programme,"100,000 Genomes Project",2014-09-30,2015-09-30,2013-04-10,160.0,160.0,0.5366
+DH/DHSC,Health and Social Care Network (Formerly Public Services Network for Health (PSNH)),Health & Social Care Network,2014-09-30,2015-09-30,2012-03-29,748.16,748.2,0.5769
+DH/DHSC,Public Services Network for Health (PSNH),Health and Social Care Network (Formerly Public Services Network for Health (PSNH)),2013-09-30,2014-09-30,2012-03-29,748.16,748.16,0.6296
+DH/DHSC,Southern Programme for IT,BT LSP (South),2013-09-30,2014-09-30,2004-01-26,634.06,634.06,0.129
+MOD,Puma Helicopter Life Extension Programme,PUMA,2014-09-30,2015-09-30,2007-02-01,377.79,374.93,0.25
+MOD,Successor SSBN,DREADNOUGHT,2016-09-30,2017-09-30,2011-04-14,31614.29,31497.93,0.08

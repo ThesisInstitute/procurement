@@ -1,0 +1,8 @@
+rating,scale,exits_with_an_end_date,projects,end_date_passed_or_within_12m,more_than_24m_still_to_run,median_months_to_end_date,median_months_to_end_date_for_projects_that_stayed
+Green,five_point,76,76,0.7237,0.2237,3.0,40.1
+Amber/Green,five_point,93,93,0.5914,0.2151,7.5,40.1
+Amber,five_point,108,108,0.463,0.3704,15.0,40.1
+Amber/Red,five_point,57,57,0.386,0.4386,17.0,40.1
+Red,five_point,12,12,0.5,0.4167,13.1,40.1
+Green,three_point,47,47,0.8511,0.1064,2.0,43.2
+Amber,three_point,84,84,0.4762,0.4405,12.0,43.2

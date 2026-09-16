@@ -1,0 +1,65 @@
+outcome,outcome_label,scale,rating,n,observed_rate,implied_p_adverse,gap
+wlc_growth_1y_gt_10,Baseline whole-life cost up more than 10 per cent,five_point,Green,26,0.0769,0.1,-0.0231
+wlc_growth_1y_gt_10,Baseline whole-life cost up more than 10 per cent,five_point,Amber/Green,165,0.1455,0.25,-0.1045
+wlc_growth_1y_gt_10,Baseline whole-life cost up more than 10 per cent,five_point,Amber,387,0.2171,0.5,-0.2829
+wlc_growth_1y_gt_10,Baseline whole-life cost up more than 10 per cent,five_point,Amber/Red,222,0.3468,0.75,-0.4032
+wlc_growth_1y_gt_10,Baseline whole-life cost up more than 10 per cent,five_point,Red,31,0.3226,0.9,-0.5774
+wlc_growth_1y_gt_10,Baseline whole-life cost up more than 10 per cent,three_point,Green,37,0.2432,0.15,0.0932
+wlc_growth_1y_gt_10,Baseline whole-life cost up more than 10 per cent,three_point,Amber,342,0.2135,0.5,-0.2865
+wlc_growth_1y_gt_10,Baseline whole-life cost up more than 10 per cent,three_point,Red,46,0.4348,0.85,-0.4152
+wlc_growth_1y_gt_25,Baseline whole-life cost up more than 25 per cent,five_point,Green,26,0.0385,0.1,-0.0615
+wlc_growth_1y_gt_25,Baseline whole-life cost up more than 25 per cent,five_point,Amber/Green,165,0.0848,0.25,-0.1652
+wlc_growth_1y_gt_25,Baseline whole-life cost up more than 25 per cent,five_point,Amber,387,0.1344,0.5,-0.3656
+wlc_growth_1y_gt_25,Baseline whole-life cost up more than 25 per cent,five_point,Amber/Red,222,0.2432,0.75,-0.5068
+wlc_growth_1y_gt_25,Baseline whole-life cost up more than 25 per cent,five_point,Red,31,0.1613,0.9,-0.7387
+wlc_growth_1y_gt_25,Baseline whole-life cost up more than 25 per cent,three_point,Green,37,0.1622,0.15,0.0122
+wlc_growth_1y_gt_25,Baseline whole-life cost up more than 25 per cent,three_point,Amber,342,0.1374,0.5,-0.3626
+wlc_growth_1y_gt_25,Baseline whole-life cost up more than 25 per cent,three_point,Red,46,0.3261,0.85,-0.5239
+slip_1y_gt_6m,End date slipped more than 6 months,five_point,Green,31,0.0645,0.1,-0.0355
+slip_1y_gt_6m,End date slipped more than 6 months,five_point,Amber/Green,179,0.1285,0.25,-0.1215
+slip_1y_gt_6m,End date slipped more than 6 months,five_point,Amber,427,0.171,0.5,-0.329
+slip_1y_gt_6m,End date slipped more than 6 months,five_point,Amber/Red,245,0.2857,0.75,-0.4643
+slip_1y_gt_6m,End date slipped more than 6 months,five_point,Red,37,0.2973,0.9,-0.6027
+slip_1y_gt_6m,End date slipped more than 6 months,three_point,Green,54,0.2407,0.15,0.0907
+slip_1y_gt_6m,End date slipped more than 6 months,three_point,Amber,499,0.2565,0.5,-0.2435
+slip_1y_gt_6m,End date slipped more than 6 months,three_point,Red,79,0.3924,0.85,-0.4576
+slip_1y_gt_12m,End date slipped more than 12 months,five_point,Green,31,0.0323,0.1,-0.0677
+slip_1y_gt_12m,End date slipped more than 12 months,five_point,Amber/Green,179,0.0838,0.25,-0.1662
+slip_1y_gt_12m,End date slipped more than 12 months,five_point,Amber,427,0.1194,0.5,-0.3806
+slip_1y_gt_12m,End date slipped more than 12 months,five_point,Amber/Red,245,0.2,0.75,-0.55
+slip_1y_gt_12m,End date slipped more than 12 months,five_point,Red,37,0.2432,0.9,-0.6568
+slip_1y_gt_12m,End date slipped more than 12 months,three_point,Green,54,0.1296,0.15,-0.0204
+slip_1y_gt_12m,End date slipped more than 12 months,three_point,Amber,499,0.1663,0.5,-0.3337
+slip_1y_gt_12m,End date slipped more than 12 months,three_point,Red,79,0.2911,0.85,-0.5589
+red_next,Rated Red at the next snapshot,five_point,Green,27,0.0,0.1,-0.1
+red_next,Rated Red at the next snapshot,five_point,Amber/Green,150,0.0133,0.25,-0.2367
+red_next,Rated Red at the next snapshot,five_point,Amber,366,0.0383,0.5,-0.4617
+red_next,Rated Red at the next snapshot,five_point,Amber/Red,213,0.061,0.75,-0.689
+red_next,Rated Red at the next snapshot,five_point,Red,34,0.2059,0.9,-0.6941
+red_next,Rated Red at the next snapshot,three_point,Green,58,0.0172,0.15,-0.1328
+red_next,Rated Red at the next snapshot,three_point,Amber,544,0.1029,0.5,-0.3971
+red_next,Rated Red at the next snapshot,three_point,Red,97,0.5052,0.85,-0.3448
+worsened_next,Rating worse at the next snapshot,five_point,Green,27,0.3333,0.1,0.2333
+worsened_next,Rating worse at the next snapshot,five_point,Amber/Green,150,0.3933,0.25,0.1433
+worsened_next,Rating worse at the next snapshot,five_point,Amber,366,0.2022,0.5,-0.2978
+worsened_next,Rating worse at the next snapshot,five_point,Amber/Red,213,0.061,0.75,-0.689
+worsened_next,Rating worse at the next snapshot,five_point,Red,34,0.0,0.9,-0.9
+worsened_next,Rating worse at the next snapshot,three_point,Green,58,0.3621,0.15,0.2121
+worsened_next,Rating worse at the next snapshot,three_point,Amber,544,0.1029,0.5,-0.3971
+worsened_next,Rating worse at the next snapshot,three_point,Red,97,0.0,0.85,-0.85
+worsened_next_excl_worst,"Rating worse at the next snapshot, excluding projects already on the worst rating",five_point,Green,27,0.3333,0.1,0.2333
+worsened_next_excl_worst,"Rating worse at the next snapshot, excluding projects already on the worst rating",five_point,Amber/Green,150,0.3933,0.25,0.1433
+worsened_next_excl_worst,"Rating worse at the next snapshot, excluding projects already on the worst rating",five_point,Amber,366,0.2022,0.5,-0.2978
+worsened_next_excl_worst,"Rating worse at the next snapshot, excluding projects already on the worst rating",five_point,Amber/Red,213,0.061,0.75,-0.689
+worsened_next_excl_worst,"Rating worse at the next snapshot, excluding projects already on the worst rating",five_point,Red,0,,0.9,
+worsened_next_excl_worst,"Rating worse at the next snapshot, excluding projects already on the worst rating",three_point,Green,58,0.3621,0.15,0.2121
+worsened_next_excl_worst,"Rating worse at the next snapshot, excluding projects already on the worst rating",three_point,Amber,544,0.1029,0.5,-0.3971
+worsened_next_excl_worst,"Rating worse at the next snapshot, excluding projects already on the worst rating",three_point,Red,0,,0.85,
+permanent_exit_next,Left the portfolio and did not return,five_point,Green,108,0.713,0.1,0.613
+permanent_exit_next,Left the portfolio and did not return,five_point,Amber/Green,274,0.3394,0.25,0.0894
+permanent_exit_next,Left the portfolio and did not return,five_point,Amber,554,0.1968,0.5,-0.3032
+permanent_exit_next,Left the portfolio and did not return,five_point,Amber/Red,319,0.1818,0.75,-0.5682
+permanent_exit_next,Left the portfolio and did not return,five_point,Red,57,0.2281,0.9,-0.6719
+permanent_exit_next,Left the portfolio and did not return,three_point,Green,105,0.4476,0.15,0.2976
+permanent_exit_next,Left the portfolio and did not return,three_point,Amber,647,0.1422,0.5,-0.3578
+permanent_exit_next,Left the portfolio and did not return,three_point,Red,107,0.0748,0.85,-0.7752

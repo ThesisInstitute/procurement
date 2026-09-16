@@ -1,0 +1,5 @@
+outcome,outcome_label,scale,n,n_projects,median,spearman_rho,rho_lo_rows,rho_hi_rows,rho_lo,rho_hi
+wlc_growth_1y,Baseline whole-life cost growth,five_point,831,342,0.0,0.1414,0.0756,0.206,0.0745,0.2093
+wlc_growth_1y,Baseline whole-life cost growth,three_point,425,211,0.0,0.0589,-0.0439,0.1617,-0.0578,0.1715
+slip_1y_months,End-date slip in months,five_point,919,368,0.0,0.1191,0.0516,0.1817,0.0568,0.1853
+slip_1y_months,End-date slip in months,three_point,632,250,0.0,0.0892,0.005,0.1719,0.0086,0.1708

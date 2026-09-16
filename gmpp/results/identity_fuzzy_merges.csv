@@ -1,0 +1,35 @@
+link_group,name_a,name_b,similarity,gmpp_id_core,ids,names,snapshots,via
+BEIS lineage,Smart Metering Implementation Programme,Smart Meters Implementation Programme,0.9474,,,,,
+CO,1617 New Property Model Programme,16/17 New Property Model Programme,0.9851,,,,,
+DFE,30 Hrs Free Childcare Programme,30 Hrs Free Childcare Project,1.0,,,,,
+DFE,Priority School Building Programme 1,Priority School Building Programme 1 (PSBP1) - Capital,0.9,,,,,
+DFT,Crossrail Programme,Crossrail,1.0,,,,,
+DFT,Thameslink Programme,Thameslink,1.0,,,,,
+DH/DHSC,NHS Pension Re-let Project,NHS Pension Re-let,1.0,,,,,
+DH/DHSC,NHSmail2,NHSmail 2,0.9412,,,,,
+DH/DHSC,Royal Liverpool & Broadgreen ('World Class Hospitals; World Class Services - Renewing the Royal Liverpool University Hospital'),PFI - Royal Liverpool and Broadgreen ('World Class Hospitals; World Class Services - Renewing the Royal Liverpool University Hospital'),0.9375,,,,,
+DH/DHSC,"100,000 Genomes Project",100000 Genomes Project,0.9778,,,,,
+DWP,Fit for Work (previously called Health and Work Service),Fit for Work Programme,1.0,,,,,
+DWP,Personal Independence Payment Programme,Personal Independence Payment,1.0,,,,,
+HO,Cyclamen Project,Cyclamen Programme,1.0,,,,,
+HO,Disclosure and Barring Service (DBS) Programme,SIG Disclosure & Barring Service Programme (formerly Convergence Programme),0.9524,,,,,
+HO,Adelphi Modernisation Programme,Adelphi Modernisation Project,1.0,,,,,
+HO,Schengen Information Systems 2 (SIS II) Programme,Schengen Information Systems (SIS) II Programme,0.963,,,,,
+HO,Schengen Information Systems 2 (SIS II) Programme,Schengen Information System (SIS II) Programme,0.961,,,,,
+MOD,CROWSNEST PROGRAMME,CROWSNEST,1.0,,,,,
+MOD,Spearfish Upgrade (SFU) Programme,Spearfish Upgrade (SFU),1.0,,,,,
+MOD,TYPE 26 GLOBAL COMBAT SHIP PROGRAMME,Type 26 Global Combat Ship (T26 GCS) (P900005700),1.0,,,,,
+MOD,LIGHTNING PROGRAMME,Lightning II Programme,0.9268,,,,,
+MOD,The Materiel Strategy,The Material Strategy,0.9524,,,,,
+MOD,Wildcat,Wildcat Programme,1.0,,,,,
+MOJ,Prisoner Escort and Custody Services (PECS) Generation 4 Programme,Prisoner Escort and Custody Services (PECS) Generation 4,1.0,,,,,
+MOJ,Legal Aid Transformation,Legal Aid Transformation Programme (LAT),1.0,,,,,
+MOJ,New Wales Prison,New Prison -Wales,1.0,,,,,
+MOJ,Prison Competitions Phase 2,Prison Competitions Phase Two,0.9286,,,,,
+DH/DHSC,,,,0017_1112-Q1,DH_0017_1112-Q1 | DOH_0017_1112-Q1,PHE SCIENCE HUB | PHE Science Hub | UK Health Security Campus,2016-09-30 2019-09-30 2021-03-31 2022-03-31 2023-03-31 2024-03-31 2025-03-31 2026-03-31,gmpp id core
+DH/DHSC,,,,0031_1314-Q1,DH_0031_1314-Q1 | DOH_0031_1314-Q1,National Proton Beam Therapy (PBT) Service Development Programme,2016-09-30 2019-09-30 2021-03-31,gmpp id core
+DH/DHSC,,,,0041_1314-Q2,DH_0041_1314-Q2 | DOH_0041_1314-Q2,Health & Social Care Network,2016-09-30 2019-09-30,gmpp id core
+DH/DHSC,,,,0058_1516-Q4,DH_0058_1516-Q4 | DOH_0058_1516-Q4,Data Processing Services Programme | National Data Services Development Programme,2016-09-30 2019-09-30,gmpp id core
+DH/DHSC,,,,0060_1617-Q1,DH_0060_1617-Q1 | DOH_0060_1617-Q1,NHS UK | NHS.UK,2016-09-30 2019-09-30,gmpp id core
+DH/DHSC,,,,0062_1819-Q3,DH_0062_1819-Q3 | DOH_0062_1819-Q3,Local Health and Care Records,2019-09-30 2021-03-31,gmpp id core
+DH/DHSC,,,,0063_1819-Q3,DH_0063_1819-Q3 | DOH_0063_1819-Q3,GP IT Futures Programme,2019-09-30 2021-03-31 2022-03-31 2023-03-31,gmpp id core
