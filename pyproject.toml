@@ -1,0 +1,23 @@
+[project]
+name = "thesify-procurement"
+version = "0.1.0"
+description = "Registered, scored forecasts of public procurement outcomes"
+requires-python = ">=3.12"
+dependencies = [
+  "pandas>=2.2",
+  "pyarrow>=16",
+  "numpy>=1.26",
+  "scikit-learn>=1.5",
+  "requests>=2.32",
+  "matplotlib>=3.9",
+  "openpyxl>=3.1",
+  "odfpy>=1.4",
+  "xlrd>=2.0",
+  "tqdm>=4.66",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[tool.pytest.ini_options]
+testpaths = ["usaspending/tests", "gmpp/tests", "worldbank/tests"]

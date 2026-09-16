@@ -1,0 +1,13 @@
+data/raw/
+data/cache/
+**/data/raw/
+**/data/cache/
+*.zip
+*.parquet
+!results/**/*.parquet
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+*.log
+.DS_Store
