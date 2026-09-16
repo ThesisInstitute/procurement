@@ -11,3 +11,5 @@ __pycache__/
 .pytest_cache/
 *.log
 .DS_Store
+.lanes/out_*
+.lanes/*.log

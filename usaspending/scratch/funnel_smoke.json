@@ -1,0 +1,45 @@
+{
+ "data_end": "2022-09-30",
+ "transactions_loaded": 2500253,
+ "base_row_diagnostics": {
+  "awards_type_D_total": 534602,
+  "awards_without_modification_number_zero": 90929,
+  "awards_base_row_not_first_action": 7,
+  "awards_with_more_than_one_base_action": 2869
+ },
+ "funnel": [
+  {
+   "filter": "start: one base row per type-D award",
+   "awards_remaining": 534602
+  },
+  {
+   "filter": "base row is the first action",
+   "awards_remaining": 534595
+  },
+  {
+   "filter": "base row carries an explicit modification_number of zero",
+   "awards_remaining": 443666
+  },
+  {
+   "filter": "exactly one action carries a modification_number of zero",
+   "awards_remaining": 440798
+  },
+  {
+   "filter": "base action_date in FY2010-FY2022",
+   "awards_remaining": 440798
+  },
+  {
+   "filter": "base federal_action_obligation >= 250,000",
+   "awards_remaining": 177770
+  },
+  {
+   "filter": "base period_of_performance_current_end_date is not null",
+   "awards_remaining": 177770
+  },
+  {
+   "filter": "base_and_all_options_value > 0 and not null",
+   "awards_remaining": 177767
+  }
+ ],
+ "seconds": 19.3
+}

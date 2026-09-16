@@ -1,0 +1,341 @@
+{
+ "action_type_code_counts": {
+  "M": 638658,
+  "B": 623389,
+  "C": 599832,
+  "(null)": 531884,
+  "G": 309730,
+  "D": 229841,
+  "K": 69349,
+  "A": 33948,
+  "L": 19864,
+  "F": 15471,
+  "V": 6339,
+  "J": 5787,
+  "W": 4270,
+  "H": 2144,
+  "S": 1236,
+  "N": 1204,
+  "E": 1005,
+  "X": 458,
+  "T": 432,
+  "R": 364,
+  "P": 265,
+  "Y": 183
+ },
+ "modification_number_top20_overall": {
+  "0": 531884,
+  "P00001": 269046,
+  "P00002": 200278,
+  "P00003": 154216,
+  "P00004": 122439,
+  "P00005": 99341,
+  "P00006": 81091,
+  "P00007": 67207,
+  "1": 65403,
+  "P00008": 56530,
+  "P00009": 47892,
+  "2": 46703,
+  "P00010": 41248,
+  "3": 36129,
+  "P00011": 35939,
+  "P00012": 31402,
+  "4": 28517,
+  "P00013": 27804,
+  "P00014": 24801,
+  "5": 23177
+ },
+ "modification_number_top20_on_first_action": {
+  "0": 528078,
+  "P00001": 22365,
+  "P00002": 8986,
+  "1": 6880,
+  "P00003": 4817,
+  "2": 3861,
+  "A00001": 3324,
+  "P00004": 3170,
+  "3": 2833,
+  "P00005": 2154,
+  "4": 2004,
+  "P00006": 1607,
+  "5": 1496,
+  "P00007": 1227,
+  "6": 1065,
+  "P00008": 968,
+  "A00002": 951,
+  "7": 902,
+  "P00009": 791,
+  "8": 732
+ },
+ "claim_base_row_ceiling_equals_potential": {
+  "n_base_rows": 528162,
+  "n_both_present": 379716,
+  "share_equal_within_1pct_or_1usd": 0.5225423260287563
+ },
+ "claim_mod_ceiling_field_is_a_delta": {
+  "n_modification_rows_tested": 1178566,
+  "share_where_base_plus_running_delta_matches_potential": 0.657053571883119,
+  "share_where_the_mod_field_itself_matches_potential": 0.0024063141139316763,
+  "reading": "the delta reading reconstructs the running ceiling far more often than the level reading"
+ },
+ "claim_value_state_fields_are_award_level": {
+  "per_field": {
+   "potential_total_value_of_award": {
+    "share_of_all_actions_populated": 0.586326051401756,
+    "awards_with_more_than_one_populated_action": 236014,
+    "share_constant_within_award": 0.5822027506842814
+   },
+   "current_total_value_of_award": {
+    "share_of_all_actions_populated": 0.5862368941221772,
+    "awards_with_more_than_one_populated_action": 236013,
+    "share_constant_within_award": 0.5244160279306649
+   },
+   "total_dollars_obligated": {
+    "share_of_all_actions_populated": 0.586326051401756,
+    "awards_with_more_than_one_populated_action": 236014,
+    "share_constant_within_award": 0.49957629632140466
+   },
+   "base_and_all_options_value": {
+    "share_of_all_actions_populated": 1.0,
+    "awards_with_more_than_one_populated_action": 399474,
+    "share_constant_within_award": 0.04420062382032373
+   },
+   "base_and_exercised_options_value": {
+    "share_of_all_actions_populated": 0.9999101966531778,
+    "awards_with_more_than_one_populated_action": 399473,
+    "share_constant_within_award": 0.04270376220670734
+   },
+   "federal_action_obligation": {
+    "share_of_all_actions_populated": 1.0,
+    "awards_with_more_than_one_populated_action": 399474,
+    "share_constant_within_award": 0.02790669730695865
+   },
+   "period_of_performance_current_end_date": {
+    "share_of_all_actions_populated": 1.0,
+    "awards_with_more_than_one_populated_action": 399474,
+    "share_constant_within_award": 0.23682142016752028
+   },
+   "period_of_performance_potential_end_date": {
+    "share_of_all_actions_populated": 0.9999101966531778,
+    "awards_with_more_than_one_populated_action": 399473,
+    "share_constant_within_award": 0.3125918397488691
+   },
+   "period_of_performance_start_date": {
+    "share_of_all_actions_populated": 0.9999993539327566,
+    "awards_with_more_than_one_populated_action": 399473,
+    "share_constant_within_award": 0.3484090288955699
+   }
+  },
+  "reading": "a field that is near constant within an award is an award-level summary joined onto every action, so its value at a horizon is the award's end state and cannot be used to build a label"
+ },
+ "potential_value_population_rate_by_action_fy": {
+  "2010": 0.2605,
+  "2011": 0.2386,
+  "2012": 0.24,
+  "2013": 0.2205,
+  "2014": 0.2328,
+  "2015": 0.2543,
+  "2016": 0.2801,
+  "2017": 0.5177,
+  "2019": 1.0,
+  "2020": 1.0,
+  "2021": 1.0,
+  "2022": 1.0,
+  "2023": 1.0,
+  "2024": 1.0,
+  "2025": 1.0,
+  "2026": 1.0
+ },
+ "base_and_all_options_population_rate_by_action_fy": {
+  "2010": 1.0,
+  "2011": 1.0,
+  "2012": 1.0,
+  "2013": 1.0,
+  "2014": 1.0,
+  "2015": 1.0,
+  "2016": 1.0,
+  "2017": 1.0,
+  "2019": 1.0,
+  "2020": 1.0,
+  "2021": 1.0,
+  "2022": 1.0,
+  "2023": 1.0,
+  "2024": 1.0,
+  "2025": 1.0,
+  "2026": 1.0
+ },
+ "fiscal_years_where_potential_value_is_fully_populated": [
+  2019,
+  2020,
+  2021,
+  2022,
+  2023,
+  2024,
+  2025,
+  2026
+ ],
+ "claim_ceiling_field_behaviour_where_fully_populated": {
+  "base_fiscal_year_at_or_after": 2020,
+  "awards_tested": 81283,
+  "awards_whose_ceiling_changed": 53232,
+  "non_final_actions": {
+   "n_actions": 526200,
+   "share_equal_to_contemporaneous_reconstruction": 0.7829304446978336,
+   "share_equal_to_the_awards_final_value": 0.5114671227670088,
+   "share_equal_to_the_base_level": 0.4692550361079437
+  },
+  "non_final_actions_on_awards_whose_ceiling_changed": {
+   "n_actions": 410421,
+   "share_equal_to_contemporaneous_reconstruction": 0.723739769651163,
+   "share_equal_to_the_awards_final_value": 0.3769836338783834,
+   "share_equal_to_the_base_level": 0.3220424880793137
+  },
+  "final_actions": {
+   "n_actions": 81283,
+   "share_equal_to_contemporaneous_reconstruction": 0.983612809566576,
+   "share_equal_to_the_awards_final_value": 1.0,
+   "share_equal_to_the_base_level": 0.41023338213402555
+  },
+  "reading": "on the final action the field and the reconstruction agree, which is the convergence check. On earlier actions they disagree on a material share, and part of that share is the field already carrying the award's final value, which is a forward look"
+ },
+ "claim_current_value_is_obligated_to_date": {
+  "n_rows_tested": 1814786,
+  "share_current_value_matches_running_obligation": 0.4154241877554709,
+  "share_current_value_le_potential": 0.9952363529363792
+ },
+ "claim_current_end_date_is_revised_by_mods": {
+  "awards_with_more_than_one_action": 399474,
+  "share_of_those_with_more_than_one_distinct_current_end_date": 0.7631785798324797,
+  "share_with_exactly_one_distinct_current_end_date": 0.23682142016752028
+ },
+ "claim_potential_value_is_a_running_level": {
+  "n_consecutive_pairs": 1353888,
+  "share_non_decreasing": 0.9059493842917583,
+  "share_unchanged": 0.816044606348531
+ },
+ "base_row_fill_rate": {
+  "solicitation_identifier": 0.535941623971433,
+  "number_of_offers_received": 1.0,
+  "recipient_uei": 1.0,
+  "recipient_duns": 0.6687304274067426,
+  "awarding_office_code": 1.0,
+  "naics_code": 0.9999981066415229,
+  "product_or_service_code": 1.0,
+  "extent_competed_code": 1.0,
+  "type_of_contract_pricing_code": 1.0,
+  "type_of_set_aside_code": 0.9999962132830458,
+  "fed_biz_opps_code": 1.0,
+  "performance_based_service_acquisition_code": 1.0,
+  "multi_year_contract_code": 1.0,
+  "cost_or_pricing_data_code": 0.9696854374226089,
+  "contracting_officers_determination_of_business_size_code": 1.0,
+  "period_of_performance_potential_end_date": 1.0
+ },
+ "solicitation_identifier_fill_rate_by_base_fy": {
+  "2010": 0.433,
+  "2011": 0.4605,
+  "2012": 0.4984,
+  "2013": 0.4685,
+  "2014": 0.4611,
+  "2015": 0.5634,
+  "2016": 0.6368,
+  "2017": 0.6655,
+  "2019": 0.552,
+  "2020": 0.5503,
+  "2021": 0.5787,
+  "2022": 0.5742,
+  "2023": 0.5939,
+  "2024": 0.5944,
+  "2025": 0.5384,
+  "2026": 0.6218
+ },
+ "share_without_a_base_action_by_first_seen_fy": {
+  "2010": {
+   "awards": 106922,
+   "share_without_base_action": 0.4954
+  },
+  "2011": {
+   "awards": 52101,
+   "share_without_base_action": 0.1483
+  },
+  "2012": {
+   "awards": 47245,
+   "share_without_base_action": 0.0846
+  },
+  "2013": {
+   "awards": 41474,
+   "share_without_base_action": 0.0512
+  },
+  "2014": {
+   "awards": 38043,
+   "share_without_base_action": 0.0375
+  },
+  "2015": {
+   "awards": 35145,
+   "share_without_base_action": 0.026
+  },
+  "2016": {
+   "awards": 35416,
+   "share_without_base_action": 0.0279
+  },
+  "2017": {
+   "awards": 33393,
+   "share_without_base_action": 0.026
+  },
+  "2019": {
+   "awards": 52792,
+   "share_without_base_action": 0.3229
+  },
+  "2020": {
+   "awards": 36680,
+   "share_without_base_action": 0.0543
+  },
+  "2021": {
+   "awards": 28607,
+   "share_without_base_action": 0.0191
+  },
+  "2022": {
+   "awards": 26784,
+   "share_without_base_action": 0.0127
+  },
+  "2023": {
+   "awards": 25964,
+   "share_without_base_action": 0.011
+  },
+  "2024": {
+   "awards": 26039,
+   "share_without_base_action": 0.0277
+  },
+  "2025": {
+   "awards": 22155,
+   "share_without_base_action": 0.0108
+  },
+  "2026": {
+   "awards": 11626,
+   "share_without_base_action": 0.0043
+  }
+ },
+ "sample_award_keys": [
+  "CONT_AWD_05GA0A17C0007_0559_-NONE-_-NONE-",
+  "CONT_AWD_05GA0A17C0009_0559_-NONE-_-NONE-",
+  "CONT_AWD_05GA0A17C0022_0559_-NONE-_-NONE-",
+  "CONT_AWD_05GA0A19C0001_0559_-NONE-_-NONE-",
+  "CONT_AWD_05GA0A21C0002_0559_-NONE-_-NONE-",
+  "CONT_AWD_05GA0A22C0001_0559_-NONE-_-NONE-",
+  "CONT_AWD_05GA0A25C0004_0559_-NONE-_-NONE-",
+  "CONT_AWD_10NGA07029DK_3355_-NONE-_-NONE-",
+  "CONT_AWD_10NGA07297DK_3355_-NONE-_-NONE-",
+  "CONT_AWD_10NGA08226DK_3355_-NONE-_-NONE-",
+  "CONT_AWD_10NGA08333DK_3355_-NONE-_-NONE-",
+  "CONT_AWD_11316019C0001SPE_1100_-NONE-_-NONE-",
+  "CONT_AWD_11316019C0001UST_1100_-NONE-_-NONE-",
+  "CONT_AWD_11316021C0002OAS_1100_-NONE-_-NONE-",
+  "CONT_AWD_1131PL16C0002_1153_-NONE-_-NONE-",
+  "CONT_AWD_1131PL17CCP91084_1153_-NONE-_-NONE-",
+  "CONT_AWD_1131PL19CCP91090_1153_-NONE-_-NONE-",
+  "CONT_AWD_1131PL19CSA41234_1153_-NONE-_-NONE-",
+  "CONT_AWD_1131PL19CSA41269_1153_-NONE-_-NONE-",
+  "CONT_AWD_1131PL20CCP91259_1153_-NONE-_-NONE-"
+ ],
+ "seconds": 20.1
+}
