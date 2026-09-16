@@ -15,22 +15,22 @@
   "cells": 4
  },
  "report": {
-  "seconds": 0.4,
-  "finished_at": "2026-09-16T10:34:39"
+  "seconds": 0.8,
+  "finished_at": "2026-09-16T11:33:03"
  },
  "orders_panel": {
-  "seconds": 38.0,
-  "finished_at": "2026-09-16T09:56:57",
+  "seconds": 48.5,
+  "finished_at": "2026-09-16T10:46:15",
   "orders": 798977
  },
  "vehicle_map": {
-  "seconds": 429.7,
-  "finished_at": "2026-09-16T10:20:56",
+  "seconds": 825.7,
+  "finished_at": "2026-09-16T11:00:01",
   "idvs": 838888
  },
  "exp2": {
-  "seconds": 820.7,
-  "finished_at": "2026-09-16T10:34:38",
+  "seconds": 1970.8,
+  "finished_at": "2026-09-16T11:32:55",
   "cells": 6
  }
 }

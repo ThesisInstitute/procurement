@@ -788,17 +788,17 @@ Source: `bidders_us/src/exp3.py`, run from the repository root as `.venv/bin/pyt
 
 ## Tests and reproduction
 
-`pytest bidders_us/tests`: 41 passed in 0.84s, exit code 0 (run 2026-09-16T09:33:04, recorded by `bidders_us/src/run_tests.py`).
+`pytest bidders_us/tests`: 45 passed in 5.94s, exit code 0 (run 2026-09-16T11:33:02, recorded by `bidders_us/src/run_tests.py`).
 
 | Step | Seconds | Finished |
 |---|---|---|
 | shape_model | 292 | 2026-09-16T08:25:52 |
 | exp1 | 1621 | 2026-09-16T09:26:53 |
 | exp3 | 124 | 2026-09-16T08:56:24 |
-| report | 0 | 2026-09-16T09:33:05 |
-| orders_panel | 38 | 2026-09-16T09:56:57 |
-| vehicle_map | 430 | 2026-09-16T10:20:56 |
-| exp2 | 821 | 2026-09-16T10:34:38 |
+| report | 0 | 2026-09-16T10:34:39 |
+| orders_panel | 48 | 2026-09-16T10:46:15 |
+| vehicle_map | 826 | 2026-09-16T11:00:01 |
+| exp2 | 1971 | 2026-09-16T11:32:55 |
 
 Disk held under `data/raw/bidders_us/`: 0.91 GB against a 6 GB budget.
 
