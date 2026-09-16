@@ -1,6 +1,6 @@
 # Forecasting contract slip per competing bidder, Ukraine (Prozorro)
 
-**The price does and the identity does not, which is the interesting part: what a bidder bid relative to its rivals on the same lot ranks the outcome, and outcomes do cluster by bidder, but a bidder's own past record does not rank its future one, so the clustering is not something a forecaster can use. The evidence, sharpest test first: with the lot held fixed, a bidder's own prior extension rate ranks its realised outcome at AUC 0.505 against a same-lot null of 0.500 (p = 0.640); the winner's raw price rank among the bids on that same lot, with no model between the price and the statistic, reaches AUC 0.514 (p = 0.208); a model given only the lot and the bidder's price reaches AUC 0.568 against 0.500 (p = 0.001); a bidder's mean forecast on the lots it lost ranks its realised rate on the lots it won at Spearman 0.233 against a within-division shuffled null of 0.138 (one-sided p = 0.030), against 0.249 for a lot-only placebo that knows nothing about the bidder and which it does not beat; outcomes nonetheless cluster by bidder beyond the buyer and the year (intraclass correlation 0.212 against a null of 0.190, one-sided p = 0.0099); and adding the winner's identity and record to the award-time model moves test AUC by -0.012.**
+**Only weakly, and only on one of the three forecasting tests. The evidence, sharpest test first: with the lot held fixed, a bidder's own prior extension rate ranks its realised outcome at AUC 0.512 against a same-lot null of 0.501 (p = 0.016); the winner's raw price rank among the bids on that same lot, with no model between the price and the statistic, reaches AUC 0.513 (p = 0.011); a model given only the lot and the bidder's price reaches AUC 0.552 against 0.500 (p = 0.001); a bidder's mean forecast on the lots it lost ranks its realised rate on the lots it won at Spearman 0.273 against a within-division shuffled null of 0.212 (one-sided p = 0.000), against 0.287 for a lot-only placebo that knows nothing about the bidder and which it does not beat; outcomes nonetheless cluster by bidder beyond the buyer and the year (intraclass correlation 0.227 against a null of 0.151, one-sided p = 0.0020); and adding the winner's identity and record to the award-time model moves test AUC by -0.008.**
 
 Prozorro is the only large procurement system that publishes every bidder's identity and price, so it is the only public place where the question can be asked at all. This report builds the panel, forecasts the winning contract's slip from award-time information, and then scores every losing bidder by transfer: what a bidder's forecast on the lots it lost says about the lots it won.
 
@@ -22,8 +22,9 @@ A one-in-5 systematic sample of whole days from the Prozorro tender feed, every 
 - Completed above-threshold tenders found, all creation years: 121,036.
 - Of those, created 2019-01-01 to 2022-12-31: 80,182.
 - Queued for fetching: all of them. There is no second-stage subsample, so the only sampling step in the whole design is the one-in-5 day selection.
-- Tender documents parsed: 13,675; bid rows: 40,461; lot rows: 15,707.
-- Lots in the analysis set (at least two live priced bids, an identified winner, and a contract): 14,380 across 12,903 tenders, 7,076 distinct winning bidders, 15,222 distinct bidders overall, 5,345 buyers.
+- Tender documents parsed: 80,182; bid rows: 238,228; lot rows: 92,802.
+- Lots in the analysis set (at least two live priced bids, an identified winner, and a contract): 85,052 across 75,676 tenders, 20,768 distinct winning bidders, 39,553 distinct bidders overall, 12,121 buyers.
+- HTTP requests issued during document fetching: contract 90,718, tender 80,182.
 
 ## The data and how the sample was drawn
 
@@ -33,7 +34,7 @@ Walking every one of those rows to the present would have taken hours: feed volu
 
 Covered `dateModified` span: 2019-01-01T00:00:10.310757+02:00 to 2024-01-01T10:10:30.344427+02:00; 3,604 listing requests over 366 whole days.
 
-The only truncation the design can still cause is a tender whose feed position fell after the walk's end date. Measured on the fetched sample, the lag from the tenderID creation date to the tender's final `dateModified` has median 38 days, p99 111 days and a maximum of 1239 days; 8 of 13,675 tenders (0.059 percent) exceed a year and 8 exceed the 366 days of slack the walk allows after the last tender creation date in the window. That is the exact size of the hole. This is also why a tender's feed position is safe to use at all: a tender's `dateModified` freezes when its contract is published and does not move when the contract registry is later amended, so the walk does not select on the outcome being forecast.
+The only truncation the design can still cause is a tender whose feed position fell after the walk's end date. Measured on the fetched sample, the lag from the tenderID creation date to the tender's final `dateModified` has median 38 days, p99 115 days and a maximum of 1239 days; 54 of 80,182 tenders (0.067 percent) exceed a year and 54 exceed the 366 days of slack the walk allows after the last tender creation date in the window. That is the exact size of the hole. This is also why a tender's feed position is safe to use at all: a tender's `dateModified` freezes when its contract is published and does not move when the contract registry is later amended, so the walk does not select on the outcome being forecast.
 
 What the feed is mostly made of (top procedure-and-status combinations):
 
@@ -58,20 +59,20 @@ Tenders by creation year, and what survives into the analysis set:
 
 | tender creation year | found in the 1-in-5 day sample | lots in the analysis set |
 |---|---|---|
-| 2019 | 20,859 | 4,131 |
-| 2020 | 20,571 | 3,882 |
-| 2021 | 25,955 | 4,834 |
-| 2022 | 12,797 | 1,533 |
+| 2019 | 20,859 | 23,733 |
+| 2020 | 20,571 | 23,204 |
+| 2021 | 25,955 | 29,070 |
+| 2022 | 12,797 | 9,043 |
 
 Above-threshold volume falls 50.7 percent from 2021 to 2022. That is the war, not a sampling artefact: the same one-in-5 day rule applies to every year. It is the main reason the 2022 test window is thin, and the reason a 2021-only test window is reported alongside it.
 
 | procedure | lots in analysis set |
 |---|---|
-| aboveThresholdUA | 12,446 |
-| aboveThresholdEU | 1,442 |
-| aboveThreshold | 492 |
+| aboveThresholdUA | 73,237 |
+| aboveThresholdEU | 8,993 |
+| aboveThreshold | 2,822 |
 
-Lots whose tender opened on or after 2022-02-24, the full-scale invasion: 1,030 of 14,380. Every table that pools years is also reported on a 2021-only test window, which is entirely pre-invasion.
+Lots whose tender opened on or after 2022-02-24, the full-scale invasion: 5,918 of 85,052. Every table that pools years is also reported on a 2021-only test window, which is entirely pre-invasion.
 
 ## Field evidence: what was checked in the data rather than assumed
 
@@ -85,22 +86,21 @@ Contract status in the analysis set, registry record against the tender's own co
 
 | status | registry record | tender copy |
 |---|---|---|
-| terminated | 12,774 | 0 |
-| active | 1,528 | 14,369 |
-| no registry record found | 67 | 0 |
-| pending | 11 | 11 |
+| terminated | 76,116 | 0 |
+| active | 8,827 | 84,943 |
+| pending | 109 | 109 |
 
 That table is itself evidence that the tender copy is frozen at signing: the registry has moved most of these contracts to `terminated` while the tender copy still shows every one of them as it stood when the contract was published. It also shows why the `cancelled` label carries no information in this sample: there are 0 cancelled contracts among the lots scored. A tender only reaches status `complete` once it has a live contract, and where a lot has both a cancelled contract and a live replacement the live one is the one scored, so contract cancellation is essentially unobservable inside a completed-tender sample. It is reported rather than dropped, and the ladder refuses to score it.
 
 The date encoded in the human `tenderID` matches the date part of `tenderPeriod.startDate` on 100.00 percent of the fetched tenders, which is why the sampling frame can be stratified on the tenderID without fetching every tender first.
 
-Bid entry statuses across the whole fetched sample (40,461 entries): `active` 39,836, `deleted` 381, `unsuccessful` 231, `invalid` 13. Entries with status `deleted`, `draft` or `invalid.pre-qualification` never reached evaluation and are excluded from the bid counts, the price ranks and the dispersion statistics.
+Bid entry statuses across the whole fetched sample (238,228 entries): `active` 234,085, `deleted` 2,458, `unsuccessful` 1,615, `invalid` 70. Entries with status `deleted`, `draft` or `invalid.pre-qualification` never reached evaluation and are excluded from the bid counts, the price ranks and the dispersion statistics.
 
 Consortium bids, meaning more than one tenderer on a single bid: 0. Prozorro records one legal entity per bid in this sample, so a bidder identity is unambiguous.
 
-Disqualification is recorded as an award with status `unsuccessful` against a specific bid, not as a status on the bid itself: across the fetched sample there are 4,482 unsuccessful awards against 15,264 active ones. Prozorro strips the price from a bid that was withdrawn or rejected outright, and 2,211 bid entries in the sample carry no amount at all, so they cannot be ranked. Of the 4,482 unsuccessful awards, 100.0 percent point at a bid that does still carry a price and can therefore be placed in the price order. Experiment 3 is restricted to those.
+Disqualification is recorded as an award with status `unsuccessful` against a specific bid, not as a status on the bid itself: across the fetched sample there are 26,739 unsuccessful awards against 90,035 active ones. Prozorro strips the price from a bid that was withdrawn or rejected outright, and 13,345 bid entries in the sample carry no amount at all, so they cannot be ranked. Of the 26,739 unsuccessful awards, 100.0 percent point at a bid that does still carry a price and can therefore be placed in the price order. Experiment 3 is restricted to those.
 
-The tender document's copy of a contract lags the live registry: it is written when the tender was last touched, and in the sample it agrees with the registry on the contract end date 78.8 percent of the 14,250 lots where both dates are present. The registry end date is later in 19.2 percent of them, by a median of 90 days. Conditioning on the registry's own `durationExtension` change, the two dates differ in 64.9 percent of extended contracts and 16.9 percent of unextended ones, and of the contracts whose end date did move, 27.3 percent carry a `durationExtension` change. So the end date moves considerably more often than an extension is registered against it. Some of that is a genuinely different event, an administrative edit to the period rather than an agreed extension, and some of it is the tender copy having been written after a change rather than at signing. Either way `days_extended` is the broader and noisier of the two signals, and `duration_extension`, which needs no date arithmetic at all, is the primary label for that reason.
+The tender document's copy of a contract lags the live registry: it is written when the tender was last touched, and in the sample it agrees with the registry on the contract end date 79.2 percent of the 84,672 lots where both dates are present. The registry end date is later in 19.1 percent of them, by a median of 90 days. Conditioning on the registry's own `durationExtension` change, the two dates differ in 64.8 percent of extended contracts and 16.5 percent of unextended ones, and of the contracts whose end date did move, 27.7 percent carry a `durationExtension` change. So the end date moves considerably more often than an extension is registered against it. Some of that is a genuinely different event, an administrative edit to the period rather than an agreed extension, and some of it is the tender copy having been written after a change rather than at signing. Either way `days_extended` is the broader and noisier of the two signals, and `duration_extension`, which needs no date arithmetic at all, is the primary label for that reason.
 
 ## Fill rates
 
@@ -108,20 +108,20 @@ Field presence, over every parsed lot and over the analysis set. The analysis se
 
 | field | lots | share | lots, analysis set | share, analysis set |
 |---|---|---|---|---|
-| at least two live priced bids on the lot | 14,512 | 0.924 | 14,380 | 1.000 |
-| an identified winning bid | 15,264 | 0.972 | 14,380 | 1.000 |
-| lot has a contract in the tender document | 15,327 | 0.976 | 14,380 | 1.000 |
-| contract found in the live registry | 14,488 | 0.922 | 14,313 | 0.995 |
-| registry amountPaid present | 12,956 | 0.825 | 12,853 | 0.894 |
-| registry amountPaid present and positive | 12,483 | 0.795 | 12,383 | 0.861 |
-| registry period.endDate present | 14,387 | 0.916 | 14,275 | 0.993 |
-| tender-copy contract period.endDate present | 15,201 | 0.968 | 14,317 | 0.996 |
-| both period end dates present | 14,362 | 0.914 | 14,250 | 0.991 |
-| registry changes[] non-empty | 8,022 | 0.511 | 7,979 | 0.555 |
-| value_change_ratio computable | 14,348 | 0.913 | 14,173 | 0.986 |
-| winner discount computable | 15,264 | 0.972 | 14,380 | 1.000 |
-| bid dispersion computable | 14,512 | 0.924 | 14,380 | 1.000 |
-| lots (denominator) | 15,707 | 1.000 | 14,380 | 1.000 |
+| at least two live priced bids on the lot | 85,947 | 0.926 | 85,052 | 1.000 |
+| an identified winning bid | 90,027 | 0.970 | 85,052 | 1.000 |
+| lot has a contract in the tender document | 90,392 | 0.974 | 85,052 | 1.000 |
+| contract found in the live registry | 85,857 | 0.925 | 85,052 | 1.000 |
+| registry amountPaid present | 76,993 | 0.830 | 76,585 | 0.900 |
+| registry amountPaid present and positive | 74,347 | 0.801 | 73,948 | 0.869 |
+| registry period.endDate present | 85,207 | 0.918 | 84,768 | 0.997 |
+| tender-copy contract period.endDate present | 89,646 | 0.966 | 84,672 | 0.996 |
+| both period end dates present | 85,111 | 0.917 | 84,672 | 0.996 |
+| registry changes[] non-empty | 47,533 | 0.512 | 47,352 | 0.557 |
+| value_change_ratio computable | 85,153 | 0.918 | 84,348 | 0.992 |
+| winner discount computable | 90,027 | 0.970 | 85,052 | 1.000 |
+| bid dispersion computable | 85,947 | 0.926 | 85,052 | 1.000 |
+| lots (denominator) | 92,802 | 1.000 | 85,052 | 1.000 |
 
 ## Labels
 
@@ -140,12 +140,13 @@ All labels are on the winning contract of a lot. A lot is one (tender, lot) pair
 
 | year | lots | tenders | still running at the snapshot | duration extension recorded | end date moved out more than 90 days | contract value up more than 10 percent | any registered change | paid less than 90 percent of the signed value | contract cancelled |
 |---|---|---|---|---|---|---|---|---|---|
-| 2019 | 4,131 | 3,616 | 0.128 | 0.082 | 0.145 | 0.077 | 0.544 | 0.233 | 0.000 |
-| 2020 | 3,882 | 3,519 | 0.101 | 0.086 | 0.075 | 0.067 | 0.568 | 0.273 | 0.000 |
-| 2021 | 4,834 | 4,339 | 0.098 | 0.104 | 0.081 | 0.059 | 0.562 | 0.313 | 0.000 |
-| 2022 | 1,533 | 1,429 | 0.085 | 0.066 | 0.065 | 0.034 | 0.554 | 0.379 | 0.000 |
+| 2019 | 23,733 | 20,859 | 0.126 | 0.081 | 0.141 | 0.081 | 0.543 | 0.234 | 0.000 |
+| 2020 | 23,204 | 20,571 | 0.092 | 0.090 | 0.078 | 0.073 | 0.570 | 0.278 | 0.000 |
+| 2021 | 29,070 | 25,955 | 0.101 | 0.102 | 0.081 | 0.062 | 0.561 | 0.318 | 0.000 |
+| 2022 | 9,043 | 8,289 | 0.085 | 0.066 | 0.054 | 0.042 | 0.544 | 0.389 | 0.000 |
+| 2023 | 2 | 2 | 0.000 | 0.000 | 0.000 | 0.000 | 0.500 | 0.500 | 0.000 |
 
-Every label is read at one snapshot, so cohorts differ in how long they have had to accumulate changes. The fourth column measures what is left of that: the share of lots whose contract the registry still calls `active` runs from 8.5 percent to 12.8 percent, and it falls with the cohort year, so the test cohorts are if anything less censored than the training cohorts and the models are not being flattered by it. The oldest cohort carrying the most still-running contracts is not what exposure alone would predict, and no explanation for it is established here.
+Every label is read at one snapshot, so cohorts differ in how long they have had to accumulate changes. The fourth column measures what is left of that: the share of lots whose contract the registry still calls `active` runs from 0.0 percent to 12.6 percent, and it falls with the cohort year, so the test cohorts are if anything less censored than the training cohorts and the models are not being flattered by it. The oldest cohort carrying the most still-running contracts is not what exposure alone would predict, and no explanation for it is established here.
 
 ## Experiment 1: forecasting the winner's slip from award-time features
 
@@ -153,7 +154,7 @@ Forward-chained throughout. Training is every lot whose tender opened in 2019 or
 
 Rungs, nested, so that each step answers one question: the training base rate; a shrunken CPV-division by region cell mean; gradient boosting on the lot alone with no identity of any kind in it; the same plus the buyer's as-of record; the same plus the winner's price position on that lot; the same plus the winner's as-of record.
 
-Before any of the bidder questions, the plain one: how forecastable are these outcomes at all? Best rung on the primary test window, by skill against the training base rate: duration extension recorded AUC 0.742 with skill +0.124 on a 9.5 percent base rate; end date moved out more than 90 days AUC 0.745 with skill +0.105 on a 7.7 percent base rate; contract value up more than 10 percent AUC 0.688 with skill +0.005 on a 5.3 percent base rate; any registered change AUC 0.731 with skill +0.141 on a 56.0 percent base rate; paid less than 90 percent of the signed value AUC 0.770 with skill +0.218 on a 32.9 percent base rate. For comparison the US panel in this repository reaches AUC 0.84 to 0.86 on schedule slip, so Ukrainian above-threshold contracts are the harder forecasting problem, on outcomes that are not quite the same outcomes.
+Before any of the bidder questions, the plain one: how forecastable are these outcomes at all? Best rung on the primary test window, by skill against the training base rate: duration extension recorded AUC 0.759 with skill +0.149 on a 9.4 percent base rate; end date moved out more than 90 days AUC 0.756 with skill +0.117 on a 7.5 percent base rate; contract value up more than 10 percent AUC 0.763 with skill +0.048 on a 5.7 percent base rate; any registered change AUC 0.759 with skill +0.191 on a 55.7 percent base rate; paid less than 90 percent of the signed value AUC 0.787 with skill +0.230 on a 33.5 percent base rate. For comparison the US panel in this repository reaches AUC 0.84 to 0.86 on schedule slip, so Ukrainian above-threshold contracts are the harder forecasting problem, on outcomes that are not quite the same outcomes.
 
 One detail worth stating rather than hiding: the gradient booster's own early-stopping validation split is a random 15 percent of the training window, not a temporal one. The test window is strictly later than the whole training window either way, so no test information enters the fit.
 
@@ -161,110 +162,110 @@ One detail worth stating rather than hiding: the gradient booster's own early-st
 
 | label | model | test lots | test base rate | train base rate | Brier | skill vs train base rate | AUC |
 |---|---|---|---|---|---|---|---|
-| duration extension recorded | base rate | 6,338 | 0.095 | 0.084 | 0.0860 | 0.000 | 0.500 |
-| duration extension recorded | reference class | 6,338 | 0.095 | 0.084 | 0.0818 | 0.049 | 0.687 |
-| duration extension recorded | GBM lot, no buyer history | 6,338 | 0.095 | 0.084 | 0.0774 | 0.100 | 0.714 |
-| duration extension recorded | GBM lot, plus buyer history | 6,338 | 0.095 | 0.084 | 0.0759 | 0.117 | 0.726 |
-| duration extension recorded | GBM plus the bidder's price | 6,338 | 0.095 | 0.084 | 0.0753 | 0.124 | 0.742 |
-| duration extension recorded | GBM plus the bidder's price and history | 6,338 | 0.095 | 0.084 | 0.0761 | 0.114 | 0.730 |
-| end date moved out more than 90 days | base rate | 6,317 | 0.077 | 0.111 | 0.0724 | 0.000 | 0.500 |
-| end date moved out more than 90 days | reference class | 6,317 | 0.077 | 0.111 | 0.0727 | -0.004 | 0.607 |
-| end date moved out more than 90 days | GBM lot, no buyer history | 6,317 | 0.077 | 0.111 | 0.0686 | 0.054 | 0.726 |
-| end date moved out more than 90 days | GBM lot, plus buyer history | 6,317 | 0.077 | 0.111 | 0.0648 | 0.105 | 0.745 |
-| end date moved out more than 90 days | GBM plus the bidder's price | 6,317 | 0.077 | 0.111 | 0.0651 | 0.102 | 0.743 |
-| end date moved out more than 90 days | GBM plus the bidder's price and history | 6,317 | 0.077 | 0.111 | 0.0649 | 0.104 | 0.746 |
-| contract value up more than 10 percent | base rate | 6,338 | 0.053 | 0.072 | 0.0503 | 0.000 | 0.500 |
-| contract value up more than 10 percent | reference class | 6,338 | 0.053 | 0.072 | 0.0503 | -0.001 | 0.650 |
-| contract value up more than 10 percent | GBM lot, no buyer history | 6,338 | 0.053 | 0.072 | 0.0515 | -0.024 | 0.681 |
-| contract value up more than 10 percent | GBM lot, plus buyer history | 6,338 | 0.053 | 0.072 | 0.0516 | -0.026 | 0.684 |
-| contract value up more than 10 percent | GBM plus the bidder's price | 6,338 | 0.053 | 0.072 | 0.0514 | -0.022 | 0.665 |
-| contract value up more than 10 percent | GBM plus the bidder's price and history | 6,338 | 0.053 | 0.072 | 0.0501 | 0.005 | 0.688 |
-| any registered change | base rate | 6,338 | 0.560 | 0.556 | 0.2464 | 0.000 | 0.500 |
-| any registered change | reference class | 6,338 | 0.560 | 0.556 | 0.2243 | 0.090 | 0.693 |
-| any registered change | GBM lot, no buyer history | 6,338 | 0.560 | 0.556 | 0.2118 | 0.141 | 0.731 |
-| any registered change | GBM lot, plus buyer history | 6,338 | 0.560 | 0.556 | 0.2143 | 0.130 | 0.726 |
-| any registered change | GBM plus the bidder's price | 6,338 | 0.560 | 0.556 | 0.2133 | 0.134 | 0.726 |
-| any registered change | GBM plus the bidder's price and history | 6,338 | 0.560 | 0.556 | 0.2162 | 0.123 | 0.722 |
-| paid less than 90 percent of the signed value | base rate | 5,503 | 0.329 | 0.253 | 0.2267 | 0.000 | 0.500 |
-| paid less than 90 percent of the signed value | reference class | 5,503 | 0.329 | 0.253 | 0.2019 | 0.109 | 0.706 |
-| paid less than 90 percent of the signed value | GBM lot, no buyer history | 5,503 | 0.329 | 0.253 | 0.1794 | 0.209 | 0.769 |
-| paid less than 90 percent of the signed value | GBM lot, plus buyer history | 5,503 | 0.329 | 0.253 | 0.1782 | 0.214 | 0.767 |
-| paid less than 90 percent of the signed value | GBM plus the bidder's price | 5,503 | 0.329 | 0.253 | 0.1772 | 0.218 | 0.770 |
-| paid less than 90 percent of the signed value | GBM plus the bidder's price and history | 5,503 | 0.329 | 0.253 | 0.1775 | 0.217 | 0.768 |
+| duration extension recorded | base rate | 38,113 | 0.094 | 0.085 | 0.0849 | 0.000 | 0.500 |
+| duration extension recorded | reference class | 38,113 | 0.094 | 0.085 | 0.0793 | 0.066 | 0.704 |
+| duration extension recorded | GBM lot, no buyer history | 38,113 | 0.094 | 0.085 | 0.0750 | 0.117 | 0.728 |
+| duration extension recorded | GBM lot, plus buyer history | 38,113 | 0.094 | 0.085 | 0.0735 | 0.135 | 0.749 |
+| duration extension recorded | GBM plus the bidder's price | 38,113 | 0.094 | 0.085 | 0.0722 | 0.149 | 0.759 |
+| duration extension recorded | GBM plus the bidder's price and history | 38,113 | 0.094 | 0.085 | 0.0740 | 0.128 | 0.751 |
+| end date moved out more than 90 days | base rate | 38,000 | 0.075 | 0.110 | 0.0704 | 0.000 | 0.500 |
+| end date moved out more than 90 days | reference class | 38,000 | 0.075 | 0.110 | 0.0691 | 0.018 | 0.658 |
+| end date moved out more than 90 days | GBM lot, no buyer history | 38,000 | 0.075 | 0.110 | 0.0652 | 0.074 | 0.720 |
+| end date moved out more than 90 days | GBM lot, plus buyer history | 38,000 | 0.075 | 0.110 | 0.0630 | 0.105 | 0.739 |
+| end date moved out more than 90 days | GBM plus the bidder's price | 38,000 | 0.075 | 0.110 | 0.0625 | 0.112 | 0.749 |
+| end date moved out more than 90 days | GBM plus the bidder's price and history | 38,000 | 0.075 | 0.110 | 0.0621 | 0.117 | 0.756 |
+| contract value up more than 10 percent | base rate | 38,113 | 0.057 | 0.077 | 0.0544 | 0.000 | 0.500 |
+| contract value up more than 10 percent | reference class | 38,113 | 0.057 | 0.077 | 0.0528 | 0.030 | 0.711 |
+| contract value up more than 10 percent | GBM lot, no buyer history | 38,113 | 0.057 | 0.077 | 0.0518 | 0.048 | 0.763 |
+| contract value up more than 10 percent | GBM lot, plus buyer history | 38,113 | 0.057 | 0.077 | 0.0530 | 0.027 | 0.726 |
+| contract value up more than 10 percent | GBM plus the bidder's price | 38,113 | 0.057 | 0.077 | 0.0527 | 0.032 | 0.735 |
+| contract value up more than 10 percent | GBM plus the bidder's price and history | 38,113 | 0.057 | 0.077 | 0.0524 | 0.037 | 0.742 |
+| any registered change | base rate | 38,113 | 0.557 | 0.557 | 0.2467 | 0.000 | 0.500 |
+| any registered change | reference class | 38,113 | 0.557 | 0.557 | 0.2183 | 0.115 | 0.703 |
+| any registered change | GBM lot, no buyer history | 38,113 | 0.557 | 0.557 | 0.2008 | 0.186 | 0.755 |
+| any registered change | GBM lot, plus buyer history | 38,113 | 0.557 | 0.557 | 0.2013 | 0.184 | 0.755 |
+| any registered change | GBM plus the bidder's price | 38,113 | 0.557 | 0.557 | 0.1997 | 0.191 | 0.758 |
+| any registered change | GBM plus the bidder's price and history | 38,113 | 0.557 | 0.557 | 0.1995 | 0.191 | 0.759 |
+| paid less than 90 percent of the signed value | base rate | 33,026 | 0.335 | 0.256 | 0.2289 | 0.000 | 0.500 |
+| paid less than 90 percent of the signed value | reference class | 33,026 | 0.335 | 0.256 | 0.1933 | 0.156 | 0.736 |
+| paid less than 90 percent of the signed value | GBM lot, no buyer history | 33,026 | 0.335 | 0.256 | 0.1762 | 0.230 | 0.788 |
+| paid less than 90 percent of the signed value | GBM lot, plus buyer history | 33,026 | 0.335 | 0.256 | 0.1763 | 0.230 | 0.785 |
+| paid less than 90 percent of the signed value | GBM plus the bidder's price | 33,026 | 0.335 | 0.256 | 0.1761 | 0.230 | 0.787 |
+| paid less than 90 percent of the signed value | GBM plus the bidder's price and history | 33,026 | 0.335 | 0.256 | 0.1766 | 0.229 | 0.786 |
 
 ### test 2021 only (pre-invasion)
 
 | label | model | test lots | test base rate | train base rate | Brier | skill vs train base rate | AUC |
 |---|---|---|---|---|---|---|---|
-| duration extension recorded | base rate | 4,810 | 0.104 | 0.084 | 0.0935 | 0.000 | 0.500 |
-| duration extension recorded | reference class | 4,810 | 0.104 | 0.084 | 0.0887 | 0.052 | 0.689 |
-| duration extension recorded | GBM lot, no buyer history | 4,810 | 0.104 | 0.084 | 0.0825 | 0.118 | 0.734 |
-| duration extension recorded | GBM lot, plus buyer history | 4,810 | 0.104 | 0.084 | 0.0807 | 0.137 | 0.741 |
-| duration extension recorded | GBM plus the bidder's price | 4,810 | 0.104 | 0.084 | 0.0798 | 0.147 | 0.759 |
-| duration extension recorded | GBM plus the bidder's price and history | 4,810 | 0.104 | 0.084 | 0.0809 | 0.135 | 0.743 |
-| end date moved out more than 90 days | base rate | 4,789 | 0.081 | 0.111 | 0.0755 | 0.000 | 0.500 |
-| end date moved out more than 90 days | reference class | 4,789 | 0.081 | 0.111 | 0.0754 | 0.002 | 0.610 |
-| end date moved out more than 90 days | GBM lot, no buyer history | 4,789 | 0.081 | 0.111 | 0.0698 | 0.076 | 0.741 |
-| end date moved out more than 90 days | GBM lot, plus buyer history | 4,789 | 0.081 | 0.111 | 0.0659 | 0.127 | 0.773 |
-| end date moved out more than 90 days | GBM plus the bidder's price | 4,789 | 0.081 | 0.111 | 0.0660 | 0.127 | 0.767 |
-| end date moved out more than 90 days | GBM plus the bidder's price and history | 4,789 | 0.081 | 0.111 | 0.0664 | 0.121 | 0.770 |
-| contract value up more than 10 percent | base rate | 4,810 | 0.059 | 0.072 | 0.0554 | 0.000 | 0.500 |
-| contract value up more than 10 percent | reference class | 4,810 | 0.059 | 0.072 | 0.0550 | 0.007 | 0.660 |
-| contract value up more than 10 percent | GBM lot, no buyer history | 4,810 | 0.059 | 0.072 | 0.0562 | -0.015 | 0.691 |
-| contract value up more than 10 percent | GBM lot, plus buyer history | 4,810 | 0.059 | 0.072 | 0.0562 | -0.014 | 0.693 |
-| contract value up more than 10 percent | GBM plus the bidder's price | 4,810 | 0.059 | 0.072 | 0.0560 | -0.011 | 0.672 |
-| contract value up more than 10 percent | GBM plus the bidder's price and history | 4,810 | 0.059 | 0.072 | 0.0549 | 0.009 | 0.695 |
-| any registered change | base rate | 4,810 | 0.562 | 0.556 | 0.2462 | 0.000 | 0.500 |
-| any registered change | reference class | 4,810 | 0.562 | 0.556 | 0.2230 | 0.094 | 0.697 |
-| any registered change | GBM lot, no buyer history | 4,810 | 0.562 | 0.556 | 0.2089 | 0.151 | 0.738 |
-| any registered change | GBM lot, plus buyer history | 4,810 | 0.562 | 0.556 | 0.2114 | 0.141 | 0.732 |
-| any registered change | GBM plus the bidder's price | 4,810 | 0.562 | 0.556 | 0.2110 | 0.143 | 0.730 |
-| any registered change | GBM plus the bidder's price and history | 4,810 | 0.562 | 0.556 | 0.2136 | 0.133 | 0.727 |
-| paid less than 90 percent of the signed value | base rate | 4,190 | 0.313 | 0.253 | 0.2189 | 0.000 | 0.500 |
-| paid less than 90 percent of the signed value | reference class | 4,190 | 0.313 | 0.253 | 0.1953 | 0.108 | 0.708 |
-| paid less than 90 percent of the signed value | GBM lot, no buyer history | 4,190 | 0.313 | 0.253 | 0.1690 | 0.228 | 0.783 |
-| paid less than 90 percent of the signed value | GBM lot, plus buyer history | 4,190 | 0.313 | 0.253 | 0.1687 | 0.229 | 0.781 |
-| paid less than 90 percent of the signed value | GBM plus the bidder's price | 4,190 | 0.313 | 0.253 | 0.1682 | 0.231 | 0.781 |
-| paid less than 90 percent of the signed value | GBM plus the bidder's price and history | 4,190 | 0.313 | 0.253 | 0.1683 | 0.231 | 0.780 |
+| duration extension recorded | base rate | 29,070 | 0.102 | 0.085 | 0.0920 | 0.000 | 0.500 |
+| duration extension recorded | reference class | 29,070 | 0.102 | 0.085 | 0.0856 | 0.070 | 0.711 |
+| duration extension recorded | GBM lot, no buyer history | 29,070 | 0.102 | 0.085 | 0.0802 | 0.129 | 0.739 |
+| duration extension recorded | GBM lot, plus buyer history | 29,070 | 0.102 | 0.085 | 0.0782 | 0.150 | 0.761 |
+| duration extension recorded | GBM plus the bidder's price | 29,070 | 0.102 | 0.085 | 0.0764 | 0.169 | 0.772 |
+| duration extension recorded | GBM plus the bidder's price and history | 29,070 | 0.102 | 0.085 | 0.0786 | 0.145 | 0.760 |
+| end date moved out more than 90 days | base rate | 28,971 | 0.081 | 0.110 | 0.0754 | 0.000 | 0.500 |
+| end date moved out more than 90 days | reference class | 28,971 | 0.081 | 0.110 | 0.0735 | 0.026 | 0.662 |
+| end date moved out more than 90 days | GBM lot, no buyer history | 28,971 | 0.081 | 0.110 | 0.0679 | 0.099 | 0.733 |
+| end date moved out more than 90 days | GBM lot, plus buyer history | 28,971 | 0.081 | 0.110 | 0.0669 | 0.114 | 0.747 |
+| end date moved out more than 90 days | GBM plus the bidder's price | 28,971 | 0.081 | 0.110 | 0.0661 | 0.124 | 0.758 |
+| end date moved out more than 90 days | GBM plus the bidder's price and history | 28,971 | 0.081 | 0.110 | 0.0654 | 0.133 | 0.768 |
+| contract value up more than 10 percent | base rate | 29,070 | 0.062 | 0.077 | 0.0586 | 0.000 | 0.500 |
+| contract value up more than 10 percent | reference class | 29,070 | 0.062 | 0.077 | 0.0560 | 0.044 | 0.728 |
+| contract value up more than 10 percent | GBM lot, no buyer history | 29,070 | 0.062 | 0.077 | 0.0530 | 0.096 | 0.784 |
+| contract value up more than 10 percent | GBM lot, plus buyer history | 29,070 | 0.062 | 0.077 | 0.0564 | 0.038 | 0.734 |
+| contract value up more than 10 percent | GBM plus the bidder's price | 29,070 | 0.062 | 0.077 | 0.0560 | 0.044 | 0.747 |
+| contract value up more than 10 percent | GBM plus the bidder's price and history | 29,070 | 0.062 | 0.077 | 0.0557 | 0.049 | 0.757 |
+| any registered change | base rate | 29,070 | 0.561 | 0.557 | 0.2463 | 0.000 | 0.500 |
+| any registered change | reference class | 29,070 | 0.561 | 0.557 | 0.2152 | 0.126 | 0.710 |
+| any registered change | GBM lot, no buyer history | 29,070 | 0.561 | 0.557 | 0.1967 | 0.201 | 0.763 |
+| any registered change | GBM lot, plus buyer history | 29,070 | 0.561 | 0.557 | 0.1965 | 0.202 | 0.764 |
+| any registered change | GBM plus the bidder's price | 29,070 | 0.561 | 0.557 | 0.1955 | 0.206 | 0.766 |
+| any registered change | GBM plus the bidder's price and history | 29,070 | 0.561 | 0.557 | 0.1953 | 0.207 | 0.767 |
+| paid less than 90 percent of the signed value | base rate | 25,276 | 0.318 | 0.256 | 0.2207 | 0.000 | 0.500 |
+| paid less than 90 percent of the signed value | reference class | 25,276 | 0.318 | 0.256 | 0.1867 | 0.154 | 0.742 |
+| paid less than 90 percent of the signed value | GBM lot, no buyer history | 25,276 | 0.318 | 0.256 | 0.1644 | 0.255 | 0.806 |
+| paid less than 90 percent of the signed value | GBM lot, plus buyer history | 25,276 | 0.318 | 0.256 | 0.1677 | 0.240 | 0.797 |
+| paid less than 90 percent of the signed value | GBM plus the bidder's price | 25,276 | 0.318 | 0.256 | 0.1676 | 0.241 | 0.799 |
+| paid less than 90 percent of the signed value | GBM plus the bidder's price and history | 25,276 | 0.318 | 0.256 | 0.1676 | 0.240 | 0.798 |
 
 ### test 2022 post-invasion
 
 | label | model | test lots | test base rate | train base rate | Brier | skill vs train base rate | AUC |
 |---|---|---|---|---|---|---|---|
-| duration extension recorded | base rate | 1,027 | 0.068 | 0.084 | 0.0638 | 0.000 | 0.500 |
-| duration extension recorded | reference class | 1,027 | 0.068 | 0.084 | 0.0614 | 0.036 | 0.698 |
-| duration extension recorded | GBM lot, no buyer history | 1,027 | 0.068 | 0.084 | 0.0624 | 0.022 | 0.650 |
-| duration extension recorded | GBM lot, plus buyer history | 1,027 | 0.068 | 0.084 | 0.0609 | 0.045 | 0.708 |
-| duration extension recorded | GBM plus the bidder's price | 1,027 | 0.068 | 0.084 | 0.0610 | 0.043 | 0.706 |
-| duration extension recorded | GBM plus the bidder's price and history | 1,027 | 0.068 | 0.084 | 0.0611 | 0.041 | 0.722 |
-| end date moved out more than 90 days | base rate | 1,027 | 0.057 | 0.111 | 0.0570 | 0.000 | 0.500 |
-| end date moved out more than 90 days | reference class | 1,027 | 0.057 | 0.111 | 0.0599 | -0.050 | 0.605 |
-| end date moved out more than 90 days | GBM lot, no buyer history | 1,027 | 0.057 | 0.111 | 0.0581 | -0.018 | 0.639 |
-| end date moved out more than 90 days | GBM lot, plus buyer history | 1,027 | 0.057 | 0.111 | 0.0542 | 0.050 | 0.632 |
-| end date moved out more than 90 days | GBM plus the bidder's price | 1,027 | 0.057 | 0.111 | 0.0557 | 0.024 | 0.631 |
-| end date moved out more than 90 days | GBM plus the bidder's price and history | 1,027 | 0.057 | 0.111 | 0.0537 | 0.059 | 0.634 |
-| contract value up more than 10 percent | base rate | 1,027 | 0.032 | 0.072 | 0.0327 | 0.000 | 0.500 |
-| contract value up more than 10 percent | reference class | 1,027 | 0.032 | 0.072 | 0.0341 | -0.043 | 0.648 |
-| contract value up more than 10 percent | GBM lot, no buyer history | 1,027 | 0.032 | 0.072 | 0.0344 | -0.052 | 0.658 |
-| contract value up more than 10 percent | GBM lot, plus buyer history | 1,027 | 0.032 | 0.072 | 0.0348 | -0.065 | 0.646 |
-| contract value up more than 10 percent | GBM plus the bidder's price | 1,027 | 0.032 | 0.072 | 0.0336 | -0.029 | 0.662 |
-| contract value up more than 10 percent | GBM plus the bidder's price and history | 1,027 | 0.032 | 0.072 | 0.0324 | 0.010 | 0.670 |
-| any registered change | base rate | 1,027 | 0.517 | 0.556 | 0.2512 | 0.000 | 0.500 |
-| any registered change | reference class | 1,027 | 0.517 | 0.556 | 0.2300 | 0.085 | 0.705 |
-| any registered change | GBM lot, no buyer history | 1,027 | 0.517 | 0.556 | 0.2213 | 0.119 | 0.718 |
-| any registered change | GBM lot, plus buyer history | 1,027 | 0.517 | 0.556 | 0.2242 | 0.108 | 0.717 |
-| any registered change | GBM plus the bidder's price | 1,027 | 0.517 | 0.556 | 0.2209 | 0.121 | 0.724 |
-| any registered change | GBM plus the bidder's price and history | 1,027 | 0.517 | 0.556 | 0.2247 | 0.106 | 0.711 |
-| paid less than 90 percent of the signed value | base rate | 937 | 0.289 | 0.253 | 0.2069 | 0.000 | 0.500 |
-| paid less than 90 percent of the signed value | reference class | 937 | 0.289 | 0.253 | 0.1905 | 0.079 | 0.679 |
-| paid less than 90 percent of the signed value | GBM lot, no buyer history | 937 | 0.289 | 0.253 | 0.1884 | 0.090 | 0.712 |
-| paid less than 90 percent of the signed value | GBM lot, plus buyer history | 937 | 0.289 | 0.253 | 0.1914 | 0.075 | 0.706 |
-| paid less than 90 percent of the signed value | GBM plus the bidder's price | 937 | 0.289 | 0.253 | 0.1854 | 0.104 | 0.719 |
-| paid less than 90 percent of the signed value | GBM plus the bidder's price and history | 937 | 0.289 | 0.253 | 0.1867 | 0.098 | 0.713 |
+| duration extension recorded | base rate | 5,916 | 0.073 | 0.085 | 0.0678 | 0.000 | 0.500 |
+| duration extension recorded | reference class | 5,916 | 0.073 | 0.085 | 0.0655 | 0.034 | 0.647 |
+| duration extension recorded | GBM lot, no buyer history | 5,916 | 0.073 | 0.085 | 0.0638 | 0.060 | 0.680 |
+| duration extension recorded | GBM lot, plus buyer history | 5,916 | 0.073 | 0.085 | 0.0639 | 0.058 | 0.704 |
+| duration extension recorded | GBM plus the bidder's price | 5,916 | 0.073 | 0.085 | 0.0643 | 0.051 | 0.703 |
+| duration extension recorded | GBM plus the bidder's price and history | 5,916 | 0.073 | 0.085 | 0.0645 | 0.050 | 0.717 |
+| end date moved out more than 90 days | base rate | 5,912 | 0.057 | 0.110 | 0.0564 | 0.000 | 0.500 |
+| end date moved out more than 90 days | reference class | 5,912 | 0.057 | 0.110 | 0.0573 | -0.016 | 0.629 |
+| end date moved out more than 90 days | GBM lot, no buyer history | 5,912 | 0.057 | 0.110 | 0.0557 | 0.012 | 0.683 |
+| end date moved out more than 90 days | GBM lot, plus buyer history | 5,912 | 0.057 | 0.110 | 0.0533 | 0.056 | 0.699 |
+| end date moved out more than 90 days | GBM plus the bidder's price | 5,912 | 0.057 | 0.110 | 0.0533 | 0.055 | 0.710 |
+| end date moved out more than 90 days | GBM plus the bidder's price and history | 5,912 | 0.057 | 0.110 | 0.0535 | 0.051 | 0.713 |
+| contract value up more than 10 percent | base rate | 5,916 | 0.040 | 0.077 | 0.0394 | 0.000 | 0.500 |
+| contract value up more than 10 percent | reference class | 5,916 | 0.040 | 0.077 | 0.0407 | -0.033 | 0.650 |
+| contract value up more than 10 percent | GBM lot, no buyer history | 5,916 | 0.040 | 0.077 | 0.0405 | -0.028 | 0.687 |
+| contract value up more than 10 percent | GBM lot, plus buyer history | 5,916 | 0.040 | 0.077 | 0.0392 | 0.006 | 0.713 |
+| contract value up more than 10 percent | GBM plus the bidder's price | 5,916 | 0.040 | 0.077 | 0.0394 | 0.001 | 0.705 |
+| contract value up more than 10 percent | GBM plus the bidder's price and history | 5,916 | 0.040 | 0.077 | 0.0394 | 0.001 | 0.703 |
+| any registered change | base rate | 5,916 | 0.499 | 0.557 | 0.2533 | 0.000 | 0.500 |
+| any registered change | reference class | 5,916 | 0.499 | 0.557 | 0.2254 | 0.110 | 0.713 |
+| any registered change | GBM lot, no buyer history | 5,916 | 0.499 | 0.557 | 0.2034 | 0.197 | 0.760 |
+| any registered change | GBM lot, plus buyer history | 5,916 | 0.499 | 0.557 | 0.2056 | 0.188 | 0.761 |
+| any registered change | GBM plus the bidder's price | 5,916 | 0.499 | 0.557 | 0.2028 | 0.199 | 0.765 |
+| any registered change | GBM plus the bidder's price and history | 5,916 | 0.499 | 0.557 | 0.2037 | 0.196 | 0.763 |
+| paid less than 90 percent of the signed value | base rate | 5,313 | 0.298 | 0.256 | 0.2108 | 0.000 | 0.500 |
+| paid less than 90 percent of the signed value | reference class | 5,313 | 0.298 | 0.256 | 0.1858 | 0.118 | 0.711 |
+| paid less than 90 percent of the signed value | GBM lot, no buyer history | 5,313 | 0.298 | 0.256 | 0.1872 | 0.112 | 0.727 |
+| paid less than 90 percent of the signed value | GBM lot, plus buyer history | 5,313 | 0.298 | 0.256 | 0.1893 | 0.102 | 0.723 |
+| paid less than 90 percent of the signed value | GBM plus the bidder's price | 5,313 | 0.298 | 0.256 | 0.1883 | 0.107 | 0.726 |
+| paid less than 90 percent of the signed value | GBM plus the bidder's price and history | 5,313 | 0.298 | 0.256 | 0.1889 | 0.104 | 0.724 |
 
-Reading the nested rungs on duration extension recorded, each step against the one above it: adding the buyer's own record moves AUC +0.013; adding the winner's price position moves AUC +0.016; adding the winner's own record moves AUC -0.012.
+Reading the nested rungs on duration extension recorded, each step against the one above it: adding the buyer's own record moves AUC +0.022; adding the winner's price position moves AUC +0.009; adding the winner's own record moves AUC -0.008.
 
-Reading the nested rungs on end date moved out more than 90 days, each step against the one above it: adding the buyer's own record moves AUC +0.020; adding the winner's price position moves AUC -0.002; adding the winner's own record moves AUC +0.003.
+Reading the nested rungs on end date moved out more than 90 days, each step against the one above it: adding the buyer's own record moves AUC +0.019; adding the winner's price position moves AUC +0.010; adding the winner's own record moves AUC +0.006.
 
 Labels refused by the ladder, because a label with almost no positives on one side of the split produces skill and AUC numbers that are noise dressed as results:
 
@@ -278,18 +279,18 @@ Calibration of the top rung on duration extension, test 2021-2022, in equal-coun
 
 | lots | mean forecast | observed rate |
 |---|---|---|
-| 634 | 0.0220 | 0.0237 |
-| 634 | 0.0289 | 0.0284 |
-| 634 | 0.0345 | 0.0426 |
-| 633 | 0.0413 | 0.0632 |
-| 634 | 0.0495 | 0.0615 |
-| 634 | 0.0593 | 0.1057 |
-| 633 | 0.0740 | 0.0664 |
-| 634 | 0.0990 | 0.0820 |
-| 634 | 0.1505 | 0.1372 |
-| 634 | 0.3665 | 0.3375 |
+| 3,812 | 0.0081 | 0.0262 |
+| 3,811 | 0.0179 | 0.0391 |
+| 3,811 | 0.0254 | 0.0352 |
+| 3,811 | 0.0329 | 0.0446 |
+| 3,812 | 0.0418 | 0.0459 |
+| 3,811 | 0.0529 | 0.0622 |
+| 3,811 | 0.0682 | 0.0743 |
+| 3,811 | 0.0919 | 0.1273 |
+| 3,811 | 0.1470 | 0.1204 |
+| 3,812 | 0.4169 | 0.3610 |
 
-Murphy decomposition of that Brier score: reliability 0.00042, resolution 0.00761, uncertainty 0.08583. Reliability is the calibration penalty and smaller is better; resolution is how far the forecasts move away from the base rate in the right direction and larger is better.
+Murphy decomposition of that Brier score: reliability 0.00062, resolution 0.00903, uncertainty 0.08485. Reliability is the calibration penalty and smaller is better; resolution is how far the forecasts move away from the base rate in the right direction and larger is better.
 
 ![Calibration, duration extension](calibration_duration_extension.png)
 
@@ -305,18 +306,18 @@ Four forecasts are transferred. The last is a placebo: the lot-only model knows 
 
 | forecast transferred | cells | bidders | lost lots | won lots | Spearman | null mean | null sd | excess | p one-sided |
 |---|---|---|---|---|---|---|---|---|---|
-| full model (price and identity) | 284 | 282 | 2,152 | 1,897 | 0.233 | 0.138 | 0.045 | 0.094 | 0.0297 |
-| price only | 284 | 282 | 2,152 | 1,897 | 0.269 | 0.133 | 0.046 | 0.136 | 0.0099 |
-| prior extension rate only | 284 | 282 | 2,152 | 1,897 | 0.121 | 0.062 | 0.045 | 0.059 | 0.1188 |
-| lot only (placebo) | 284 | 282 | 2,152 | 1,897 | 0.249 | 0.128 | 0.043 | 0.122 | 0.0099 |
-| full model, history as of each tender (overlaps the resolution window) | 284 | 282 | 2,152 | 1,897 | 0.231 | 0.132 | 0.044 | 0.099 | 0.0297 |
-| prior extension rate, history as of each tender (overlaps) | 284 | 282 | 2,152 | 1,897 | 0.288 | 0.104 | 0.049 | 0.184 | 0.0099 |
+| full model (price and identity) | 2,318 | 2,170 | 23,350 | 20,894 | 0.273 | 0.212 | 0.015 | 0.060 | 0.0004 |
+| price only | 2,318 | 2,170 | 23,350 | 20,894 | 0.287 | 0.214 | 0.015 | 0.073 | 0.0002 |
+| prior extension rate only | 2,318 | 2,170 | 23,350 | 20,894 | 0.122 | 0.069 | 0.019 | 0.054 | 0.0014 |
+| lot only (placebo) | 2,318 | 2,170 | 23,350 | 20,894 | 0.287 | 0.210 | 0.015 | 0.077 | 0.0002 |
+| full model, history as of each tender (overlaps the resolution window) | 2,318 | 2,170 | 23,350 | 20,894 | 0.291 | 0.214 | 0.015 | 0.077 | 0.0002 |
+| prior extension rate, history as of each tender (overlaps) | 2,318 | 2,170 | 23,350 | 20,894 | 0.288 | 0.094 | 0.018 | 0.194 | 0.0002 |
 
-Read the placebo row first. It excesses the null by +0.122 against +0.094 for the bidder-aware forecast, so whatever correlation there is here is produced by which lots a bidder competes for and not by the bidder. A significant p-value on the full model would mean nothing while a forecast that cannot see the bidder at all does at least as well.
+Read the placebo row first. It excesses the null by +0.077 against +0.060 for the bidder-aware forecast, so whatever correlation there is here is produced by which lots a bidder competes for and not by the bidder. A significant p-value on the full model would mean nothing while a forecast that cannot see the bidder at all does at least as well.
 
-What this test could have found: the null has a standard deviation of 0.045, so the smallest excess over the null it could have declared significant at one-sided 5 percent is about 0.074. An effect smaller than that would not show up here whether or not it exists, and the number of cells is what sets it.
+What this test could have found: the null has a standard deviation of 0.015, so the smallest excess over the null it could have declared significant at one-sided 5 percent is about 0.024. An effect smaller than that would not show up here whether or not it exists, and the number of cells is what sets it.
 
-Pooled across divisions, ignoring the CPV cell: Spearman 0.265 over 322 bidders with at least three wins in the test window.
+Pooled across divisions, ignoring the CPV cell: Spearman 0.274 over 2,631 bidders with at least three wins in the test window.
 
 ![Transfer scatter](transfer_scatter_duration_extension.png)
 
@@ -324,18 +325,18 @@ Pooled across divisions, ignoring the CPV cell: Spearman 0.265 over 322 bidders 
 
 | forecast transferred | cells | bidders | lost lots | won lots | Spearman | null mean | null sd | excess | p one-sided |
 |---|---|---|---|---|---|---|---|---|---|
-| full model (price and identity) | 283 | 281 | 2,149 | 1,890 | 0.197 | 0.135 | 0.041 | 0.062 | 0.0594 |
-| price only | 283 | 281 | 2,149 | 1,890 | 0.236 | 0.129 | 0.044 | 0.107 | 0.0099 |
-| prior extension rate only | 283 | 281 | 2,149 | 1,890 | -0.115 | 0.010 | 0.049 | -0.125 | 1.0000 |
-| lot only (placebo) | 283 | 281 | 2,149 | 1,890 | 0.227 | 0.132 | 0.042 | 0.095 | 0.0297 |
-| full model, history as of each tender (overlaps the resolution window) | 283 | 281 | 2,149 | 1,890 | 0.205 | 0.136 | 0.041 | 0.069 | 0.0495 |
-| prior extension rate, history as of each tender (overlaps) | 283 | 281 | 2,149 | 1,890 | -0.018 | 0.051 | 0.048 | -0.069 | 0.9208 |
+| full model (price and identity) | 2,314 | 2,166 | 23,340 | 20,812 | 0.291 | 0.132 | 0.016 | 0.159 | 0.0002 |
+| price only | 2,314 | 2,166 | 23,340 | 20,812 | 0.286 | 0.131 | 0.016 | 0.155 | 0.0002 |
+| prior extension rate only | 2,314 | 2,166 | 23,340 | 20,812 | 0.059 | 0.049 | 0.019 | 0.010 | 0.3051 |
+| lot only (placebo) | 2,314 | 2,166 | 23,340 | 20,812 | 0.285 | 0.137 | 0.016 | 0.147 | 0.0002 |
+| full model, history as of each tender (overlaps the resolution window) | 2,314 | 2,166 | 23,340 | 20,812 | 0.289 | 0.133 | 0.016 | 0.156 | 0.0002 |
+| prior extension rate, history as of each tender (overlaps) | 2,314 | 2,166 | 23,340 | 20,812 | 0.116 | 0.061 | 0.019 | 0.055 | 0.0038 |
 
-Read the placebo row first. It excesses the null by +0.095 against +0.062 for the bidder-aware forecast, so whatever correlation there is here is produced by which lots a bidder competes for and not by the bidder. A significant p-value on the full model would mean nothing while a forecast that cannot see the bidder at all does at least as well.
+The bidder-aware forecast excesses the null by +0.159 against +0.147 for the lot-only placebo, so the difference between them is what is attributable to the bidder rather than to the lots it chooses.
 
-What this test could have found: the null has a standard deviation of 0.041, so the smallest excess over the null it could have declared significant at one-sided 5 percent is about 0.067. An effect smaller than that would not show up here whether or not it exists, and the number of cells is what sets it.
+What this test could have found: the null has a standard deviation of 0.016, so the smallest excess over the null it could have declared significant at one-sided 5 percent is about 0.026. An effect smaller than that would not show up here whether or not it exists, and the number of cells is what sets it.
 
-Pooled across divisions, ignoring the CPV cell: Spearman 0.249 over 320 bidders with at least three wins in the test window.
+Pooled across divisions, ignoring the CPV cell: Spearman 0.292 over 2,628 bidders with at least three wins in the test window.
 
 ![Transfer scatter](transfer_scatter_days_extended_gt90.png)
 
@@ -345,28 +346,28 @@ The transfer test above still compares a bidder across different lots. This one 
 
 | label | sample | forecast | test lots | mean percentile when it slipped | mean percentile when it did not | AUC | null mean | null sd | p two-sided |
 |---|---|---|---|---|---|---|---|---|---|
-| duration_extension | all test lots | raw price rank on the lot, no model | 6,338 | 0.160 | 0.140 | 0.514 | 0.499 | 0.011 | 0.208 |
-| duration_extension | all test lots | full model (price and identity) | 6,338 | 0.395 | 0.329 | 0.538 | 0.500 | 0.011 | 0.002 |
-| duration_extension | all test lots | price only | 6,338 | 0.407 | 0.290 | 0.568 | 0.500 | 0.011 | 0.001 |
-| duration_extension | all test lots | prior extension rate only | 6,338 | 0.455 | 0.451 | 0.505 | 0.500 | 0.011 | 0.640 |
-| duration_extension | all test lots | lot only (degenerate control) | 6,338 | 0.500 | 0.500 | 0.500 | 0.500 | 0.000 | 1.000 |
-| duration_extension | pre-invasion test lots only | raw price rank on the lot, no model | 5,311 | 0.159 | 0.135 | 0.517 | 0.500 | 0.012 | 0.158 |
-| duration_extension | pre-invasion test lots only | full model (price and identity) | 5,311 | 0.392 | 0.329 | 0.537 | 0.500 | 0.012 | 0.002 |
-| duration_extension | pre-invasion test lots only | price only | 5,311 | 0.409 | 0.295 | 0.566 | 0.500 | 0.012 | 0.001 |
-| duration_extension | pre-invasion test lots only | prior extension rate only | 5,311 | 0.453 | 0.451 | 0.504 | 0.500 | 0.013 | 0.757 |
-| duration_extension | pre-invasion test lots only | lot only (degenerate control) | 5,311 | 0.500 | 0.500 | 0.500 | 0.500 | 0.000 | 1.000 |
-| days_extended_gt90 | all test lots | raw price rank on the lot, no model | 6,317 | 0.149 | 0.141 | 0.502 | 0.500 | 0.012 | 0.837 |
-| days_extended_gt90 | all test lots | full model (price and identity) | 6,317 | 0.476 | 0.458 | 0.511 | 0.500 | 0.012 | 0.364 |
-| days_extended_gt90 | all test lots | price only | 6,317 | 0.427 | 0.426 | 0.497 | 0.499 | 0.013 | 0.830 |
-| days_extended_gt90 | all test lots | prior extension rate only | 6,317 | 0.466 | 0.450 | 0.511 | 0.499 | 0.013 | 0.391 |
-| days_extended_gt90 | all test lots | lot only (degenerate control) | 6,317 | 0.500 | 0.500 | 0.500 | 0.500 | 0.000 | 1.000 |
-| days_extended_gt90 | pre-invasion test lots only | raw price rank on the lot, no model | 5,290 | 0.133 | 0.138 | 0.497 | 0.499 | 0.014 | 0.818 |
-| days_extended_gt90 | pre-invasion test lots only | full model (price and identity) | 5,290 | 0.483 | 0.455 | 0.517 | 0.500 | 0.013 | 0.204 |
-| days_extended_gt90 | pre-invasion test lots only | price only | 5,290 | 0.420 | 0.425 | 0.495 | 0.499 | 0.013 | 0.684 |
-| days_extended_gt90 | pre-invasion test lots only | prior extension rate only | 5,290 | 0.467 | 0.450 | 0.513 | 0.499 | 0.014 | 0.358 |
-| days_extended_gt90 | pre-invasion test lots only | lot only (degenerate control) | 5,290 | 0.500 | 0.500 | 0.500 | 0.500 | 0.000 | 1.000 |
+| duration_extension | all test lots | raw price rank on the lot, no model | 38,113 | 0.153 | 0.137 | 0.513 | 0.500 | 0.005 | 0.011 |
+| duration_extension | all test lots | full model (price and identity) | 38,113 | 0.561 | 0.465 | 0.555 | 0.500 | 0.005 | 0.001 |
+| duration_extension | all test lots | price only | 38,113 | 0.596 | 0.504 | 0.552 | 0.500 | 0.005 | 0.001 |
+| duration_extension | all test lots | prior extension rate only | 38,113 | 0.457 | 0.439 | 0.512 | 0.501 | 0.005 | 0.016 |
+| duration_extension | all test lots | lot only (degenerate control) | 38,113 | 0.500 | 0.500 | 0.500 | 0.500 | 0.000 | 1.000 |
+| duration_extension | pre-invasion test lots only | raw price rank on the lot, no model | 32,197 | 0.148 | 0.133 | 0.512 | 0.500 | 0.005 | 0.018 |
+| duration_extension | pre-invasion test lots only | full model (price and identity) | 32,197 | 0.570 | 0.469 | 0.558 | 0.500 | 0.005 | 0.001 |
+| duration_extension | pre-invasion test lots only | price only | 32,197 | 0.613 | 0.516 | 0.554 | 0.500 | 0.005 | 0.001 |
+| duration_extension | pre-invasion test lots only | prior extension rate only | 32,197 | 0.454 | 0.436 | 0.512 | 0.501 | 0.005 | 0.019 |
+| duration_extension | pre-invasion test lots only | lot only (degenerate control) | 32,197 | 0.500 | 0.500 | 0.500 | 0.500 | 0.000 | 1.000 |
+| days_extended_gt90 | all test lots | raw price rank on the lot, no model | 38,000 | 0.141 | 0.138 | 0.501 | 0.500 | 0.005 | 0.897 |
+| days_extended_gt90 | all test lots | full model (price and identity) | 38,000 | 0.511 | 0.485 | 0.514 | 0.500 | 0.005 | 0.007 |
+| days_extended_gt90 | all test lots | price only | 38,000 | 0.485 | 0.482 | 0.501 | 0.500 | 0.005 | 0.940 |
+| days_extended_gt90 | all test lots | prior extension rate only | 38,000 | 0.460 | 0.439 | 0.514 | 0.501 | 0.005 | 0.007 |
+| days_extended_gt90 | all test lots | lot only (degenerate control) | 38,000 | 0.500 | 0.500 | 0.500 | 0.500 | 0.000 | 1.000 |
+| days_extended_gt90 | pre-invasion test lots only | raw price rank on the lot, no model | 32,088 | 0.137 | 0.134 | 0.501 | 0.500 | 0.006 | 0.856 |
+| days_extended_gt90 | pre-invasion test lots only | full model (price and identity) | 32,088 | 0.513 | 0.481 | 0.518 | 0.500 | 0.006 | 0.002 |
+| days_extended_gt90 | pre-invasion test lots only | price only | 32,088 | 0.492 | 0.484 | 0.504 | 0.500 | 0.005 | 0.440 |
+| days_extended_gt90 | pre-invasion test lots only | prior extension rate only | 32,088 | 0.465 | 0.436 | 0.519 | 0.501 | 0.006 | 0.001 |
+| days_extended_gt90 | pre-invasion test lots only | lot only (degenerate control) | 32,088 | 0.500 | 0.500 | 0.500 | 0.500 | 0.000 | 1.000 |
 
-The first row needs no model at all: it is the winner's own price rank among the bids on its lot, at AUC 0.514 (p = 0.208). Above 0.5 means the more expensive the winner was relative to its rivals, the more likely the extension. It points the same way as the discount deciles further down, where the extension rate falls as the discount deepens (Spearman -0.70 across deciles), but on its own it does not clear its null, so the rank alone is not the statistic to lean on. What does clear it is the model that sees the size of the discount and not only its rank (AUC 0.568, p = 0.001), which says the relationship between price and slip is not simply monotone in the price order within a lot.
+The first row needs no model at all: it is the winner's own price rank among the bids on its lot, at AUC 0.513 (p = 0.011). Above 0.5 means the more expensive the winner was relative to its rivals, the more likely the extension. It points the same way as the discount deciles further down, where the extension rate falls as the discount deepens (Spearman -0.48 across deciles), and it clears its own null. What does clear it is the model that sees the size of the discount and not only its rank (AUC 0.552, p = 0.001), which says the relationship between price and slip is not simply monotone in the price order within a lot.
 
 Dropping every lot whose tender opened on or after the full-scale invasion moves no AUC in that table by more than 0.003. The answer does not depend on the war.
 
@@ -378,105 +379,105 @@ Pooled against stratified, on duration extension. A stratified column never comp
 
 | predictor | AUC pooled | AUC within buyer | buyers used | AUC within CPV division and year | cells used |
 |---|---|---|---|---|---|
-| buyer's as-of extension rate | 0.641 | 0.472 | 183 | 0.619 | 57 |
-| winner's as-of extension rate | 0.519 | 0.393 | 183 | 0.538 | 57 |
-| winner's as-of win rate | 0.494 | 0.517 | 183 | 0.487 | 57 |
-| winner's price as a share of the expected value | 0.550 | 0.576 | 183 | 0.533 | 57 |
-| log lot value | 0.724 | 0.601 | 183 | 0.693 | 57 |
+| buyer's as-of extension rate | 0.684 | 0.552 | 1,127 | 0.657 | 80 |
+| winner's as-of extension rate | 0.584 | 0.437 | 1,127 | 0.566 | 80 |
+| winner's as-of win rate | 0.488 | 0.521 | 1,127 | 0.493 | 80 |
+| winner's price as a share of the expected value | 0.541 | 0.587 | 1,127 | 0.521 | 80 |
+| log lot value | 0.712 | 0.663 | 1,127 | 0.688 | 80 |
 
-Three readings follow. First the sanity check: the buyer's own rate goes from 0.641 pooled to 0.472 within buyer, because it is nearly constant inside a buyer and has nothing left to rank with once the buyer is fixed. It keeps 0.619 within CPV division and year, so it is not a sector effect either. Second, the winner's price goes from 0.550 pooled to 0.576 within buyer, so the price signal is not a buyer effect wearing a price costume.
+Three readings follow. First the sanity check: the buyer's own rate goes from 0.684 pooled to 0.552 within buyer, because it is nearly constant inside a buyer and has nothing left to rank with once the buyer is fixed. It keeps 0.657 within CPV division and year, so it is not a sector effect either. Second, the winner's price goes from 0.541 pooled to 0.587 within buyer, so the price signal is not a buyer effect wearing a price costume.
 
-Third, and this is the one to be careful with: the winner's own record reads 0.519 pooled, 0.393 within buyer and 0.538 within CPV division and year. Those sit on both sides of chance and span 0.145. A signal that changes sign depending on what is held fixed is not a signal; the honest reading is that the bidder's own record is close to uninformative and that the direction of the residue is not stable enough to name.
+Third, and this is the one to be careful with: the winner's own record reads 0.584 pooled, 0.437 within buyer and 0.566 within CPV division and year. Those sit on both sides of chance and span 0.146. A signal that changes sign depending on what is held fixed is not a signal; the honest reading is that the bidder's own record is close to uninformative and that the direction of the residue is not stable enough to name.
 
 | predictor | duration extension recorded | end date moved out more than 90 days | contract value up more than 10 percent | any registered change | paid less than 90 percent of the signed value |
 |---|---|---|---|---|---|
-| buyer's as-of extension rate | 0.641 | 0.561 | 0.392 | 0.551 | 0.562 |
-| log lot value | 0.724 | 0.742 | 0.487 | 0.618 | 0.601 |
-| winner's as-of extension rate | 0.519 | 0.522 | 0.504 | 0.482 | 0.484 |
-| winner's as-of win rate | 0.494 | 0.501 | 0.499 | 0.472 | 0.481 |
-| winner's price as a share of the expected value | 0.550 | 0.534 | 0.535 | 0.490 | 0.486 |
+| buyer's as-of extension rate | 0.684 | 0.596 | 0.429 | 0.566 | 0.549 |
+| log lot value | 0.712 | 0.723 | 0.504 | 0.628 | 0.602 |
+| winner's as-of extension rate | 0.584 | 0.579 | 0.497 | 0.490 | 0.478 |
+| winner's as-of win rate | 0.488 | 0.497 | 0.505 | 0.478 | 0.473 |
+| winner's price as a share of the expected value | 0.541 | 0.529 | 0.518 | 0.488 | 0.484 |
 
-On duration extension the buyer's own record reaches AUC 0.641 and the winner's reaches 0.519. Both are visible in this dataset and only one of them carries the signal. That is the same answer the US panel in this repository gave from the other direction: there the contracting office mattered and the contractor added almost nothing, but US data never shows the losing offers, so it could not rule out that the bidder's identity mattered and was simply unobserved. Here it is observed, and it does not.
+On duration extension the buyer's own record reaches AUC 0.684 and the winner's reaches 0.584. Both are visible in this dataset and only one of them carries the signal. That is the same answer the US panel in this repository gave from the other direction: there the contracting office mattered and the contractor added almost nothing, but US data never shows the losing offers, so it could not rule out that the bidder's identity mattered and was simply unobserved. Here it is observed, and it does not.
 
 A thin record is the obvious alternative explanation for a null bidder result, so the same comparison restricted to the lots where the record is already substantial, on duration extension. These are pooled AUCs: the experienced-winner subset leaves too few buyers holding both outcomes for a within-buyer version to mean anything, which is itself a finding about how concentrated experienced bidders are:
 
 | subset | buyer's as-of extension rate | winner's as-of extension rate | lots |
 |---|---|---|---|
-| all test lots | 0.641 | 0.519 | 6,338 |
-| buyer has 10 or more prior lots | 0.788 | 0.431 | 1,072 |
-| winner has 10 or more prior wins | 0.829 | 0.256 | 718 |
+| all test lots | 0.684 | 0.584 | 38,113 |
+| buyer has 10 or more prior lots | 0.744 | 0.557 | 19,507 |
+| winner has 10 or more prior wins | 0.732 | 0.517 | 13,685 |
 
-Restricting to winners with at least ten prior wins, where the bidder's own rate is estimated from a real sample rather than two or three contracts, it inverts, from 0.519 to 0.256. An experienced bidder's past extension rate ranks its next contract in the wrong direction in this sample. Thin histories are therefore not what is holding the bidder result down, but the inversion itself is not explained here: experienced bidders concentrate at a handful of high-volume buyers whose own rate reaches 0.829 on the same lots, and that concentration is enough to produce an inversion without any bidder-level mechanism at all. It is reported as an observation, not as a finding about bidders.
+Restricting to winners with at least ten prior wins, where the bidder's own rate is estimated from a real sample rather than two or three contracts, it barely moves, 0.584 to 0.517. Thin histories are not what is holding the bidder result down.
 
 The same question without any model in it. The intraclass correlation asks how much of the variance in an outcome sits between groups rather than within them, using nothing but the outcome and the grouping. Groups with fewer than three lots are dropped, because a group of one contributes no within-group variance and would inflate the statistic. The null shuffles the outcome across the retained rows, which destroys real clustering while keeping the group sizes and the base rate.
 
 | label | grouping | lots | groups | mean group size | ICC | null mean | null sd | p one-sided |
 |---|---|---|---|---|---|---|---|---|
-| duration extension recorded | the buyer | 9,351 | 1,375 | 6.8007 | 0.2605 | 0.0002 | 0.0067 | 0.0099 |
-| duration extension recorded | the winning bidder | 7,379 | 1,153 | 6.3998 | 0.2368 | -0.0017 | 0.0088 | 0.0099 |
-| duration extension recorded | the CPV division | 14,311 | 45 | 318.0222 | 0.0806 | 0.0002 | 0.0008 | 0.0099 |
-| duration extension recorded | the buyer's region | 14,287 | 54 | 264.5741 | 0.0037 | 0.0001 | 0.0008 | 0.0099 |
-| end date moved out more than 90 days | the buyer | 9,290 | 1,372 | 6.7711 | 0.2429 | 0.0012 | 0.0071 | 0.0099 |
-| end date moved out more than 90 days | the winning bidder | 7,319 | 1,140 | 6.4202 | 0.1674 | 0.0002 | 0.0077 | 0.0099 |
-| end date moved out more than 90 days | the CPV division | 14,248 | 45 | 316.6222 | 0.0313 | -0.0000 | 0.0007 | 0.0099 |
-| end date moved out more than 90 days | the buyer's region | 14,224 | 54 | 263.4074 | 0.0159 | -0.0000 | 0.0008 | 0.0099 |
-| any registered change | the buyer | 9,351 | 1,375 | 6.8007 | 0.2521 | 0.0008 | 0.0062 | 0.0099 |
-| any registered change | the winning bidder | 7,379 | 1,153 | 6.3998 | 0.3135 | 0.0004 | 0.0058 | 0.0099 |
-| any registered change | the CPV division | 14,311 | 45 | 318.0222 | 0.1517 | -0.0000 | 0.0007 | 0.0099 |
-| any registered change | the buyer's region | 14,287 | 54 | 264.5741 | 0.0188 | -0.0000 | 0.0008 | 0.0099 |
-| paid less than 90 percent of the signed value | the buyer | 8,061 | 1,216 | 6.6291 | 0.2331 | 0.0001 | 0.0065 | 0.0099 |
-| paid less than 90 percent of the signed value | the winning bidder | 6,166 | 990 | 6.2283 | 0.3083 | -0.0006 | 0.0083 | 0.0099 |
-| paid less than 90 percent of the signed value | the CPV division | 12,376 | 43 | 287.8140 | 0.1623 | -0.0001 | 0.0008 | 0.0099 |
-| paid less than 90 percent of the signed value | the buyer's region | 12,358 | 53 | 233.1698 | 0.0167 | -0.0000 | 0.0008 | 0.0099 |
+| duration extension recorded | the buyer | 76,669 | 5,816 | 13.1824 | 0.2086 | -0.0000 | 0.0017 | 0.0020 |
+| duration extension recorded | the winning bidder | 67,322 | 6,891 | 9.7696 | 0.2374 | -0.0000 | 0.0023 | 0.0020 |
+| duration extension recorded | the CPV division | 85,052 | 46 | 1848.9565 | 0.0796 | 0.0000 | 0.0001 | 0.0020 |
+| duration extension recorded | the buyer's region | 85,040 | 73 | 1164.9315 | 0.0045 | -0.0000 | 0.0002 | 0.0020 |
+| end date moved out more than 90 days | the buyer | 76,284 | 5,812 | 13.1253 | 0.2120 | -0.0000 | 0.0016 | 0.0020 |
+| end date moved out more than 90 days | the winning bidder | 66,955 | 6,861 | 9.7588 | 0.2023 | 0.0001 | 0.0021 | 0.0020 |
+| end date moved out more than 90 days | the CPV division | 84,672 | 46 | 1840.6957 | 0.0311 | -0.0000 | 0.0001 | 0.0020 |
+| end date moved out more than 90 days | the buyer's region | 84,660 | 73 | 1159.7260 | 0.0145 | -0.0000 | 0.0002 | 0.0020 |
+| any registered change | the buyer | 76,669 | 5,816 | 13.1824 | 0.1971 | -0.0000 | 0.0014 | 0.0020 |
+| any registered change | the winning bidder | 67,322 | 6,891 | 9.7696 | 0.3044 | 0.0000 | 0.0017 | 0.0020 |
+| any registered change | the CPV division | 85,052 | 46 | 1848.9565 | 0.1459 | 0.0000 | 0.0001 | 0.0020 |
+| any registered change | the buyer's region | 85,040 | 73 | 1164.9315 | 0.0171 | 0.0000 | 0.0001 | 0.0020 |
+| paid less than 90 percent of the signed value | the buyer | 66,517 | 5,101 | 13.0400 | 0.2071 | -0.0002 | 0.0015 | 0.0020 |
+| paid less than 90 percent of the signed value | the winning bidder | 57,350 | 6,005 | 9.5504 | 0.3118 | -0.0001 | 0.0020 | 0.0020 |
+| paid less than 90 percent of the signed value | the CPV division | 73,944 | 46 | 1607.4783 | 0.1643 | 0.0000 | 0.0001 | 0.0020 |
+| paid less than 90 percent of the signed value | the buyer's region | 73,923 | 67 | 1103.3284 | 0.0172 | 0.0000 | 0.0002 | 0.0020 |
 
-On duration extension the buyer explains 0.260 of the variance and the winning bidder 0.237. No model is involved in those two numbers.
+On duration extension the buyer explains 0.209 of the variance and the winning bidder 0.237. No model is involved in those two numbers.
 
 The raw figures above cannot separate the two, because a bidder usually wins repeatedly from the same handful of buyers, so clustering by bidder partly restates clustering by buyer. This next table holds one of them fixed. The null permutes the grouping label among lots that share the same block value, which keeps every group's size exactly and keeps each block's mix of groups, and destroys only the pairing between a particular group and a particular outcome. An excess over that null is clustering the block cannot account for.
 
 | label | sample | clustering by | holding fixed | lots | groups | blocks | ICC | null mean | null sd | excess | p one-sided |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| duration extension recorded | all lots | the winning bidder | the buyer | 7,379 | 1,153 | 3,390 | 0.2368 | 0.1812 | 0.0081 | 0.0556 | 0.0099 |
-| duration extension recorded | all lots | the buyer | the winning bidder | 9,351 | 1,375 | 4,968 | 0.2605 | 0.1824 | 0.0058 | 0.0781 | 0.0099 |
-| duration extension recorded | all lots | the winning bidder | the CPV division | 7,379 | 1,153 | 42 | 0.2368 | 0.0977 | 0.0101 | 0.1391 | 0.0099 |
-| duration extension recorded | all lots | the buyer | the CPV division | 9,351 | 1,375 | 46 | 0.2605 | 0.0303 | 0.0080 | 0.2302 | 0.0099 |
-| duration extension recorded | all lots | the winning bidder | the buyer within the year | 7,379 | 1,153 | 4,513 | 0.2368 | 0.2083 | 0.0059 | 0.0285 | 0.0099 |
-| duration extension recorded | one lot per bidder and tender | the winning bidder | the buyer | 6,315 | 1,007 | 3,321 | 0.2124 | 0.1714 | 0.0086 | 0.0410 | 0.0099 |
-| duration extension recorded | one lot per bidder and tender | the winning bidder | the buyer within the year | 6,315 | 1,007 | 4,404 | 0.2124 | 0.1895 | 0.0062 | 0.0229 | 0.0099 |
-| duration extension recorded | one lot per bidder and tender | the buyer | the winning bidder | 8,326 | 1,299 | 4,910 | 0.2438 | 0.1723 | 0.0060 | 0.0715 | 0.0099 |
-| duration extension recorded | pre-invasion lots only | the winning bidder | the buyer within the year | 6,765 | 1,073 | 4,058 | 0.2462 | 0.2144 | 0.0064 | 0.0318 | 0.0099 |
-| duration extension recorded | pre-invasion lots only | the buyer | the winning bidder | 8,640 | 1,292 | 4,612 | 0.2669 | 0.1896 | 0.0068 | 0.0773 | 0.0099 |
-| end date moved out more than 90 days | all lots | the winning bidder | the buyer | 7,319 | 1,140 | 3,382 | 0.1674 | 0.1210 | 0.0078 | 0.0464 | 0.0099 |
-| end date moved out more than 90 days | all lots | the buyer | the winning bidder | 9,290 | 1,372 | 4,946 | 0.2429 | 0.1349 | 0.0059 | 0.1080 | 0.0099 |
-| end date moved out more than 90 days | all lots | the winning bidder | the CPV division | 7,319 | 1,140 | 42 | 0.1674 | 0.0366 | 0.0085 | 0.1308 | 0.0099 |
-| end date moved out more than 90 days | all lots | the buyer | the CPV division | 9,290 | 1,372 | 46 | 0.2429 | 0.0094 | 0.0062 | 0.2335 | 0.0099 |
-| end date moved out more than 90 days | all lots | the winning bidder | the buyer within the year | 7,319 | 1,140 | 4,492 | 0.1674 | 0.1403 | 0.0076 | 0.0272 | 0.0099 |
-| end date moved out more than 90 days | one lot per bidder and tender | the winning bidder | the buyer | 6,266 | 995 | 3,313 | 0.1406 | 0.1051 | 0.0081 | 0.0355 | 0.0099 |
-| end date moved out more than 90 days | one lot per bidder and tender | the winning bidder | the buyer within the year | 6,266 | 995 | 4,384 | 0.1406 | 0.1214 | 0.0070 | 0.0192 | 0.0099 |
-| end date moved out more than 90 days | one lot per bidder and tender | the buyer | the winning bidder | 8,275 | 1,297 | 4,888 | 0.2239 | 0.1289 | 0.0073 | 0.0950 | 0.0099 |
-| end date moved out more than 90 days | pre-invasion lots only | the winning bidder | the buyer within the year | 6,704 | 1,059 | 4,038 | 0.1725 | 0.1428 | 0.0070 | 0.0297 | 0.0099 |
-| end date moved out more than 90 days | pre-invasion lots only | the buyer | the winning bidder | 8,577 | 1,288 | 4,589 | 0.2485 | 0.1358 | 0.0064 | 0.1127 | 0.0099 |
-| any registered change | all lots | the winning bidder | the buyer | 7,379 | 1,153 | 3,390 | 0.3135 | 0.2098 | 0.0054 | 0.1037 | 0.0099 |
-| any registered change | all lots | the buyer | the winning bidder | 9,351 | 1,375 | 4,968 | 0.2521 | 0.1890 | 0.0049 | 0.0631 | 0.0099 |
-| any registered change | all lots | the winning bidder | the CPV division | 7,379 | 1,153 | 42 | 0.3135 | 0.1429 | 0.0065 | 0.1706 | 0.0099 |
-| any registered change | all lots | the buyer | the CPV division | 9,351 | 1,375 | 46 | 0.2521 | 0.0429 | 0.0055 | 0.2092 | 0.0099 |
-| any registered change | all lots | the winning bidder | the buyer within the year | 7,379 | 1,153 | 4,513 | 0.3135 | 0.2517 | 0.0053 | 0.0619 | 0.0099 |
-| any registered change | one lot per bidder and tender | the winning bidder | the buyer | 6,315 | 1,007 | 3,321 | 0.2677 | 0.1767 | 0.0068 | 0.0910 | 0.0099 |
-| any registered change | one lot per bidder and tender | the winning bidder | the buyer within the year | 6,315 | 1,007 | 4,404 | 0.2677 | 0.2163 | 0.0057 | 0.0514 | 0.0099 |
-| any registered change | one lot per bidder and tender | the buyer | the winning bidder | 8,326 | 1,299 | 4,910 | 0.2207 | 0.1639 | 0.0053 | 0.0568 | 0.0099 |
-| any registered change | pre-invasion lots only | the winning bidder | the buyer within the year | 6,765 | 1,073 | 4,058 | 0.3087 | 0.2474 | 0.0052 | 0.0613 | 0.0099 |
-| any registered change | pre-invasion lots only | the buyer | the winning bidder | 8,640 | 1,292 | 4,612 | 0.2582 | 0.1960 | 0.0053 | 0.0622 | 0.0099 |
-| paid less than 90 percent of the signed value | all lots | the winning bidder | the buyer | 6,166 | 990 | 2,865 | 0.3083 | 0.1956 | 0.0068 | 0.1127 | 0.0099 |
-| paid less than 90 percent of the signed value | all lots | the buyer | the winning bidder | 8,061 | 1,216 | 4,399 | 0.2331 | 0.1661 | 0.0052 | 0.0670 | 0.0099 |
-| paid less than 90 percent of the signed value | all lots | the winning bidder | the CPV division | 6,166 | 990 | 41 | 0.3083 | 0.1435 | 0.0061 | 0.1648 | 0.0099 |
-| paid less than 90 percent of the signed value | all lots | the buyer | the CPV division | 8,061 | 1,216 | 46 | 0.2331 | 0.0525 | 0.0076 | 0.1805 | 0.0099 |
-| paid less than 90 percent of the signed value | all lots | the winning bidder | the buyer within the year | 6,166 | 990 | 3,795 | 0.3083 | 0.2464 | 0.0056 | 0.0619 | 0.0099 |
-| paid less than 90 percent of the signed value | one lot per bidder and tender | the winning bidder | the buyer | 5,226 | 854 | 2,797 | 0.2853 | 0.1838 | 0.0077 | 0.1014 | 0.0099 |
-| paid less than 90 percent of the signed value | one lot per bidder and tender | the winning bidder | the buyer within the year | 5,226 | 854 | 3,687 | 0.2853 | 0.2247 | 0.0056 | 0.0605 | 0.0099 |
-| paid less than 90 percent of the signed value | one lot per bidder and tender | the buyer | the winning bidder | 7,174 | 1,154 | 4,347 | 0.2104 | 0.1511 | 0.0057 | 0.0593 | 0.0099 |
-| paid less than 90 percent of the signed value | pre-invasion lots only | the winning bidder | the buyer within the year | 5,609 | 912 | 3,380 | 0.3174 | 0.2537 | 0.0058 | 0.0637 | 0.0099 |
-| paid less than 90 percent of the signed value | pre-invasion lots only | the buyer | the winning bidder | 7,402 | 1,134 | 4,066 | 0.2396 | 0.1702 | 0.0056 | 0.0694 | 0.0099 |
+| duration extension recorded | all lots | the winning bidder | the buyer | 67,322 | 6,891 | 10,801 | 0.2374 | 0.1308 | 0.0028 | 0.1066 | 0.0020 |
+| duration extension recorded | all lots | the buyer | the winning bidder | 76,669 | 5,816 | 19,260 | 0.2086 | 0.1201 | 0.0020 | 0.0885 | 0.0020 |
+| duration extension recorded | all lots | the winning bidder | the CPV division | 67,322 | 6,891 | 46 | 0.2374 | 0.0813 | 0.0025 | 0.1561 | 0.0020 |
+| duration extension recorded | all lots | the buyer | the CPV division | 76,669 | 5,816 | 46 | 0.2086 | 0.0314 | 0.0020 | 0.1772 | 0.0020 |
+| duration extension recorded | all lots | the winning bidder | the buyer within the year | 67,322 | 6,891 | 20,059 | 0.2374 | 0.1548 | 0.0026 | 0.0826 | 0.0020 |
+| duration extension recorded | one lot per bidder and tender | the winning bidder | the buyer | 60,885 | 6,532 | 10,764 | 0.2266 | 0.1298 | 0.0029 | 0.0968 | 0.0020 |
+| duration extension recorded | one lot per bidder and tender | the winning bidder | the buyer within the year | 60,885 | 6,532 | 19,962 | 0.2266 | 0.1512 | 0.0029 | 0.0754 | 0.0020 |
+| duration extension recorded | one lot per bidder and tender | the buyer | the winning bidder | 70,394 | 5,675 | 19,209 | 0.2019 | 0.1173 | 0.0020 | 0.0846 | 0.0020 |
+| duration extension recorded | pre-invasion lots only | the winning bidder | the buyer within the year | 62,174 | 6,485 | 18,138 | 0.2434 | 0.1599 | 0.0027 | 0.0835 | 0.0020 |
+| duration extension recorded | pre-invasion lots only | the buyer | the winning bidder | 71,048 | 5,485 | 18,249 | 0.2177 | 0.1258 | 0.0020 | 0.0919 | 0.0020 |
+| end date moved out more than 90 days | all lots | the winning bidder | the buyer | 66,955 | 6,861 | 10,798 | 0.2023 | 0.0996 | 0.0027 | 0.1026 | 0.0020 |
+| end date moved out more than 90 days | all lots | the buyer | the winning bidder | 76,284 | 5,812 | 19,215 | 0.2120 | 0.0816 | 0.0018 | 0.1304 | 0.0020 |
+| end date moved out more than 90 days | all lots | the winning bidder | the CPV division | 66,955 | 6,861 | 46 | 0.2023 | 0.0349 | 0.0022 | 0.1673 | 0.0020 |
+| end date moved out more than 90 days | all lots | the buyer | the CPV division | 76,284 | 5,812 | 46 | 0.2120 | 0.0054 | 0.0016 | 0.2066 | 0.0020 |
+| end date moved out more than 90 days | all lots | the winning bidder | the buyer within the year | 66,955 | 6,861 | 20,039 | 0.2023 | 0.1246 | 0.0026 | 0.0777 | 0.0020 |
+| end date moved out more than 90 days | one lot per bidder and tender | the winning bidder | the buyer | 60,580 | 6,503 | 10,760 | 0.1817 | 0.0901 | 0.0029 | 0.0916 | 0.0020 |
+| end date moved out more than 90 days | one lot per bidder and tender | the winning bidder | the buyer within the year | 60,580 | 6,503 | 19,941 | 0.1817 | 0.1123 | 0.0028 | 0.0695 | 0.0020 |
+| end date moved out more than 90 days | one lot per bidder and tender | the buyer | the winning bidder | 70,074 | 5,673 | 19,161 | 0.1976 | 0.0763 | 0.0018 | 0.1213 | 0.0020 |
+| end date moved out more than 90 days | pre-invasion lots only | the winning bidder | the buyer within the year | 61,815 | 6,456 | 18,118 | 0.2057 | 0.1273 | 0.0028 | 0.0784 | 0.0020 |
+| end date moved out more than 90 days | pre-invasion lots only | the buyer | the winning bidder | 70,667 | 5,481 | 18,203 | 0.2189 | 0.0855 | 0.0020 | 0.1334 | 0.0020 |
+| any registered change | all lots | the winning bidder | the buyer | 67,322 | 6,891 | 10,801 | 0.3044 | 0.1168 | 0.0020 | 0.1876 | 0.0020 |
+| any registered change | all lots | the buyer | the winning bidder | 76,669 | 5,816 | 19,260 | 0.1971 | 0.1176 | 0.0016 | 0.0795 | 0.0020 |
+| any registered change | all lots | the winning bidder | the CPV division | 67,322 | 6,891 | 46 | 0.3044 | 0.1344 | 0.0016 | 0.1700 | 0.0020 |
+| any registered change | all lots | the buyer | the CPV division | 76,669 | 5,816 | 46 | 0.1971 | 0.0407 | 0.0016 | 0.1563 | 0.0020 |
+| any registered change | all lots | the winning bidder | the buyer within the year | 67,322 | 6,891 | 20,059 | 0.3044 | 0.1581 | 0.0020 | 0.1463 | 0.0020 |
+| any registered change | one lot per bidder and tender | the winning bidder | the buyer | 60,885 | 6,532 | 10,764 | 0.2875 | 0.1107 | 0.0022 | 0.1767 | 0.0020 |
+| any registered change | one lot per bidder and tender | the winning bidder | the buyer within the year | 60,885 | 6,532 | 19,962 | 0.2875 | 0.1483 | 0.0020 | 0.1392 | 0.0020 |
+| any registered change | one lot per bidder and tender | the buyer | the winning bidder | 70,394 | 5,675 | 19,209 | 0.1857 | 0.1105 | 0.0015 | 0.0752 | 0.0020 |
+| any registered change | pre-invasion lots only | the winning bidder | the buyer within the year | 62,174 | 6,485 | 18,138 | 0.3041 | 0.1578 | 0.0020 | 0.1464 | 0.0020 |
+| any registered change | pre-invasion lots only | the buyer | the winning bidder | 71,048 | 5,485 | 18,249 | 0.2009 | 0.1203 | 0.0017 | 0.0805 | 0.0020 |
+| paid less than 90 percent of the signed value | all lots | the winning bidder | the buyer | 57,350 | 6,005 | 9,436 | 0.3118 | 0.1191 | 0.0022 | 0.1927 | 0.0020 |
+| paid less than 90 percent of the signed value | all lots | the buyer | the winning bidder | 66,517 | 5,101 | 17,553 | 0.2071 | 0.1185 | 0.0018 | 0.0886 | 0.0020 |
+| paid less than 90 percent of the signed value | all lots | the winning bidder | the CPV division | 57,350 | 6,005 | 46 | 0.3118 | 0.1524 | 0.0019 | 0.1593 | 0.0020 |
+| paid less than 90 percent of the signed value | all lots | the buyer | the CPV division | 66,517 | 5,101 | 46 | 0.2071 | 0.0534 | 0.0020 | 0.1537 | 0.0020 |
+| paid less than 90 percent of the signed value | all lots | the winning bidder | the buyer within the year | 57,350 | 6,005 | 17,259 | 0.3118 | 0.1660 | 0.0022 | 0.1457 | 0.0020 |
+| paid less than 90 percent of the signed value | one lot per bidder and tender | the winning bidder | the buyer | 51,752 | 5,693 | 9,394 | 0.3012 | 0.1142 | 0.0025 | 0.1870 | 0.0020 |
+| paid less than 90 percent of the signed value | one lot per bidder and tender | the winning bidder | the buyer within the year | 51,752 | 5,693 | 17,151 | 0.3012 | 0.1583 | 0.0022 | 0.1429 | 0.0020 |
+| paid less than 90 percent of the signed value | one lot per bidder and tender | the buyer | the winning bidder | 61,067 | 4,989 | 17,499 | 0.1979 | 0.1133 | 0.0020 | 0.0846 | 0.0020 |
+| paid less than 90 percent of the signed value | pre-invasion lots only | the winning bidder | the buyer within the year | 52,855 | 5,650 | 15,520 | 0.3166 | 0.1691 | 0.0025 | 0.1475 | 0.0020 |
+| paid less than 90 percent of the signed value | pre-invasion lots only | the buyer | the winning bidder | 61,515 | 4,810 | 16,583 | 0.2120 | 0.1223 | 0.0019 | 0.0896 | 0.0020 |
 
-On the strictest variant, one lot per bidder per tender with the buyer held fixed within the year, the bidder's clustering survives: ICC 0.212 against a null of 0.190, an excess of 0.023 (one-sided p = 0.0099). Read that next to the head-to-head table above, where a bidder's own past rate barely ranks its future one. Outcomes do cluster by bidder; the clustering is not stable enough over time to forecast with.
+On the strictest variant, one lot per bidder per tender with the buyer held fixed within the year, the bidder's clustering survives: ICC 0.227 against a null of 0.151, an excess of 0.075 (one-sided p = 0.0020). Read that next to the head-to-head table above, where a bidder's own past rate barely ranks its future one. Outcomes do cluster by bidder; the clustering is not stable enough over time to forecast with.
 
 ## Does a bidder's own record persist at all?
 
@@ -484,24 +485,24 @@ The transfer test above has nothing to transfer unless a bidder's record is stab
 
 | label | wins each side | bidders | earlier lots | later lots | Spearman | null mean | null sd | excess | p one-sided |
 |---|---|---|---|---|---|---|---|---|---|
-| duration extension recorded | 2 | 327 | 1,816 | 1,677 | 0.263 | 0.104 | 0.050 | 0.159 | 0.0099 |
-| duration extension recorded | 3 | 166 | 1,330 | 1,188 | 0.227 | 0.120 | 0.062 | 0.107 | 0.0594 |
-| duration extension recorded | 5 | 58 | 775 | 677 | 0.301 | 0.098 | 0.111 | 0.203 | 0.0198 |
-| end date moved out more than 90 days | 2 | 326 | 1,807 | 1,672 | 0.249 | 0.057 | 0.049 | 0.192 | 0.0099 |
-| end date moved out more than 90 days | 3 | 166 | 1,323 | 1,185 | 0.148 | 0.083 | 0.069 | 0.065 | 0.1881 |
-| end date moved out more than 90 days | 5 | 58 | 771 | 675 | 0.049 | 0.083 | 0.115 | -0.034 | 0.6238 |
-| contract value up more than 10 percent | 2 | 326 | 1,804 | 1,675 | 0.102 | 0.060 | 0.054 | 0.042 | 0.2475 |
-| contract value up more than 10 percent | 3 | 166 | 1,322 | 1,188 | 0.036 | 0.028 | 0.075 | 0.008 | 0.4950 |
-| contract value up more than 10 percent | 5 | 58 | 772 | 677 | 0.028 | 0.026 | 0.130 | 0.002 | 0.4851 |
-| any registered change | 2 | 327 | 1,816 | 1,677 | 0.445 | 0.317 | 0.037 | 0.127 | 0.0099 |
-| any registered change | 3 | 166 | 1,330 | 1,188 | 0.547 | 0.391 | 0.043 | 0.157 | 0.0099 |
-| any registered change | 5 | 58 | 775 | 677 | 0.630 | 0.391 | 0.089 | 0.239 | 0.0297 |
-| paid less than 90 percent of the signed value | 2 | 275 | 1,510 | 1,367 | 0.518 | 0.323 | 0.042 | 0.195 | 0.0099 |
-| paid less than 90 percent of the signed value | 3 | 137 | 1,080 | 959 | 0.625 | 0.439 | 0.038 | 0.186 | 0.0099 |
-| paid less than 90 percent of the signed value | 5 | 50 | 626 | 566 | 0.606 | 0.430 | 0.081 | 0.177 | 0.0297 |
-| contract cancelled | 2 | 327 | 1,816 | 1,677 |  |  |  |  |  |
-| contract cancelled | 3 | 166 | 1,330 | 1,188 |  |  |  |  |  |
-| contract cancelled | 5 | 58 | 775 | 677 |  |  |  |  |  |
+| duration extension recorded | 2 | 2,558 | 24,010 | 20,377 | 0.254 | 0.100 | 0.018 | 0.154 | 0.0002 |
+| duration extension recorded | 3 | 1,546 | 20,255 | 16,961 | 0.276 | 0.104 | 0.022 | 0.172 | 0.0002 |
+| duration extension recorded | 5 | 800 | 15,634 | 13,326 | 0.280 | 0.115 | 0.030 | 0.165 | 0.0002 |
+| end date moved out more than 90 days | 2 | 2,546 | 23,880 | 20,274 | 0.307 | 0.057 | 0.019 | 0.250 | 0.0002 |
+| end date moved out more than 90 days | 3 | 1,535 | 20,151 | 16,845 | 0.334 | 0.079 | 0.025 | 0.256 | 0.0002 |
+| end date moved out more than 90 days | 5 | 798 | 15,568 | 13,262 | 0.328 | 0.095 | 0.033 | 0.233 | 0.0002 |
+| contract value up more than 10 percent | 2 | 2,535 | 23,779 | 20,307 | 0.398 | 0.093 | 0.020 | 0.305 | 0.0002 |
+| contract value up more than 10 percent | 3 | 1,528 | 20,070 | 16,882 | 0.417 | 0.118 | 0.024 | 0.299 | 0.0002 |
+| contract value up more than 10 percent | 5 | 797 | 15,527 | 13,294 | 0.409 | 0.145 | 0.032 | 0.264 | 0.0002 |
+| any registered change | 2 | 2,558 | 24,010 | 20,377 | 0.474 | 0.261 | 0.014 | 0.213 | 0.0002 |
+| any registered change | 3 | 1,546 | 20,255 | 16,961 | 0.546 | 0.321 | 0.018 | 0.225 | 0.0002 |
+| any registered change | 5 | 800 | 15,634 | 13,326 | 0.660 | 0.388 | 0.022 | 0.272 | 0.0002 |
+| paid less than 90 percent of the signed value | 2 | 2,234 | 20,339 | 16,680 | 0.507 | 0.258 | 0.017 | 0.249 | 0.0002 |
+| paid less than 90 percent of the signed value | 3 | 1,318 | 17,050 | 14,037 | 0.590 | 0.337 | 0.019 | 0.253 | 0.0002 |
+| paid less than 90 percent of the signed value | 5 | 685 | 13,106 | 10,997 | 0.715 | 0.419 | 0.023 | 0.297 | 0.0002 |
+| contract cancelled | 2 | 2,558 | 24,010 | 20,377 |  |  |  |  |  |
+| contract cancelled | 3 | 1,546 | 20,255 | 16,961 |  |  |  |  |  |
+| contract cancelled | 5 | 800 | 15,634 | 13,326 |  |  |  |  |  |
 
 ## Experiment 3: the lowest bidder disqualified
 
@@ -509,13 +510,13 @@ Treated lots are those where the cheapest live bid was disqualified (an award wi
 
 | label | treated lots | control lots | treated, matched | control, matched | treated rate, raw | control rate, raw | treated rate, matched | control rate, standardised | difference | 95% low | 95% high |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| duration extension recorded | 3,056 | 11,230 | 3,054 | 11,114 | 0.108 | 0.083 | 0.108 | 0.087 | 0.021 | 0.008 | 0.033 |
-| end date moved out more than 90 days | 3,041 | 11,182 | 3,039 | 11,066 | 0.101 | 0.095 | 0.101 | 0.097 | 0.004 | -0.008 | 0.015 |
-| contract value up more than 10 percent | 3,027 | 11,119 | 3,025 | 11,004 | 0.064 | 0.063 | 0.064 | 0.059 | 0.005 | -0.005 | 0.016 |
-| any registered change | 3,056 | 11,230 | 3,054 | 11,114 | 0.573 | 0.553 | 0.573 | 0.557 | 0.016 | -0.004 | 0.036 |
-| paid less than 90 percent of the signed value | 2,600 | 9,759 | 2,598 | 9,655 | 0.275 | 0.289 | 0.274 | 0.290 | -0.016 | -0.035 | 0.003 |
+| duration extension recorded | 17,843 | 67,016 | 17,842 | 66,954 | 0.106 | 0.084 | 0.106 | 0.092 | 0.014 | 0.009 | 0.019 |
+| end date moved out more than 90 days | 17,754 | 66,727 | 17,753 | 66,666 | 0.097 | 0.093 | 0.097 | 0.097 | -0.000 | -0.005 | 0.005 |
+| contract value up more than 10 percent | 17,681 | 66,474 | 17,679 | 66,412 | 0.064 | 0.069 | 0.064 | 0.065 | -0.001 | -0.005 | 0.003 |
+| any registered change | 17,843 | 67,016 | 17,842 | 66,954 | 0.572 | 0.553 | 0.572 | 0.555 | 0.017 | 0.008 | 0.024 |
+| paid less than 90 percent of the signed value | 15,436 | 58,350 | 15,435 | 58,270 | 0.277 | 0.295 | 0.277 | 0.294 | -0.017 | -0.025 | -0.010 |
 
-Differences whose interval excludes zero: duration extension recorded +2.1 points (+0.8 to +3.3).
+Differences whose interval excludes zero: duration extension recorded +1.4 points (+0.9 to +1.9); any registered change +1.7 points (+0.8 to +2.4); paid less than 90 percent of the signed value -1.7 points (-2.5 to -1.0).
 
 ### Winner's discount and the outcome
 
@@ -523,18 +524,18 @@ Deciles of the winner's discount against the expected lot value, with the realis
 
 | decile | lots | discount min | discount median | discount max | duration extension recorded | end date moved out more than 90 days | contract value up more than 10 percent | any registered change | paid less than 90 percent of the signed value |
 |---|---|---|---|---|---|---|---|---|---|
-| 0 | 1,438 | 0.000 | 0.000 | 0.001 | 0.094 | 0.112 | 0.072 | 0.545 | 0.294 |
-| 1 | 1,438 | 0.001 | 0.002 | 0.004 | 0.098 | 0.103 | 0.077 | 0.529 | 0.241 |
-| 2 | 1,438 | 0.004 | 0.006 | 0.010 | 0.087 | 0.089 | 0.078 | 0.529 | 0.241 |
-| 3 | 1,438 | 0.010 | 0.014 | 0.019 | 0.096 | 0.108 | 0.067 | 0.547 | 0.258 |
-| 4 | 1,438 | 0.019 | 0.028 | 0.042 | 0.085 | 0.105 | 0.069 | 0.565 | 0.274 |
-| 5 | 1,438 | 0.042 | 0.060 | 0.083 | 0.101 | 0.119 | 0.061 | 0.559 | 0.293 |
-| 6 | 1,438 | 0.083 | 0.110 | 0.141 | 0.086 | 0.087 | 0.047 | 0.591 | 0.315 |
-| 7 | 1,438 | 0.141 | 0.177 | 0.218 | 0.082 | 0.086 | 0.053 | 0.576 | 0.305 |
-| 8 | 1,438 | 0.218 | 0.268 | 0.333 | 0.077 | 0.075 | 0.056 | 0.597 | 0.347 |
-| 9 | 1,438 | 0.333 | 0.429 | 1.000 | 0.084 | 0.078 | 0.054 | 0.536 | 0.300 |
+| 0 | 8,506 | -0.044 | 0.000 | 0.001 | 0.088 | 0.107 | 0.078 | 0.558 | 0.303 |
+| 1 | 8,612 | 0.001 | 0.002 | 0.004 | 0.096 | 0.095 | 0.070 | 0.526 | 0.254 |
+| 2 | 8,398 | 0.004 | 0.006 | 0.009 | 0.080 | 0.086 | 0.076 | 0.536 | 0.257 |
+| 3 | 8,505 | 0.009 | 0.013 | 0.018 | 0.097 | 0.105 | 0.069 | 0.534 | 0.258 |
+| 4 | 8,505 | 0.018 | 0.027 | 0.040 | 0.093 | 0.105 | 0.074 | 0.549 | 0.280 |
+| 5 | 8,505 | 0.040 | 0.057 | 0.079 | 0.108 | 0.119 | 0.067 | 0.563 | 0.296 |
+| 6 | 8,505 | 0.079 | 0.104 | 0.136 | 0.090 | 0.093 | 0.063 | 0.582 | 0.303 |
+| 7 | 8,505 | 0.136 | 0.171 | 0.212 | 0.085 | 0.086 | 0.062 | 0.596 | 0.335 |
+| 8 | 8,505 | 0.212 | 0.261 | 0.325 | 0.078 | 0.074 | 0.059 | 0.587 | 0.337 |
+| 9 | 8,506 | 0.325 | 0.428 | 1.000 | 0.074 | 0.071 | 0.064 | 0.535 | 0.291 |
 
-The relationship runs the opposite way to the winner's-curse intuition: the extension rate falls from 9.4 percent in the decile that won at essentially the expected value to 8.4 percent in the deepest-discount decile (Spearman across deciles -0.70). A bidder that cut its price hard is not the one whose contract gets extended in this sample.
+The relationship runs the opposite way to the winner's-curse intuition: the extension rate falls from 8.8 percent in the decile that won at essentially the expected value to 7.4 percent in the deepest-discount decile (Spearman across deciles -0.48). A bidder that cut its price hard is not the one whose contract gets extended in this sample.
 
 ![Extension rate by discount decile](extension_by_discount_decile.png)
 
@@ -544,24 +545,24 @@ Bins of the coefficient of variation of the live priced bids on the lot, with th
 
 | decile | lots | dispersion min | dispersion median | dispersion max | duration extension recorded | end date moved out more than 90 days | contract value up more than 10 percent | any registered change | paid less than 90 percent of the signed value |
 |---|---|---|---|---|---|---|---|---|---|
-| 0 | 2,397 | 0.000 | 0.000 | 0.001 | 0.095 | 0.102 | 0.070 | 0.560 | 0.304 |
-| 1 | 2,397 | 0.001 | 0.002 | 0.004 | 0.091 | 0.101 | 0.071 | 0.543 | 0.250 |
-| 2 | 2,396 | 0.004 | 0.007 | 0.015 | 0.078 | 0.099 | 0.072 | 0.562 | 0.266 |
-| 3 | 2,397 | 0.015 | 0.029 | 0.049 | 0.096 | 0.106 | 0.057 | 0.563 | 0.304 |
-| 4 | 2,396 | 0.049 | 0.077 | 0.115 | 0.091 | 0.087 | 0.055 | 0.583 | 0.295 |
-| 5 | 2,397 | 0.115 | 0.186 | 1.410 | 0.082 | 0.082 | 0.056 | 0.534 | 0.302 |
+| 0 | 14,176 | 0.000 | 0.000 | 0.001 | 0.102 | 0.106 | 0.073 | 0.569 | 0.312 |
+| 1 | 14,175 | 0.001 | 0.002 | 0.004 | 0.084 | 0.092 | 0.069 | 0.535 | 0.262 |
+| 2 | 14,192 | 0.004 | 0.007 | 0.014 | 0.082 | 0.096 | 0.075 | 0.543 | 0.278 |
+| 3 | 14,158 | 0.014 | 0.028 | 0.048 | 0.088 | 0.098 | 0.069 | 0.569 | 0.298 |
+| 4 | 14,175 | 0.048 | 0.075 | 0.115 | 0.093 | 0.090 | 0.063 | 0.590 | 0.310 |
+| 5 | 14,176 | 0.115 | 0.183 | 1.732 | 0.085 | 0.082 | 0.061 | 0.534 | 0.289 |
 
 For comparison, the same rates by the number of live priced bids on the lot:
 
 | live priced bids | lots | duration extension recorded | end date moved out more than 90 days | contract value up more than 10 percent | any registered change | paid less than 90 percent of the signed value |
 |---|---|---|---|---|---|---|
-| 2 | 9,359 | 0.083 | 0.099 | 0.064 | 0.549 | 0.283 |
-| 3 | 2,810 | 0.096 | 0.095 | 0.072 | 0.590 | 0.301 |
-| 4 | 1,157 | 0.114 | 0.108 | 0.055 | 0.553 | 0.288 |
-| 5 | 544 | 0.092 | 0.076 | 0.045 | 0.557 | 0.276 |
-| 6 | 240 | 0.071 | 0.046 | 0.029 | 0.492 | 0.269 |
-| 7 | 116 | 0.112 | 0.088 | 0.052 | 0.586 | 0.229 |
-| 8 | 154 | 0.104 | 0.039 | 0.052 | 0.597 | 0.333 |
+| 2 | 55,747 | 0.084 | 0.096 | 0.071 | 0.552 | 0.290 |
+| 3 | 16,412 | 0.095 | 0.094 | 0.066 | 0.573 | 0.300 |
+| 4 | 6,952 | 0.101 | 0.093 | 0.066 | 0.565 | 0.289 |
+| 5 | 3,104 | 0.099 | 0.084 | 0.055 | 0.556 | 0.283 |
+| 6 | 1,342 | 0.114 | 0.084 | 0.046 | 0.522 | 0.266 |
+| 7 | 682 | 0.103 | 0.078 | 0.043 | 0.559 | 0.270 |
+| 8 | 813 | 0.092 | 0.041 | 0.038 | 0.583 | 0.291 |
 
 ## Caveats
 
@@ -608,10 +609,10 @@ Released tables, with `column_dictionary.json` beside them:
 
 | file | rows | columns | MB |
 |---|---|---|---|
-| tenders.csv | 13,675 | 31 | 6.9 |
-| bids.csv | 40,461 | 20 | 11.0 |
-| contracts.csv | 16,226 | 49 | 10.6 |
-| lots.csv | 15,707 | 35 | 6.7 |
+| tenders.csv.gz | 80,182 | 31 | 11.1 |
+| bids.csv.gz | 238,228 | 20 | 19.7 |
+| contracts.csv.gz | 95,272 | 49 | 19.2 |
+| lots.csv.gz | 92,802 | 35 | 13.7 |
 
-These carry legal-entity names and the published identifier, both of which Prozorro publishes itself, and nothing else about any person: no contact name, no email, no telephone, no street address. One thing to know about the identifiers: 10,543 bidders carry an 8 digit company EDRPOU; 4,652 bidders carry a 10 digit individual taxpayer number; 27 bidders carry another identifier length. A Ukrainian sole trader bids under a personal name and a ten-digit individual taxpayer number rather than an eight-digit company EDRPOU, and both are kept here as published.
+These carry legal-entity names and the published identifier, both of which Prozorro publishes itself, and nothing else about any person: no contact name, no email, no telephone, no street address. One thing to know about the identifiers: 25,979 bidders carry an 8 digit company EDRPOU; 13,488 bidders carry a 10 digit individual taxpayer number; 86 bidders carry another identifier length. A Ukrainian sole trader bids under a personal name and a ten-digit individual taxpayer number rather than an eight-digit company EDRPOU, and both are kept here as published.
 

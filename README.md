@@ -66,3 +66,28 @@ Rank discrimination for cost growth above 10 percent is 0.614 (95 percent interv
 ### World Bank appraisal documents to IEG outcome ratings (`worldbank/`)
 
 4,253 rated projects with a qualifying Project Appraisal Document dated before board approval, joined on the P-number to the IEG rating written a median of eight years later. Forward-chained: test on 1,522 projects approved from 2011. A TF-IDF model on the appraisal text alone reaches AUC 0.624 pooled and 0.579 within country (permutation p = 0.009, uncorrected across a six-rung search), with Brier skill +0.024 against the realised test base rate. Country identity alone gives pooled AUC 0.570 and within-country 0.500. The joined table (`worldbank/results/pad_ieg_join.csv`) is the contribution; the text baseline is a weak positive awaiting a pre-registered replication.
+
+## Competing bidders: is the slip forecast about the bidder or the contract? (2026-09-16)
+
+Max asked whether slip can be forecast per competing bidder. Two workstreams answer it where a competition set is observable. Full tables, nulls, and caveats in `bidders_us/results/report.md` and `prozorro/results/report.md`.
+
+### United States (`bidders_us/`)
+
+- **Contractor residual persistence.** On the definitive-contract panel, fit the slip model with nothing that identifies the contractor, then check whether a contractor's leftover slip in FY2010 to FY2017 predicts its leftover slip in FY2020 to FY2022. Roughly 1 to 2 percent of the forecastable slip signal is the contractor (persistence r 0.07 to 0.18 depending on the record window; AUC of the contractor's history alone 0.53 to 0.58; placebo r 0.005). The contracting office carries about twice that.
+- **Vehicle holders as the competition set.** 798,977 delivery orders of $250,000 or more under multiple-award vehicles, FY2010 to FY2022, with vehicles defined as sibling contracts from one solicitation (81 eligible vehicles, 21,605 test orders, 2,671 holders). A holder's prior slip rate alone ranks orders within a vehicle at AUC 0.60 to 0.62 and persists across periods (Spearman 0.23 to 0.24 against a shuffled-identity null of 0.02), but adding it to the contract-shape model moves within-vehicle AUC by at most 0.002 and Brier skill by 0.003. Ranking holders by their record recovers 7 to 12 percent of the realised best-to-worst gap between holders on the same vehicle.
+- **The two numbers a losing bid would have carried.** Number of offers has AUC 0.47 for slip on competed awards and a flat partial dependence from 2 to 30 offers; award size relative to its agency and product cell has AUC 0.56 and adds 0.0002 skill.
+
+### Ukraine, Prozorro (`prozorro/`)
+
+The only large system that publishes every bidder's identity and price. A systematic one-in-five-day sample of the tender feed: 80,182 completed above-threshold tenders created 2019 to 2022, 238,228 bids, 95,272 contracts, labels from the contract registry's typed change records. Forward-chained: train on tenders opened in 2019 to 2020, test on 2021 to 2022 (38,113 lots).
+
+| Forecast of a recorded duration extension | AUC | Brier skill |
+|---|---|---|
+| Base rate (9.4 percent) | 0.500 | 0.000 |
+| Reference class (sector by region) | 0.704 | 0.066 |
+| GBM on the lot alone | 0.728 | 0.117 |
+| plus the buyer's record | 0.749 | 0.135 |
+| plus the winner's price position | 0.759 | 0.149 |
+| plus the winner's identity and record | 0.751 | 0.128 |
+
+The bidder's price position among its rivals on the same lot carries signal; the bidder's identity and past record do not add any once the lot and the buyer are known, and outcomes cluster by bidder (intraclass correlation 0.227 against a null of 0.151) without that clustering being usable in advance. Transfer scoring of bidder-level forecasts (forecasts on lost lots against realised rates on won lots) reaches Spearman 0.273 but does not beat a lot-only placebo at 0.287. When the cheapest bid was disqualified and a dearer bid won, recorded extensions ran 1.4 points higher (0.9 to 1.9) than matched controls. Deeper winner discounts go with slightly fewer extensions, the opposite of the winner's-curse intuition.

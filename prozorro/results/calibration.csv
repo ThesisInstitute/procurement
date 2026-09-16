@@ -1,251 +1,251 @@
 label,model,bin,n,mean_forecast,observed
-duration_extension,reference class,0.0,664,0.031044066998455026,0.0391566265060241
-duration_extension,reference class,1.0,616,0.046426840458523466,0.06655844155844155
-duration_extension,reference class,2.0,648,0.05324069745760499,0.035493827160493825
-duration_extension,reference class,3.0,622,0.059814456031033005,0.04983922829581994
-duration_extension,reference class,4.0,621,0.07122107762437098,0.06280193236714976
-duration_extension,reference class,5.0,743,0.0782838445928663,0.06594885598923284
-duration_extension,reference class,6.0,522,0.08404553141273213,0.07662835249042145
-duration_extension,reference class,7.0,637,0.09906812680381004,0.152276295133438
-duration_extension,reference class,8.0,704,0.13601270514656308,0.11505681818181818
-duration_extension,reference class,9.0,561,0.22175695735451384,0.31016042780748665
-duration_extension,"GBM lot, no buyer history",0.0,634,0.015959006817410283,0.025236593059936908
-duration_extension,"GBM lot, no buyer history",1.0,634,0.023272151708916097,0.02996845425867508
-duration_extension,"GBM lot, no buyer history",2.0,634,0.029009538434527544,0.052050473186119876
-duration_extension,"GBM lot, no buyer history",3.0,633,0.03537432899517589,0.07109004739336493
-duration_extension,"GBM lot, no buyer history",4.0,634,0.042895800278389525,0.05993690851735016
-duration_extension,"GBM lot, no buyer history",5.0,634,0.0524261723038049,0.07886435331230283
-duration_extension,"GBM lot, no buyer history",6.0,633,0.06567076323319525,0.09636650868878358
-duration_extension,"GBM lot, no buyer history",7.0,634,0.08854867513231368,0.09779179810725552
-duration_extension,"GBM lot, no buyer history",8.0,634,0.13234140190801255,0.11829652996845426
-duration_extension,"GBM lot, no buyer history",9.0,634,0.31179561888352747,0.3186119873817035
-duration_extension,"GBM lot, plus buyer history",0.0,637,0.020877867054012577,0.018838304552590265
-duration_extension,"GBM lot, plus buyer history",1.0,631,0.02738309485907849,0.03486529318541997
-duration_extension,"GBM lot, plus buyer history",2.0,649,0.034416266621301685,0.040061633281972264
-duration_extension,"GBM lot, plus buyer history",3.0,618,0.04222204993452711,0.05177993527508091
-duration_extension,"GBM lot, plus buyer history",4.0,634,0.05248097696984587,0.09936908517350158
-duration_extension,"GBM lot, plus buyer history",5.0,634,0.06482657281926332,0.08832807570977919
-duration_extension,"GBM lot, plus buyer history",6.0,633,0.08030104565524461,0.07266982622432859
-duration_extension,"GBM lot, plus buyer history",7.0,634,0.10369849209736448,0.08675078864353312
-duration_extension,"GBM lot, plus buyer history",8.0,634,0.15361280605126745,0.12933753943217666
-duration_extension,"GBM lot, plus buyer history",9.0,634,0.3427260884285731,0.3264984227129338
-duration_extension,GBM plus the bidder's price,0.0,634,0.02065992374880555,0.015772870662460567
-duration_extension,GBM plus the bidder's price,1.0,634,0.0269760450141602,0.03470031545741325
-duration_extension,GBM plus the bidder's price,2.0,634,0.03305822622325451,0.02996845425867508
-duration_extension,GBM plus the bidder's price,3.0,633,0.04065736633314527,0.07582938388625593
-duration_extension,GBM plus the bidder's price,4.0,634,0.0491254981410227,0.06309148264984227
-duration_extension,GBM plus the bidder's price,5.0,634,0.05950110516090871,0.06309148264984227
-duration_extension,GBM plus the bidder's price,6.0,633,0.07335629936719583,0.09794628751974724
-duration_extension,GBM plus the bidder's price,7.0,634,0.09366633278309239,0.07728706624605679
-duration_extension,GBM plus the bidder's price,8.0,634,0.14336080130604006,0.13406940063091483
-duration_extension,GBM plus the bidder's price,9.0,634,0.3454276590492835,0.35646687697160884
-duration_extension,GBM plus the bidder's price and history,0.0,634,0.021998562168076666,0.02365930599369085
-duration_extension,GBM plus the bidder's price and history,1.0,634,0.02889102646037666,0.028391167192429023
-duration_extension,GBM plus the bidder's price and history,2.0,634,0.03452369864275427,0.04258675078864353
-duration_extension,GBM plus the bidder's price and history,3.0,633,0.04132745130194201,0.0631911532385466
-duration_extension,GBM plus the bidder's price and history,4.0,634,0.049535612693703865,0.061514195583596214
-duration_extension,GBM plus the bidder's price and history,5.0,634,0.05932222143873332,0.1056782334384858
-duration_extension,GBM plus the bidder's price and history,6.0,633,0.0739861745644186,0.06635071090047394
-duration_extension,GBM plus the bidder's price and history,7.0,634,0.09904471524893639,0.08201892744479496
-duration_extension,GBM plus the bidder's price and history,8.0,634,0.15050695989031274,0.13722397476340695
-duration_extension,GBM plus the bidder's price and history,9.0,634,0.36647661974204543,0.33753943217665616
-days_extended_gt90,reference class,0.0,634,0.04268602300283946,0.061514195583596214
-days_extended_gt90,reference class,1.0,679,0.06634089530392982,0.045655375552282766
-days_extended_gt90,reference class,2.0,636,0.08085385774431987,0.055031446540880505
-days_extended_gt90,reference class,3.0,578,0.09036841567524177,0.06747404844290658
-days_extended_gt90,reference class,4.0,641,0.09954371447878907,0.0405616224648986
-days_extended_gt90,reference class,5.0,692,0.1090604188827735,0.07947976878612717
-days_extended_gt90,reference class,6.0,576,0.11814501979322922,0.07118055555555555
-days_extended_gt90,reference class,7.0,660,0.14096233461881655,0.11212121212121212
-days_extended_gt90,reference class,8.0,595,0.16766528676406475,0.08235294117647059
-days_extended_gt90,reference class,9.0,626,0.2648442393635851,0.15814696485623003
-days_extended_gt90,"GBM lot, no buyer history",0.0,632,0.010008352235949444,0.03164556962025317
-days_extended_gt90,"GBM lot, no buyer history",1.0,632,0.018353055907737444,0.03639240506329114
-days_extended_gt90,"GBM lot, no buyer history",2.0,631,0.02658730032179875,0.025356576862123614
-days_extended_gt90,"GBM lot, no buyer history",3.0,632,0.037163094351074635,0.03164556962025317
-days_extended_gt90,"GBM lot, no buyer history",4.0,632,0.050492534913056414,0.04113924050632911
-days_extended_gt90,"GBM lot, no buyer history",5.0,631,0.0693146716427929,0.05705229793977813
-days_extended_gt90,"GBM lot, no buyer history",6.0,632,0.09750712428573097,0.07753164556962025
-days_extended_gt90,"GBM lot, no buyer history",7.0,631,0.13814827135321597,0.08557844690966719
-days_extended_gt90,"GBM lot, no buyer history",8.0,632,0.20056851297103825,0.12183544303797468
-days_extended_gt90,"GBM lot, no buyer history",9.0,632,0.36725885117727775,0.26424050632911394
-days_extended_gt90,"GBM lot, plus buyer history",0.0,635,0.007844796802180629,0.014173228346456693
-days_extended_gt90,"GBM lot, plus buyer history",1.0,629,0.011897072360073029,0.04292527821939587
-days_extended_gt90,"GBM lot, plus buyer history",2.0,631,0.015967627306825192,0.03486529318541997
-days_extended_gt90,"GBM lot, plus buyer history",3.0,632,0.02076626516199607,0.03164556962025317
-days_extended_gt90,"GBM lot, plus buyer history",4.0,632,0.02724238822849622,0.03481012658227848
-days_extended_gt90,"GBM lot, plus buyer history",5.0,631,0.03613984645418489,0.044374009508716325
-days_extended_gt90,"GBM lot, plus buyer history",6.0,632,0.04827252074093154,0.060126582278481014
-days_extended_gt90,"GBM lot, plus buyer history",7.0,631,0.07255302780637858,0.1045958795562599
-days_extended_gt90,"GBM lot, plus buyer history",8.0,632,0.12337452809267477,0.12183544303797468
-days_extended_gt90,"GBM lot, plus buyer history",9.0,632,0.29310725010218097,0.28322784810126583
-days_extended_gt90,GBM plus the bidder's price,0.0,632,0.006925056088334441,0.020569620253164556
-days_extended_gt90,GBM plus the bidder's price,1.0,632,0.010696426745852049,0.0379746835443038
-days_extended_gt90,GBM plus the bidder's price,2.0,631,0.01469545712237286,0.028526148969889066
-days_extended_gt90,GBM plus the bidder's price,3.0,632,0.02001527335537145,0.03481012658227848
-days_extended_gt90,GBM plus the bidder's price,4.0,632,0.02639923376404247,0.04430379746835443
-days_extended_gt90,GBM plus the bidder's price,5.0,631,0.03450697050174716,0.039619651347068144
-days_extended_gt90,GBM plus the bidder's price,6.0,632,0.04653109471947148,0.055379746835443035
-days_extended_gt90,GBM plus the bidder's price,7.0,631,0.07186256988560054,0.09508716323296355
-days_extended_gt90,GBM plus the bidder's price,8.0,632,0.1242338524365863,0.14556962025316456
-days_extended_gt90,GBM plus the bidder's price,9.0,632,0.3001035065622613,0.27056962025316456
-days_extended_gt90,GBM plus the bidder's price and history,0.0,632,0.013196142144381856,0.012658227848101266
-days_extended_gt90,GBM plus the bidder's price and history,1.0,632,0.018547481653510257,0.03955696202531646
-days_extended_gt90,GBM plus the bidder's price and history,2.0,631,0.02405441913982991,0.03645007923930269
-days_extended_gt90,GBM plus the bidder's price and history,3.0,632,0.029914922052213837,0.028481012658227847
-days_extended_gt90,GBM plus the bidder's price and history,4.0,632,0.037322982546324796,0.0379746835443038
-days_extended_gt90,GBM plus the bidder's price and history,5.0,631,0.046856478062683476,0.044374009508716325
-days_extended_gt90,GBM plus the bidder's price and history,6.0,632,0.06042195608912105,0.07436708860759493
-days_extended_gt90,GBM plus the bidder's price and history,7.0,631,0.08366625620007852,0.0919175911251981
-days_extended_gt90,GBM plus the bidder's price and history,8.0,632,0.1314786777522442,0.11867088607594936
-days_extended_gt90,GBM plus the bidder's price and history,9.0,632,0.273040505429673,0.2879746835443038
-value_growth_gt10,reference class,0.0,647,0.02356140733270732,0.010819165378670788
-value_growth_gt10,reference class,1.0,668,0.03829530405567079,0.016467065868263474
-value_growth_gt10,reference class,2.0,665,0.0481843122289884,0.039097744360902256
-value_growth_gt10,reference class,3.0,639,0.054903408098976356,0.03442879499217527
-value_growth_gt10,reference class,4.0,572,0.06208823813427996,0.03146853146853147
-value_growth_gt10,reference class,5.0,787,0.07030025610436304,0.052096569250317665
-value_growth_gt10,reference class,6.0,479,0.08058112218185692,0.1315240083507307
-value_growth_gt10,reference class,7.0,638,0.09707107603424497,0.08620689655172414
-value_growth_gt10,reference class,8.0,610,0.1198789744692408,0.054098360655737705
-value_growth_gt10,reference class,9.0,633,0.1722054851325706,0.09162717219589257
-value_growth_gt10,"GBM lot, no buyer history",0.0,634,0.0075632257440183485,0.0015772870662460567
-value_growth_gt10,"GBM lot, no buyer history",1.0,634,0.013280276280003177,0.014195583596214511
-value_growth_gt10,"GBM lot, no buyer history",2.0,634,0.021301283982182062,0.00473186119873817
-value_growth_gt10,"GBM lot, no buyer history",3.0,633,0.030901772853961222,0.05845181674565561
-value_growth_gt10,"GBM lot, no buyer history",4.0,634,0.04097094569442479,0.083596214511041
-value_growth_gt10,"GBM lot, no buyer history",5.0,634,0.0536996877509319,0.04416403785488959
-value_growth_gt10,"GBM lot, no buyer history",6.0,633,0.07074755517881212,0.04265402843601896
-value_growth_gt10,"GBM lot, no buyer history",7.0,634,0.09380043278951149,0.07413249211356467
-value_growth_gt10,"GBM lot, no buyer history",8.0,634,0.1341974523541303,0.083596214511041
-value_growth_gt10,"GBM lot, no buyer history",9.0,634,0.2536030935193266,0.11987381703470032
-value_growth_gt10,"GBM lot, plus buyer history",0.0,634,0.0049636702719288465,0.006309148264984227
-value_growth_gt10,"GBM lot, plus buyer history",1.0,638,0.010633617870734113,0.006269592476489028
-value_growth_gt10,"GBM lot, plus buyer history",2.0,630,0.016837478021742062,0.025396825396825397
-value_growth_gt10,"GBM lot, plus buyer history",3.0,633,0.02379256000845961,0.030015797788309637
-value_growth_gt10,"GBM lot, plus buyer history",4.0,634,0.03204746241412417,0.09779179810725552
-value_growth_gt10,"GBM lot, plus buyer history",5.0,634,0.04272550606568465,0.050473186119873815
-value_growth_gt10,"GBM lot, plus buyer history",6.0,634,0.058314819823195106,0.03943217665615142
-value_growth_gt10,"GBM lot, plus buyer history",7.0,633,0.08184408347095525,0.052132701421800945
-value_growth_gt10,"GBM lot, plus buyer history",8.0,634,0.12553146474557095,0.09779179810725552
-value_growth_gt10,"GBM lot, plus buyer history",9.0,634,0.26232983041120284,0.12145110410094637
-value_growth_gt10,GBM plus the bidder's price,0.0,634,0.004664796881125507,0.00473186119873817
-value_growth_gt10,GBM plus the bidder's price,1.0,634,0.00980519682293482,0.007886435331230283
-value_growth_gt10,GBM plus the bidder's price,2.0,634,0.01567269185230275,0.022082018927444796
-value_growth_gt10,GBM plus the bidder's price,3.0,633,0.022245901956839797,0.11058451816745656
-value_growth_gt10,GBM plus the bidder's price,4.0,634,0.030224882206370013,0.025236593059936908
-value_growth_gt10,GBM plus the bidder's price,5.0,634,0.04085186010348561,0.04416403785488959
-value_growth_gt10,GBM plus the bidder's price,6.0,633,0.056015600195817764,0.04897314375987362
-value_growth_gt10,GBM plus the bidder's price,7.0,634,0.07828461688848506,0.04574132492113565
-value_growth_gt10,GBM plus the bidder's price,8.0,634,0.12030562935066656,0.09779179810725552
-value_growth_gt10,GBM plus the bidder's price,9.0,634,0.2518457050378349,0.11987381703470032
-value_growth_gt10,GBM plus the bidder's price and history,0.0,634,0.0062570427494438394,0.0031545741324921135
-value_growth_gt10,GBM plus the bidder's price and history,1.0,634,0.011336732597202815,0.011041009463722398
-value_growth_gt10,GBM plus the bidder's price and history,2.0,634,0.017141319474242026,0.017350157728706624
-value_growth_gt10,GBM plus the bidder's price and history,3.0,633,0.02350629851238137,0.06477093206951026
-value_growth_gt10,GBM plus the bidder's price and history,4.0,634,0.03034162614814434,0.06309148264984227
-value_growth_gt10,GBM plus the bidder's price and history,5.0,634,0.03893287333502206,0.03943217665615142
-value_growth_gt10,GBM plus the bidder's price and history,6.0,633,0.050907258317614404,0.04739336492890995
-value_growth_gt10,GBM plus the bidder's price and history,7.0,634,0.07027215007453057,0.055205047318611984
-value_growth_gt10,GBM plus the bidder's price and history,8.0,634,0.1054119565312557,0.0946372239747634
-value_growth_gt10,GBM plus the bidder's price and history,9.0,634,0.21271609547848538,0.1309148264984227
-any_change,reference class,0.0,659,0.3972885762855428,0.330804248861912
-any_change,reference class,1.0,624,0.4895769747135144,0.3942307692307692
-any_change,reference class,2.0,721,0.5169463821855314,0.3841886269070735
-any_change,reference class,3.0,548,0.5426240572877636,0.4251824817518248
-any_change,reference class,4.0,656,0.5629351102143898,0.5091463414634146
-any_change,reference class,5.0,601,0.6001582087857946,0.6173044925124792
-any_change,reference class,6.0,673,0.6434069063068768,0.6151560178306092
-any_change,reference class,7.0,603,0.6853830078374898,0.7479270315091211
-any_change,reference class,8.0,647,0.7191701948495781,0.8176197836166924
-any_change,reference class,9.0,606,0.7757168899035569,0.7838283828382838
-any_change,"GBM lot, no buyer history",0.0,634,0.14970737712657795,0.27917981072555204
-any_change,"GBM lot, no buyer history",1.0,634,0.26890214273794666,0.31230283911671924
-any_change,"GBM lot, no buyer history",2.0,634,0.3683926004812047,0.35962145110410093
-any_change,"GBM lot, no buyer history",3.0,648,0.4650038615392874,0.47685185185185186
-any_change,"GBM lot, no buyer history",4.0,619,0.5541284733986868,0.5072697899838449
-any_change,"GBM lot, no buyer history",5.0,634,0.6411690976039788,0.6025236593059937
-any_change,"GBM lot, no buyer history",6.0,633,0.7313543405149306,0.6445497630331753
-any_change,"GBM lot, no buyer history",7.0,634,0.8074866430773194,0.7460567823343849
-any_change,"GBM lot, no buyer history",8.0,634,0.870606897972532,0.8028391167192429
-any_change,"GBM lot, no buyer history",9.0,634,0.9202073883955652,0.8675078864353313
-any_change,"GBM lot, plus buyer history",0.0,634,0.1609902495687167,0.2807570977917981
-any_change,"GBM lot, plus buyer history",1.0,634,0.28497697732759286,0.3832807570977918
-any_change,"GBM lot, plus buyer history",2.0,634,0.3797608657115355,0.3548895899053628
-any_change,"GBM lot, plus buyer history",3.0,633,0.47539856281755904,0.40916271721958924
-any_change,"GBM lot, plus buyer history",4.0,634,0.5653532767594456,0.48738170347003157
-any_change,"GBM lot, plus buyer history",5.0,634,0.6544146670687452,0.61198738170347
-any_change,"GBM lot, plus buyer history",6.0,633,0.7390739949185637,0.655608214849921
-any_change,"GBM lot, plus buyer history",7.0,634,0.8136811774576587,0.7413249211356467
-any_change,"GBM lot, plus buyer history",8.0,634,0.8717039085728298,0.8012618296529969
-any_change,"GBM lot, plus buyer history",9.0,634,0.9171621796401567,0.8722397476340694
-any_change,GBM plus the bidder's price,0.0,634,0.17380070217815216,0.277602523659306
-any_change,GBM plus the bidder's price,1.0,634,0.2951509098991439,0.3753943217665615
-any_change,GBM plus the bidder's price,2.0,634,0.38714941986150647,0.3643533123028391
-any_change,GBM plus the bidder's price,3.0,633,0.4787210244457128,0.42496050552922593
-any_change,GBM plus the bidder's price,4.0,634,0.5618805887378097,0.4952681388012618
-any_change,GBM plus the bidder's price,5.0,634,0.6479623990778539,0.5694006309148265
-any_change,GBM plus the bidder's price,6.0,633,0.7326909102274581,0.6540284360189573
-any_change,GBM plus the bidder's price,7.0,634,0.8056419363915587,0.7634069400630915
-any_change,GBM plus the bidder's price,8.0,634,0.8644268543277593,0.8123028391167192
-any_change,GBM plus the bidder's price,9.0,634,0.9095612210174568,0.861198738170347
-any_change,GBM plus the bidder's price and history,0.0,634,0.15498767453682757,0.31703470031545744
-any_change,GBM plus the bidder's price and history,1.0,634,0.2746083076033787,0.35962145110410093
-any_change,GBM plus the bidder's price and history,2.0,634,0.37406217721550344,0.3580441640378549
-any_change,GBM plus the bidder's price and history,3.0,633,0.4698229874214342,0.40916271721958924
-any_change,GBM plus the bidder's price and history,4.0,634,0.5625893994839374,0.4589905362776025
-any_change,GBM plus the bidder's price and history,5.0,634,0.652788022889662,0.613564668769716
-any_change,GBM plus the bidder's price and history,6.0,633,0.7369298474264201,0.6761453396524486
-any_change,GBM plus the bidder's price and history,7.0,634,0.8081330686166142,0.750788643533123
-any_change,GBM plus the bidder's price and history,8.0,634,0.8684506503963021,0.8012618296529969
-any_change,GBM plus the bidder's price and history,9.0,634,0.9225699588880059,0.8533123028391167
-underexecuted,reference class,0.0,556,0.12151356494390812,0.14388489208633093
-underexecuted,reference class,1.0,553,0.16241609404324198,0.1844484629294756
-underexecuted,reference class,2.0,543,0.19388973979824892,0.1860036832412523
-underexecuted,reference class,3.0,549,0.22167723791603428,0.1930783242258652
-underexecuted,reference class,4.0,762,0.2468810909734322,0.26246719160104987
-underexecuted,reference class,5.0,340,0.26931435545503096,0.3
-underexecuted,reference class,6.0,600,0.30160416506297194,0.37
-underexecuted,reference class,7.0,500,0.348207451247977,0.506
-underexecuted,reference class,8.0,557,0.3905458488439377,0.4955116696588869
-underexecuted,reference class,9.0,543,0.4593906325030067,0.6795580110497238
-underexecuted,"GBM lot, no buyer history",0.0,555,0.026908655900979173,0.05765765765765766
-underexecuted,"GBM lot, no buyer history",1.0,546,0.05730585117649472,0.12087912087912088
-underexecuted,"GBM lot, no buyer history",2.0,550,0.09139165773978267,0.18
-underexecuted,"GBM lot, no buyer history",3.0,550,0.1322352316514637,0.19636363636363635
-underexecuted,"GBM lot, no buyer history",4.0,551,0.18012723420850701,0.20689655172413793
-underexecuted,"GBM lot, no buyer history",5.0,550,0.23481980505960956,0.29818181818181816
-underexecuted,"GBM lot, no buyer history",6.0,550,0.3118316283783693,0.3890909090909091
-underexecuted,"GBM lot, no buyer history",7.0,550,0.4168387161175959,0.5036363636363637
-underexecuted,"GBM lot, no buyer history",8.0,550,0.5450223358766987,0.6072727272727273
-underexecuted,"GBM lot, no buyer history",9.0,551,0.7178108013386468,0.7313974591651543
-underexecuted,"GBM lot, plus buyer history",0.0,551,0.030052438376851107,0.07622504537205081
-underexecuted,"GBM lot, plus buyer history",1.0,550,0.0662517800668159,0.11090909090909092
-underexecuted,"GBM lot, plus buyer history",2.0,550,0.10518455183568995,0.16545454545454547
-underexecuted,"GBM lot, plus buyer history",3.0,550,0.15005365768167364,0.1890909090909091
-underexecuted,"GBM lot, plus buyer history",4.0,551,0.20017090575898086,0.22141560798548093
-underexecuted,"GBM lot, plus buyer history",5.0,550,0.2655213353076574,0.31272727272727274
-underexecuted,"GBM lot, plus buyer history",6.0,550,0.3536735640788854,0.3563636363636364
-underexecuted,"GBM lot, plus buyer history",7.0,550,0.4622214712081589,0.509090909090909
-underexecuted,"GBM lot, plus buyer history",8.0,550,0.5882670959252914,0.6618181818181819
-underexecuted,"GBM lot, plus buyer history",9.0,551,0.7495828042410309,0.6878402903811253
-underexecuted,GBM plus the bidder's price,0.0,551,0.032633427241997484,0.07441016333938294
-underexecuted,GBM plus the bidder's price,1.0,550,0.06947192735602988,0.1
-underexecuted,GBM plus the bidder's price,2.0,550,0.10738313884721322,0.16
-underexecuted,GBM plus the bidder's price,3.0,550,0.15026193662180498,0.20727272727272728
-underexecuted,GBM plus the bidder's price,4.0,551,0.19889865335108312,0.2250453720508167
-underexecuted,GBM plus the bidder's price,5.0,550,0.2570710841197269,0.31272727272727274
-underexecuted,GBM plus the bidder's price,6.0,550,0.33387562059165576,0.35818181818181816
-underexecuted,GBM plus the bidder's price,7.0,550,0.44042859182495486,0.4818181818181818
-underexecuted,GBM plus the bidder's price,8.0,550,0.5732400171213871,0.6581818181818182
-underexecuted,GBM plus the bidder's price,9.0,551,0.7309084844966119,0.7132486388384754
-underexecuted,GBM plus the bidder's price and history,0.0,551,0.0354844227022101,0.07622504537205081
-underexecuted,GBM plus the bidder's price and history,1.0,550,0.07506874571282246,0.11454545454545455
-underexecuted,GBM plus the bidder's price and history,2.0,550,0.11274938224936963,0.15818181818181817
-underexecuted,GBM plus the bidder's price and history,3.0,550,0.15286726360226482,0.20363636363636364
-underexecuted,GBM plus the bidder's price and history,4.0,551,0.20024313765002513,0.22141560798548093
-underexecuted,GBM plus the bidder's price and history,5.0,550,0.26120339912808577,0.28909090909090907
-underexecuted,GBM plus the bidder's price and history,6.0,550,0.34321738855403205,0.3836363636363636
-underexecuted,GBM plus the bidder's price and history,7.0,550,0.4428955152920296,0.49636363636363634
-underexecuted,GBM plus the bidder's price and history,8.0,550,0.5685393945833611,0.6236363636363637
-underexecuted,GBM plus the bidder's price and history,9.0,551,0.7342024862961776,0.7241379310344828
+duration_extension,reference class,0.0,3824,0.024885228543856615,0.038702928870292884
+duration_extension,reference class,1.0,4103,0.03571507106596786,0.038752132585912744
+duration_extension,reference class,2.0,3573,0.041887385661716514,0.05737475510775259
+duration_extension,reference class,3.0,3780,0.051465379626265954,0.05582010582010582
+duration_extension,reference class,4.0,3809,0.0594547393284141,0.059333158309267525
+duration_extension,reference class,5.0,3783,0.06731009615505865,0.06397039386730108
+duration_extension,reference class,6.0,3822,0.07768680057565845,0.05886970172684458
+duration_extension,reference class,7.0,4109,0.09368738527699239,0.12971525918715016
+duration_extension,reference class,8.0,3520,0.1326121963009907,0.13835227272727274
+duration_extension,reference class,9.0,3790,0.2661506476794754,0.2986807387862797
+duration_extension,"GBM lot, no buyer history",0.0,3812,0.00864867209153999,0.03541448058761805
+duration_extension,"GBM lot, no buyer history",1.0,3811,0.020454752251379313,0.03804775649435844
+duration_extension,"GBM lot, no buyer history",2.0,3811,0.02832129991984663,0.04906848596168985
+duration_extension,"GBM lot, no buyer history",3.0,3811,0.035427248472250705,0.05274206245080031
+duration_extension,"GBM lot, no buyer history",4.0,3812,0.04300440920248791,0.06033578174186779
+duration_extension,"GBM lot, no buyer history",5.0,3811,0.052222401762245296,0.05195486748884807
+duration_extension,"GBM lot, no buyer history",6.0,3811,0.06429284116934611,0.06927315665179742
+duration_extension,"GBM lot, no buyer history",7.0,3811,0.0829950473087322,0.11151928627656783
+duration_extension,"GBM lot, no buyer history",8.0,3811,0.12122439861244251,0.11834164261348727
+duration_extension,"GBM lot, no buyer history",9.0,3812,0.3471378779138435,0.34942287513116477
+duration_extension,"GBM lot, plus buyer history",0.0,3812,0.008680421665968819,0.035939139559286466
+duration_extension,"GBM lot, plus buyer history",1.0,3812,0.019758004055910165,0.03672612801678909
+duration_extension,"GBM lot, plus buyer history",2.0,3810,0.027503126412844185,0.03622047244094488
+duration_extension,"GBM lot, plus buyer history",3.0,3811,0.03497978610176226,0.04487011283127788
+duration_extension,"GBM lot, plus buyer history",4.0,3812,0.04342677572674215,0.053515215110178385
+duration_extension,"GBM lot, plus buyer history",5.0,3811,0.0540265159833904,0.05405405405405406
+duration_extension,"GBM lot, plus buyer history",6.0,3811,0.06869210003058146,0.0669115717659407
+duration_extension,"GBM lot, plus buyer history",7.0,3811,0.09278410766351741,0.07871949619522435
+duration_extension,"GBM lot, plus buyer history",8.0,3811,0.1446173231001008,0.1689845184990816
+duration_extension,"GBM lot, plus buyer history",9.0,3812,0.40533833905523475,0.3601783840503673
+duration_extension,GBM plus the bidder's price,0.0,3812,0.007480212821810881,0.03410283315844701
+duration_extension,GBM plus the bidder's price,1.0,3811,0.017820085841672176,0.032274993440041984
+duration_extension,GBM plus the bidder's price,2.0,3811,0.02558908986440912,0.03962214641826292
+duration_extension,GBM plus the bidder's price,3.0,3811,0.03296673071843176,0.04801889267908686
+duration_extension,GBM plus the bidder's price,4.0,3812,0.04141380027001417,0.048268625393494226
+duration_extension,GBM plus the bidder's price,5.0,3811,0.05194273181186642,0.05326685909210181
+duration_extension,GBM plus the bidder's price,6.0,3811,0.06625014798468848,0.06507478352138546
+duration_extension,GBM plus the bidder's price,7.0,3811,0.08992401278085453,0.07740750459197061
+duration_extension,GBM plus the bidder's price,8.0,3811,0.14680693737288875,0.12909997376016794
+duration_extension,GBM plus the bidder's price,9.0,3812,0.413097628697668,0.4089716684155299
+duration_extension,GBM plus the bidder's price and history,0.0,3812,0.008052554386390954,0.026232948583420776
+duration_extension,GBM plus the bidder's price and history,1.0,3811,0.01786979867248487,0.03909734977696143
+duration_extension,GBM plus the bidder's price and history,2.0,3811,0.025415825638735696,0.03516137496720021
+duration_extension,GBM plus the bidder's price and history,3.0,3811,0.03288768637911344,0.04460771451062713
+duration_extension,GBM plus the bidder's price and history,4.0,3812,0.041803319344232474,0.04590766002098636
+duration_extension,GBM plus the bidder's price and history,5.0,3811,0.05287012834210158,0.06218840199422724
+duration_extension,GBM plus the bidder's price and history,6.0,3811,0.0682374426750833,0.07425872474416163
+duration_extension,GBM plus the bidder's price and history,7.0,3811,0.09192504832299239,0.1272631855156127
+duration_extension,GBM plus the bidder's price and history,8.0,3811,0.14703227018982987,0.12044082917869325
+duration_extension,GBM plus the bidder's price and history,9.0,3812,0.41687384002525946,0.36096537250786986
+days_extended_gt90,reference class,0.0,3826,0.02835415313018625,0.05253528489283847
+days_extended_gt90,reference class,1.0,3782,0.045216594383049244,0.029613960867265997
+days_extended_gt90,reference class,2.0,3939,0.05960823811765556,0.04265041888804265
+days_extended_gt90,reference class,3.0,3785,0.07347755150049431,0.046763540290620874
+days_extended_gt90,reference class,4.0,4156,0.08737043494775049,0.05702598652550529
+days_extended_gt90,reference class,5.0,3483,0.09860360968275297,0.05512489233419466
+days_extended_gt90,reference class,6.0,3673,0.11457579980131012,0.0639803974952355
+days_extended_gt90,reference class,7.0,3812,0.13562026765430724,0.08656873032528856
+days_extended_gt90,reference class,8.0,3872,0.17216082953827408,0.12370867768595041
+days_extended_gt90,reference class,9.0,3672,0.26319026443886495,0.19308278867102396
+days_extended_gt90,"GBM lot, no buyer history",0.0,3800,0.004921998862281028,0.04868421052631579
+days_extended_gt90,"GBM lot, no buyer history",1.0,3800,0.011622412182507025,0.02631578947368421
+days_extended_gt90,"GBM lot, no buyer history",2.0,3800,0.019370229274141483,0.024736842105263158
+days_extended_gt90,"GBM lot, no buyer history",3.0,3800,0.030354947157576667,0.032105263157894734
+days_extended_gt90,"GBM lot, no buyer history",4.0,3800,0.04539603518577808,0.03710526315789474
+days_extended_gt90,"GBM lot, no buyer history",5.0,3800,0.06583600888476296,0.060263157894736845
+days_extended_gt90,"GBM lot, no buyer history",6.0,3800,0.0925035454894546,0.05578947368421053
+days_extended_gt90,"GBM lot, no buyer history",7.0,3800,0.129354376252099,0.08026315789473684
+days_extended_gt90,"GBM lot, no buyer history",8.0,3800,0.19287636744077918,0.11105263157894738
+days_extended_gt90,"GBM lot, no buyer history",9.0,3800,0.37481727794622255,0.2710526315789474
+days_extended_gt90,"GBM lot, plus buyer history",0.0,3800,0.005252504143871124,0.04263157894736842
+days_extended_gt90,"GBM lot, plus buyer history",1.0,3800,0.011032081174909983,0.02
+days_extended_gt90,"GBM lot, plus buyer history",2.0,3800,0.017181592640884858,0.022894736842105263
+days_extended_gt90,"GBM lot, plus buyer history",3.0,3800,0.024693934447481743,0.02763157894736842
+days_extended_gt90,"GBM lot, plus buyer history",4.0,3800,0.034214600121659874,0.04263157894736842
+days_extended_gt90,"GBM lot, plus buyer history",5.0,3800,0.04630461364108681,0.05157894736842105
+days_extended_gt90,"GBM lot, plus buyer history",6.0,3800,0.06277426341514115,0.060526315789473685
+days_extended_gt90,"GBM lot, plus buyer history",7.0,3800,0.08778399596188637,0.07921052631578947
+days_extended_gt90,"GBM lot, plus buyer history",8.0,3800,0.13783456410399236,0.11552631578947369
+days_extended_gt90,"GBM lot, plus buyer history",9.0,3800,0.3326211893016885,0.2847368421052632
+days_extended_gt90,GBM plus the bidder's price,0.0,3800,0.005326629827599383,0.035526315789473684
+days_extended_gt90,GBM plus the bidder's price,1.0,3800,0.010999289929385161,0.020789473684210528
+days_extended_gt90,GBM plus the bidder's price,2.0,3800,0.017116692633449702,0.024736842105263158
+days_extended_gt90,GBM plus the bidder's price,3.0,3800,0.024590463181005443,0.028157894736842104
+days_extended_gt90,GBM plus the bidder's price,4.0,3800,0.03386166314011251,0.04
+days_extended_gt90,GBM plus the bidder's price,5.0,3800,0.045535148534647636,0.049473684210526316
+days_extended_gt90,GBM plus the bidder's price,6.0,3800,0.061768730525973814,0.05894736842105263
+days_extended_gt90,GBM plus the bidder's price,7.0,3800,0.08732790233680372,0.07894736842105263
+days_extended_gt90,GBM plus the bidder's price,8.0,3800,0.13738128496488405,0.12263157894736842
+days_extended_gt90,GBM plus the bidder's price,9.0,3800,0.33577221384557293,0.2881578947368421
+days_extended_gt90,GBM plus the bidder's price and history,0.0,3800,0.004517192438677748,0.015
+days_extended_gt90,GBM plus the bidder's price and history,1.0,3800,0.009750199044291781,0.026842105263157896
+days_extended_gt90,GBM plus the bidder's price and history,2.0,3800,0.015153142313150838,0.03105263157894737
+days_extended_gt90,GBM plus the bidder's price and history,3.0,3800,0.021722722726295732,0.03710526315789474
+days_extended_gt90,GBM plus the bidder's price and history,4.0,3800,0.029988168405777272,0.03921052631578947
+days_extended_gt90,GBM plus the bidder's price and history,5.0,3800,0.04102164872633891,0.04657894736842105
+days_extended_gt90,GBM plus the bidder's price and history,6.0,3800,0.056808425937643424,0.05973684210526316
+days_extended_gt90,GBM plus the bidder's price and history,7.0,3800,0.0815237443105977,0.08394736842105263
+days_extended_gt90,GBM plus the bidder's price and history,8.0,3800,0.13147308311388883,0.12052631578947369
+days_extended_gt90,GBM plus the bidder's price and history,9.0,3800,0.3355947475854011,0.2873684210526316
+value_growth_gt10,reference class,0.0,3844,0.00958691554187784,0.005202913631633715
+value_growth_gt10,reference class,1.0,3868,0.022153052768873752,0.01809720785935884
+value_growth_gt10,reference class,2.0,3920,0.034554469486250745,0.024744897959183672
+value_growth_gt10,reference class,3.0,3766,0.04978317718212777,0.038502389803505045
+value_growth_gt10,reference class,4.0,3729,0.06482468754615879,0.053901850362027354
+value_growth_gt10,reference class,5.0,3910,0.07615213379128914,0.04833759590792839
+value_growth_gt10,reference class,6.0,3678,0.09325949054221354,0.054377379010331704
+value_growth_gt10,reference class,7.0,3801,0.11227277743000962,0.08208366219415943
+value_growth_gt10,reference class,8.0,4156,0.1409414636624163,0.09143407122232916
+value_growth_gt10,reference class,9.0,3441,0.20586416922258474,0.16594013368206917
+value_growth_gt10,"GBM lot, no buyer history",0.0,3812,0.0015131404267082784,0.0026232948583420775
+value_growth_gt10,"GBM lot, no buyer history",1.0,3811,0.005851774922633891,0.005772763054316453
+value_growth_gt10,"GBM lot, no buyer history",2.0,3812,0.012623445056747498,0.013116474291710388
+value_growth_gt10,"GBM lot, no buyer history",3.0,3810,0.025240193662625962,0.03464566929133858
+value_growth_gt10,"GBM lot, no buyer history",4.0,3812,0.03994147870043535,0.04275970619097587
+value_growth_gt10,"GBM lot, no buyer history",5.0,3811,0.05573627726976047,0.046969299396483866
+value_growth_gt10,"GBM lot, no buyer history",6.0,3811,0.07484988334420926,0.05930202046706901
+value_growth_gt10,"GBM lot, no buyer history",7.0,3811,0.10185010739518226,0.07058514825505116
+value_growth_gt10,"GBM lot, no buyer history",8.0,3811,0.14474576735765324,0.10049855680923642
+value_growth_gt10,"GBM lot, no buyer history",9.0,3812,0.31886434148200055,0.19700944386149002
+value_growth_gt10,"GBM lot, plus buyer history",0.0,3812,0.0015891701205113808,0.0026232948583420775
+value_growth_gt10,"GBM lot, plus buyer history",1.0,3811,0.005681141175622188,0.007347152978220939
+value_growth_gt10,"GBM lot, plus buyer history",2.0,3811,0.011551714250005478,0.02177906061401207
+value_growth_gt10,"GBM lot, plus buyer history",3.0,3811,0.02071650051121428,0.0543164523747048
+value_growth_gt10,"GBM lot, plus buyer history",4.0,3812,0.03181046409606895,0.047743966421825816
+value_growth_gt10,"GBM lot, plus buyer history",5.0,3811,0.04530801102436759,0.04408291786932564
+value_growth_gt10,"GBM lot, plus buyer history",6.0,3811,0.06184445193623948,0.05667803726056153
+value_growth_gt10,"GBM lot, plus buyer history",7.0,3811,0.08596435321966853,0.07268433482025716
+value_growth_gt10,"GBM lot, plus buyer history",8.0,3811,0.1286841801682388,0.09446339543426922
+value_growth_gt10,"GBM lot, plus buyer history",9.0,3812,0.27538749826873704,0.17156348373557187
+value_growth_gt10,GBM plus the bidder's price,0.0,3812,0.0016241170589428673,0.0026232948583420775
+value_growth_gt10,GBM plus the bidder's price,1.0,3811,0.005940150994092047,0.0060351613749672
+value_growth_gt10,GBM plus the bidder's price,2.0,3811,0.012131765200157478,0.01600629755969562
+value_growth_gt10,GBM plus the bidder's price,3.0,3811,0.0218031285538336,0.0356861716085017
+value_growth_gt10,GBM plus the bidder's price,4.0,3812,0.032892758891152445,0.05325288562434417
+value_growth_gt10,GBM plus the bidder's price,5.0,3811,0.045919018676298086,0.06559958016268697
+value_growth_gt10,GBM plus the bidder's price,6.0,3811,0.0628766060637563,0.06271319863552874
+value_growth_gt10,GBM plus the bidder's price,7.0,3811,0.08736024354203117,0.06507478352138546
+value_growth_gt10,GBM plus the bidder's price,8.0,3811,0.12876513658643451,0.09288900551036473
+value_growth_gt10,GBM plus the bidder's price,9.0,3812,0.2716384808103971,0.17339979013641132
+value_growth_gt10,GBM plus the bidder's price and history,0.0,3812,0.0018979184652718032,0.005508919202518363
+value_growth_gt10,GBM plus the bidder's price and history,1.0,3811,0.0059369849129053175,0.011545526108632905
+value_growth_gt10,GBM plus the bidder's price and history,2.0,3811,0.012122826011984037,0.01784308580425085
+value_growth_gt10,GBM plus the bidder's price and history,3.0,3811,0.022018103718107637,0.02309105221726581
+value_growth_gt10,GBM plus the bidder's price and history,4.0,3812,0.03397161511720068,0.05010493179433368
+value_growth_gt10,GBM plus the bidder's price and history,5.0,3811,0.04755056339644384,0.05169246916819732
+value_growth_gt10,GBM plus the bidder's price and history,6.0,3811,0.06493000213327581,0.05615324061926004
+value_growth_gt10,GBM plus the bidder's price and history,7.0,3811,0.08930973422026359,0.08003148779847809
+value_growth_gt10,GBM plus the bidder's price and history,8.0,3811,0.13077760280278408,0.10574652322225138
+value_growth_gt10,GBM plus the bidder's price and history,9.0,3812,0.26688177709556765,0.17156348373557187
+any_change,reference class,0.0,3813,0.310875404925883,0.2976658798846053
+any_change,reference class,1.0,3847,0.42248055769172166,0.35066285417208215
+any_change,reference class,2.0,3904,0.466240324170146,0.413422131147541
+any_change,reference class,3.0,3818,0.5111374066384989,0.4316396018858041
+any_change,reference class,4.0,4114,0.5635719903048251,0.5267379679144385
+any_change,reference class,5.0,3453,0.6176862595009683,0.5708079930495221
+any_change,reference class,6.0,3900,0.6789957196941154,0.6858974358974359
+any_change,reference class,7.0,3754,0.7404082102859371,0.7402770378263186
+any_change,reference class,8.0,3837,0.7839474542448184,0.7657023716445139
+any_change,reference class,9.0,3673,0.8431489082959074,0.8042472093656412
+any_change,"GBM lot, no buyer history",0.0,3812,0.1642084106543696,0.21222455403987409
+any_change,"GBM lot, no buyer history",1.0,3811,0.2795091465739455,0.2928365258462346
+any_change,"GBM lot, no buyer history",2.0,3811,0.37048005151570934,0.37654159013382316
+any_change,"GBM lot, no buyer history",3.0,3811,0.4574643031604588,0.43531881395959066
+any_change,"GBM lot, no buyer history",4.0,3812,0.542553809006007,0.5097061909758657
+any_change,"GBM lot, no buyer history",5.0,3811,0.6255581834149957,0.599317764366308
+any_change,"GBM lot, no buyer history",6.0,3811,0.7165477270092119,0.6830228286538966
+any_change,"GBM lot, no buyer history",7.0,3811,0.8056027394871205,0.762791918131724
+any_change,"GBM lot, no buyer history",8.0,3811,0.8855748591229268,0.8186827604303333
+any_change,"GBM lot, no buyer history",9.0,3812,0.9495988659570898,0.8798530954879329
+any_change,"GBM lot, plus buyer history",0.0,3813,0.16465115515334486,0.22685549436139524
+any_change,"GBM lot, plus buyer history",1.0,3810,0.28324746454332755,0.27506561679790026
+any_change,"GBM lot, plus buyer history",2.0,3811,0.37882014864171315,0.3739176069273157
+any_change,"GBM lot, plus buyer history",3.0,3811,0.47154864986879047,0.43872999212805036
+any_change,"GBM lot, plus buyer history",4.0,3812,0.5591798429274228,0.5107555089192025
+any_change,"GBM lot, plus buyer history",5.0,3811,0.6417435185987055,0.6011545526108633
+any_change,"GBM lot, plus buyer history",6.0,3811,0.7276021272927881,0.6782996588821831
+any_change,"GBM lot, plus buyer history",7.0,3811,0.8151684039702108,0.7620047231697717
+any_change,"GBM lot, plus buyer history",8.0,3811,0.8909122958868978,0.8239307268433482
+any_change,"GBM lot, plus buyer history",9.0,3812,0.9502410589064517,0.8795907660020986
+any_change,GBM plus the bidder's price,0.0,3812,0.17096883965047432,0.2166841552990556
+any_change,GBM plus the bidder's price,1.0,3811,0.28936222419803237,0.27683022828653897
+any_change,GBM plus the bidder's price,2.0,3811,0.37982763979802237,0.3702440304382052
+any_change,GBM plus the bidder's price,3.0,3811,0.4666157280165447,0.4400419837313041
+any_change,GBM plus the bidder's price,4.0,3812,0.5524780602346777,0.5052465897166841
+any_change,GBM plus the bidder's price,5.0,3811,0.6353288606805843,0.6090265022303857
+any_change,GBM plus the bidder's price,6.0,3811,0.7224096252480205,0.6796116504854369
+any_change,GBM plus the bidder's price,7.0,3811,0.8095818650634943,0.7625295198110732
+any_change,GBM plus the bidder's price,8.0,3811,0.8860198517761072,0.8291786932563632
+any_change,GBM plus the bidder's price,9.0,3812,0.9471211637041164,0.8809024134312696
+any_change,GBM plus the bidder's price and history,0.0,3812,0.16534951586574767,0.22324239244491081
+any_change,GBM plus the bidder's price and history,1.0,3811,0.28314943982431967,0.27840461821044343
+any_change,GBM plus the bidder's price and history,2.0,3811,0.3729129652730979,0.36499606402519025
+any_change,GBM plus the bidder's price and history,3.0,3811,0.46321856792182486,0.4295460509052742
+any_change,GBM plus the bidder's price and history,4.0,3812,0.5547071239788668,0.5123294858342078
+any_change,GBM plus the bidder's price and history,5.0,3811,0.6443089656152361,0.6001049593282602
+any_change,GBM plus the bidder's price and history,6.0,3811,0.7352416612193524,0.6803988454473892
+any_change,GBM plus the bidder's price and history,7.0,3811,0.8186829333072555,0.7719758593545001
+any_change,GBM plus the bidder's price and history,8.0,3811,0.8889206871875069,0.8249803201259512
+any_change,GBM plus the bidder's price and history,9.0,3812,0.9482294933582224,0.8843126967471143
+underexecuted,reference class,0.0,3309,0.08552304459312458,0.08854638863705047
+underexecuted,reference class,1.0,3470,0.12844330355906894,0.161671469740634
+underexecuted,reference class,2.0,3361,0.15874567584014493,0.1898244570068432
+underexecuted,reference class,3.0,3174,0.1962012427217248,0.1947069943289225
+underexecuted,reference class,4.0,3304,0.23505512286199937,0.25272397094430993
+underexecuted,reference class,5.0,3260,0.2703346808060184,0.2901840490797546
+underexecuted,reference class,6.0,3264,0.323591036222988,0.41482843137254904
+underexecuted,reference class,7.0,3378,0.39696939209785514,0.5180580224985198
+underexecuted,reference class,8.0,3279,0.45631921243694695,0.5794449527294907
+underexecuted,reference class,9.0,3227,0.5597056990339494,0.6699721103191819
+underexecuted,"GBM lot, no buyer history",0.0,3303,0.025797987965729463,0.04178019981834696
+underexecuted,"GBM lot, no buyer history",1.0,3303,0.05816576839708018,0.09234029669996972
+underexecuted,"GBM lot, no buyer history",2.0,3302,0.09536263087715831,0.13264688067837674
+underexecuted,"GBM lot, no buyer history",3.0,3303,0.1384016085457682,0.1995155918861641
+underexecuted,"GBM lot, no buyer history",4.0,3302,0.18964430726842477,0.26135675348273774
+underexecuted,"GBM lot, no buyer history",5.0,3303,0.24948180878073994,0.32394792612776263
+underexecuted,"GBM lot, no buyer history",6.0,3302,0.32538842826593106,0.4094488188976378
+underexecuted,"GBM lot, no buyer history",7.0,3303,0.42034303904983195,0.5080230093854072
+underexecuted,"GBM lot, no buyer history",8.0,3302,0.5390962334086328,0.6308298001211387
+underexecuted,"GBM lot, no buyer history",9.0,3303,0.70668564295813,0.7481077808053285
+underexecuted,"GBM lot, plus buyer history",0.0,3303,0.025184714757260217,0.044807750529821375
+underexecuted,"GBM lot, plus buyer history",1.0,3303,0.05733662801853056,0.09173478655767484
+underexecuted,"GBM lot, plus buyer history",2.0,3302,0.09604015733233108,0.13385826771653545
+underexecuted,"GBM lot, plus buyer history",3.0,3303,0.14349843273773194,0.2031486527399334
+underexecuted,"GBM lot, plus buyer history",4.0,3302,0.20018472407111576,0.2462144155057541
+underexecuted,"GBM lot, plus buyer history",5.0,3303,0.26804792265960603,0.32334241598546776
+underexecuted,"GBM lot, plus buyer history",6.0,3302,0.35372686932075725,0.4094488188976378
+underexecuted,"GBM lot, plus buyer history",7.0,3303,0.4668565163105831,0.5340599455040872
+underexecuted,"GBM lot, plus buyer history",8.0,3302,0.5974316008682048,0.646274984857662
+underexecuted,"GBM lot, plus buyer history",9.0,3303,0.7729281712682126,0.7151074780502573
+underexecuted,GBM plus the bidder's price,0.0,3303,0.02618443962871053,0.03754162882228277
+underexecuted,GBM plus the bidder's price,1.0,3303,0.05666924158485307,0.08749621556161066
+underexecuted,GBM plus the bidder's price,2.0,3302,0.09544516422322323,0.13476680799515445
+underexecuted,GBM plus the bidder's price,3.0,3303,0.14241305932418377,0.20375416288222828
+underexecuted,GBM plus the bidder's price,4.0,3302,0.1975415681410467,0.24470018170805571
+underexecuted,GBM plus the bidder's price,5.0,3303,0.2640679636983009,0.33212231304874357
+underexecuted,GBM plus the bidder's price,6.0,3302,0.3505070660582137,0.42004845548152636
+underexecuted,GBM plus the bidder's price,7.0,3303,0.45927382437091124,0.5237662730850742
+underexecuted,GBM plus the bidder's price,8.0,3302,0.5897349577719755,0.6580860084797092
+underexecuted,GBM plus the bidder's price,9.0,3303,0.7683287128023379,0.7057220708446866
+underexecuted,GBM plus the bidder's price and history,0.0,3303,0.02546936724821518,0.04783530124129579
+underexecuted,GBM plus the bidder's price and history,1.0,3303,0.05593116868711343,0.08537693006357856
+underexecuted,GBM plus the bidder's price and history,2.0,3302,0.09265053137373953,0.1308298001211387
+underexecuted,GBM plus the bidder's price and history,3.0,3303,0.1370000242658876,0.19709355131698456
+underexecuted,GBM plus the bidder's price and history,4.0,3302,0.19259259508304263,0.2540884312537856
+underexecuted,GBM plus the bidder's price and history,5.0,3303,0.26076212004507027,0.33272782319103844
+underexecuted,GBM plus the bidder's price and history,6.0,3302,0.34562614389622537,0.4161114476075106
+underexecuted,GBM plus the bidder's price and history,7.0,3303,0.45476916004422996,0.527096578867696
+underexecuted,GBM plus the bidder's price and history,8.0,3302,0.5907121353974379,0.6326468806783767
+underexecuted,GBM plus the bidder's price and history,9.0,3303,0.7731736187950515,0.7241901301846806

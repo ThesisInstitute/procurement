@@ -1,31 +1,31 @@
 {
  "tenders": {
-  "file": "tenders.csv",
-  "rows": 13675,
+  "file": "tenders.csv.gz",
+  "rows": 80182,
   "columns": 31,
-  "megabytes": 6.9
+  "megabytes": 11.1
  },
  "bids": {
-  "file": "bids.csv",
-  "rows": 40461,
+  "file": "bids.csv.gz",
+  "rows": 238228,
   "columns": 20,
-  "megabytes": 11.0
+  "megabytes": 19.7
  },
  "contracts": {
-  "file": "contracts.csv",
-  "rows": 16226,
+  "file": "contracts.csv.gz",
+  "rows": 95272,
   "columns": 49,
-  "megabytes": 10.6
+  "megabytes": 19.2
  },
  "lots": {
-  "file": "lots.csv",
-  "rows": 15707,
+  "file": "lots.csv.gz",
+  "rows": 92802,
   "columns": 35,
-  "megabytes": 6.7
+  "megabytes": 13.7
  },
  "identifier_shape": {
-  "bidders with an 8 digit company EDRPOU": 10543,
-  "bidders with a 10 digit individual taxpayer number": 4652,
-  "bidders with another identifier length": 27
+  "bidders with an 8 digit company EDRPOU": 25979,
+  "bidders with a 10 digit individual taxpayer number": 13488,
+  "bidders with another identifier length": 86
  }
 }
