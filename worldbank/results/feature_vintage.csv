@@ -1,0 +1,8 @@
+field,countries_total,countries_varying,countries_tested,mean_approval_fy_accuracy,mean_closing_fy_accuracy,closing_better_in,approval_better_in,closing_exact_in,approval_exact_in,verdict
+Country / Economy FCS Status,187,51,50,0.8784794916493229,0.92298819872049,29.0,0.0,22.0,7.0,tracks the closing period; NOT established as ex ante
+Country / Economy Lending Group,187,4,0,,,,,,,constant within country in this snapshot
+Country / Economy FCS Lending Group,187,58,50,0.8784794916493229,0.92298819872049,29.0,0.0,22.0,7.0,tracks the closing period; NOT established as ex ante
+Practice Group,187,164,134,0.6921212877067786,0.6796005917930247,30.0,54.0,0.0,1.0,tracks the approval period
+Global Practice,187,165,134,0.8173465720266992,0.8064614062188123,15.0,46.0,0.0,1.0,tracks the approval period
+Agreement Type,187,147,126,0.8919917415875628,0.8875179149458245,18.0,32.0,4.0,6.0,tracks the approval period
+Lending Instrument Type,187,146,127,0.8419187207866684,0.8218224020975912,27.0,63.0,2.0,3.0,tracks the approval period

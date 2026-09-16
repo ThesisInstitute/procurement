@@ -1,0 +1,179 @@
+column,dtype,non_null,distinct,known_at_board_approval,source,observed_values_if_few
+ieg_as_of_date,str,4253,1,False,Finances One IEG bulk CSV (DS00053/RS00055),09/13/2026
+projectid,str,4253,4253,True,derived in src/dataset.py or Projects API scalar field,
+ieg_project_name,str,4253,4140,False,Finances One IEG bulk CSV (DS00053/RS00055),
+ieg_region,str,4253,9,True,Finances One IEG bulk CSV (DS00053/RS00055),"Africa; East Asia and Pacific; Eastern and Southern Africa; Europe and Central Asia; Latin America and Caribbean; Middle East, North Africa, Afghanistan, and Pakistan; Other; South Asia; Western and Central Africa"
+ieg_country,str,4253,166,True,Finances One IEG bulk CSV (DS00053/RS00055),
+ieg_country_lending_group,str,4253,4,True,Finances One IEG bulk CSV (DS00053/RS00055),BLEND; IBRD; IDA; OTHER
+ieg_country_fcs_status,str,4253,2,True,Finances One IEG bulk CSV (DS00053/RS00055),FCS; non-FCS
+ieg_country_fcs_lending_group,str,4253,8,False,Finances One IEG bulk CSV (DS00053/RS00055),BLEND FCS; BLEND non-FCS; IBRD FCS; IBRD non-FCS; IDA FCS; IDA non-FCS; OTHER FCS; OTHER non-FCS
+ieg_practice_group,str,4248,6,True,Finances One IEG bulk CSV (DS00053/RS00055),"Digital; Equitable Growth, Finance and Institutions; Human Development; Infrastructure; Other; Sustainable Development"
+ieg_global_practice,str,4253,17,True,Finances One IEG bulk CSV (DS00053/RS00055),
+ieg_agreement_type,str,4253,7,True,Finances One IEG bulk CSV (DS00053/RS00055),GEF; IBRD; IDA; MONT; RETF; SPF; Special Financing
+ieg_lending_instrument_type,str,4253,2,True,Finances One IEG bulk CSV (DS00053/RS00055),DPF; IPF
+ieg_approval_fy,int64,4253,27,False,Finances One IEG bulk CSV (DS00053/RS00055),
+ieg_final_closing_fy,int64,4253,29,False,Finances One IEG bulk CSV (DS00053/RS00055),
+ieg_evaluation_type,str,4253,2,False,Finances One IEG bulk CSV (DS00053/RS00055),ICRR; PPAR
+ieg_outcome,str,4253,7,False,Finances One IEG bulk CSV (DS00053/RS00055),Highly Satisfactory; Highly Unsatisfactory; Moderately Satisfactory; Moderately Unsatisfactory; Not Rated; Satisfactory; Unsatisfactory
+ieg_quality_at_entry,str,4253,7,False,Finances One IEG bulk CSV (DS00053/RS00055),Highly Satisfactory; Highly Unsatisfactory; Moderately Satisfactory; Moderately Unsatisfactory; Not Rated; Satisfactory; Unsatisfactory
+ieg_quality_of_supervision,str,4253,7,False,Finances One IEG bulk CSV (DS00053/RS00055),Highly Satisfactory; Highly Unsatisfactory; Moderately Satisfactory; Moderately Unsatisfactory; Not Rated; Satisfactory; Unsatisfactory
+ieg_bank_performance,str,4253,7,False,Finances One IEG bulk CSV (DS00053/RS00055),Highly Satisfactory; Highly Unsatisfactory; Moderately Satisfactory; Moderately Unsatisfactory; Not Rated; Satisfactory; Unsatisfactory
+ieg_me_quality,str,4253,5,False,Finances One IEG bulk CSV (DS00053/RS00055),High; Modest; Negligible; Not Rated; Substantial
+ieg_evaluation_fy,int64,4253,28,False,Finances One IEG bulk CSV (DS00053/RS00055),
+boardapprovaldate,datetime64[us],4253,1827,True,derived in src/dataset.py or Projects API scalar field,
+pad_doc_id,str,4253,4231,False,Documents and Reports API (qualifying PAD record),
+pad_docdt,str,4253,2613,False,Documents and Reports API (qualifying PAD record),
+pad_guid,str,4253,4231,False,Documents and Reports API (qualifying PAD record),
+pad_txturl,str,4251,4229,False,Documents and Reports API (qualifying PAD record),
+pad_pdfurl,str,4251,4229,False,Documents and Reports API (qualifying PAD record),
+pad_url,str,4253,4231,False,Documents and Reports API (qualifying PAD record),
+pad_display_title,str,4253,4226,False,Documents and Reports API (qualifying PAD record),
+pad_repnb,str,4253,4231,False,Documents and Reports API (qualifying PAD record),
+pad_lang,str,4253,2,False,Documents and Reports API (qualifying PAD record),English; French
+pad_versiontyp,str,4250,8,False,Documents and Reports API (qualifying PAD record),Buff; Buff Cover; Buff cover; Final; Gray cover; Revised; Revised buff cover; corrigendum buff cover
+pad_disclstat,str,2861,1,False,Documents and Reports API (qualifying PAD record),Disclosed
+pad_seccl,str,4253,1,False,Documents and Reports API (qualifying PAD record),Public
+pad_abstract,str,4249,4227,False,Documents and Reports API (qualifying PAD record),
+pad_sectr,str,4253,397,False,Documents and Reports API (qualifying PAD record),
+pad_theme,str,4253,3313,False,Documents and Reports API (qualifying PAD record),
+pad_country_field,str,4253,186,False,Documents and Reports API (qualifying PAD record),
+pad_admreg,str,4230,15,False,Documents and Reports API (qualifying PAD record),
+pad_datestored,str,4253,2126,False,Documents and Reports API (qualifying PAD record),
+pad_disclosure_date,str,4253,1348,False,Documents and Reports API (qualifying PAD record),
+project_name,str,4253,4140,True,derived in src/dataset.py or Projects API scalar field,
+regionname,str,4253,9,True,derived in src/dataset.py or Projects API scalar field,"Africa; East Asia and Pacific; Eastern and Southern Africa; Europe and Central Asia; Latin America and Caribbean; Middle East, North Africa, Afghanistan, and Pakistan; Other; South Asia; Western and Central Africa"
+countryname,str,4253,166,True,derived in src/dataset.py or Projects API scalar field,
+countryshortname,str,4253,166,False,derived in src/dataset.py or Projects API scalar field,
+countrycode,str,4253,166,True,derived in src/dataset.py or Projects API scalar field,
+boardapprovaldate_exact,str,4253,1827,False,derived in src/dataset.py or Projects API scalar field,
+closingdate,str,4253,682,False,derived in src/dataset.py or Projects API scalar field,
+loan_effective_date,str,4218,2913,False,derived in src/dataset.py or Projects API scalar field,
+public_disclosure_date,str,4253,2612,False,derived in src/dataset.py or Projects API scalar field,
+fiscalyear,str,4253,27,True,derived in src/dataset.py or Projects API scalar field,
+status,str,4253,2,False,derived in src/dataset.py or Projects API scalar field,Active; Closed
+last_stage_reached_name,str,4253,2,False,derived in src/dataset.py or Projects API scalar field,Board Approved; RVP Approved
+prodline_exact,str,4253,6,True,derived in src/dataset.py or Projects API scalar field,GE; GU; MT; PE; RE; SF
+projectfinancialtype_exact,str,4250,102,False,derived in src/dataset.py or Projects API scalar field,
+envassesmentcategorycode,str,4156,6,True,derived in src/dataset.py or Projects API scalar field,A; B; C; F; H; U
+esrc_ovrl_risk_rate,str,69,4,False,derived in src/dataset.py or Projects API scalar field,H; L; M; S
+lendprojectcost,float64,4253,2572,True,derived in src/dataset.py or Projects API scalar field,
+curr_project_cost,float64,4253,2572,False,derived in src/dataset.py or Projects API scalar field,
+totalamt,float64,3747,1190,True,derived in src/dataset.py or Projects API scalar field,
+grantamt,float64,4248,828,True,derived in src/dataset.py or Projects API scalar field,
+idacommamt,float64,3747,791,True,derived in src/dataset.py or Projects API scalar field,
+curr_ibrd_commitment,float64,3748,647,False,derived in src/dataset.py or Projects API scalar field,
+curr_ida_commitment,float64,3747,791,False,derived in src/dataset.py or Projects API scalar field,
+curr_total_commitment,float64,4248,1710,False,derived in src/dataset.py or Projects API scalar field,
+borrower,str,2095,930,True,derived in src/dataset.py or Projects API scalar field,
+impagency,str,2222,1920,True,derived in src/dataset.py or Projects API scalar field,
+major_sector_code,str,4253,348,True,derived in src/dataset.py or Projects API scalar field,
+major_sector_name,str,4253,449,True,derived in src/dataset.py or Projects API scalar field,
+sector_name,str,4253,1969,True,derived in src/dataset.py or Projects API scalar field,
+sectorcode,str,4253,1969,True,derived in src/dataset.py or Projects API scalar field,
+sector_percent,str,4253,1941,True,derived in src/dataset.py or Projects API scalar field,
+theme,str,4253,3175,True,derived in src/dataset.py or Projects API scalar field,
+themecode,str,4253,3175,True,derived in src/dataset.py or Projects API scalar field,
+pdo,str,4228,4213,True,derived in src/dataset.py or Projects API scalar field,
+project_abstract,str,4222,4203,True,derived in src/dataset.py or Projects API scalar field,
+ms_concpt_review_date,str,4136,2756,False,Projects API milestones block,
+ms_begin_apprsl_date,str,4220,2664,False,Projects API milestones block,
+ms_apprvl_date,str,4253,1827,False,Projects API milestones block,
+ms_effctvnss_date,str,4176,2884,False,Projects API milestones block,
+ms_icr_nco_date,str,4251,2063,False,Projects API milestones block,
+ms_decsn_review_date,str,3698,2475,False,Projects API milestones block,
+n_isr_ratings,int64,4253,13,False,derived in src/dataset.py or Projects API scalar field,
+isr_first_pdo_rating,str,3680,6,False,Projects API isr_ratings block (POST-approval),Highly Satisfactory; Highly Unsatisfactory; Moderately Satisfactory; Moderately Unsatisfactory; Satisfactory; Unsatisfactory
+isr_first_pdo_date,str,3680,2215,False,Projects API isr_ratings block (POST-approval),
+isr_last_pdo_rating,str,3680,6,False,Projects API isr_ratings block (POST-approval),Highly Satisfactory; Highly Unsatisfactory; Moderately Satisfactory; Moderately Unsatisfactory; Satisfactory; Unsatisfactory
+isr_last_pdo_date,str,3680,2215,False,Projects API isr_ratings block (POST-approval),
+isr_first_ip_rating,str,3894,6,False,Projects API isr_ratings block (POST-approval),Highly Satisfactory; Highly Unsatisfactory; Moderately Satisfactory; Moderately Unsatisfactory; Satisfactory; Unsatisfactory
+isr_first_ip_date,str,3894,2294,False,Projects API isr_ratings block (POST-approval),
+isr_last_ip_rating,str,3894,6,False,Projects API isr_ratings block (POST-approval),Highly Satisfactory; Highly Unsatisfactory; Moderately Satisfactory; Moderately Unsatisfactory; Satisfactory; Unsatisfactory
+isr_last_ip_date,str,3894,2294,False,Projects API isr_ratings block (POST-approval),
+icr_bankqualityentry,str,2732,5,False,Projects API icr_ratings block (Bank self-rating),Highly Satisfactory; Moderately Satisfactory; Moderately Unsatisfactory; Not Rated; Substantial
+icr_bankqualityentry__n_distinct,int64,4253,2,False,Projects API icr_ratings block (Bank self-rating),0; 1
+icr_banksupervision,str,2769,7,False,Projects API icr_ratings block (Bank self-rating),Highly Satisfactory; Highly Unsatisfactory; Moderately Satisfactory; Moderately Unsatisfactory; Not Rated; Substantial; Unsatisfactory
+icr_banksupervision__n_distinct,int64,4253,6,False,Projects API icr_ratings block (Bank self-rating),0; 1; 2; 3; 4; 5
+icr_borrgovt,str,2049,7,False,Projects API icr_ratings block (Bank self-rating),Highly Satisfactory; Highly Unsatisfactory; Moderately Satisfactory; Moderately Unsatisfactory; Not Applicable; Substantial; Unsatisfactory
+icr_borrgovt__n_distinct,int64,4253,2,False,Projects API icr_ratings block (Bank self-rating),0; 1
+icr_borrimplegency,str,2048,7,False,Projects API icr_ratings block (Bank self-rating),Highly Satisfactory; Highly Unsatisfactory; Moderately Satisfactory; Moderately Unsatisfactory; Not Applicable; Substantial; Unsatisfactory
+icr_borrimplegency__n_distinct,int64,4253,2,False,Projects API icr_ratings block (Bank self-rating),0; 1
+icr_borroverall,str,2049,6,False,Projects API icr_ratings block (Bank self-rating),Highly Satisfactory; Highly Unsatisfactory; Moderately Satisfactory; Moderately Unsatisfactory; Substantial; Unsatisfactory
+icr_borroverall__n_distinct,int64,4253,2,False,Projects API icr_ratings block (Bank self-rating),0; 1
+icr_completion_riskdo,str,2176,8,False,Projects API icr_ratings block (Bank self-rating),High; Highly Satisfactory; Moderately Satisfactory; Moderately Unsatisfactory; Modest; Negligible; Substantial; Unsatisfactory
+icr_completion_riskdo__n_distinct,int64,4253,6,False,Projects API icr_ratings block (Bank self-rating),0; 1; 2; 3; 4; 5
+icr_outratingind,str,3692,6,False,Projects API icr_ratings block (Bank self-rating),Highly Satisfactory; Highly Unsatisfactory; Moderately Satisfactory; Moderately Unsatisfactory; Substantial; Unsatisfactory
+icr_outratingind__n_distinct,int64,4253,3,False,Projects API icr_ratings block (Bank self-rating),0; 1; 2
+icr_overallrating,str,3689,5,False,Projects API icr_ratings block (Bank self-rating),Highly Satisfactory; Moderately Satisfactory; Moderately Unsatisfactory; Substantial; Unsatisfactory
+icr_overallrating__n_distinct,int64,4253,3,False,Projects API icr_ratings block (Bank self-rating),0; 1; 2
+icr_value,str,3670,1765,False,Projects API icr_ratings block (Bank self-rating),
+icr_value__n_distinct,int64,4253,3,False,Projects API icr_ratings block (Bank self-rating),0; 1; 2
+icr__n_blocks_distinct,int64,4253,9,False,Projects API icr_ratings block (Bank self-rating),0; 1; 2; 3; 4; 5; 6; 7; 8
+icr__n_blocks_raw,int64,4253,31,False,Projects API icr_ratings block (Bank self-rating),
+iegapi_evaldate,str,4251,2243,False,Projects API ieg_ratings block,
+iegapi_evaldate__n_distinct,int64,4253,3,False,Projects API ieg_ratings block,0; 1; 2
+iegapi_borrowcompliance,str,3404,7,False,Projects API ieg_ratings block,Highly Satisfactory; Highly Unsatisfactory; Moderately Satisfactory; Moderately Unsatisfactory; Not Rated; Satisfactory; Unsatisfactory
+iegapi_borrowcompliance__n_distinct,int64,4253,3,False,Projects API ieg_ratings block,0; 1; 2
+iegapi_icrquality,str,4248,7,False,Projects API ieg_ratings block,Exemplary; High; Modest; Not Rated; Satisfactory; Substantial; Unsatisfactory
+iegapi_icrquality__n_distinct,int64,4253,3,False,Projects API ieg_ratings block,0; 1; 2
+iegapi_mequality,str,4251,5,False,Projects API ieg_ratings block,High; Modest; Negligible; Not Rated; Substantial
+iegapi_mequality__n_distinct,int64,4253,3,False,Projects API ieg_ratings block,0; 1; 2
+iegapi_outcome,str,4251,7,False,Projects API ieg_ratings block,Highly Satisfactory; Highly Unsatisfactory; Moderately Satisfactory; Moderately Unsatisfactory; Not Rated; Satisfactory; Unsatisfactory
+iegapi_outcome__n_distinct,int64,4253,3,False,Projects API ieg_ratings block,0; 1; 2
+iegapi_overallbankperf,str,4251,7,False,Projects API ieg_ratings block,Highly Satisfactory; Highly Unsatisfactory; Moderately Satisfactory; Moderately Unsatisfactory; Not Rated; Satisfactory; Unsatisfactory
+iegapi_overallbankperf__n_distinct,int64,4253,3,False,Projects API ieg_ratings block,0; 1; 2
+iegapi_overallborrowperf,str,2579,8,False,Projects API ieg_ratings block,Highly Satisfactory; Highly Unsatisfactory; Moderately Satisfactory; Moderately Unsatisfactory; Not Applicable/Not Related; Not Rated; Satisfactory; Unsatisfactory
+iegapi_overallborrowperf__n_distinct,int64,4253,3,False,Projects API ieg_ratings block,0; 1; 2
+iegapi_evaluation_riskdo,str,2581,10,False,Projects API ieg_ratings block,High; Low; Moderate; Modest; Negligible; Negligible To Low; Not Applicable/Not Related; Not Rated; Significant; Substantial
+iegapi_evaluation_riskdo__n_distinct,int64,4253,3,False,Projects API ieg_ratings block,0; 1; 2
+iegapi__n_blocks_distinct,int64,4253,3,False,Projects API ieg_ratings block,0; 1; 2
+iegapi__n_blocks_raw,int64,4253,3,False,Projects API ieg_ratings block,0; 1; 2
+iegapi_first_evaldate,str,4251,2226,False,Projects API ieg_ratings block,
+iegapi_first_borrowcompliance,str,3404,7,False,Projects API ieg_ratings block,Highly Satisfactory; Highly Unsatisfactory; Moderately Satisfactory; Moderately Unsatisfactory; Not Rated; Satisfactory; Unsatisfactory
+iegapi_first_icrquality,str,4248,8,False,Projects API ieg_ratings block,Exemplary; High; Moderate; Modest; Not Rated; Satisfactory; Substantial; Unsatisfactory
+iegapi_first_mequality,str,4251,5,False,Projects API ieg_ratings block,High; Modest; Negligible; Not Rated; Substantial
+iegapi_first_outcome,str,4251,7,False,Projects API ieg_ratings block,Highly Satisfactory; Highly Unsatisfactory; Moderately Satisfactory; Moderately Unsatisfactory; Not Rated; Satisfactory; Unsatisfactory
+iegapi_first_overallbankperf,str,4251,7,False,Projects API ieg_ratings block,Highly Satisfactory; Highly Unsatisfactory; Moderately Satisfactory; Moderately Unsatisfactory; Not Rated; Satisfactory; Unsatisfactory
+iegapi_first_overallborrowperf,str,2563,7,False,Projects API ieg_ratings block,Highly Satisfactory; Highly Unsatisfactory; Moderately Satisfactory; Moderately Unsatisfactory; Not Rated; Satisfactory; Unsatisfactory
+iegapi_first_evaluation_riskdo,str,2563,9,False,Projects API ieg_ratings block,High; Low; Moderate; Modest; Negligible; Negligible To Low; Not Rated; Significant; Substantial
+approval_year,int32,4253,28,True,derived in src/dataset.py or Projects API scalar field,
+approval_decade,Int64,4253,4,True,derived in src/dataset.py or Projects API scalar field,1990; 2000; 2010; 2020
+pad_docdt_dt,datetime64[us],4253,2613,False,Documents and Reports API (qualifying PAD record),
+pad_lead_days_raw,Float64,4253,137,False,Documents and Reports API (qualifying PAD record),
+pad_lead_days_out_of_range,boolean,4253,2,False,Documents and Reports API (qualifying PAD record),False; True
+pad_lead_days,Float64,4247,131,True,Documents and Reports API (qualifying PAD record),
+actual_closing_date,datetime64[us],4253,682,False,derived in src/dataset.py or Projects API scalar field,
+gt_original_closing_date,datetime64[us],1860,397,True,GovTech workbook (Data Catalog 0038056/DR0095723),
+gt_actual_closing_date,datetime64[us],1860,402,False,GovTech workbook (Data Catalog 0038056/DR0095723),
+gt_icr_outcome,string,1484,10,False,GovTech workbook (Data Catalog 0038056/DR0095723),#; -; 0; ?; HS; HU; MS; MU; S; U
+gt_ieg_outcome,string,1573,11,False,GovTech workbook (Data Catalog 0038056/DR0095723),#; -; 0; ?; HS; HU; MS; MU; NR; S; U
+gt_icr_bank_perf,string,1471,8,False,GovTech workbook (Data Catalog 0038056/DR0095723),-; 0; ?; HS; MS; MU; S; U
+gt_ieg_bank_perf,string,1571,11,False,GovTech workbook (Data Catalog 0038056/DR0095723),#; -; 0; ?; HS; HU; MS; MU; NR; S; U
+gt_icr_borrower_perf,string,1053,9,False,GovTech workbook (Data Catalog 0038056/DR0095723),-; 0; ?; HS; HU; MS; MU; S; U
+gt_ieg_borrower_perf,string,1573,11,False,GovTech workbook (Data Catalog 0038056/DR0095723),#; -; 0; ?; HS; HU; MS; MU; NR; S; U
+gt_sheet,str,1874,2,False,GovTech workbook (Data Catalog 0038056/DR0095723),DG Other; DG Projects
+planned_closing_date,datetime64[us],1860,397,True,derived in src/dataset.py or Projects API scalar field,
+schedule_slip_days,Float64,1860,272,False,derived in src/dataset.py or Projects API scalar field,
+schedule_slip_days_api_actual,Float64,1860,313,False,derived in src/dataset.py or Projects API scalar field,
+icr_self_outcome_six_point,float64,1423,6,False,Projects API icr_ratings block (Bank self-rating),1.0; 2.0; 3.0; 4.0; 5.0; 6.0
+ieg_outcome_six_point_govtech,float64,1480,6,False,Finances One IEG bulk CSV (DS00053/RS00055),1.0; 2.0; 3.0; 4.0; 5.0; 6.0
+bank_minus_ieg_outcome,float64,1367,6,False,derived in src/dataset.py or Projects API scalar field,-1.0; -2.0; 0.0; 1.0; 2.0; 3.0
+implementation_days,Float64,4253,2071,False,derived in src/dataset.py or Projects API scalar field,
+implementation_years,Float64,4253,2071,False,derived in src/dataset.py or Projects API scalar field,
+outcome_six_point,Float64,4198,6,False,derived in src/dataset.py or Projects API scalar field,1.0; 2.0; 3.0; 4.0; 5.0; 6.0
+y_satisfactory,Float64,4198,2,False,derived in src/dataset.py or Projects API scalar field,0.0; 1.0
+bank_perf_six_point,Float64,4244,6,False,derived in src/dataset.py or Projects API scalar field,1.0; 2.0; 3.0; 4.0; 5.0; 6.0
+quality_entry_six_point,Float64,4207,6,False,derived in src/dataset.py or Projects API scalar field,1.0; 2.0; 3.0; 4.0; 5.0; 6.0
+quality_supervision_six_point,Float64,4171,6,False,derived in src/dataset.py or Projects API scalar field,1.0; 2.0; 3.0; 4.0; 5.0; 6.0
+me_quality_four_point,float64,3706,4,False,derived in src/dataset.py or Projects API scalar field,1.0; 2.0; 3.0; 4.0
+risk_to_dev_outcome_four_point,float64,2092,4,False,derived in src/dataset.py or Projects API scalar field,1.0; 2.0; 3.0; 4.0
+risk_to_dev_outcome_scale_vintage,str,2092,3,False,derived in src/dataset.py or Projects API scalar field,both; new; old
+borrower_perf_six_point,Float64,2551,6,False,derived in src/dataset.py or Projects API scalar field,1.0; 2.0; 3.0; 4.0; 5.0; 6.0
+approval_amount_usd,float64,4253,1462,True,derived in src/dataset.py or Projects API scalar field,
+log_commitment,float64,4253,1462,True,derived in src/dataset.py or Projects API scalar field,
+log_curr_commitment_excluded_from_features,float64,4248,1710,False,derived in src/dataset.py or Projects API scalar field,
+pad_text_sha256,str,4250,4214,False,Documents and Reports API (qualifying PAD record),
+pad_text_bytes,float64,4251,4190,False,Documents and Reports API (qualifying PAD record),
+pad_text_status,str,4251,4,False,Documents and Reports API (qualifying PAD record),extract_failed; http_404; ok; too_short
+pad_text_http_status,float64,4251,2,False,Documents and Reports API (qualifying PAD record),200.0; 404.0
+pad_text_usable,bool,4253,2,False,Documents and Reports API (qualifying PAD record),False; True

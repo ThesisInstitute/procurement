@@ -1,0 +1,7 @@
+feature set,rung,pooled_auc,within_country_auc,brier,within_country_rows_excluded
+ex-ante features only (reported ladder),(e) structured only,0.5547887503722929,0.49899117276166455,0.16345892105851742,0.3245729303547963
+ex-ante features only (reported ladder),(c) text + structured,0.604705782240565,0.5480453972257251,0.15373912758012342,0.3245729303547963
+with ieg_country_fcs_status added back,(e) structured only,0.5615850458806677,0.4931904161412358,0.16333218930910384,0.3245729303547963
+with ieg_country_fcs_status added back,(c) text + structured,0.6084925328681444,0.544766708701135,0.15318093798329546,0.3245729303547963
+without log_commitment (vintage unknown),(e) structured only,0.5478080812378562,0.48348045397225725,0.15997773892032865,0.3245729303547963
+without log_commitment (vintage unknown),(c) text + structured,0.6043980201109078,0.5412358133669609,0.15056554309886352,0.3245729303547963

@@ -1,0 +1,44 @@
+{
+  "cuts": {
+    "train_end": 2005,
+    "valid_end": 2010,
+    "n_train": 1703,
+    "n_valid": 973,
+    "n_test": 1522,
+    "moved_from_preregistered": false
+  },
+  "best_C": {
+    "text_structured": 10.0,
+    "text_only": 10.0,
+    "structured_only": 1.0
+  },
+  "cell_k": 10.0,
+  "train_base_rate": 0.7275784753363229,
+  "test_base_rate": 0.8127463863337714,
+  "n_fit": 2676,
+  "n_test": 1522,
+  "test_with_text": 1520,
+  "fit_with_text": 2640,
+  "cell_with_decade": {
+    "global_mean": 0.7275784753363229,
+    "n_target": 1522,
+    "n_hit": 618,
+    "fallback_share": 0.5939553219448095,
+    "n_train_cells": 812,
+    "n_target_cells": 508,
+    "n_target_cells_hit": 116
+  },
+  "cell_no_decade": {
+    "global_mean": 0.7275784753363229,
+    "n_target": 1522,
+    "n_hit": 1340,
+    "fallback_share": 0.11957950065703027,
+    "n_train_cells": 474,
+    "n_target_cells": 460,
+    "n_target_cells_hit": 360
+  },
+  "cell_with_decade_fallback_share": 0.5939553219448095,
+  "cell_no_decade_fallback_share": 0.11957950065703027,
+  "test_rows_with_aggregate_country_label": 116,
+  "share": 0.07621550591327202
+}

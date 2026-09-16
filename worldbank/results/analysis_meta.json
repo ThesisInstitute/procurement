@@ -1,0 +1,35 @@
+{
+  "placebo_permute": {
+    "observed_within_country_auc": 0.5788146279949559,
+    "null_mean": 0.5002023959646911,
+    "null_sd": 0.03217356394481388,
+    "null_p95": 0.5536065573770491,
+    "n_permutations": 2000,
+    "p_value_one_sided": 0.009495252373813094
+  },
+  "placebo_refit": {
+    "n_repeats": 20,
+    "mean_within_country_auc": 0.5001639344262295,
+    "max_within_country_auc": 0.5651954602774275,
+    "mean_pooled_auc": 0.4947657745819682
+  },
+  "second_cut": {
+    "definition": "outcome >= Satisfactory (six-point >= 5)",
+    "fit_base_rate": 0.30979073243647237,
+    "test_base_rate": 0.4487516425755585
+  },
+  "censoring": {
+    "n_test_full": 1522,
+    "n_test_restricted": 1393,
+    "years_kept": "2011,2012,2013,2014,2015,2016,2017,2018",
+    "min_evaluated_share": 0.5
+  },
+  "best_C_reused": {
+    "text_structured": 10.0,
+    "text_only": 10.0,
+    "structured_only": 1.0
+  },
+  "excluded_post_treatment_features": [
+    "ieg_country_fcs_status"
+  ]
+}

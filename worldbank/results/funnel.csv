@@ -1,0 +1,10 @@
+stage,n
+IEG rating rows in the bulk CSV (as published),12598
+rows dropped as duplicate P-numbers,1
+distinct projects with an IEG rating,12597
+distinct projects with any PAD in WDS,6575
+rated projects with any PAD,4265
+rated projects with a board approval date,12578
+rated projects with a PAD and a board approval date,4265
+rated projects with a QUALIFYING PAD (leakage filter passed),4253
+rated projects with a qualifying PAD and a txturl,4251

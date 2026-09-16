@@ -1,0 +1,81 @@
+direction,rank,term,coefficient
+toward satisfactory,1,communes,1.2706239585168972
+toward satisfactory,2,rural roads,1.0796732465905177
+toward satisfactory,3,mountainous,1.0183841879121605
+toward satisfactory,4,safety net,0.9622320900117858
+toward satisfactory,5,kfw,0.9583122099477895
+toward satisfactory,6,digital,0.9523188649837622
+toward satisfactory,7,31 2002,0.9089556425908134
+toward satisfactory,8,spot,0.9069888653416183
+toward satisfactory,9,asset,0.8904269557696673
+toward satisfactory,10,figure,0.8755264992670037
+toward satisfactory,11,departmental,0.8726094563115392
+toward satisfactory,12,yerevan,0.8715441113016021
+toward satisfactory,13,2009,0.8646704600408927
+toward satisfactory,14,armenia,0.859761480786372
+toward satisfactory,15,matching,0.8589139958473352
+toward satisfactory,16,subtotal,0.8586686164408767
+toward satisfactory,17,mandated,0.8568721549530106
+toward satisfactory,18,outreach,0.8566282141474226
+toward satisfactory,19,block grants,0.8445232214990721
+toward satisfactory,20,pfis,0.8435455479997681
+toward satisfactory,21,vat,0.8428815281183855
+toward satisfactory,22,relationships,0.8395142856764863
+toward satisfactory,23,b1,0.8386352862221331
+toward satisfactory,24,rs,0.8381078056757418
+toward satisfactory,25,vietnam,0.8305504467192378
+toward satisfactory,26,techniques,0.8299026593709034
+toward satisfactory,27,institutional strengthening,0.826659224735107
+toward satisfactory,28,settlements,0.8255383134099697
+toward satisfactory,29,commune,0.8237176563115532
+toward satisfactory,30,maputo,0.8216191047972654
+toward satisfactory,31,china,0.816196922803312
+toward satisfactory,32,maps,0.8077450034241809
+toward satisfactory,33,uruguay,0.807430180135688
+toward satisfactory,34,investigation,0.805632226990595
+toward satisfactory,35,saint,0.8043834573643942
+toward satisfactory,36,armenian,0.7979620527469625
+toward satisfactory,37,romania,0.7902156017121379
+toward satisfactory,38,incorporating,0.7874947530076369
+toward satisfactory,39,pilot phase,0.7867512635403011
+toward satisfactory,40,road maintenance,0.7856092596864018
+toward unsatisfactory,1,cameroon,-1.5652275725188014
+toward unsatisfactory,2,concession,-1.453721768116641
+toward unsatisfactory,3,chad,-1.204383008793439
+toward unsatisfactory,4,scenario,-1.1235044518500308
+toward unsatisfactory,5,water utilities,-1.0764767473148866
+toward unsatisfactory,6,concessionaire,-1.0631416274694125
+toward unsatisfactory,7,regulatory frameworks,-1.0400034312390822
+toward unsatisfactory,8,fmr,-1.0195620544593647
+toward unsatisfactory,9,electrification,-1.0115939814710175
+toward unsatisfactory,10,bidders,-1.0114144651670915
+toward unsatisfactory,11,port,-1.0079919003309814
+toward unsatisfactory,12,oil,-0.9658771339322094
+toward unsatisfactory,13,unions,-0.9573137375414595
+toward unsatisfactory,14,public service,-0.946806449609556
+toward unsatisfactory,15,curricula,-0.9466011890203231
+toward unsatisfactory,16,financial restructuring,-0.9369157565117264
+toward unsatisfactory,17,deficiency,-0.9347879027606143
+toward unsatisfactory,18,pollution,-0.9344098462696265
+toward unsatisfactory,19,bp gp,-0.9272481180944657
+toward unsatisfactory,20,advisor,-0.9225865375891582
+toward unsatisfactory,21,social risks,-0.9142365226793868
+toward unsatisfactory,22,non oil,-0.9103321059234367
+toward unsatisfactory,23,private partnerships,-0.9093818722350433
+toward unsatisfactory,24,ecology,-0.9049488902658168
+toward unsatisfactory,25,shouldbe,-0.8957002183365463
+toward unsatisfactory,26,operator,-0.89391628714506
+toward unsatisfactory,27,strategic environmental,-0.889580108748009
+toward unsatisfactory,28,aspect,-0.8868801463250415
+toward unsatisfactory,29,planning monitoring,-0.8697407373603041
+toward unsatisfactory,30,finalization,-0.8649810239588379
+toward unsatisfactory,31,procurement process,-0.864911701391929
+toward unsatisfactory,32,gdln,-0.8636052201967299
+toward unsatisfactory,33,forest management,-0.8599878699350185
+toward unsatisfactory,34,viable,-0.8551638522092478
+toward unsatisfactory,35,ministry environment,-0.8541521185606156
+toward unsatisfactory,36,civil service,-0.8522454042422283
+toward unsatisfactory,37,reform agenda,-0.8516530529862242
+toward unsatisfactory,38,000 qcbs,-0.8490588685051745
+toward unsatisfactory,39,ta project,-0.8475486671852304
+toward unsatisfactory,40,public education,-0.8348035977556133

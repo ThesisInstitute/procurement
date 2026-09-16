@@ -1,0 +1,142 @@
+group,n,n_pos,n_neg,pairs,usable,auc
+People's Republic of China,108,101,7,707,True,0.57991513437058
+Republic of India,78,66,12,792,True,0.4545454545454546
+Socialist Republic of Viet Nam,44,39,5,195,True,0.5282051282051282
+People's Republic of Bangladesh,40,37,3,111,True,0.7027027027027029
+Western and Central Africa,34,32,2,64,True,0.515625
+Republic of Indonesia,29,25,4,100,True,0.29
+Federative Republic of Brazil,26,22,4,88,True,0.5340909090909091
+Islamic Republic of Pakistan,25,20,5,100,True,0.91
+Eastern and Southern Africa,25,20,5,100,True,0.2
+Islamic  Republic of Afghanistan,24,6,18,108,True,0.6944444444444444
+Federal Republic of Nigeria,23,16,7,112,True,0.8035714285714286
+Federal Democratic Republic of Ethiopia,22,19,3,57,True,0.4912280701754386
+Nepal,22,16,6,96,True,0.6458333333333334
+Democratic Republic of the Congo,22,16,6,96,True,0.6145833333333333
+Republic of Ghana,21,17,4,68,True,0.7352941176470589
+Republic of Mali,20,18,2,36,True,0.3888888888888889
+West Bank and Gaza,20,17,3,51,True,0.411764705882353
+Burkina Faso,20,14,6,84,True,0.5476190476190477
+Republic of Kenya,19,17,2,34,True,0.6764705882352942
+Republic of Mozambique,19,17,2,34,True,0.588235294117647
+Argentine Republic,18,14,4,56,True,0.3214285714285714
+Republic of Peru,17,11,6,66,True,0.3484848484848485
+Republic of Uzbekistan,17,15,2,30,True,0.5666666666666667
+Republic of Niger,16,13,3,39,True,0.6153846153846154
+Republic of Malawi,16,13,3,39,True,0.9230769230769231
+Lao People's Democratic Republic,16,14,2,28,True,0.14285714285714285
+Republic of Guinea,16,12,4,48,True,0.49999999999999994
+Republic of Senegal,15,13,2,26,True,0.5384615384615384
+Republic of Armenia,15,13,2,26,True,0.5384615384615384
+United Mexican States,15,12,3,36,True,0.6666666666666666
+Republic of Benin,15,15,0,0,False,
+Republic of Sierra Leone,14,11,3,33,True,0.8787878787878789
+Republic of Liberia,14,10,4,40,True,0.325
+Democratic Socialist Republic of Sri Lanka,14,9,5,45,True,0.4444444444444444
+Republic of Uganda,14,13,1,13,False,
+Republic of Nicaragua,13,13,0,0,False,
+Lebanese Republic,13,9,4,36,True,0.6666666666666666
+Republic of Haiti,13,7,6,42,True,0.5952380952380952
+Republic of Cote d'Ivoire,13,11,2,22,True,0.6363636363636364
+Republic of the Union of Myanmar,13,7,6,42,True,0.38095238095238093
+Republic of Zambia,13,9,4,36,True,0.8055555555555556
+Republic of Turkiye,12,12,0,0,False,
+Republic of Cameroon,12,7,5,35,True,0.6
+Republic of Burundi,12,9,3,27,True,0.5925925925925926
+Central African Republic,12,10,2,20,True,0.25
+Republic of Tajikistan,12,12,0,0,False,
+Republic of Madagascar,12,11,1,11,False,
+Georgia,11,11,0,0,False,
+Kyrgyz Republic,11,9,2,18,True,0.5555555555555556
+Kingdom of Morocco,11,9,2,18,True,0.8333333333333333
+Republic of Congo,11,9,2,18,True,0.5555555555555556
+Republic of Togo,10,8,2,16,True,0.6875
+United Republic of Tanzania,10,5,5,25,True,0.56
+Plurinational State of Bolivia,10,6,4,24,True,0.7083333333333334
+Arab Republic of Egypt,10,10,0,0,False,
+Bosnia and Herzegovina,10,8,2,16,True,0.625
+Republic of Kazakhstan,10,5,5,25,True,0.6799999999999999
+Republic of Chad,9,7,2,14,False,
+Kingdom of Lesotho,9,9,0,0,False,
+Republic of Djibouti,9,7,2,14,False,
+Jamaica,9,8,1,8,False,
+Mongolia,9,9,0,0,False,
+Republic of Albania,9,9,0,0,False,
+Republic of Moldova,8,8,0,0,False,
+Republic of Serbia,8,8,0,0,False,
+Republic of Tunisia,8,4,4,16,False,
+The Independent State of Papua New Guinea,8,5,3,15,False,
+Africa,8,4,4,16,False,
+Islamic Republic of Mauritania,8,7,1,7,False,
+Republic of Belarus,8,4,4,16,False,
+Kingdom of Cambodia,8,8,0,0,False,
+Ukraine,7,7,0,0,False,
+Republic of Kosovo,7,7,0,0,False,
+Republic of the Sudan,7,5,2,10,False,
+Samoa,7,6,1,6,False,
+Kingdom of Tonga,7,6,1,6,False,
+Federal Republic of Somalia,7,7,0,0,False,
+Republic of Yemen,7,7,0,0,False,
+Republic of Cabo Verde,7,5,2,10,False,
+Republic of Ecuador,7,5,2,10,False,
+Republic of Rwanda,7,7,0,0,False,
+Republic of Croatia,7,4,3,12,False,
+Gabonese Republic,6,3,3,9,False,
+Co-operative Republic of Guyana,6,6,0,0,False,
+Republic of Azerbaijan,6,6,0,0,False,
+Pacific Islands,6,3,3,9,False,
+Republic of South Sudan,6,5,1,5,False,
+Republic of The Gambia,6,6,0,0,False,
+Organization of Eastern Caribbean States (OECS),6,4,2,8,False,
+Republic of Guinea-Bissau,6,5,1,5,False,
+Republic of Zimbabwe,5,4,1,4,False,
+Hashemite Kingdom of Jordan,5,5,0,0,False,
+Republic of the Philippines,5,5,0,0,False,
+"North Macedonia, Republic of",5,4,1,4,False,
+Republic of Angola,5,5,0,0,False,
+Republic of Honduras,5,3,2,6,False,
+Solomon Islands,5,4,1,4,False,
+Union of the Comoros,5,4,1,4,False,
+Central Asia,5,5,0,0,False,
+Oriental Republic of Uruguay,5,5,0,0,False,
+Republic of the Marshall Islands,4,1,3,3,False,
+Republic of Vanuatu,4,3,1,3,False,
+Federated States of Micronesia,4,1,3,3,False,
+Belize,4,3,1,3,False,
+Republic of Colombia,4,3,1,3,False,
+Republic of Maldives,4,4,0,0,False,
+Republic of Iraq,4,1,3,3,False,
+Republic of Kiribati,4,4,0,0,False,
+Republic of South Africa,3,2,1,2,False,
+Republic of Chile,3,3,0,0,False,
+Republic of Fiji,3,2,1,2,False,
+Tuvalu,3,1,2,2,False,
+St. Lucia,3,3,0,0,False,
+South Asia,3,3,0,0,False,
+Democratic Republic of Sao Tome and Principe,3,3,0,0,False,
+Romania,3,1,2,2,False,
+Democratic Republic of Timor-Leste,3,2,1,2,False,
+Russian Federation,3,2,1,2,False,
+Middle East and North Africa,3,3,0,0,False,
+Republic of Panama,3,2,1,2,False,
+Kingdom of Bhutan,3,2,1,2,False,
+World,3,1,2,2,False,
+Commonwealth of Dominica,2,2,0,0,False,
+Dominican Republic,2,2,0,0,False,
+Sint Maarten,2,2,0,0,False,
+Western Balkans,2,0,2,0,False,
+Kingdom of Eswatini,2,2,0,0,False,
+Montenegro,2,2,0,0,False,
+Latin America and Caribbean,2,2,0,0,False,
+Grenada,2,1,1,1,False,
+Republic of El Salvador,2,2,0,0,False,
+Antigua and Barbuda,1,0,1,0,False,
+Caribbean,1,1,0,0,False,
+Kingdom of Thailand,1,1,0,0,False,
+Republic of Guatemala,1,0,1,0,False,
+Republic of Poland,1,1,0,0,False,
+Republic of Costa Rica,1,1,0,0,False,
+Republic of Bulgaria,1,1,0,0,False,
+Europe and Central Asia,1,1,0,0,False,
+East Asia and Pacific,1,1,0,0,False,
+Southern Africa,1,0,1,0,False,
