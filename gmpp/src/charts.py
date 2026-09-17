@@ -274,6 +274,54 @@ def chart_adverse_rate_by_rating(cal: pd.DataFrame) -> None:
         _save(fig, f"chart_adverse_rate_by_rating_{scale}.png")
 
 
+def chart_summary_for_sharing(cal: pd.DataFrame) -> None:
+    """Two panels sized for an email or a slide: cost and schedule by rating.
+
+    One series, so one hue and no legend; the rating names carry identity and
+    every bar is labelled because the five values are the message.
+    """
+    panels = [
+        ("wlc_growth_1y_gt_10", "Whole-life cost up more than 10%"),
+        ("slip_1y_gt_6m", "End date slipped more than 6 months"),
+    ]
+    block = cal[cal["scale"] == "five_point"]
+    fig, axes = _figure(1, 2, (8.75, 3.7))
+    for ax, (outcome, title) in zip(axes, panels):
+        sub = block[block["outcome"] == outcome].set_index("rating")
+        order = [r for r in FIVE_POINT if r in sub.index]
+        ys = np.arange(len(order))[::-1]
+        values = [float(sub.loc[r, "observed_rate"]) for r in order]
+        counts = [int(sub.loc[r, "n"]) for r in order]
+        ax.barh(ys, values, height=0.6, color=SERIES_1, edgecolor=SURFACE,
+                linewidth=2)
+        for y, v, n in zip(ys, values, counts):
+            # Offsets in points, so the two labels never collide whatever the x-range.
+            ax.annotate(f"{v:.0%}", (v, y), xytext=(6, 0), textcoords="offset points",
+                        va="center", ha="left", fontsize=11, color=INK)
+            ax.annotate(f"n={n}", (v, y), xytext=(40, 0), textcoords="offset points",
+                        va="center", ha="left", fontsize=8.5, color=INK_MUTED)
+        _style(ax)
+        ax.grid(False)
+        ax.spines["bottom"].set_visible(False)
+        ax.set_yticks(ys)
+        ax.set_yticklabels(order, fontsize=10.5, color=INK_SECONDARY)
+        ax.set_xticks([])
+        ax.set_xlim(0, max(values) * 1.45)
+        ax.set_title(title, fontsize=11, color=INK, loc="left", pad=8)
+    fig.suptitle(
+        "Worse ratings went with worse following years, and Red looked like Amber/Red",
+        fontsize=13, color=INK, x=0.012, ha="left", y=1.03,
+    )
+    fig.text(
+        0.012, 0.915,
+        "Share of UK major projects with each outcome in the year after the "
+        "published rating. Five-point scale, September 2012 to March 2021.",
+        fontsize=9.5, color=INK_SECONDARY, ha="left",
+    )
+    fig.tight_layout(rect=(0, 0, 1, 0.9))
+    _save(fig, "chart_summary_for_sharing.png")
+
+
 def chart_auc_over_time(by_snapshot: pd.DataFrame) -> None:
     """Discrimination snapshot by snapshot, against the no-skill line."""
     fig, axes = _figure(1, 1, (11.0, 5.2))
@@ -340,6 +388,7 @@ def main() -> int:
     chart_calibration(cal)
     chart_rating_distribution(dist)
     chart_adverse_rate_by_rating(cal)
+    chart_summary_for_sharing(cal)
     chart_auc_over_time(by_snapshot)
     return 0
 
