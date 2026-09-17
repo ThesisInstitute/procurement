@@ -91,3 +91,7 @@ The only large system that publishes every bidder's identity and price. A system
 | plus the winner's identity and record | 0.751 | 0.128 |
 
 The bidder's price position among its rivals on the same lot carries signal; the bidder's identity and past record do not add any once the lot and the buyer are known, and outcomes cluster by bidder (intraclass correlation 0.227 against a null of 0.151) without that clustering being usable in advance. Transfer scoring of bidder-level forecasts (forecasts on lost lots against realised rates on won lots) reaches Spearman 0.273 but does not beat a lot-only placebo at 0.287. When the cheapest bid was disqualified and a dearer bid won, recorded extensions ran 1.4 points higher (0.9 to 1.9) than matched controls. Deeper winner discounts go with slightly fewer extensions, the opposite of the winner's-curse intuition.
+
+## Licensing
+
+Code is released under the MIT License (see `LICENSE`). Reports, charts, and the derived tables under each `results/` directory are released under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/): reuse them with attribution to the Thesis Institute. Upstream data keep their own terms: USAspending and FPDS records are US government works; the IEG project ratings are published by the World Bank under CC BY 4.0; the UK Government Major Projects Portfolio files are published under the Open Government Licence v3.0; World Bank project documents and Prozorro tender records are reproduced under the terms their publishers state.
