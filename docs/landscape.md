@@ -1,6 +1,6 @@
 # Forecasting procurement outcomes: who has tried, and what public data supports it
 
-Reviewed September 2026 by the Thesis Institute. Every claim links to the source we read; where we could not open a primary source we say so.
+Reviewed September 2026 by the Thesis Institute. Every claim links to the source we read; where we could not open a primary source we say so. The workstreams in this repository are retrospective backtests, a first test of whether the gap below is worth filling.
 
 ## The gap
 
@@ -24,7 +24,7 @@ We found no system, in government, academia, commerce, or civic technology, that
 | Opportunity scoring sold to bidders | For example [Deltek GovWin IQ](https://www.deltek.com/en/government-contracting/govwin), whose "Smart Fit Scores give visibility into your best-fit leads" | Commercial prediction inside procurement | Helps a contractor choose what to bid on, and says nothing about what happens after award |
 | Schedule forecasting for project owners | [nPlan](https://www.nplan.io/): trained on 750,000 historical construction schedules; Network Rail and HS2 among its customers | Forecasts delivery outcomes commercially | Works on schedules already under contract; no published backtest |
 | AI inside US source selection | The Army's experimental FAST TRACK tool is the subject of [TRAX International's Court of Federal Claims suit](https://www.defenseone.com/policy/2026/08/ai-army-contract-lawsuit/415261/) after [GAO denied the protest](https://www.gao.gov/products/b-424271,b-424271.2,b-424271.3); an [Army SBIR topic](https://armysbir.army.mil/topics/ai-enabled-source-selection-solution-for-contract-proposal-evaluation/) seeks evaluation software; a [DHS pilot](https://fedscoop.com/dhs-artificial-intelligence-past-performance-data-procurement-innovation-lab/) retrieved relevant past-performance records | Government is experimenting | Workflow and retrieval; the live legal question is documentation of what the tool contributed |
-| Pre-registered metrics for procurement reform | [Madeline Hart, "Keeping Score on Procurement Reform"](https://www.defensetechacquisition.com/p/keeping-score-on-procurement-reform): four spending metrics and a stated success threshold for fiscal year 2026 | A public, checkable prediction about procurement | Aggregates for a reform agenda, where this project scores individual awards |
+| Pre-registered metrics for procurement reform | [Madeline Hart, "Keeping Score on Procurement Reform"](https://www.defensetechacquisition.com/p/keeping-score-on-procurement-reform): four spending metrics and a stated success threshold for fiscal year 2026 | A public, checkable prediction about procurement | Aggregates for a reform agenda, where this project backtests forecasts on individual awards |
 
 ## How well ex-ante judgment predicts outcomes
 
@@ -42,7 +42,7 @@ Grantmaking has measured this more than procurement has. Within the fundable ran
 | [SBIR.gov](https://www.sbir.gov/data-resources) | Phase I award abstracts | A later Phase II award | No |
 | UK [contract performance notices](https://www.gov.uk/government/publications/procurement-act-2023-guidance-documents-manage-phase/guidance-contract-performance-notices-html) | Contract and supplier | From 2026, contracts above £5 million get a published rating on a fixed four-point scale at least yearly | No |
 
-US contractor performance ratings (CPARS) would be the richest label and are closed by regulation. Losing proposals stay confidential in most systems, so a forecast for a bid that lost never resolves; this project scores the awarded contract and tests bidder-level signal where bids are public.
+US contractor performance ratings (CPARS) would be the richest label and are closed by regulation. Losing proposals stay confidential in most systems, so a forecast for a bid that lost never resolves; this project backtests forecasts for the awarded contract and tests bidder-level signal where bids are public.
 
 ## Rules for using a forecast inside source selection
 

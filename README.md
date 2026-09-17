@@ -1,6 +1,8 @@
 # Thesify procurement
 
-Registered, scored forecasts of public procurement outcomes, built the way Thesis scores bill forecasts: forecast at award, resolve against the official record, publish the skill.
+Backtests of whether public procurement outcomes can be forecast at award. They are groundwork for what the [Thesis Institute](https://thesisinstitute.org) does with official statistics and bills: register a forecast in advance, resolve it against the official record, publish the score.
+
+Everything here is retrospective. The models are statistical (gradient boosting, shrunken reference-class means, and a TF-IDF logistic regression), trained on earlier years and tested on later ones. Nothing in this repository is a registered live forecast, and none of it uses the AI forecasting agents that Thesis runs.
 
 Three workstreams, each in its own directory with its own README, tests, and `results/report.md`:
 
