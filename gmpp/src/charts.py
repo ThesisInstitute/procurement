@@ -27,6 +27,9 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt  # noqa: E402
 import numpy as np  # noqa: E402
+import os  # noqa: E402
+import re  # noqa: E402
+
 import pandas as pd  # noqa: E402
 
 from .paths import RESULTS_DIR  # noqa: E402
@@ -45,6 +48,47 @@ SERIES_2 = "#eb6834"
 DIVERGING_5 = ["#184f95", "#86b6ef", "#eceae3", "#ee8a5f", "#a52424"]
 DIVERGING_3 = ["#184f95", "#eceae3", "#a52424"]
 NON_RATING_GREY = "#898781"
+
+# Thesis Institute design tokens (thesis-design tokens.css, Clear Horizon palette), used by the
+# single-series summary chart. The two-series charts keep the validated neutral pair above:
+# horizon-700 with the rose accent fails colour-vision separation as a categorical pair
+# (protan delta E 4.3 in the dataviz validator), so they are not used side by side.
+THESIS = {
+    "paper": "#FCFDFE",
+    "text_primary": "#14202B",
+    "text_secondary": "#415463",
+    "text_tertiary": "#6B7C89",
+    "border_strong": "#BED0DB",
+    "horizon_700": "#356C99",
+    "font_display": "Newsreader",
+    "font_body": "IBM Plex Sans",
+}
+_FONT_DIRS = [
+    os.environ.get("THESIS_FONT_DIR", ""),
+    os.path.expanduser("~/Library/Fonts"),
+    "/Library/Fonts",
+    "/usr/share/fonts",
+    "/usr/local/texlive/2026/texmf-dist/fonts/opentype/ibm/plex",
+]
+
+
+def _thesis_fonts() -> tuple[str, str]:
+    """Register Newsreader and IBM Plex Sans if present; fall back to matplotlib's defaults."""
+    from matplotlib import font_manager as fm
+
+    for d in _FONT_DIRS:
+        if d and os.path.isdir(d):
+            for name in os.listdir(d):
+                if re.match(r"(?i)(newsreader|ibmplexsans-(regular|medium|semibold|bold)).*\.(ttf|otf)$", name):
+                    try:
+                        fm.fontManager.addfont(os.path.join(d, name))
+                    except Exception:  # noqa: BLE001
+                        pass
+    have = {f.name for f in fm.fontManager.ttflist}
+    display = THESIS["font_display"] if THESIS["font_display"] in have else "DejaVu Serif"
+    body = THESIS["font_body"] if THESIS["font_body"] in have else "DejaVu Sans"
+    return display, body
+
 
 HEADLINE = [
     ("wlc_growth_1y_gt_10", "Whole-life cost up more than 10%"),
@@ -285,41 +329,52 @@ def chart_summary_for_sharing(cal: pd.DataFrame) -> None:
         ("slip_1y_gt_6m", "End date slipped more than 6 months"),
     ]
     block = cal[cal["scale"] == "five_point"]
+    display, body = _thesis_fonts()
     fig, axes = _figure(1, 2, (8.75, 3.7))
+    fig.patch.set_facecolor(THESIS["paper"])
     for ax, (outcome, title) in zip(axes, panels):
         sub = block[block["outcome"] == outcome].set_index("rating")
         order = [r for r in FIVE_POINT if r in sub.index]
         ys = np.arange(len(order))[::-1]
         values = [float(sub.loc[r, "observed_rate"]) for r in order]
         counts = [int(sub.loc[r, "n"]) for r in order]
-        ax.barh(ys, values, height=0.6, color=SERIES_1, edgecolor=SURFACE,
+        ax.barh(ys, values, height=0.6, color=THESIS["horizon_700"], edgecolor=THESIS["paper"],
                 linewidth=2)
         for y, v, n in zip(ys, values, counts):
             # Offsets in points, so the two labels never collide whatever the x-range.
             ax.annotate(f"{v:.0%}", (v, y), xytext=(6, 0), textcoords="offset points",
-                        va="center", ha="left", fontsize=11, color=INK)
+                        va="center", ha="left", fontsize=11, color=THESIS["text_primary"],
+                        fontfamily=body)
             ax.annotate(f"n={n}", (v, y), xytext=(40, 0), textcoords="offset points",
-                        va="center", ha="left", fontsize=8.5, color=INK_MUTED)
+                        va="center", ha="left", fontsize=8.5, color=THESIS["text_tertiary"],
+                        fontfamily=body)
         _style(ax)
+        ax.set_facecolor(THESIS["paper"])
         ax.grid(False)
         ax.spines["bottom"].set_visible(False)
+        ax.spines["left"].set_color(THESIS["border_strong"])
         ax.set_yticks(ys)
-        ax.set_yticklabels(order, fontsize=10.5, color=INK_SECONDARY)
+        ax.set_yticklabels(order, fontsize=10.5, color=THESIS["text_secondary"], fontfamily=body)
         ax.set_xticks([])
         ax.set_xlim(0, max(values) * 1.45)
-        ax.set_title(title, fontsize=11, color=INK, loc="left", pad=8)
+        ax.set_title(title, fontsize=11, color=THESIS["text_primary"], loc="left", pad=8,
+                     fontfamily=body, fontweight="medium")
     fig.suptitle(
         "Worse ratings went with worse following years, and Red looked like Amber/Red",
-        fontsize=13, color=INK, x=0.012, ha="left", y=1.03,
+        fontsize=15, color=THESIS["text_primary"], x=0.012, ha="left", y=1.035,
+        fontfamily=display,
     )
     fig.text(
         0.012, 0.915,
         "Share of UK major projects with each outcome in the year after the "
         "published rating. Five-point scale, September 2012 to March 2021.",
-        fontsize=9.5, color=INK_SECONDARY, ha="left",
+        fontsize=9.5, color=THESIS["text_secondary"], ha="left", fontfamily=body,
     )
     fig.tight_layout(rect=(0, 0, 1, 0.9))
-    _save(fig, "chart_summary_for_sharing.png")
+    path = RESULTS_DIR / "chart_summary_for_sharing.png"
+    fig.savefig(path, dpi=160, facecolor=THESIS["paper"], bbox_inches="tight")
+    plt.close(fig)
+    print(f"wrote {path.name} (fonts: {display}, {body})")
 
 
 def chart_auc_over_time(by_snapshot: pd.DataFrame) -> None:

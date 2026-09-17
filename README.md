@@ -10,7 +10,7 @@ Three workstreams, each in its own directory with its own README, tests, and `re
 
 Conventions: Python 3.12+, `uv`, `pytest`. Raw downloads live under `data/raw/` (gitignored). Every number in a report traces to a script in this repo. Sentence case headings. No emoji.
 
-Background memo: `~/chief-of-staff/state/procurement-thesify/memo.md` (2026-09-15).
+Background: [who has tried this, and what public data supports it](docs/landscape.md).
 
 ## Results, first pass (2026-09-16)
 
